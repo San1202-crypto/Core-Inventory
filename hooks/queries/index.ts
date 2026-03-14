@@ -155,6 +155,15 @@ export { useSession, useLogin, useRegister, useLogout } from "./use-auth";
 // Payment hooks
 export { useCreateCheckout } from "./use-payments";
 
+// Receipt hooks
+export {
+  useReceipts,
+  useReceipt,
+  useCreateReceipt,
+  useAddReceiptItems,
+  useValidateReceipt,
+} from "./use-receipts";
+
 // Shipping hooks
 export {
   useGetShippingRates,

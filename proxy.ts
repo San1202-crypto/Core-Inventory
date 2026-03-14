@@ -9,7 +9,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 
-const PUBLIC = new Set(["/login", "/register"]);
+const PUBLIC = new Set(["/login", "/register", "/auth/forgot-password", "/auth/reset-password"]);
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
