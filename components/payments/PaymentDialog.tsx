@@ -72,11 +72,11 @@ export default function PaymentDialog({
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent className="poppins max-h-[90vh] flex flex-col overflow-hidden pl-4 sm:pl-8 pt-4 sm:pt-7 pb-4 sm:pb-7 pr-0 border-zinc-400/30 dark:border-zinc-400/30 shadow-[0_30px_80px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)]">
+      <DialogContent className="poppins max-h-[90vh] flex flex-col overflow-hidden pl-4 sm:pl-8 pt-4 sm:pt-7 pb-4 sm:pb-7 pr-0 border-sky-400/30 dark:border-sky-400/30 shadow-[0_30px_80px_rgba(2,132,199,0.35)] dark:shadow-[0_30px_80px_rgba(2,132,199,0.25)]">
         <DialogHeader className="flex-shrink-0 space-y-1.5 pr-4 sm:pr-8">
           <DialogTitle className="flex items-center gap-2 text-xl text-white  ">
             Complete Payment
-            <ShieldCheck className="h-5 w-5 text-zinc-500 shrink-0" />
+            <ShieldCheck className="h-5 w-5 text-green-500 shrink-0" />
           </DialogTitle>
           <DialogDescription className="text-sm text-white/80">
             Secure payment powered by Stripe
@@ -86,7 +86,7 @@ export default function PaymentDialog({
         <div className="flex flex-col gap-6 overflow-y-auto min-h-0 flex-1 w-full">
           <div className="pr-4 sm:pr-8 flex flex-col gap-6">
           {/* Order/Invoice Summary */}
-          <div className="rounded-lg border border-zinc-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm p-4 space-y-3 flex-shrink-0 shadow-[0_10px_30px_rgba(0,0,0,0.2)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
+          <div className="rounded-lg border border-sky-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm p-4 space-y-3 flex-shrink-0 shadow-[0_10px_30px_rgba(2,132,199,0.15)] dark:shadow-[0_10px_30px_rgba(2,132,199,0.1)]">
             <div className="flex items-center justify-between">
               <span className="text-sm font-medium text-white">
                 {type === "order" ? "Order" : "Invoice"} Summary
@@ -153,7 +153,7 @@ export default function PaymentDialog({
                   {discount != null && discount > 0 && (
                     <div className="flex items-center justify-between text-white">
                       <span>Discount</span>
-                      <span className="text-zinc-400">
+                      <span className="text-emerald-400">
                         -${discount.toFixed(2)}
                       </span>
                     </div>
@@ -186,7 +186,7 @@ export default function PaymentDialog({
             <Button
               onClick={handlePayment}
               disabled={isLoading}
-              className="h-11 w-full sm:w-auto px-11 inline-flex items-center justify-center rounded-xl border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/70 via-zinc-500/50 to-zinc-500/30 dark:from-zinc-500/70 dark:via-zinc-500/50 dark:to-zinc-500/30 text-white shadow-[0_15px_35px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_35px_rgba(0,0,0,0.2)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/40 hover:from-zinc-500/80 hover:via-zinc-500/60 hover:to-zinc-500/40 dark:hover:border-zinc-300/40 dark:hover:from-zinc-500/80 dark:hover:via-zinc-500/60 dark:hover:to-zinc-500/40 hover:shadow-[0_20px_45px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_20px_45px_rgba(0,0,0,0.2)] focus-visible:ring-zinc-500/50"
+              className="h-11 w-full sm:w-auto px-11 inline-flex items-center justify-center rounded-xl border border-sky-400/30 dark:border-sky-400/30 bg-gradient-to-r from-sky-500/70 via-sky-500/50 to-sky-500/30 dark:from-sky-500/70 dark:via-sky-500/50 dark:to-sky-500/30 text-white shadow-[0_15px_35px_rgba(2,132,199,0.45)] dark:shadow-[0_15px_35px_rgba(2,132,199,0.25)] backdrop-blur-sm transition duration-200 hover:border-sky-300/40 hover:from-sky-500/80 hover:via-sky-500/60 hover:to-sky-500/40 dark:hover:border-sky-300/40 dark:hover:from-sky-500/80 dark:hover:via-sky-500/60 dark:hover:to-sky-500/40 hover:shadow-[0_20px_45px_rgba(2,132,199,0.6)] dark:hover:shadow-[0_20px_45px_rgba(2,132,199,0.35)] focus-visible:ring-sky-500/50"
             >
               {isLoading ? (
                 <>
@@ -211,4 +211,3 @@ export default function PaymentDialog({
     </Dialog>
   );
 }
-

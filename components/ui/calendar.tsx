@@ -43,8 +43,8 @@ function Calendar({
         ),
         day_range_end: "day-range-end",
         day_selected:
-          "bg-zinc-500 text-white hover:bg-zinc-600 hover:text-white focus:bg-zinc-500 focus:text-white",
-        day_today: "bg-zinc-100 dark:bg-zinc-900/30 text-zinc-900 dark:text-zinc-300",
+          "bg-rose-500 text-white hover:bg-rose-600 hover:text-white focus:bg-rose-500 focus:text-white",
+        day_today: "bg-rose-100 dark:bg-rose-900/30 text-rose-900 dark:text-rose-300",
         day_outside:
           "day-outside text-gray-400 dark:text-white/30 opacity-50 aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30",
         day_disabled: "text-gray-300 dark:text-white/20 opacity-50",
@@ -68,4 +68,3 @@ function Calendar({
 Calendar.displayName = "Calendar"
 
 export { Calendar }
-

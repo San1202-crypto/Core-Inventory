@@ -192,7 +192,7 @@ export default function AdminDashboardOverview({
               <CardTitle className="text-sm font-medium text-muted-foreground">
                 Total Orders
               </CardTitle>
-              <ShoppingCart className="h-4 w-4 text-zinc-600 dark:text-zinc-400" />
+              <ShoppingCart className="h-4 w-4 text-blue-600 dark:text-blue-400" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-semibold">{stats.totalOrders}</div>
@@ -204,7 +204,7 @@ export default function AdminDashboardOverview({
               <CardTitle className="text-sm font-medium text-muted-foreground">
                 Total Revenue
               </CardTitle>
-              <DollarSign className="h-4 w-4 text-zinc-600 dark:text-zinc-400" />
+              <DollarSign className="h-4 w-4 text-green-600 dark:text-green-400" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-semibold">
@@ -222,7 +222,7 @@ export default function AdminDashboardOverview({
               <CardTitle className="text-sm font-medium text-muted-foreground">
                 Total Products
               </CardTitle>
-              <Package className="h-4 w-4 text-zinc-600 dark:text-zinc-400" />
+              <Package className="h-4 w-4 text-purple-600 dark:text-purple-400" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-semibold">
@@ -236,7 +236,7 @@ export default function AdminDashboardOverview({
               <CardTitle className="text-sm font-medium text-muted-foreground">
                 Total Users
               </CardTitle>
-              <Users className="h-4 w-4 text-zinc-600 dark:text-zinc-400" />
+              <Users className="h-4 w-4 text-orange-600 dark:text-orange-400" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-semibold">{stats.totalUsers}</div>
@@ -248,7 +248,7 @@ export default function AdminDashboardOverview({
               <CardTitle className="text-sm font-medium text-muted-foreground">
                 Total Suppliers
               </CardTitle>
-              <Truck className="h-4 w-4 text-zinc-600 dark:text-zinc-400" />
+              <Truck className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-semibold">
@@ -262,7 +262,7 @@ export default function AdminDashboardOverview({
               <CardTitle className="text-sm font-medium text-muted-foreground">
                 Total Warehouses
               </CardTitle>
-              <Warehouse className="h-4 w-4 text-zinc-600 dark:text-zinc-400" />
+              <Warehouse className="h-4 w-4 text-amber-600 dark:text-amber-400" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-semibold">
@@ -280,7 +280,7 @@ export default function AdminDashboardOverview({
               <CardTitle className="text-sm font-medium text-muted-foreground">
                 Average Order Value
               </CardTitle>
-              <TrendingUp className="h-4 w-4 text-zinc-600 dark:text-zinc-400" />
+              <TrendingUp className="h-4 w-4 text-purple-600 dark:text-purple-400" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-semibold">
@@ -298,7 +298,7 @@ export default function AdminDashboardOverview({
               <CardTitle className="text-sm font-medium text-muted-foreground">
                 Orders by Status
               </CardTitle>
-              <BarChart3 className="h-4 w-4 text-zinc-600 dark:text-zinc-400" />
+              <BarChart3 className="h-4 w-4 text-sky-600 dark:text-sky-400" />
             </CardHeader>
             <CardContent>
               <ul className="text-sm space-y-1">
@@ -375,7 +375,7 @@ export default function AdminDashboardOverview({
                       <TableCell className="text-right">
                         <Link
                           href={`${orderDetailHrefBase}/${order.id}`}
-                          className="inline-flex items-center gap-1 text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
+                          className="inline-flex items-center gap-1 text-sm text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
                         >
                           <Eye className="h-4 w-4" />
                           View
@@ -392,4 +392,3 @@ export default function AdminDashboardOverview({
     </PageContentWrapper>
   );
 }
-

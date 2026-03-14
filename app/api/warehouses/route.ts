@@ -21,10 +21,9 @@ export async function GET(request: NextRequest) {
     }
 
     const userId = session.id;
-    const userRole = session.role;
 
     const warehouses = await prisma.warehouse.findMany({
-      where: userRole === "admin" ? {} : { userId },
+      where: { userId },
     });
 
     return NextResponse.json(warehouses);

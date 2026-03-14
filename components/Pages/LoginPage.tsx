@@ -217,9 +217,9 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-background dark:bg-background">
+    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.15),transparent_55%),radial-gradient(circle_at_bottom,_rgba(236,72,153,0.12),transparent_65%)] dark:bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.15),transparent_55%),radial-gradient(circle_at_bottom,_rgba(236,72,153,0.12),transparent_65%)]">
       {/* Background overlay layer - lighter for light mode, darker for dark mode */}
-      <div className="pointer-events-none absolute inset-0  dark:"></div>
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.3),transparent_60%)] dark:bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.05),transparent_60%)]"></div>
 
       <div className="relative z-10 w-full">
         <div className="flex flex-col lg:flex-row min-h-screen">
@@ -236,7 +236,7 @@ export default function LoginPage() {
             </div>
             <div className="relative z-10 max-w-2xl w-full space-y-6">
               {/* Main Welcome Card - Demo guide */}
-              <div className="rounded-[28px] border border-zinc-400/30 dark:border-white/10 bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5 dark:from-white/5 dark:via-white/5 dark:to-white/5 backdrop-blur-sm shadow-[0_30px_80px_rgba(0,0,0,0.2)] dark:shadow-lg p-4 sm:p-8">
+              <div className="rounded-[28px] border border-sky-400/30 dark:border-white/10 bg-gradient-to-br from-sky-500/25 via-sky-500/10 to-sky-500/5 dark:from-white/5 dark:via-white/5 dark:to-white/5 backdrop-blur-sm shadow-[0_30px_80px_rgba(2,132,199,0.35)] dark:shadow-lg p-4 sm:p-8">
                 <h1 className="text-xl lg:text-2xl font-semibold text-gray-900 dark:text-white mb-3 tracking-tight text-center">
                   Demo Accounts Guide
                 </h1>
@@ -249,10 +249,10 @@ export default function LoginPage() {
               {/* Demo role cards */}
               <div className="grid grid-cols-2 gap-4">
                 {/* Admin */}
-                <div className="rounded-[20px] border border-zinc-400/30 dark:border-white/10 bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5 dark:from-white/5 dark:via-white/5 dark:to-white/5 backdrop-blur-sm shadow-[0_20px_60px_rgba(0,0,0,0.2)] dark:shadow-lg p-4 transition-all hover:shadow-[0_25px_70px_rgba(0,0,0,0.2)] hover:border-zinc-300/50 dark:hover:border-zinc-300/40">
+                <div className="rounded-[20px] border border-sky-400/30 dark:border-white/10 bg-gradient-to-br from-sky-500/25 via-sky-500/10 to-sky-500/5 dark:from-white/5 dark:via-white/5 dark:to-white/5 backdrop-blur-sm shadow-[0_20px_60px_rgba(2,132,199,0.3)] dark:shadow-lg p-4 transition-all hover:shadow-[0_25px_70px_rgba(2,132,199,0.4)] hover:border-sky-300/50 dark:hover:border-sky-300/40">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="rounded-xl border border-zinc-400/30 dark:border-zinc-400/20 bg-zinc-500/20 dark:bg-zinc-500/10 backdrop-blur-sm p-2">
-                      <Shield className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
+                    <div className="rounded-xl border border-sky-400/30 dark:border-sky-400/20 bg-sky-500/20 dark:bg-sky-500/10 backdrop-blur-sm p-2">
+                      <Shield className="h-5 w-5 text-sky-600 dark:text-sky-400" />
                     </div>
                     <h3 className="text-md font-semibold text-gray-900 dark:text-white">
                       Admin
@@ -265,10 +265,10 @@ export default function LoginPage() {
                 </div>
 
                 {/* Client */}
-                <div className="rounded-[20px] border border-zinc-400/30 dark:border-white/10 bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5 dark:from-white/5 dark:via-white/5 dark:to-white/5 backdrop-blur-sm shadow-[0_20px_60px_rgba(0,0,0,0.2)] dark:shadow-lg p-4 transition-all hover:shadow-[0_25px_70px_rgba(0,0,0,0.2)] hover:border-zinc-300/50 dark:hover:border-zinc-300/40">
+                <div className="rounded-[20px] border border-emerald-400/30 dark:border-white/10 bg-gradient-to-br from-emerald-500/25 via-emerald-500/10 to-emerald-500/5 dark:from-white/5 dark:via-white/5 dark:to-white/5 backdrop-blur-sm shadow-[0_20px_60px_rgba(16,185,129,0.3)] dark:shadow-lg p-4 transition-all hover:shadow-[0_25px_70px_rgba(16,185,129,0.4)] hover:border-emerald-300/50 dark:hover:border-emerald-300/40">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="rounded-xl border border-zinc-400/30 dark:border-zinc-400/20 bg-zinc-500/20 dark:bg-zinc-500/10 backdrop-blur-sm p-2">
-                      <ShoppingBag className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
+                    <div className="rounded-xl border border-emerald-400/30 dark:border-emerald-400/20 bg-emerald-500/20 dark:bg-emerald-500/10 backdrop-blur-sm p-2">
+                      <ShoppingBag className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
                     </div>
                     <h3 className="text-md font-semibold text-gray-900 dark:text-white">
                       Client
@@ -281,10 +281,10 @@ export default function LoginPage() {
                 </div>
 
                 {/* Supplier */}
-                <div className="rounded-[20px] border border-zinc-400/30 dark:border-white/10 bg-gradient-to-br from-zinc-500/30 via-zinc-500/15 to-zinc-500/5 dark:from-white/5 dark:via-white/5 dark:to-white/5 backdrop-blur-sm shadow-[0_20px_60px_rgba(0,0,0,0.2)] dark:shadow-lg p-4 transition-all hover:shadow-[0_25px_70px_rgba(0,0,0,0.2)] hover:border-zinc-300/60 dark:hover:border-zinc-300/40">
+                <div className="rounded-[20px] border border-amber-400/30 dark:border-white/10 bg-gradient-to-br from-amber-500/30 via-amber-500/15 to-amber-500/5 dark:from-white/5 dark:via-white/5 dark:to-white/5 backdrop-blur-sm shadow-[0_20px_60px_rgba(245,158,11,0.25)] dark:shadow-lg p-4 transition-all hover:shadow-[0_25px_70px_rgba(245,158,11,0.35)] hover:border-amber-300/60 dark:hover:border-amber-300/40">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="rounded-xl border border-zinc-400/30 dark:border-zinc-400/20 bg-zinc-500/20 dark:bg-zinc-500/10 backdrop-blur-sm p-2">
-                      <Store className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
+                    <div className="rounded-xl border border-amber-400/30 dark:border-amber-400/20 bg-amber-500/20 dark:bg-amber-500/10 backdrop-blur-sm p-2">
+                      <Store className="h-5 w-5 text-amber-600 dark:text-amber-400" />
                     </div>
                     <h3 className="text-md font-semibold text-gray-900 dark:text-white">
                       Supplier
@@ -297,10 +297,10 @@ export default function LoginPage() {
                 </div>
 
                 {/* New accounts & roles */}
-                <div className="rounded-[20px] border border-zinc-400/30 dark:border-white/10 bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5 dark:from-white/5 dark:via-white/5 dark:to-white/5 backdrop-blur-sm shadow-[0_20px_60px_rgba(0,0,0,0.2)] dark:shadow-lg p-4 transition-all hover:shadow-[0_25px_70px_rgba(0,0,0,0.2)] hover:border-zinc-300/50 dark:hover:border-zinc-300/40">
+                <div className="rounded-[20px] border border-violet-400/30 dark:border-white/10 bg-gradient-to-br from-violet-500/25 via-violet-500/10 to-violet-500/5 dark:from-white/5 dark:via-white/5 dark:to-white/5 backdrop-blur-sm shadow-[0_20px_60px_rgba(139,92,246,0.35)] dark:shadow-lg p-4 transition-all hover:shadow-[0_25px_70px_rgba(139,92,246,0.45)] hover:border-violet-300/50 dark:hover:border-violet-300/40">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="rounded-xl border border-zinc-400/30 dark:border-zinc-400/20 bg-zinc-500/20 dark:bg-zinc-500/10 backdrop-blur-sm p-2">
-                      <Users className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
+                    <div className="rounded-xl border border-violet-400/30 dark:border-violet-400/20 bg-violet-500/20 dark:bg-violet-500/10 backdrop-blur-sm p-2">
+                      <Users className="h-5 w-5 text-violet-600 dark:text-violet-400" />
                     </div>
                     <h3 className="text-md font-semibold text-gray-900 dark:text-white">
                       Accounts & Roles
@@ -318,7 +318,7 @@ export default function LoginPage() {
 
           {/* Right Side - Login Form */}
           <div className="w-full lg:w-1/2 flex items-center justify-center p-0 sm:p-8 lg:p-12">
-            <div className="w-full max-w-md rounded-[28px] border border-zinc-400/30 dark:border-white/10 bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5 dark:from-white/5 dark:via-white/5 dark:to-white/5 backdrop-blur-sm shadow-[0_30px_80px_rgba(0,0,0,0.2)] dark:shadow-lg p-4 sm:p-8 transition-all duration-300 hover:shadow-[0_40px_100px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_40px_100px_rgba(0,0,0,0.2)] hover:border-zinc-300/50 dark:hover:border-zinc-300/30">
+            <div className="w-full max-w-md rounded-[28px] border border-sky-400/30 dark:border-white/10 bg-gradient-to-br from-sky-500/25 via-sky-500/10 to-sky-500/5 dark:from-white/5 dark:via-white/5 dark:to-white/5 backdrop-blur-sm shadow-[0_30px_80px_rgba(2,132,199,0.35)] dark:shadow-lg p-4 sm:p-8 transition-all duration-300 hover:shadow-[0_40px_100px_rgba(2,132,199,0.5)] dark:hover:shadow-[0_40px_100px_rgba(2,132,199,0.4)] hover:border-sky-300/50 dark:hover:border-sky-300/30">
               <div className="space-y-2 mb-6">
                 <h2 className="text-2xl sm:text-2xl font-semibold text-gray-900 dark:text-white text-center">
                   Welcome Back
@@ -336,7 +336,7 @@ export default function LoginPage() {
                   </label>
                   {!selectMounted ? (
                     <div
-                      className="flex h-11 w-full items-center justify-between rounded-md border border-zinc-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 px-3 py-2.5 text-sm text-gray-500 dark:text-white/40"
+                      className="flex h-11 w-full items-center justify-between rounded-md border border-sky-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 px-3 py-2.5 text-sm text-gray-500 dark:text-white/40"
                       aria-hidden
                     >
                       Select Role Based Test Account
@@ -347,37 +347,37 @@ export default function LoginPage() {
                       value={selectedRole || undefined}
                       onValueChange={handleRoleSelect}
                     >
-                      <SelectTrigger className="w-full border-zinc-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-white/40 focus:border-zinc-400 focus:ring-zinc-500/50">
+                      <SelectTrigger className="w-full border-sky-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-white/40 focus:border-sky-400 focus:ring-sky-500/50">
                         <SelectValue placeholder="Select Role Based Test Account" />
                       </SelectTrigger>
                       <SelectContent
-                        className="border-zinc-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm z-[100]"
+                        className="border-sky-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm z-[100]"
                         position="popper"
                         sideOffset={5}
                         align="start"
                       >
                         <SelectItem
                           value="guest-user"
-                          className="cursor-pointer text-gray-900 dark:text-white focus:bg-zinc-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
+                          className="cursor-pointer text-gray-900 dark:text-white focus:bg-sky-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
                         >
                           Guest User / Admin (test@admin.com)
                         </SelectItem>
                         <SelectItem
                           value="guest-supplier"
-                          className="cursor-pointer text-gray-900 dark:text-white focus:bg-zinc-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
+                          className="cursor-pointer text-gray-900 dark:text-white focus:bg-sky-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
                         >
                           Supplier (test@supplier.com)
                         </SelectItem>
                         <SelectItem
                           value="guest-client"
-                          className="cursor-pointer text-gray-900 dark:text-white focus:bg-zinc-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
+                          className="cursor-pointer text-gray-900 dark:text-white focus:bg-sky-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
                         >
                           Client (test@client.com)
                         </SelectItem>
                         {selectedRole && (
                           <SelectItem
                             value="clear"
-                            className="cursor-pointer text-gray-500 dark:text-white/60 opacity-60 focus:bg-zinc-100 dark:focus:bg-white/10 focus:text-gray-500 dark:focus:text-white/60"
+                            className="cursor-pointer text-gray-500 dark:text-white/60 opacity-60 focus:bg-sky-100 dark:focus:bg-white/10 focus:text-gray-500 dark:focus:text-white/60"
                           >
                             Clear Selection
                           </SelectItem>
@@ -402,7 +402,7 @@ export default function LoginPage() {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="you@example.com"
                     required
-                    className="w-full bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-zinc-400/30 dark:border-white/20 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+                    className="w-full bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-sky-400/30 dark:border-white/20 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-white/40 focus-visible:border-sky-400 focus-visible:ring-sky-500/50 shadow-[0_10px_30px_rgba(2,132,199,0.15)]"
                   />
                 </div>
 
@@ -421,14 +421,14 @@ export default function LoginPage() {
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter your password"
                     required
-                    className="w-full bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-zinc-400/30 dark:border-white/20 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+                    className="w-full bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-sky-400/30 dark:border-white/20 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-white/40 focus-visible:border-sky-400 focus-visible:ring-sky-500/50 shadow-[0_10px_30px_rgba(2,132,199,0.15)]"
                   />
                 </div>
 
                 {/* Sign In Button — Loader2 inside button until homepage displays (no overlay) */}
                 <Button
                   type="submit"
-                  className="w-full rounded-xl border border-zinc-400/30 dark:border-zinc-400/40 bg-gradient-to-r from-zinc-500/70 via-zinc-500/50 to-zinc-500/30 dark:from-zinc-500/80 dark:via-zinc-500/60 dark:to-zinc-500/40 text-white shadow-[0_15px_35px_rgba(0,0,0,0.2)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/60 dark:hover:border-zinc-300/60 hover:from-zinc-500/90 hover:via-zinc-500/70 hover:to-zinc-500/50 dark:hover:from-zinc-500/90 dark:hover:via-zinc-500/70 dark:hover:to-zinc-500/50 hover:shadow-[0_20px_45px_rgba(0,0,0,0.2)]"
+                  className="w-full rounded-xl border border-sky-400/30 dark:border-sky-400/40 bg-gradient-to-r from-sky-500/70 via-sky-500/50 to-sky-500/30 dark:from-sky-500/80 dark:via-sky-500/60 dark:to-sky-500/40 text-white shadow-[0_15px_35px_rgba(2,132,199,0.45)] backdrop-blur-sm transition duration-200 hover:border-sky-300/60 dark:hover:border-sky-300/60 hover:from-sky-500/90 hover:via-sky-500/70 hover:to-sky-500/50 dark:hover:from-sky-500/90 dark:hover:via-sky-500/70 dark:hover:to-sky-500/50 hover:shadow-[0_20px_45px_rgba(2,132,199,0.6)]"
                   disabled={isLoading || isNavigatingToHome}
                 >
                   {isNavigatingToHome ? (
@@ -450,7 +450,7 @@ export default function LoginPage() {
               {/* Separator */}
               <div className="relative mb-6">
                 <div className="absolute inset-0 flex items-center">
-                  <span className="w-full border-t border-zinc-400/20 dark:border-white/10" />
+                  <span className="w-full border-t border-sky-400/20 dark:border-white/10" />
                 </div>
                 <div className="relative flex justify-center text-xs uppercase">
                   <span className="bg-transparent px-2 text-gray-600 dark:text-white/60">
@@ -465,7 +465,7 @@ export default function LoginPage() {
                 variant="outline"
                 onClick={handleGoogleSignIn}
                 disabled={isLoading || isNavigatingToHome}
-                className="w-full border-zinc-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-gray-900 dark:text-white hover:bg-white/20 dark:hover:bg-white/10 hover:text-gray-900 dark:hover:text-white mb-6"
+                className="w-full border-sky-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-gray-900 dark:text-white hover:bg-white/20 dark:hover:bg-white/10 hover:text-gray-900 dark:hover:text-white mb-6"
               >
                 <svg
                   className="mr-2 h-4 w-4"
@@ -498,17 +498,9 @@ export default function LoginPage() {
                   Don&apos;t have an account?{" "}
                   <Link
                     href="/register"
-                    className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors font-medium"
+                    className="text-sky-600 dark:text-sky-400 hover:text-sky-700 dark:hover:text-sky-300 transition-colors font-medium"
                   >
                     Sign up
-                  </Link>
-                </p>
-                <p className="mt-2">
-                  <Link
-                    href="/auth/forgot-password"
-                    className="text-gray-500 dark:text-white/50 hover:text-sky-600 dark:hover:text-sky-400 text-xs transition-colors"
-                  >
-                    Forgot your password?
                   </Link>
                 </p>
               </div>
@@ -519,4 +511,3 @@ export default function LoginPage() {
     </div>
   );
 }
-

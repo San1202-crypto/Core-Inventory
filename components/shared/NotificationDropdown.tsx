@@ -75,29 +75,29 @@ function getNotificationIcon(type: NotificationType) {
 function getNotificationColor(type: NotificationType): string {
   switch (type) {
     case "low_stock":
-      return "text-zinc-600 dark:text-zinc-400";
+      return "text-orange-600 dark:text-orange-400";
     case "stock_out":
-      return "text-zinc-600 dark:text-zinc-400";
+      return "text-red-600 dark:text-red-400";
     case "order_confirmation":
     case "order_status_update":
-      return "text-zinc-600 dark:text-zinc-400";
+      return "text-blue-600 dark:text-blue-400";
     case "client_order_received":
-      return "text-zinc-600 dark:text-zinc-400";
+      return "text-violet-600 dark:text-violet-400";
     case "product_review_submitted":
-      return "text-zinc-600 dark:text-zinc-400";
+      return "text-amber-600 dark:text-amber-400";
     case "shipping_notification":
-      return "text-zinc-600 dark:text-zinc-400";
+      return "text-purple-600 dark:text-purple-400";
     case "invoice_ready":
     case "invoice_sent":
-      return "text-zinc-600 dark:text-zinc-400";
+      return "text-green-600 dark:text-green-400";
     case "support_ticket_created":
-      return "text-zinc-600 dark:text-zinc-400";
+      return "text-sky-600 dark:text-sky-400";
     case "support_ticket_replied":
-      return "text-zinc-600 dark:text-zinc-400";
+      return "text-blue-600 dark:text-blue-400";
     case "import_complete":
-      return "text-zinc-600 dark:text-zinc-400";
+      return "text-green-600 dark:text-green-400";
     case "import_failed":
-      return "text-zinc-600 dark:text-zinc-400";
+      return "text-red-600 dark:text-red-400";
     default:
       return "text-gray-600 dark:text-gray-400";
   }
@@ -135,9 +135,9 @@ export function NotificationDropdown({
   };
 
   return (
-    <div className="absolute right-0 top-full mt-2 w-80 sm:w-96 rounded-lg border border-zinc-400/30 dark:border-white/10 bg-white/95 dark:bg-popover/95 backdrop-blur-sm shadow-[0_30px_80px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)] z-50 overflow-hidden">
+    <div className="absolute right-0 top-full mt-2 w-80 sm:w-96 rounded-lg border border-rose-400/30 dark:border-white/10 bg-white/95 dark:bg-popover/95 backdrop-blur-sm shadow-[0_30px_80px_rgba(225,29,72,0.35)] dark:shadow-[0_30px_80px_rgba(225,29,72,0.25)] z-50 overflow-hidden">
       {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b border-zinc-400/20 dark:border-white/10">
+      <div className="flex items-center justify-between p-4 border-b border-rose-400/20 dark:border-white/10">
         <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
           Notifications
         </h3>
@@ -147,7 +147,7 @@ export function NotificationDropdown({
             size="sm"
             onClick={handleMarkAllAsRead}
             disabled={markAllAsRead.isPending}
-            className="h-8 text-xs text-zinc-600 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300"
+            className="h-8 text-xs text-rose-600 dark:text-rose-400 hover:text-rose-700 dark:hover:text-rose-300"
           >
             {markAllAsRead.isPending ? (
               <Loader2 className="h-3 w-3 mr-1 animate-spin" />
@@ -167,7 +167,7 @@ export function NotificationDropdown({
             <p className="text-sm">Loading notifications...</p>
           </div>
         ) : isError ? (
-          <div className="p-4 text-center text-zinc-500 dark:text-zinc-400">
+          <div className="p-4 text-center text-red-500 dark:text-red-400">
             <p className="text-sm">Failed to load notifications</p>
           </div>
         ) : notifications.length === 0 ? (
@@ -176,7 +176,7 @@ export function NotificationDropdown({
             <p className="text-sm">No notifications</p>
           </div>
         ) : (
-          <div className="divide-y divide-zinc-400/10 dark:divide-white/10">
+          <div className="divide-y divide-rose-400/10 dark:divide-white/10">
             {notifications.map((notification) => {
               const Icon = getNotificationIcon(notification.type);
               const iconColor = getNotificationColor(notification.type);
@@ -187,8 +187,8 @@ export function NotificationDropdown({
                 <div
                   key={notification.id}
                   className={cn(
-                    "p-4 hover:bg-zinc-50/50 dark:hover:bg-white/5 transition-colors",
-                    !notification.read && "bg-zinc-50/30 dark:bg-zinc-500/5"
+                    "p-4 hover:bg-rose-50/50 dark:hover:bg-white/5 transition-colors",
+                    !notification.read && "bg-rose-50/30 dark:bg-rose-500/5"
                   )}
                 >
                   <div className="flex items-start gap-3">
@@ -198,7 +198,7 @@ export function NotificationDropdown({
                         "flex-shrink-0 h-8 w-8 rounded-full flex items-center justify-center",
                         iconColor,
                         !notification.read
-                          ? "bg-zinc-100 dark:bg-zinc-500/20"
+                          ? "bg-rose-100 dark:bg-rose-500/20"
                           : "bg-gray-100 dark:bg-gray-700"
                       )}
                     >
@@ -264,7 +264,7 @@ export function NotificationDropdown({
                         size="sm"
                         onClick={() => handleDelete(notification.id)}
                         disabled={deleteNotification.isPending}
-                        className="h-6 w-6 p-0 text-zinc-600 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300"
+                        className="h-6 w-6 p-0 text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300"
                         aria-label="Delete notification"
                       >
                         <Trash2 className="h-3 w-3" />
@@ -277,7 +277,7 @@ export function NotificationDropdown({
                     <div className="mt-2 flex items-center gap-2">
                       <Badge
                         variant="secondary"
-                        className="text-xs bg-zinc-100 text-zinc-700 dark:bg-zinc-500/20 dark:text-zinc-300 border-0"
+                        className="text-xs bg-rose-100 text-rose-700 dark:bg-rose-500/20 dark:text-rose-300 border-0"
                       >
                         New
                       </Badge>
@@ -292,7 +292,7 @@ export function NotificationDropdown({
 
       {/* Footer */}
       {notifications.length > 0 && (
-        <div className="p-3 border-t border-zinc-400/20 dark:border-white/10 text-center">
+        <div className="p-3 border-t border-rose-400/20 dark:border-white/10 text-center">
           <Button
             variant="ghost"
             size="sm"
@@ -306,4 +306,3 @@ export function NotificationDropdown({
     </div>
   );
 }
-

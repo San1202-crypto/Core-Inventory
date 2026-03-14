@@ -37,17 +37,17 @@ import OrderActions from "./OrderActions";
 function getStatusColor(status: string): string {
   switch (status) {
     case "pending":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300";
     case "confirmed":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300";
     case "processing":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300";
     case "shipped":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300";
     case "delivered":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300";
     case "cancelled":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300";
     default:
       return "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300";
   }
@@ -59,11 +59,11 @@ function getStatusColor(status: string): string {
 function getPaymentStatusColor(status: string): string {
   switch (status) {
     case "paid":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300";
     case "unpaid":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300";
     case "partial":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300";
     case "refunded":
       return "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300";
     default:
@@ -185,7 +185,7 @@ export const createOrderColumns = (
         <div className="flex flex-col gap-0.5">
           <Link
             href={href}
-            className="font-semibold text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
+            className="font-semibold text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
           >
             {order.orderNumber}
           </Link>
@@ -199,8 +199,8 @@ export const createOrderColumns = (
               <Badge
                 className={
                   order._source === "personal"
-                    ? "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300 text-xs"
-                    : "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300 text-xs"
+                    ? "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 text-xs"
+                    : "bg-violet-100 text-violet-800 dark:bg-violet-900/30 dark:text-violet-300 text-xs"
                 }
               >
                 {order._source === "personal" ? "Self" : "Client"}
@@ -295,4 +295,3 @@ export const createOrderColumns = (
     },
   },
 ];
-

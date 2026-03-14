@@ -114,7 +114,7 @@ export default function ShippingManagement({
   if (hasTrackingInfo) {
     return (
       <div className="flex items-center gap-2 text-sm">
-        <CheckCircle className="h-4 w-4 text-zinc-500" />
+        <CheckCircle className="h-4 w-4 text-green-500" />
         <span className="text-muted-foreground">
           Tracking: {order.trackingNumber}
         </span>
@@ -144,7 +144,7 @@ export default function ShippingManagement({
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent className="p-4 sm:p-7 sm:px-8 poppins max-h-[90vh] overflow-y-auto flex flex-col overflow-hidden gap-8 border-zinc-400/30 dark:border-zinc-400/30 shadow-[0_30px_80px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)]">
+      <DialogContent className="p-4 sm:p-7 sm:px-8 poppins max-h-[90vh] overflow-y-auto flex flex-col overflow-hidden gap-8 border-emerald-400/30 dark:border-emerald-400/30 shadow-[0_30px_80px_rgba(16,185,129,0.35)] dark:shadow-[0_30px_80px_rgba(16,185,129,0.25)]">
         <DialogHeader className="flex-shrink-0">
           <DialogTitle className="flex items-center gap-2 text-white">
             <Package className="h-5 w-5" />
@@ -164,17 +164,17 @@ export default function ShippingManagement({
             onValueChange={(v) => setActiveTab(v as "auto" | "manual")}
             className="flex flex-col min-h-full"
           >
-            <TabsList className="grid w-full grid-cols-2 h-11 p-1 rounded-lg bg-white/30 dark:bg-white/10 text-white shrink-0 border border-zinc-400/30 dark:border-white/20 shadow-[0_10px_30px_rgba(0,0,0,0.2)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
+            <TabsList className="grid w-full grid-cols-2 h-11 p-1 rounded-lg bg-white/30 dark:bg-white/10 text-white shrink-0 border border-emerald-400/30 dark:border-white/20 shadow-[0_10px_30px_rgba(16,185,129,0.15)] dark:shadow-[0_10px_30px_rgba(16,185,129,0.1)]">
               <TabsTrigger
                 value="auto"
-                className="h-9 gap-2 rounded-md data-[state=active]:border data-[state=active]:border-zinc-400 data-[state=active]:ring-2 data-[state=active]:ring-zinc-500/50 data-[state=active]:bg-background data-[state=active]:text-slate-700 dark:data-[state=active]:text-white dark:data-[state=active]:bg-white/20 data-[state=active]:shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+                className="h-9 gap-2 rounded-md data-[state=active]:border data-[state=active]:border-emerald-400 data-[state=active]:ring-2 data-[state=active]:ring-emerald-500/50 data-[state=active]:bg-background data-[state=active]:text-slate-700 dark:data-[state=active]:text-white dark:data-[state=active]:bg-white/20 data-[state=active]:shadow-[0_10px_30px_rgba(16,185,129,0.15)]"
               >
                 <Truck className="h-4 w-4" />
                 Auto Generate
               </TabsTrigger>
               <TabsTrigger
                 value="manual"
-                className="h-9 gap-2 rounded-md data-[state=active]:border data-[state=active]:border-zinc-400 data-[state=active]:ring-2 data-[state=active]:ring-zinc-500/50 data-[state=active]:bg-background data-[state=active]:text-slate-700 dark:data-[state=active]:text-white dark:data-[state=active]:bg-white/20 data-[state=active]:shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+                className="h-9 gap-2 rounded-md data-[state=active]:border data-[state=active]:border-emerald-400 data-[state=active]:ring-2 data-[state=active]:ring-emerald-500/50 data-[state=active]:bg-background data-[state=active]:text-slate-700 dark:data-[state=active]:text-white dark:data-[state=active]:bg-white/20 data-[state=active]:shadow-[0_10px_30px_rgba(16,185,129,0.15)]"
               >
                 <Tag className="h-4 w-4" />
                 Manual Entry
@@ -186,10 +186,10 @@ export default function ShippingManagement({
               value="auto"
               className="space-y-4 mt-4 flex-1 min-h-0 data-[state=inactive]:hidden"
             >
-              <div className="rounded-lg border border-zinc-200 bg-zinc-50 dark:bg-zinc-950/30 dark:border-zinc-800 p-3">
+              <div className="rounded-lg border border-amber-200 bg-amber-50 dark:bg-amber-950/30 dark:border-amber-800 p-3">
                 <div className="flex items-start gap-2">
-                  <AlertTriangle className="h-4 w-4 text-zinc-600 mt-0.5 shrink-0" />
-                  <p className="text-xs text-zinc-700 dark:text-zinc-400">
+                  <AlertTriangle className="h-4 w-4 text-amber-600 mt-0.5 shrink-0" />
+                  <p className="text-xs text-amber-700 dark:text-amber-400">
                     This will generate a shipping label via Shippo and
                     automatically update the order status to
                     &quot;shipped&quot;. Label costs will be charged to your
@@ -208,12 +208,12 @@ export default function ShippingManagement({
                 >
                   <SelectTrigger
                     id="carrier"
-                    className="h-11 w-full border-zinc-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus:border-zinc-400 focus:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+                    className="h-11 w-full border-emerald-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus:border-emerald-400 focus:ring-emerald-500/50 shadow-[0_10px_30px_rgba(16,185,129,0.15)] dark:shadow-[0_10px_30px_rgba(16,185,129,0.1)]"
                   >
                     <SelectValue placeholder="Select carrier" />
                   </SelectTrigger>
                   <SelectContent
-                    className="border-zinc-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm z-[100]"
+                    className="border-emerald-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm z-[100]"
                     position="popper"
                     sideOffset={5}
                     align="start"
@@ -222,7 +222,7 @@ export default function ShippingManagement({
                       <SelectItem
                         key={c.value}
                         value={c.value}
-                        className="cursor-pointer text-gray-900 dark:text-white focus:bg-zinc-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
+                        className="cursor-pointer text-gray-900 dark:text-white focus:bg-emerald-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
                       >
                         {c.label}
                       </SelectItem>
@@ -234,7 +234,7 @@ export default function ShippingManagement({
               <Button
                 onClick={handleGenerateLabel}
                 disabled={isLoading}
-                className="h-11 w-full rounded-xl border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/70 via-zinc-500/50 to-zinc-500/30 dark:from-zinc-500/70 dark:via-zinc-500/50 dark:to-zinc-500/30 text-white shadow-[0_15px_35px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_35px_rgba(0,0,0,0.2)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/40 hover:from-zinc-500/80 hover:via-zinc-500/60 hover:to-zinc-500/40 dark:hover:border-zinc-300/40 dark:hover:from-zinc-500/80 dark:hover:via-zinc-500/60 dark:hover:to-zinc-500/40 hover:shadow-[0_20px_45px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_20px_45px_rgba(0,0,0,0.2)] focus-visible:ring-zinc-500/50"
+                className="h-11 w-full rounded-xl border border-emerald-400/30 dark:border-emerald-400/30 bg-gradient-to-r from-emerald-500/70 via-emerald-500/50 to-emerald-500/30 dark:from-emerald-500/70 dark:via-emerald-500/50 dark:to-emerald-500/30 text-white shadow-[0_15px_35px_rgba(16,185,129,0.45)] dark:shadow-[0_15px_35px_rgba(16,185,129,0.25)] backdrop-blur-sm transition duration-200 hover:border-emerald-300/40 hover:from-emerald-500/80 hover:via-emerald-500/60 hover:to-emerald-500/40 dark:hover:border-emerald-300/40 dark:hover:from-emerald-500/80 dark:hover:via-emerald-500/60 dark:hover:to-emerald-500/40 hover:shadow-[0_20px_45px_rgba(16,185,129,0.6)] dark:hover:shadow-[0_20px_45px_rgba(16,185,129,0.35)] focus-visible:ring-emerald-500/50"
               >
                 {generateLabelMutation.isPending ? (
                   <>
@@ -270,12 +270,12 @@ export default function ShippingManagement({
                 >
                   <SelectTrigger
                     id="manual-carrier"
-                    className="h-11 w-full border-zinc-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus:border-zinc-400 focus:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+                    className="h-11 w-full border-emerald-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus:border-emerald-400 focus:ring-emerald-500/50 shadow-[0_10px_30px_rgba(16,185,129,0.15)] dark:shadow-[0_10px_30px_rgba(16,185,129,0.1)]"
                   >
                     <SelectValue placeholder="Select carrier" />
                   </SelectTrigger>
                   <SelectContent
-                    className="border-zinc-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm z-[100]"
+                    className="border-emerald-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm z-[100]"
                     position="popper"
                     sideOffset={5}
                     align="start"
@@ -284,7 +284,7 @@ export default function ShippingManagement({
                       <SelectItem
                         key={c.value}
                         value={c.value}
-                        className="cursor-pointer text-gray-900 dark:text-white focus:bg-zinc-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
+                        className="cursor-pointer text-gray-900 dark:text-white focus:bg-emerald-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
                       >
                         {c.label}
                       </SelectItem>
@@ -302,14 +302,14 @@ export default function ShippingManagement({
                   placeholder="Enter tracking number"
                   value={manualTrackingNumber}
                   onChange={(e) => setManualTrackingNumber(e.target.value)}
-                  className="h-11 w-full border-zinc-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+                  className="h-11 w-full border-emerald-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus-visible:border-emerald-400 focus-visible:ring-emerald-500/50 shadow-[0_10px_30px_rgba(16,185,129,0.15)] dark:shadow-[0_10px_30px_rgba(16,185,129,0.1)]"
                 />
               </div>
 
               <Button
                 onClick={handleAddTracking}
                 disabled={isLoading || !manualTrackingNumber.trim()}
-                className="h-11 w-full rounded-xl border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/70 via-zinc-500/50 to-zinc-500/30 dark:from-zinc-500/70 dark:via-zinc-500/50 dark:to-zinc-500/30 text-white shadow-[0_15px_35px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_35px_rgba(0,0,0,0.2)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/40 hover:from-zinc-500/80 hover:via-zinc-500/60 hover:to-zinc-500/40 dark:hover:border-zinc-300/40 dark:hover:from-zinc-500/80 dark:hover:via-zinc-500/60 dark:hover:to-zinc-500/40 hover:shadow-[0_20px_45px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_20px_45px_rgba(0,0,0,0.2)] focus-visible:ring-zinc-500/50"
+                className="h-11 w-full rounded-xl border border-emerald-400/30 dark:border-emerald-400/30 bg-gradient-to-r from-emerald-500/70 via-emerald-500/50 to-emerald-500/30 dark:from-emerald-500/70 dark:via-emerald-500/50 dark:to-emerald-500/30 text-white shadow-[0_15px_35px_rgba(16,185,129,0.45)] dark:shadow-[0_15px_35px_rgba(16,185,129,0.25)] backdrop-blur-sm transition duration-200 hover:border-emerald-300/40 hover:from-emerald-500/80 hover:via-emerald-500/60 hover:to-emerald-500/40 dark:hover:border-emerald-300/40 dark:hover:from-emerald-500/80 dark:hover:via-emerald-500/60 dark:hover:to-emerald-500/40 hover:shadow-[0_20px_45px_rgba(16,185,129,0.6)] dark:hover:shadow-[0_20px_45px_rgba(16,185,129,0.35)] focus-visible:ring-emerald-500/50"
               >
                 {addTrackingMutation.isPending ? (
                   <>
@@ -330,4 +330,3 @@ export default function ShippingManagement({
     </Dialog>
   );
 }
-

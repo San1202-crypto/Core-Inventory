@@ -25,13 +25,13 @@ import type { UserForAdmin } from "@/types";
 function getRoleColor(role: string | null): string {
   switch (role ?? "") {
     case "admin":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-violet-100 text-violet-800 dark:bg-violet-900/30 dark:text-violet-300";
     case "supplier":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300";
     case "client":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-sky-100 text-sky-800 dark:bg-sky-900/30 dark:text-sky-300";
     case "retailer":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300";
     case "user":
     default:
       return "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300";
@@ -109,7 +109,7 @@ export function createUserManagementColumns(
         return (
           <Link
             href={href}
-            className="font-medium truncate max-w-[140px] block text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
+            className="font-medium truncate max-w-[140px] block text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
             title={u.name}
           >
             {u.name}
@@ -220,4 +220,3 @@ export function createUserManagementColumns(
     },
   ];
 }
-

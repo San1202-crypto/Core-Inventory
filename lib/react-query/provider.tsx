@@ -52,10 +52,10 @@ export function QueryProvider({ children }: QueryProviderProps) {
         }}
       >
         {children}
-      {/* Devtools removed for production-ready monochrome look */}
-      {/* {process.env.NODE_ENV === "development" && (
-        <ReactQueryDevtools initialIsOpen={false} />
-      )} */}
+        {/* Show devtools only in development */}
+        {process.env.NODE_ENV === "development" && (
+          <ReactQueryDevtools initialIsOpen={false} />
+        )}
       </PersistQueryClientProvider>
     );
   }

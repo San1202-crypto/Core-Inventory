@@ -62,14 +62,14 @@ function getStatusBadgeClassName(
 ): string {
   switch (recommendation) {
     case "urgent":
-      return "border-zinc-500/40 bg-zinc-500/15 text-zinc-700 dark:text-zinc-300 dark:bg-zinc-500/20 dark:border-zinc-400/40";
+      return "border-red-500/40 bg-red-500/15 text-red-700 dark:text-red-300 dark:bg-red-500/20 dark:border-red-400/40";
     case "soon":
-      return "border-zinc-500/40 bg-zinc-500/15 text-zinc-800 dark:text-zinc-300 dark:bg-zinc-500/20 dark:border-zinc-400/40";
+      return "border-amber-500/40 bg-amber-500/15 text-amber-800 dark:text-amber-300 dark:bg-amber-500/20 dark:border-amber-400/40";
     case "overstocked":
       return "border-slate-400/40 bg-slate-500/15 text-slate-700 dark:text-slate-300 dark:bg-slate-500/20 dark:border-slate-400/40";
     case "normal":
     default:
-      return "border-zinc-500/40 bg-zinc-500/15 text-zinc-800 dark:text-zinc-300 dark:bg-zinc-500/20 dark:border-zinc-400/40";
+      return "border-emerald-500/40 bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 dark:bg-emerald-500/20 dark:border-emerald-400/40";
   }
 }
 
@@ -78,9 +78,9 @@ function getStatusBadgeClassName(
  */
 function getAnomalyTypeBadgeClassName(anomalyType: string): string {
   if (anomalyType === "spike") {
-    return "border-zinc-500/40 bg-zinc-500/15 text-zinc-700 dark:text-zinc-300 dark:bg-zinc-500/20 dark:border-zinc-400/40";
+    return "border-red-500/40 bg-red-500/15 text-red-700 dark:text-red-300 dark:bg-red-500/20 dark:border-red-400/40";
   }
-  return "border-zinc-500/40 bg-zinc-500/15 text-zinc-800 dark:text-zinc-300 dark:bg-zinc-500/20 dark:border-zinc-400/40";
+  return "border-amber-500/40 bg-amber-500/15 text-amber-800 dark:text-amber-300 dark:bg-amber-500/20 dark:border-amber-400/40";
 }
 
 /**
@@ -89,11 +89,11 @@ function getAnomalyTypeBadgeClassName(anomalyType: string): string {
 function getAnomalySeverityColor(severity: SalesAnomaly["severity"]): string {
   switch (severity) {
     case "high":
-      return "text-zinc-600 dark:text-zinc-400";
+      return "text-red-600 dark:text-red-400";
     case "medium":
-      return "text-zinc-600 dark:text-zinc-400";
+      return "text-orange-600 dark:text-orange-400";
     default:
-      return "text-zinc-600 dark:text-zinc-400";
+      return "text-yellow-600 dark:text-yellow-400";
   }
 }
 
@@ -166,7 +166,7 @@ export default function ForecastingSection() {
           </CardHeader>
           <CardContent>
             <div className="flex items-center gap-2">
-              <Package className="h-5 w-5 text-zinc-500" />
+              <Package className="h-5 w-5 text-blue-500" />
               <span className="text-2xl font-semibold">
                 {summary.totalProducts}
               </span>
@@ -182,7 +182,7 @@ export default function ForecastingSection() {
           </CardHeader>
           <CardContent>
             <div className="flex items-center gap-2">
-              <AlertTriangle className="h-5 w-5 text-zinc-500" />
+              <AlertTriangle className="h-5 w-5 text-red-500" />
               <span className="text-2xl font-semibold">
                 {summary.productsAtRisk}
               </span>
@@ -198,7 +198,7 @@ export default function ForecastingSection() {
           </CardHeader>
           <CardContent>
             <div className="flex items-center gap-2">
-              <TrendingDown className="h-5 w-5 text-zinc-500" />
+              <TrendingDown className="h-5 w-5 text-orange-500" />
               <span className="text-2xl font-semibold">
                 {summary.productsOverstocked}
               </span>
@@ -214,7 +214,7 @@ export default function ForecastingSection() {
           </CardHeader>
           <CardContent>
             <div className="flex items-center gap-2">
-              <AlertCircle className="h-5 w-5 text-zinc-500" />
+              <AlertCircle className="h-5 w-5 text-purple-500" />
               <span className="text-2xl font-semibold">
                 {summary.anomaliesDetected}
               </span>
@@ -228,7 +228,7 @@ export default function ForecastingSection() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Sparkles className="h-5 w-5 text-zinc-500" />
+              <Sparkles className="h-5 w-5 text-purple-500" />
               AI Insights
             </CardTitle>
           </CardHeader>
@@ -245,7 +245,7 @@ export default function ForecastingSection() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Clock className="h-5 w-5 text-zinc-500" />
+              <Clock className="h-5 w-5 text-red-500" />
               Reorder Recommendations
             </CardTitle>
             <CardDescription>
@@ -318,7 +318,7 @@ export default function ForecastingSection() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <TrendingUp className="h-5 w-5 text-zinc-500" />
+              <TrendingUp className="h-5 w-5 text-purple-500" />
               Sales Anomalies
             </CardTitle>
             <CardDescription>
@@ -458,4 +458,3 @@ export default function ForecastingSection() {
     </div>
   );
 }
-

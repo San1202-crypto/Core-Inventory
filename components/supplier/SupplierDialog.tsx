@@ -283,7 +283,7 @@ export default function AddSupplierDialog({
           <Button className="h-10 font-semibold">+Add Supplier</Button>
         )}
       </DialogTrigger>
-      <DialogContent className="p-4 sm:p-7 sm:px-8 poppins max-h-[90vh] overflow-y-auto border-zinc-400/30 dark:border-zinc-400/30 shadow-[0_30px_80px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)]">
+      <DialogContent className="p-4 sm:p-7 sm:px-8 poppins max-h-[90vh] overflow-y-auto border-emerald-400/30 dark:border-emerald-400/30 shadow-[0_30px_80px_rgba(16,185,129,0.35)] dark:shadow-[0_30px_80px_rgba(16,185,129,0.25)]">
         <DialogHeader>
           <DialogTitle className="text-[22px] text-white">
             {editingSupplier ? "Edit Supplier" : "Add Supplier"}
@@ -305,7 +305,7 @@ export default function AddSupplierDialog({
                 value={newSupplierName}
                 onChange={(e) => setNewSupplierName(e.target.value)}
                 placeholder="Supplier Name"
-                className="mt-2 w-full bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-zinc-400/30 dark:border-white/20 text-white placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+                className="mt-2 w-full bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-emerald-400/30 dark:border-white/20 text-white placeholder:text-white/40 focus-visible:border-emerald-400 focus-visible:ring-emerald-500/50 shadow-[0_10px_30px_rgba(16,185,129,0.15)]"
               />
             </div>
             <div className="pb-4">
@@ -318,7 +318,7 @@ export default function AddSupplierDialog({
                 placeholder="Enter supplier description..."
                 rows={3}
                 maxLength={500}
-                className="mt-2 w-full bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-zinc-400/30 dark:border-white/20 text-white placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+                className="mt-2 w-full bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-emerald-400/30 dark:border-white/20 text-white placeholder:text-white/40 focus-visible:border-emerald-400 focus-visible:ring-emerald-500/50 shadow-[0_10px_30px_rgba(16,185,129,0.15)]"
               />
             </div>
             <div className="pb-4">
@@ -331,7 +331,7 @@ export default function AddSupplierDialog({
                 placeholder="Enter supplier notes..."
                 rows={3}
                 maxLength={1000}
-                className="mt-2 w-full bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-zinc-400/30 dark:border-white/20 text-white placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+                className="mt-2 w-full bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-emerald-400/30 dark:border-white/20 text-white placeholder:text-white/40 focus-visible:border-emerald-400 focus-visible:ring-emerald-500/50 shadow-[0_10px_30px_rgba(16,185,129,0.15)]"
               />
             </div>
             <div className="pb-4 flex items-center gap-2">
@@ -339,7 +339,7 @@ export default function AddSupplierDialog({
                 id="edit-supplier-status"
                 checked={newSupplierStatus}
                 onCheckedChange={(checked) => setNewSupplierStatus(checked === true)}
-                className="border-zinc-400/30 data-[state=checked]:bg-zinc-500/70"
+                className="border-emerald-400/30 data-[state=checked]:bg-emerald-500/70"
               />
               <Label
                 htmlFor="edit-supplier-status"
@@ -358,7 +358,7 @@ export default function AddSupplierDialog({
               </Button>
               <Button
                 onClick={handleUpdateSupplier}
-                className="h-11 w-full sm:w-auto px-11 inline-flex items-center justify-center rounded-xl border border-zinc-400/30 dark:border-primary/30 bg-gradient-to-r from-zinc-500/70 via-zinc-500/50 to-zinc-500/30 dark:from-primary/70 dark:via-primary/50 dark:to-primary/30 text-white shadow-[0_15px_35px_rgba(0,0,0,0.2)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/40 hover:from-zinc-500/80 hover:via-zinc-500/60 hover:to-zinc-500/40 dark:hover:border-primary/40 dark:hover:from-primary/80 dark:hover:via-primary/60 dark:hover:to-primary/40"
+                className="h-11 w-full sm:w-auto px-11 inline-flex items-center justify-center rounded-xl border border-sky-400/30 dark:border-primary/30 bg-gradient-to-r from-sky-500/70 via-sky-500/50 to-sky-500/30 dark:from-primary/70 dark:via-primary/50 dark:to-primary/30 text-white shadow-[0_15px_35px_rgba(2,132,199,0.45)] backdrop-blur-sm transition duration-200 hover:border-sky-300/40 hover:from-sky-500/80 hover:via-sky-500/60 hover:to-sky-500/40 dark:hover:border-primary/40 dark:hover:from-primary/80 dark:hover:via-primary/60 dark:hover:to-primary/40"
                 disabled={isEditing}
               >
                 {isEditing ? "Saving..." : "Save Changes"}
@@ -372,7 +372,7 @@ export default function AddSupplierDialog({
                 value={supplierName}
                 onChange={(e) => setSupplierName(e.target.value)}
                 placeholder="New Supplier"
-                className="mt-4 w-full bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-zinc-400/30 dark:border-white/20 text-white placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+                className="mt-4 w-full bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-emerald-400/30 dark:border-white/20 text-white placeholder:text-white/40 focus-visible:border-emerald-400 focus-visible:ring-emerald-500/50 shadow-[0_10px_30px_rgba(16,185,129,0.15)]"
               />
             </div>
             <div className="pb-4">
@@ -385,7 +385,7 @@ export default function AddSupplierDialog({
                 placeholder="Enter supplier description..."
                 rows={3}
                 maxLength={500}
-                className="mt-2 w-full bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-zinc-400/30 dark:border-white/20 text-white placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+                className="mt-2 w-full bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-emerald-400/30 dark:border-white/20 text-white placeholder:text-white/40 focus-visible:border-emerald-400 focus-visible:ring-emerald-500/50 shadow-[0_10px_30px_rgba(16,185,129,0.15)]"
               />
             </div>
             <div className="pb-4">
@@ -398,7 +398,7 @@ export default function AddSupplierDialog({
                 placeholder="Enter supplier notes..."
                 rows={3}
                 maxLength={1000}
-                className="mt-2 w-full bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-zinc-400/30 dark:border-white/20 text-white placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+                className="mt-2 w-full bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-emerald-400/30 dark:border-white/20 text-white placeholder:text-white/40 focus-visible:border-emerald-400 focus-visible:ring-emerald-500/50 shadow-[0_10px_30px_rgba(16,185,129,0.15)]"
               />
             </div>
             <div className="pb-4 flex items-center gap-2">
@@ -406,7 +406,7 @@ export default function AddSupplierDialog({
                 id="supplier-status"
                 checked={supplierStatus}
                 onCheckedChange={(checked) => setSupplierStatus(checked === true)}
-                className="border-zinc-400/30 data-[state=checked]:bg-zinc-500/70"
+                className="border-emerald-400/30 data-[state=checked]:bg-emerald-500/70"
               />
               <Label
                 htmlFor="supplier-status"
@@ -426,7 +426,7 @@ export default function AddSupplierDialog({
               </DialogClose>
               <Button
                 onClick={handleAddSupplier}
-                className="h-11 w-full sm:w-auto px-11 inline-flex items-center justify-center rounded-xl border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-l from-zinc-500/70 via-zinc-500/50 to-zinc-500/30 dark:from-zinc-500/70 dark:via-zinc-500/50 dark:to-zinc-500/30 text-white shadow-[0_15px_35px_rgba(0,0,0,0.2)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/40 hover:from-zinc-500/80 hover:via-zinc-500/60 hover:to-zinc-500/40 dark:hover:border-zinc-300/40 dark:hover:from-zinc-500/80 dark:hover:via-zinc-500/60 dark:hover:to-zinc-500/40 hover:shadow-[0_20px_45px_rgba(0,0,0,0.2)]"
+                className="h-11 w-full sm:w-auto px-11 inline-flex items-center justify-center rounded-xl border border-sky-400/30 dark:border-sky-400/30 bg-gradient-to-l from-sky-500/70 via-sky-500/50 to-sky-500/30 dark:from-sky-500/70 dark:via-sky-500/50 dark:to-sky-500/30 text-white shadow-[0_15px_35px_rgba(2,132,199,0.45)] backdrop-blur-sm transition duration-200 hover:border-sky-300/40 hover:from-sky-500/80 hover:via-sky-500/60 hover:to-sky-500/40 dark:hover:border-sky-300/40 dark:hover:from-sky-500/80 dark:hover:via-sky-500/60 dark:hover:to-sky-500/40 hover:shadow-[0_20px_45px_rgba(2,132,199,0.6)]"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Creating..." : "Add Supplier"}
@@ -445,7 +445,7 @@ export default function AddSupplierDialog({
               </span>
             )}
           </h3>
-          <div className="rounded-md border border-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)] bg-gradient-to-br from-white/20 via-white/15 to-white/10 dark:from-white/5 dark:via-white/5 dark:to-white/5 backdrop-blur-sm">
+          <div className="rounded-md border border-white/10 shadow-[0_30px_80px_rgba(16,185,129,0.35)] dark:shadow-[0_30px_80px_rgba(16,185,129,0.25)] bg-gradient-to-br from-white/20 via-white/15 to-white/10 dark:from-white/5 dark:via-white/5 dark:to-white/5 backdrop-blur-sm">
             <Table>
               <TableHeader>
                 {table.getHeaderGroups().map((headerGroup) => (
@@ -525,4 +525,3 @@ export default function AddSupplierDialog({
     </Dialog>
   );
 }
-

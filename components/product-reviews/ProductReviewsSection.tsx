@@ -30,7 +30,7 @@ function StarRating({ value }: { value: number }) {
           className={cn(
             "h-4 w-4",
             value >= v
-              ? "text-zinc-500 fill-zinc-500"
+              ? "text-amber-500 fill-amber-500"
               : "text-gray-300 dark:text-gray-600",
           )}
         />
@@ -51,32 +51,32 @@ export type ProductReviewsSectionProps = {
 
 const variantConfig = {
   amber: {
-    border: "border-zinc-400/20",
+    border: "border-amber-400/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/10 via-zinc-500/5 to-transparent",
+      "bg-gradient-to-br from-amber-500/10 via-amber-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
+      "shadow-[0_15px_40px_rgba(245,158,11,0.12)] dark:shadow-[0_15px_40px_rgba(245,158,11,0.08)]",
     iconBg:
-      "border-zinc-300/30 bg-zinc-100/50 dark:border-zinc-400/30 dark:bg-zinc-500/20",
-    button: "border-zinc-400/30 from-zinc-500/50 to-zinc-500/30 text-white",
+      "border-amber-300/30 bg-amber-100/50 dark:border-amber-400/30 dark:bg-amber-500/20",
+    button: "border-amber-400/30 from-amber-500/50 to-amber-500/30 text-white",
   },
   violet: {
-    border: "border-zinc-400/20",
+    border: "border-violet-400/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/10 via-zinc-500/5 to-transparent",
-    shadow: "shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
+      "bg-gradient-to-br from-violet-500/10 via-violet-500/5 to-transparent",
+    shadow: "shadow-[0_15px_40px_rgba(139,92,246,0.12)]",
     iconBg:
-      "border-zinc-300/30 bg-zinc-100/50 dark:border-zinc-400/30 dark:bg-zinc-500/20",
+      "border-violet-300/30 bg-violet-100/50 dark:border-violet-400/30 dark:bg-violet-500/20",
     button:
-      "border-zinc-400/30 from-zinc-500/50 to-zinc-500/30 text-white",
+      "border-violet-400/30 from-violet-500/50 to-violet-500/30 text-white",
   },
   sky: {
-    border: "border-zinc-400/20",
-    gradient: "bg-gradient-to-br from-zinc-500/10 via-zinc-500/5 to-transparent",
-    shadow: "shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
+    border: "border-sky-400/20",
+    gradient: "bg-gradient-to-br from-sky-500/10 via-sky-500/5 to-transparent",
+    shadow: "shadow-[0_15px_40px_rgba(2,132,199,0.12)]",
     iconBg:
-      "border-zinc-300/30 bg-zinc-100/50 dark:border-zinc-400/30 dark:bg-zinc-500/20",
-    button: "border-zinc-400/30 from-zinc-500/50 to-zinc-500/30 text-white",
+      "border-sky-300/30 bg-sky-100/50 dark:border-sky-400/30 dark:bg-sky-500/20",
+    button: "border-sky-400/30 from-sky-500/50 to-sky-500/30 text-white",
   },
 };
 
@@ -139,7 +139,7 @@ export default function ProductReviewsSection({
               size="sm"
               onClick={handleWriteNew}
               className={cn(
-                "rounded-lg h-8 text-zinc-600 dark:text-zinc-400",
+                "rounded-lg h-8 text-amber-600 dark:text-amber-400",
               )}
             >
               <MessageSquare className="h-3.5 w-3.5 mr-1" />
@@ -168,7 +168,7 @@ export default function ProductReviewsSection({
                   })
                 }
                 disabled={deleteReview.isPending}
-                className="h-8 rounded-lg text-zinc-600 dark:text-zinc-400"
+                className="h-8 rounded-lg text-rose-600 dark:text-rose-400"
               >
                 <Trash2 className="h-3.5 w-3.5" />
               </Button>
@@ -202,7 +202,7 @@ export default function ProductReviewsSection({
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
         <div className="flex items-center gap-2">
           <div className={cn("p-2 rounded-xl border", config.iconBg)}>
-            <Star className="h-5 w-5 text-zinc-500" />
+            <Star className="h-5 w-5 text-amber-500" />
           </div>
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
             Reviews
@@ -258,7 +258,7 @@ export default function ProductReviewsSection({
               <li
                 key={review.id}
                 className={cn(
-                  "rounded-xl border border-zinc-200/30 dark:border-white/10 p-4",
+                  "rounded-xl border border-amber-200/30 dark:border-white/10 p-4",
                   "bg-white/40 dark:bg-white/5",
                 )}
               >
@@ -267,7 +267,7 @@ export default function ProductReviewsSection({
                     <div className="flex items-center gap-2 flex-wrap">
                       <StarRating value={review.rating} />
                       {review.status === "pending" && (
-                        <span className="text-xs font-medium text-zinc-600 dark:text-zinc-400 bg-zinc-100/80 dark:bg-zinc-500/20 px-2 py-0.5 rounded-full">
+                        <span className="text-xs font-medium text-amber-600 dark:text-amber-400 bg-amber-100/80 dark:bg-amber-500/20 px-2 py-0.5 rounded-full">
                           Pending approval
                         </span>
                       )}
@@ -281,7 +281,7 @@ export default function ProductReviewsSection({
                         alt=""
                         width={32}
                         height={32}
-                        className="h-8 w-8 rounded-full object-cover border border-zinc-200/90 dark:border-white/30 flex-shrink-0"
+                        className="h-8 w-8 rounded-full object-cover border border-amber-200/90 dark:border-white/30 flex-shrink-0"
                         unoptimized
                         onError={(e) => {
                           const target = e.currentTarget;
@@ -325,7 +325,7 @@ export default function ProductReviewsSection({
                             })
                           }
                           disabled={deleteReview.isPending}
-                          className="cursor-pointer text-zinc-600 dark:text-zinc-400"
+                          className="cursor-pointer text-rose-600 dark:text-rose-400"
                         >
                           <Trash2 className="h-4 w-4 mr-2" />
                           Delete review
@@ -353,4 +353,3 @@ export default function ProductReviewsSection({
     </article>
   );
 }
-

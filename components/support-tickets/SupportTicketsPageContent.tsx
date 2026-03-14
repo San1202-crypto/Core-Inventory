@@ -106,10 +106,10 @@ export default function SupportTicketsPageContent({
                 <div
                   className={cn(
                     "p-2.5 rounded-xl border",
-                    "border-zinc-300/30 bg-zinc-100/50 dark:border-zinc-400/30 dark:bg-zinc-500/20",
+                    "border-sky-300/30 bg-sky-100/50 dark:border-sky-400/30 dark:bg-sky-500/20",
                   )}
                 >
-                  <MessageSquare className="h-6 w-6 text-zinc-600 dark:text-zinc-400" />
+                  <MessageSquare className="h-6 w-6 text-sky-600 dark:text-sky-400" />
                 </div>
                 Your Support Tickets
               </h1>
@@ -125,10 +125,10 @@ export default function SupportTicketsPageContent({
                 trigger={
                   <Button
                     className={cn(
-                      "h-10 rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30",
-                      "bg-gradient-to-r from-zinc-500/50 via-zinc-500/40 to-zinc-500/30 dark:from-zinc-500/50 dark:via-zinc-500/40 dark:to-zinc-500/30",
-                      "text-white shadow-[0_10px_30px_rgba(0,0,0,0.2)] backdrop-blur-sm",
-                      "hover:border-zinc-300/50 hover:from-zinc-500/60 hover:via-zinc-500/50 hover:to-zinc-500/40",
+                      "h-10 rounded-[28px] border border-sky-400/30 dark:border-sky-400/30",
+                      "bg-gradient-to-r from-sky-500/50 via-sky-500/40 to-sky-500/30 dark:from-sky-500/50 dark:via-sky-500/40 dark:to-sky-500/30",
+                      "text-white shadow-[0_10px_30px_rgba(2,132,199,0.3)] backdrop-blur-sm",
+                      "hover:border-sky-300/50 hover:from-sky-500/60 hover:via-sky-500/50 hover:to-sky-500/40",
                       "gap-2",
                     )}
                   >
@@ -232,4 +232,3 @@ export default function SupportTicketsPageContent({
     </Navbar>
   );
 }
-

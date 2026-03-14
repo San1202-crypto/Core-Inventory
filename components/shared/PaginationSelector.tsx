@@ -51,7 +51,7 @@ export default function PaginationSelection({
             }))
           }
         >
-          <SelectTrigger className="border border-white/20 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-gray-700 dark:text-white/80 placeholder:text-white/40 focus:border-zinc-400 focus:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)] rounded-[28px] px-2 w-full sm:w-14 h-10">
+          <SelectTrigger className="border border-white/20 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-gray-700 dark:text-white/80 placeholder:text-white/40 focus:border-sky-400 focus:ring-sky-500/50 shadow-[0_10px_30px_rgba(2,132,199,0.15)] rounded-[28px] px-2 w-full sm:w-14 h-10">
             <SelectValue placeholder={pagination.pageSize.toString()} />
           </SelectTrigger>
           <SelectContent
@@ -63,7 +63,7 @@ export default function PaginationSelection({
               <SelectItem
                 key={size}
                 value={size.toString()}
-                className="text-gray-700 dark:text-white/80 hover:text-gray-900 dark:hover:text-white focus:bg-zinc-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
+                className="text-gray-700 dark:text-white/80 hover:text-gray-900 dark:hover:text-white focus:bg-sky-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
               >
                 {size}
               </SelectItem>
@@ -74,4 +74,3 @@ export default function PaginationSelection({
     </div>
   );
 }
-

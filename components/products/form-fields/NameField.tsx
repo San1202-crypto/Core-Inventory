@@ -21,13 +21,13 @@ export default function ProductName() {
           {...register("productName")}
           type="text"
           id="product-name"
-          className="h-11 bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-zinc-400/30 dark:border-white/20 text-white placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+          className="h-11 bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-rose-400/30 dark:border-white/20 text-white placeholder:text-white/40 focus-visible:border-rose-400 focus-visible:ring-rose-500/50 shadow-[0_10px_30px_rgba(225,29,72,0.15)]"
           placeholder="Laptop..."
         />
       </div>
 
       {errors.productName && (
-        <div className="text-zinc-500 flex gap-1 items-center text-[13px]">
+        <div className="text-red-500 flex gap-1 items-center text-[13px]">
           <MdError />
           <p>The product name is required</p>
         </div>
@@ -35,4 +35,3 @@ export default function ProductName() {
     </div>
   );
 }
-

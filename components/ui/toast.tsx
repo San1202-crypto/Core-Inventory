@@ -32,7 +32,7 @@ const toastVariants = cva(
         default:
           "border border-white/20 dark:border-white/10 bg-gradient-to-br from-white/80 via-white/70 to-white/60 dark:from-white/10 dark:via-white/10 dark:to-white/5 text-foreground backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.2)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.4)]",
         destructive:
-          "destructive group border-zinc-400/30 dark:border-zinc-400/20 bg-gradient-to-br from-zinc-500/80 via-zinc-500/70 to-zinc-500/60 dark:from-zinc-500/25 dark:via-zinc-500/15 dark:to-zinc-500/10 text-destructive-foreground backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.2)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.2)]",
+          "destructive group border-rose-400/30 dark:border-rose-400/20 bg-gradient-to-br from-rose-500/80 via-rose-500/70 to-rose-500/60 dark:from-rose-500/25 dark:via-rose-500/15 dark:to-rose-500/10 text-destructive-foreground backdrop-blur-sm shadow-[0_10px_30px_rgba(225,29,72,0.3)] dark:shadow-[0_10px_30px_rgba(225,29,72,0.4)]",
       },
     },
     defaultVariants: {
@@ -78,7 +78,7 @@ const ToastClose = React.forwardRef<
   <ToastPrimitives.Close
     ref={ref}
     className={cn(
-      "absolute right-1 top-1 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-1 group-hover:opacity-100 group-[.destructive]:text-zinc-300 group-[.destructive]:hover:text-zinc-50 group-[.destructive]:focus:ring-zinc-400 group-[.destructive]:focus:ring-offset-zinc-600",
+      "absolute right-1 top-1 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-1 group-hover:opacity-100 group-[.destructive]:text-red-300 group-[.destructive]:hover:text-red-50 group-[.destructive]:focus:ring-red-400 group-[.destructive]:focus:ring-offset-red-600",
       className
     )}
     toast-close=""
@@ -128,4 +128,3 @@ export {
   ToastClose,
   ToastAction,
 };
-

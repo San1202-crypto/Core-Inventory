@@ -40,16 +40,16 @@ function CopyableField({ label, value, className }: CopyableFieldProps) {
     <div
       className={cn(
         "flex items-center justify-between px-4 py-3 rounded-lg border border-border/50 bg-muted/30 cursor-pointer hover:bg-muted/50 transition-colors",
-        "dark:border-zinc-500/40 dark:bg-zinc-950/40 dark:hover:bg-zinc-900/40",
+        "dark:border-amber-500/40 dark:bg-amber-950/40 dark:hover:bg-amber-900/40",
         className,
       )}
       onClick={handleCopy}
     >
       <div className="flex items-center gap-2">
-        <span className="text-sm text-zinc-700 dark:text-zinc-400">
+        <span className="text-sm text-emerald-700 dark:text-emerald-400">
           {label}:
         </span>
-        <span className="font-mono font-medium text-zinc-700  dark:text-zinc-400">
+        <span className="font-mono font-medium text-emerald-700  dark:text-emerald-400">
           {value}
         </span>
       </div>
@@ -59,7 +59,7 @@ function CopyableField({ label, value, className }: CopyableFieldProps) {
         aria-label={`Copy ${label}`}
       >
         {copied ? (
-          <Check className="h-4 w-4 text-zinc-500" />
+          <Check className="h-4 w-4 text-green-500" />
         ) : (
           <Copy className="h-4 w-4 text-muted-foreground" />
         )}
@@ -70,20 +70,20 @@ function CopyableField({ label, value, className }: CopyableFieldProps) {
 
 export default function TestCredentialsCard() {
   return (
-    <Card className="border-zinc-500/30 bg-zinc-50/50 dark:bg-zinc-950/20">
+    <Card className="border-amber-500/30 bg-amber-50/50 dark:bg-amber-950/20">
       <CardHeader className="pb-3 pt-4 px-4 space-y-2">
         <div className="flex items-center gap-3 flex-wrap">
-          <CardTitle className="text-base font-semibold text-zinc-700 dark:text-zinc-400">
+          <CardTitle className="text-base font-semibold text-amber-700 dark:text-amber-400">
             Note: Test Credentials
           </CardTitle>
           <Badge
             variant="outline"
-            className="bg-zinc-100 text-zinc-700 border-zinc-300 dark:bg-zinc-900/50 dark:text-zinc-400 dark:border-zinc-700"
+            className="bg-amber-100 text-amber-700 border-amber-300 dark:bg-amber-900/50 dark:text-amber-400 dark:border-amber-700"
           >
             Test Mode
           </Badge>
         </div>
-        <CardDescription className="text-zinc-700 dark:text-zinc-400 text-sm leading-relaxed">
+        <CardDescription className="text-amber-700 dark:text-amber-400 text-sm leading-relaxed">
           Use these test credentials to complete payment without entering real
           card details:
         </CardDescription>
@@ -94,7 +94,7 @@ export default function TestCredentialsCard() {
           <CopyableField label="Expiry" value="12/34" />
           <CopyableField label="CVC" value="123" />
         </div>
-        <p className="text-xs text-zinc-700 dark:text-zinc-400 mt-4 leading-relaxed">
+        <p className="text-xs text-amber-700 dark:text-amber-400 mt-4 leading-relaxed">
           <strong>Note:</strong> In this demo project, we haven&apos;t
           implemented user address collection during checkout. For shipping
           label generation and tracking, we&apos;re using fallback test
@@ -105,4 +105,3 @@ export default function TestCredentialsCard() {
     </Card>
   );
 }
-

@@ -132,7 +132,7 @@ export default function SupplierActions({ row, onEdit, onBeforeNavigate }: Suppl
           <DropdownMenuItem
             onClick={() => setDeleteDialogOpen(true)}
             disabled={isDeleting || isGlobalDemo}
-            className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400"
+            className="flex items-center gap-2 text-red-600 dark:text-red-400"
           >
             <Trash2 className="h-4 w-4" />
             {isDeleting ? "Deleting..." : "Delete Supplier"}
@@ -156,4 +156,3 @@ export default function SupplierActions({ row, onEdit, onBeforeNavigate }: Suppl
     </>
   );
 }
-

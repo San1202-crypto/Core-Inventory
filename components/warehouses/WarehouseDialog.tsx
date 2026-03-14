@@ -150,7 +150,7 @@ export default function WarehouseDialog({
     <Dialog open={open} onOpenChange={setOpen}>
       {children && <DialogTrigger asChild>{children}</DialogTrigger>}
       <DialogContent
-        className="p-4 sm:p-7 sm:px-8 poppins max-h-[90vh] overflow-y-auto border-zinc-400/30 dark:border-zinc-400/30 shadow-[0_30px_80px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)]"
+        className="p-4 sm:p-7 sm:px-8 poppins max-h-[90vh] overflow-y-auto border-teal-400/30 dark:border-teal-400/30 shadow-[0_30px_80px_rgba(20,184,166,0.35)] dark:shadow-[0_30px_80px_rgba(20,184,166,0.25)]"
         onOpenAutoFocus={(e) => e.preventDefault()}
       >
         <DialogHeader>
@@ -177,7 +177,7 @@ export default function WarehouseDialog({
               onChange={(e) => setName(e.target.value)}
               placeholder="e.g. Main Warehouse, NYC Distribution Center"
               required
-              className="h-11 border-zinc-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus:border-zinc-400 focus:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+              className="h-11 border-teal-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus:border-teal-400 focus:ring-teal-500/50 shadow-[0_10px_30px_rgba(20,184,166,0.15)]"
             />
           </div>
           <div className="space-y-2">
@@ -193,7 +193,7 @@ export default function WarehouseDialog({
               onChange={(e) => setCode(e.target.value)}
               placeholder="e.g. WH-001, MAIN"
               required
-              className="h-11 border-zinc-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus:border-zinc-400 focus:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+              className="h-11 border-teal-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus:border-teal-400 focus:ring-teal-500/50 shadow-[0_10px_30px_rgba(20,184,166,0.15)]"
             />
           </div>
           <div className="space-y-2">
@@ -208,7 +208,7 @@ export default function WarehouseDialog({
               value={location}
               onChange={(e) => setLocation(e.target.value)}
               placeholder="City or physical location"
-              className="h-11 border-zinc-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus:border-zinc-400 focus:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+              className="h-11 border-teal-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus:border-teal-400 focus:ring-teal-500/50 shadow-[0_10px_30px_rgba(20,184,166,0.15)]"
             />
           </div>
           <div className="space-y-2">
@@ -224,15 +224,15 @@ export default function WarehouseDialog({
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Optional description"
               rows={3}
-              className="border-zinc-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus:border-zinc-400 focus:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)] resize-none"
+              className="border-teal-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus:border-teal-400 focus:ring-teal-500/50 shadow-[0_10px_30px_rgba(20,184,166,0.15)] resize-none"
             />
           </div>
-          <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-zinc-400/20">
+          <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-teal-400/20">
             <Switch
               id="warehouse-isActive"
               checked={isActive}
               onCheckedChange={setIsActive}
-              className="data-[state=checked]:bg-zinc-500"
+              className="data-[state=checked]:bg-teal-500"
             />
             <div className="flex flex-col">
               <Label
@@ -262,7 +262,7 @@ export default function WarehouseDialog({
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="h-11 w-full sm:w-auto px-8 inline-flex items-center justify-center rounded-xl border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/70 via-zinc-500/50 to-zinc-500/30 dark:from-zinc-500/70 dark:via-zinc-500/50 dark:to-zinc-500/30 text-white shadow-[0_15px_35px_rgba(0,0,0,0.2)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/40 hover:from-zinc-500/80 hover:via-zinc-500/60 hover:to-zinc-500/40 dark:hover:border-zinc-300/40 dark:hover:from-zinc-500/80 dark:hover:via-zinc-500/60 dark:hover:to-zinc-500/40 hover:shadow-[0_20px_45px_rgba(0,0,0,0.2)]"
+              className="h-11 w-full sm:w-auto px-8 inline-flex items-center justify-center rounded-xl border border-teal-400/30 dark:border-teal-400/30 bg-gradient-to-r from-teal-500/70 via-teal-500/50 to-teal-500/30 dark:from-teal-500/70 dark:via-teal-500/50 dark:to-teal-500/30 text-white shadow-[0_15px_35px_rgba(20,184,166,0.45)] backdrop-blur-sm transition duration-200 hover:border-teal-300/40 hover:from-teal-500/80 hover:via-teal-500/60 hover:to-teal-500/40 dark:hover:border-teal-300/40 dark:hover:from-teal-500/80 dark:hover:via-teal-500/60 dark:hover:to-teal-500/40 hover:shadow-[0_20px_45px_rgba(20,184,166,0.6)]"
             >
               {isSubmitting
                 ? "Saving..."
@@ -276,4 +276,3 @@ export default function WarehouseDialog({
     </Dialog>
   );
 }
-

@@ -68,75 +68,75 @@ const variantConfig: Record<
   }
 > = {
   sky: {
-    border: "border-zinc-400/20",
-    gradient: "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
+    border: "border-sky-400/20",
+    gradient: "bg-gradient-to-br from-sky-500/15 via-sky-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+      "shadow-[0_15px_40px_rgba(2,132,199,0.15)] dark:shadow-[0_15px_40px_rgba(2,132,199,0.1)]",
+    hoverBorder: "hover:border-sky-300/40",
+    iconBg: "border-sky-300/30 bg-sky-100/50",
   },
   emerald: {
-    border: "border-zinc-400/20",
+    border: "border-emerald-400/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
+      "bg-gradient-to-br from-emerald-500/15 via-emerald-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+      "shadow-[0_15px_40px_rgba(16,185,129,0.15)] dark:shadow-[0_15px_40px_rgba(16,185,129,0.1)]",
+    hoverBorder: "hover:border-emerald-300/40",
+    iconBg: "border-emerald-300/30 bg-emerald-100/50",
   },
   amber: {
-    border: "border-zinc-400/20",
+    border: "border-amber-400/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
+      "bg-gradient-to-br from-amber-500/15 via-amber-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+      "shadow-[0_15px_40px_rgba(245,158,11,0.12)] dark:shadow-[0_15px_40px_rgba(245,158,11,0.08)]",
+    hoverBorder: "hover:border-amber-300/40",
+    iconBg: "border-amber-300/30 bg-amber-100/50",
   },
   rose: {
-    border: "border-zinc-400/20",
+    border: "border-rose-400/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
+      "bg-gradient-to-br from-rose-500/15 via-rose-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+      "shadow-[0_15px_40px_rgba(225,29,72,0.15)] dark:shadow-[0_15px_40px_rgba(225,29,72,0.1)]",
+    hoverBorder: "hover:border-rose-300/40",
+    iconBg: "border-rose-300/30 bg-rose-100/50",
   },
   violet: {
-    border: "border-zinc-400/20",
+    border: "border-violet-400/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
+      "bg-gradient-to-br from-violet-500/15 via-violet-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+      "shadow-[0_15px_40px_rgba(139,92,246,0.15)] dark:shadow-[0_15px_40px_rgba(139,92,246,0.1)]",
+    hoverBorder: "hover:border-violet-300/40",
+    iconBg: "border-violet-300/30 bg-violet-100/50",
   },
   blue: {
-    border: "border-zinc-400/20",
+    border: "border-blue-400/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
+      "bg-gradient-to-br from-blue-500/15 via-blue-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.05)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.1)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+      "shadow-[0_15px_40px_rgba(59,130,246,0.15)] dark:shadow-[0_15px_40px_rgba(59,130,246,0.1)]",
+    hoverBorder: "hover:border-blue-300/40",
+    iconBg: "border-blue-300/30 bg-blue-100/50",
   },
   orange: {
-    border: "border-zinc-400/20",
+    border: "border-orange-400/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
+      "bg-gradient-to-br from-orange-500/15 via-orange-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.1)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+      "shadow-[0_15px_40px_rgba(249,115,22,0.15)] dark:shadow-[0_15px_40px_rgba(249,115,22,0.1)]",
+    hoverBorder: "hover:border-orange-300/40",
+    iconBg: "border-orange-300/30 bg-orange-100/50",
   },
   teal: {
-    border: "border-zinc-400/20",
+    border: "border-teal-400/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
+      "bg-gradient-to-br from-teal-500/15 via-teal-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+      "shadow-[0_15px_40px_rgba(20,184,166,0.15)] dark:shadow-[0_15px_40px_rgba(20,184,166,0.1)]",
+    hoverBorder: "hover:border-teal-300/40",
+    iconBg: "border-teal-300/30 bg-teal-100/50",
   },
 };
 
@@ -376,8 +376,8 @@ export default function SupplierDetailPage({
                 className={cn(
                   "text-sm border",
                   supplier.status
-                    ? "bg-zinc-500/20 text-zinc-700 dark:text-zinc-300 border-zinc-400/30"
-                    : "bg-zinc-500/20 text-zinc-700 dark:text-zinc-300 border-zinc-400/30",
+                    ? "bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border-emerald-400/30"
+                    : "bg-rose-500/20 text-rose-700 dark:text-rose-300 border-rose-400/30",
                 )}
               >
                 {supplier.status ? (
@@ -401,7 +401,7 @@ export default function SupplierDetailPage({
             <GlassCard variant="orange">
               <div className="p-4 sm:p-5">
                 <div className="flex items-center gap-2 mb-4">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-orange-300/30 bg-orange-100/50 dark:border-white/15 dark:bg-white/10">
                     <Truck className="h-4 w-4 text-gray-900 dark:text-white" />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -420,7 +420,7 @@ export default function SupplierDetailPage({
                   </div>
 
                   {supplier.description && (
-                    <div className="pt-3 mt-3 border-t border-zinc-400/20">
+                    <div className="pt-3 mt-3 border-t border-orange-400/20">
                       <p className="text-sm text-gray-600 dark:text-white/60 mb-1">
                         Description:
                       </p>
@@ -431,7 +431,7 @@ export default function SupplierDetailPage({
                   )}
 
                   {supplier.notes && (
-                    <div className="pt-3 mt-3 border-t border-zinc-400/20">
+                    <div className="pt-3 mt-3 border-t border-orange-400/20">
                       <p className="text-sm text-gray-600 dark:text-white/60 mb-1">
                         Notes:
                       </p>
@@ -467,7 +467,7 @@ export default function SupplierDetailPage({
 
                   {/* Creator Information */}
                   {supplier.creator && (
-                    <div className="pt-3 mt-3 border-t border-zinc-400/20">
+                    <div className="pt-3 mt-3 border-t border-orange-400/20">
                       <div className="flex items-center gap-2 text-sm">
                         <User className="h-4 w-4 text-gray-500 dark:text-white/50" />
                         <span className="text-gray-600 dark:text-white/60">
@@ -491,7 +491,7 @@ export default function SupplierDetailPage({
 
                   {/* Updater Information */}
                   {supplier.updater && (
-                    <div className="pt-3 mt-3 border-t border-zinc-400/20">
+                    <div className="pt-3 mt-3 border-t border-orange-400/20">
                       <div className="flex items-center gap-2 text-sm">
                         <User className="h-4 w-4 text-gray-500 dark:text-white/50" />
                         <span className="text-gray-600 dark:text-white/60">
@@ -520,7 +520,7 @@ export default function SupplierDetailPage({
             <GlassCard variant="teal">
               <div className="p-4 sm:p-5">
                 <div className="flex items-center gap-2 mb-2">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-teal-300/30 bg-teal-100/50 dark:border-white/15 dark:bg-white/10">
                     <BarChart3 className="h-4 w-4 text-gray-900 dark:text-white" />
                   </div>
                   <div>
@@ -533,7 +533,7 @@ export default function SupplierDetailPage({
                   </div>
                 </div>
                 <div className="space-y-3 mt-4">
-                  <div className="flex justify-between items-center p-3 rounded-xl border border-zinc-400/20 bg-gradient-to-r from-zinc-500/10 to-transparent">
+                  <div className="flex justify-between items-center p-3 rounded-xl border border-violet-400/20 bg-gradient-to-r from-violet-500/10 to-transparent">
                     <span className="text-sm text-gray-600 dark:text-white/70">
                       Total Products:
                     </span>
@@ -542,7 +542,7 @@ export default function SupplierDetailPage({
                     </span>
                   </div>
 
-                  <div className="flex justify-between items-center p-3 rounded-xl border border-zinc-400/20 bg-gradient-to-r from-zinc-500/10 to-transparent">
+                  <div className="flex justify-between items-center p-3 rounded-xl border border-sky-400/20 bg-gradient-to-r from-sky-500/10 to-transparent">
                     <span className="text-sm text-gray-600 dark:text-white/70">
                       Total Quantity Sold:
                     </span>
@@ -551,16 +551,16 @@ export default function SupplierDetailPage({
                     </span>
                   </div>
 
-                  <div className="flex justify-between items-center p-3 rounded-xl border border-zinc-400/20 bg-gradient-to-r from-zinc-500/10 to-transparent">
+                  <div className="flex justify-between items-center p-3 rounded-xl border border-emerald-400/20 bg-gradient-to-r from-emerald-500/10 to-transparent">
                     <span className="text-sm text-gray-600 dark:text-white/70">
                       Total Revenue:
                     </span>
-                    <span className="text-lg font-semibold text-zinc-600 dark:text-zinc-400">
+                    <span className="text-lg font-semibold text-emerald-600 dark:text-emerald-400">
                       ${stats.totalRevenue.toFixed(2)}
                     </span>
                   </div>
 
-                  <div className="flex justify-between items-center p-3 rounded-xl border border-zinc-400/20 bg-gradient-to-r from-zinc-500/10 to-transparent">
+                  <div className="flex justify-between items-center p-3 rounded-xl border border-amber-400/20 bg-gradient-to-r from-amber-500/10 to-transparent">
                     <span className="text-sm text-gray-600 dark:text-white/70">
                       Orders Containing Products:
                     </span>
@@ -569,11 +569,11 @@ export default function SupplierDetailPage({
                     </span>
                   </div>
 
-                  <div className="flex justify-between items-center p-3 rounded-xl border border-zinc-400/20 bg-gradient-to-r from-zinc-500/10 to-transparent">
+                  <div className="flex justify-between items-center p-3 rounded-xl border border-blue-400/20 bg-gradient-to-r from-blue-500/10 to-transparent">
                     <span className="text-sm text-gray-600 dark:text-white/70">
                       Current Stock Value:
                     </span>
-                    <span className="text-lg font-semibold text-zinc-600 dark:text-zinc-400">
+                    <span className="text-lg font-semibold text-blue-600 dark:text-blue-400">
                       ${stats.totalValue.toFixed(2)}
                     </span>
                   </div>
@@ -587,7 +587,7 @@ export default function SupplierDetailPage({
             <GlassCard variant="sky">
               <div className="p-4 sm:p-5">
                 <div className="flex items-center gap-2 mb-2">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-sky-300/30 bg-sky-100/50 dark:border-white/15 dark:bg-white/10">
                     <Package className="h-4 w-4 text-gray-900 dark:text-white" />
                   </div>
                   <div>
@@ -646,7 +646,7 @@ export default function SupplierDetailPage({
             <GlassCard variant="violet">
               <div className="p-4 sm:p-5">
                 <div className="flex items-center gap-2 mb-2">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-violet-300/30 bg-violet-100/50 dark:border-white/15 dark:bg-white/10">
                     <ShoppingCart className="h-4 w-4 text-gray-900 dark:text-white" />
                   </div>
                   <div>
@@ -691,7 +691,7 @@ export default function SupplierDetailPage({
                               <span className="text-gray-500 dark:text-white/50 line-through mr-2">
                                 ${order.subtotal.toFixed(2)}
                               </span>
-                              <span className="text-zinc-600 dark:text-zinc-400">
+                              <span className="text-rose-600 dark:text-rose-400">
                                 ${order.proportionalAmount.toFixed(2)}
                               </span>
                             </>
@@ -703,12 +703,12 @@ export default function SupplierDetailPage({
                           className={cn(
                             "text-xs mt-1 border",
                             order.orderStatus === "cancelled" &&
-                              "bg-zinc-500/20 text-zinc-700 dark:text-zinc-300 border-zinc-400/30",
+                              "bg-rose-500/20 text-rose-700 dark:text-rose-300 border-rose-400/30",
                             order.orderStatus === "delivered" &&
-                              "bg-zinc-500/20 text-zinc-700 dark:text-zinc-300 border-zinc-400/30",
+                              "bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border-emerald-400/30",
                             order.orderStatus !== "cancelled" &&
                               order.orderStatus !== "delivered" &&
-                              "bg-zinc-500/20 text-zinc-700 dark:text-zinc-300 border-zinc-400/30",
+                              "bg-blue-500/20 text-blue-700 dark:text-blue-300 border-blue-400/30",
                           )}
                         >
                           {order.orderStatus
@@ -738,7 +738,7 @@ export default function SupplierDetailPage({
               variant="outline"
               onClick={handleEditSupplier}
               disabled={isGlobalDemo}
-              className="w-full sm:w-auto gap-2 rounded-xl border-zinc-400/30 bg-gradient-to-r from-zinc-500/20 via-zinc-500/10 to-transparent hover:from-zinc-500/30 shadow-[0_5px_20px_rgba(0,0,0,0.05)]"
+              className="w-full sm:w-auto gap-2 rounded-xl border-blue-400/30 bg-gradient-to-r from-blue-500/20 via-blue-500/10 to-transparent hover:from-blue-500/30 shadow-[0_5px_20px_rgba(59,130,246,0.15)]"
             >
               <Edit className="h-4 w-4 shrink-0" />
               Edit Supplier
@@ -747,7 +747,7 @@ export default function SupplierDetailPage({
               variant="outline"
               onClick={handleDuplicateSupplier}
               disabled={isCopying || isGlobalDemo}
-              className="w-full sm:w-auto gap-2 rounded-xl border-zinc-400/30 bg-gradient-to-r from-zinc-500/20 via-zinc-500/10 to-transparent hover:from-zinc-500/30 shadow-[0_5px_20px_rgba(0,0,0,0.2)]"
+              className="w-full sm:w-auto gap-2 rounded-xl border-violet-400/30 bg-gradient-to-r from-violet-500/20 via-violet-500/10 to-transparent hover:from-violet-500/30 shadow-[0_5px_20px_rgba(139,92,246,0.15)]"
             >
               <Copy className="h-4 w-4 shrink-0" />
               {isCopying ? "Duplicating..." : "Create Duplicate"}
@@ -755,7 +755,7 @@ export default function SupplierDetailPage({
             <Button
               onClick={() => setDeleteDialogOpen(true)}
               disabled={isDeleting || isGlobalDemo}
-              className="w-full sm:w-auto gap-2 rounded-xl border border-zinc-400/30 bg-gradient-to-r from-zinc-500/20 via-zinc-500/10 to-transparent text-white dark:text-white0 hover:from-zinc-500/30 shadow-[0_5px_20px_rgba(0,0,0,0.2)]"
+              className="w-full sm:w-auto gap-2 rounded-xl border border-rose-400/30 bg-gradient-to-r from-rose-500/20 via-rose-500/10 to-transparent text-white dark:text-white0 hover:from-rose-500/30 shadow-[0_5px_20px_rgba(225,29,72,0.15)]"
             >
               <Trash2 className="h-4 w-4 shrink-0" />
               {isDeleting ? "Deleting..." : "Delete Supplier"}
@@ -793,4 +793,3 @@ export default function SupplierDetailPage({
     </PageWrapper>
   );
 }
-

@@ -109,7 +109,7 @@ export default function InvoiceActions({ invoice, onEdit, detailHrefBase }: Invo
           <>
             <DropdownMenuSeparator />
             <DropdownMenuItem
-              className="text-zinc-600 dark:text-zinc-400"
+              className="text-red-600 dark:text-red-400"
               onClick={() => setDeleteDialogOpen(true)}
               disabled={isDeleting}
             >
@@ -150,4 +150,3 @@ export default function InvoiceActions({ invoice, onEdit, detailHrefBase }: Invo
     </>
   );
 }
-

@@ -25,11 +25,11 @@ import type { SupportTicket } from "@/types";
 function getStatusColor(status: string): string {
   switch (status) {
     case "open":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300";
     case "in_progress":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300";
     case "resolved":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300";
     case "closed":
       return "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300";
     default:
@@ -40,11 +40,11 @@ function getStatusColor(status: string): string {
 function getPriorityColor(priority: string): string {
   switch (priority) {
     case "urgent":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300";
     case "high":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300";
     case "medium":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-sky-100 text-sky-800 dark:bg-sky-900/30 dark:text-sky-300";
     case "low":
       return "bg-slate-100 text-slate-800 dark:bg-slate-900/30 dark:text-slate-300";
     default:
@@ -235,4 +235,3 @@ export function createSupportTicketColumns(
     },
   ];
 }
-

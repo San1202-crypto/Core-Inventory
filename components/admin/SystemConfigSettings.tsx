@@ -227,7 +227,7 @@ function ConfigField({ config, value, onChange, isChanged }: ConfigFieldProps) {
         <div className="space-y-0.5">
           <Label
             htmlFor={config.key}
-            className={cn("font-medium", isChanged && "text-zinc-600")}
+            className={cn("font-medium", isChanged && "text-blue-600")}
           >
             {config.label}
             {isChanged && <span className="ml-2 text-xs">(changed)</span>}
@@ -252,7 +252,7 @@ function ConfigField({ config, value, onChange, isChanged }: ConfigFieldProps) {
       <div className="space-y-2">
         <Label
           htmlFor={config.key}
-          className={cn("font-medium", isChanged && "text-zinc-600")}
+          className={cn("font-medium", isChanged && "text-blue-600")}
         >
           {config.label}
           {isChanged && <span className="ml-2 text-xs">(changed)</span>}
@@ -276,7 +276,7 @@ function ConfigField({ config, value, onChange, isChanged }: ConfigFieldProps) {
     <div className="space-y-2">
       <Label
         htmlFor={config.key}
-        className={cn("font-medium", isChanged && "text-zinc-600")}
+        className={cn("font-medium", isChanged && "text-blue-600")}
       >
         {config.label}
         {isChanged && <span className="ml-2 text-xs">(changed)</span>}
@@ -294,4 +294,3 @@ function ConfigField({ config, value, onChange, isChanged }: ConfigFieldProps) {
     </div>
   );
 }
-

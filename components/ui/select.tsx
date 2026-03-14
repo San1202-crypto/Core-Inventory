@@ -20,8 +20,8 @@ const SelectTrigger = React.forwardRef<
     ref={ref}
     className={cn(
       "flex h-11 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2.5 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
-      "focus:outline-none focus:border-2 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-500/20",
-      "dark:border-white/20 dark:bg-white/5 dark:text-white dark:focus:border-zinc-400 dark:focus:ring-zinc-400/30",
+      "focus:outline-none focus:border-2 focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20",
+      "dark:border-white/20 dark:bg-white/5 dark:text-white dark:focus:border-sky-400 dark:focus:ring-sky-400/30",
       className
     )}
     {...props}
@@ -160,4 +160,3 @@ export {
   SelectScrollUpButton,
   SelectScrollDownButton,
 };
-

@@ -53,67 +53,67 @@ const variantConfig: Record<
   }
 > = {
   sky: {
-    border: "border-zinc-400/20",
-    gradient: "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
+    border: "border-sky-400/20",
+    gradient: "bg-gradient-to-br from-sky-500/15 via-sky-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
+      "shadow-[0_15px_40px_rgba(2,132,199,0.15)] dark:shadow-[0_15px_40px_rgba(2,132,199,0.1)]",
+    hoverBorder: "hover:border-sky-300/40",
   },
   emerald: {
-    border: "border-zinc-400/20",
+    border: "border-emerald-400/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
+      "bg-gradient-to-br from-emerald-500/15 via-emerald-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
+      "shadow-[0_15px_40px_rgba(16,185,129,0.15)] dark:shadow-[0_15px_40px_rgba(16,185,129,0.1)]",
+    hoverBorder: "hover:border-emerald-300/40",
   },
   amber: {
-    border: "border-zinc-400/20",
+    border: "border-amber-400/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
+      "bg-gradient-to-br from-amber-500/15 via-amber-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
+      "shadow-[0_15px_40px_rgba(245,158,11,0.12)] dark:shadow-[0_15px_40px_rgba(245,158,11,0.08)]",
+    hoverBorder: "hover:border-amber-300/40",
   },
   rose: {
-    border: "border-zinc-400/20",
+    border: "border-rose-400/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
+      "bg-gradient-to-br from-rose-500/15 via-rose-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
+      "shadow-[0_15px_40px_rgba(225,29,72,0.15)] dark:shadow-[0_15px_40px_rgba(225,29,72,0.1)]",
+    hoverBorder: "hover:border-rose-300/40",
   },
   violet: {
-    border: "border-zinc-400/20",
+    border: "border-violet-400/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
+      "bg-gradient-to-br from-violet-500/15 via-violet-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
+      "shadow-[0_15px_40px_rgba(139,92,246,0.15)] dark:shadow-[0_15px_40px_rgba(139,92,246,0.1)]",
+    hoverBorder: "hover:border-violet-300/40",
   },
   blue: {
-    border: "border-zinc-400/20",
+    border: "border-blue-400/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
+      "bg-gradient-to-br from-blue-500/15 via-blue-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.05)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.1)]",
-    hoverBorder: "hover:border-zinc-300/40",
+      "shadow-[0_15px_40px_rgba(59,130,246,0.15)] dark:shadow-[0_15px_40px_rgba(59,130,246,0.1)]",
+    hoverBorder: "hover:border-blue-300/40",
   },
   orange: {
-    border: "border-zinc-400/20",
+    border: "border-orange-400/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
+      "bg-gradient-to-br from-orange-500/15 via-orange-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.1)]",
-    hoverBorder: "hover:border-zinc-300/40",
+      "shadow-[0_15px_40px_rgba(249,115,22,0.15)] dark:shadow-[0_15px_40px_rgba(249,115,22,0.1)]",
+    hoverBorder: "hover:border-orange-300/40",
   },
   teal: {
-    border: "border-zinc-400/20",
+    border: "border-teal-400/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
+      "bg-gradient-to-br from-teal-500/15 via-teal-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
+      "shadow-[0_15px_40px_rgba(20,184,166,0.15)] dark:shadow-[0_15px_40px_rgba(20,184,166,0.1)]",
+    hoverBorder: "hover:border-teal-300/40",
   },
 };
 
@@ -1163,13 +1163,13 @@ export default function ApiDocsPage() {
   const getMethodColor = (method: string) => {
     switch (method) {
       case "GET":
-        return "bg-zinc-500/20 text-zinc-700 dark:text-zinc-300 border-zinc-400/30";
+        return "bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border-emerald-400/30";
       case "POST":
-        return "bg-zinc-500/20 text-zinc-700 dark:text-zinc-300 border-zinc-400/30";
+        return "bg-blue-500/20 text-blue-700 dark:text-blue-300 border-blue-400/30";
       case "PUT":
-        return "bg-zinc-500/20 text-zinc-700 dark:text-zinc-300 border-zinc-400/30";
+        return "bg-amber-500/20 text-amber-700 dark:text-amber-300 border-amber-400/30";
       case "DELETE":
-        return "bg-zinc-500/20 text-zinc-700 dark:text-zinc-300 border-zinc-400/30";
+        return "bg-rose-500/20 text-rose-700 dark:text-rose-300 border-rose-400/30";
       default:
         return "bg-gray-500/20 text-gray-700 dark:text-gray-300 border-gray-400/30";
     }
@@ -1233,7 +1233,7 @@ export default function ApiDocsPage() {
                 <GlassCard variant="blue">
                   <div className="p-4 sm:p-5">
                     <div className="flex items-center gap-2 mb-3">
-                      <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-blue-300/30 bg-blue-100/50 dark:border-white/15 dark:bg-white/10">
                         <FiCode className="h-4 w-4 text-gray-900 dark:text-white" />
                       </div>
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -1250,7 +1250,7 @@ export default function ApiDocsPage() {
                 <GlassCard variant="violet">
                   <div className="p-4 sm:p-5">
                     <div className="flex items-center gap-2 mb-3">
-                      <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-violet-300/30 bg-violet-100/50 dark:border-white/15 dark:bg-white/10">
                         <FiKey className="h-4 w-4 text-gray-900 dark:text-white" />
                       </div>
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -1259,7 +1259,7 @@ export default function ApiDocsPage() {
                     </div>
                     <p className="text-sm text-gray-600 dark:text-white/70">
                       Session cookie (HTTP-only). Send{" "}
-                      <code className="text-xs bg-zinc-500/10 px-1 py-0.5 rounded">
+                      <code className="text-xs bg-violet-500/10 px-1 py-0.5 rounded">
                         credentials: &quot;include&quot;
                       </code>
                     </p>
@@ -1270,7 +1270,7 @@ export default function ApiDocsPage() {
                 <GlassCard variant="amber">
                   <div className="p-4 sm:p-5">
                     <div className="flex items-center gap-2 mb-3">
-                      <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-amber-300/30 bg-amber-100/50 dark:border-white/15 dark:bg-white/10">
                         <Zap className="h-4 w-4 text-gray-900 dark:text-white" />
                       </div>
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -1288,7 +1288,7 @@ export default function ApiDocsPage() {
                 <GlassCard variant="teal">
                   <div className="p-4 sm:p-5">
                     <div className="flex items-center gap-2 mb-3">
-                      <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-teal-300/30 bg-teal-100/50 dark:border-white/15 dark:bg-white/10">
                         <FileJson className="h-4 w-4 text-gray-900 dark:text-white" />
                       </div>
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -1299,7 +1299,7 @@ export default function ApiDocsPage() {
                       href={`${baseUrl}/api/openapi`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
+                      className="inline-flex items-center gap-1 text-sm font-medium text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
                     >
                       Download spec
                       <ExternalLink className="h-3 w-3" />
@@ -1351,21 +1351,21 @@ export default function ApiDocsPage() {
                           className={cn(
                             "flex h-10 w-10 items-center justify-center rounded-xl border backdrop-blur",
                             variant === "violet" &&
-                              "border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10",
+                              "border-violet-300/30 bg-violet-100/50 dark:border-white/15 dark:bg-white/10",
                             variant === "emerald" &&
-                              "border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10",
+                              "border-emerald-300/30 bg-emerald-100/50 dark:border-white/15 dark:bg-white/10",
                             variant === "sky" &&
-                              "border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10",
+                              "border-sky-300/30 bg-sky-100/50 dark:border-white/15 dark:bg-white/10",
                             variant === "orange" &&
-                              "border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10",
+                              "border-orange-300/30 bg-orange-100/50 dark:border-white/15 dark:bg-white/10",
                             variant === "blue" &&
-                              "border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10",
+                              "border-blue-300/30 bg-blue-100/50 dark:border-white/15 dark:bg-white/10",
                             variant === "rose" &&
-                              "border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10",
+                              "border-rose-300/30 bg-rose-100/50 dark:border-white/15 dark:bg-white/10",
                             variant === "teal" &&
-                              "border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10",
+                              "border-teal-300/30 bg-teal-100/50 dark:border-white/15 dark:bg-white/10",
                             variant === "amber" &&
-                              "border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10",
+                              "border-amber-300/30 bg-amber-100/50 dark:border-white/15 dark:bg-white/10",
                           )}
                         >
                           <section.icon className="h-5 w-5 text-gray-900 dark:text-white" />
@@ -1419,7 +1419,7 @@ export default function ApiDocsPage() {
                                         {param.required && (
                                           <Badge
                                             variant="outline"
-                                            className="text-xs border-zinc-400/30 bg-zinc-500/10 text-zinc-700 dark:text-zinc-300"
+                                            className="text-xs border-rose-400/30 bg-rose-500/10 text-rose-700 dark:text-rose-300"
                                           >
                                             Required
                                           </Badge>
@@ -1440,7 +1440,7 @@ export default function ApiDocsPage() {
                               </h5>
                               <div className="space-y-2">
                                 <div className="flex items-center gap-2">
-                                  <Badge className="bg-zinc-500/20 text-zinc-700 dark:text-zinc-300 border border-zinc-400/30">
+                                  <Badge className="bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-400/30">
                                     Success
                                   </Badge>
                                   <span className="text-sm text-gray-600 dark:text-white/70">
@@ -1452,7 +1452,7 @@ export default function ApiDocsPage() {
                                 </code>
 
                                 <div className="flex items-center gap-2">
-                                  <Badge className="bg-zinc-500/20 text-zinc-700 dark:text-zinc-300 border border-zinc-400/30">
+                                  <Badge className="bg-rose-500/20 text-rose-700 dark:text-rose-300 border border-rose-400/30">
                                     Error
                                   </Badge>
                                   <span className="text-sm text-gray-600 dark:text-white/70">
@@ -1477,7 +1477,7 @@ export default function ApiDocsPage() {
                                 />
                               </h5>
                               <pre className="bg-gray-900/90 dark:bg-black/50 p-3 rounded-xl text-xs font-mono overflow-x-auto border border-gray-700/50">
-                                <code className="text-zinc-400">
+                                <code className="text-emerald-400">
                                   {getFetchExample(
                                     endpoint.method,
                                     endpoint.path,
@@ -1501,7 +1501,7 @@ export default function ApiDocsPage() {
               <GlassCard variant="sky">
                 <div className="p-4 sm:p-5">
                   <div className="flex items-center gap-2 mb-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-sky-300/30 bg-sky-100/50 dark:border-white/15 dark:bg-white/10">
                       <FiDatabase className="h-5 w-5 text-gray-900 dark:text-white" />
                     </div>
                     <div>
@@ -1530,13 +1530,13 @@ export default function ApiDocsPage() {
                           className={cn(
                             "rounded-xl border p-4 backdrop-blur-sm",
                             typeVariant === "emerald" &&
-                              "border-zinc-400/20 bg-gradient-to-br from-zinc-500/10 via-zinc-500/5 to-transparent",
+                              "border-emerald-400/20 bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-transparent",
                             typeVariant === "violet" &&
-                              "border-zinc-400/20 bg-gradient-to-br from-zinc-500/10 via-zinc-500/5 to-transparent",
+                              "border-violet-400/20 bg-gradient-to-br from-violet-500/10 via-violet-500/5 to-transparent",
                             typeVariant === "orange" &&
-                              "border-zinc-400/20 bg-gradient-to-br from-zinc-500/10 via-zinc-500/5 to-transparent",
+                              "border-orange-400/20 bg-gradient-to-br from-orange-500/10 via-orange-500/5 to-transparent",
                             typeVariant === "teal" &&
-                              "border-zinc-400/20 bg-gradient-to-br from-zinc-500/10 via-zinc-500/5 to-transparent",
+                              "border-teal-400/20 bg-gradient-to-br from-teal-500/10 via-teal-500/5 to-transparent",
                           )}
                         >
                           <h4 className="font-semibold mb-3 text-gray-900 dark:text-white">
@@ -1575,7 +1575,7 @@ export default function ApiDocsPage() {
               <GlassCard variant="rose">
                 <div className="p-4 sm:p-5">
                   <div className="flex items-center gap-2 mb-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-rose-300/30 bg-rose-100/50 dark:border-white/15 dark:bg-white/10">
                       <AlertCircle className="h-5 w-5 text-gray-900 dark:text-white" />
                     </div>
                     <div>
@@ -1590,13 +1590,13 @@ export default function ApiDocsPage() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {/* Success Codes */}
-                    <div className="rounded-xl border border-zinc-400/20 bg-gradient-to-br from-zinc-500/10 via-zinc-500/5 to-transparent p-4 backdrop-blur-sm space-y-3">
-                      <h4 className="font-medium text-zinc-700 dark:text-zinc-300 text-sm">
+                    <div className="rounded-xl border border-emerald-400/20 bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-transparent p-4 backdrop-blur-sm space-y-3">
+                      <h4 className="font-medium text-emerald-700 dark:text-emerald-300 text-sm">
                         Success Codes
                       </h4>
                       <div className="space-y-2">
                         <div className="flex items-center gap-2">
-                          <Badge className="bg-zinc-500/20 text-zinc-700 dark:text-zinc-300 border border-zinc-400/30 font-mono">
+                          <Badge className="bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-400/30 font-mono">
                             200
                           </Badge>
                           <span className="text-sm text-gray-700 dark:text-white/80">
@@ -1604,7 +1604,7 @@ export default function ApiDocsPage() {
                           </span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <Badge className="bg-zinc-500/20 text-zinc-700 dark:text-zinc-300 border border-zinc-400/30 font-mono">
+                          <Badge className="bg-blue-500/20 text-blue-700 dark:text-blue-300 border border-blue-400/30 font-mono">
                             201
                           </Badge>
                           <span className="text-sm text-gray-700 dark:text-white/80">
@@ -1615,13 +1615,13 @@ export default function ApiDocsPage() {
                     </div>
 
                     {/* Error Codes */}
-                    <div className="rounded-xl border border-zinc-400/20 bg-gradient-to-br from-zinc-500/10 via-zinc-500/5 to-transparent p-4 backdrop-blur-sm space-y-3">
-                      <h4 className="font-medium text-zinc-700 dark:text-zinc-300 text-sm">
+                    <div className="rounded-xl border border-rose-400/20 bg-gradient-to-br from-rose-500/10 via-rose-500/5 to-transparent p-4 backdrop-blur-sm space-y-3">
+                      <h4 className="font-medium text-rose-700 dark:text-rose-300 text-sm">
                         Error Codes
                       </h4>
                       <div className="space-y-2">
                         <div className="flex items-center gap-2">
-                          <Badge className="bg-zinc-500/20 text-zinc-700 dark:text-zinc-300 border border-zinc-400/30 font-mono">
+                          <Badge className="bg-rose-500/20 text-rose-700 dark:text-rose-300 border border-rose-400/30 font-mono">
                             400
                           </Badge>
                           <span className="text-sm text-gray-700 dark:text-white/80">
@@ -1629,7 +1629,7 @@ export default function ApiDocsPage() {
                           </span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <Badge className="bg-zinc-500/20 text-zinc-700 dark:text-zinc-300 border border-zinc-400/30 font-mono">
+                          <Badge className="bg-rose-500/20 text-rose-700 dark:text-rose-300 border border-rose-400/30 font-mono">
                             401
                           </Badge>
                           <span className="text-sm text-gray-700 dark:text-white/80">
@@ -1637,7 +1637,7 @@ export default function ApiDocsPage() {
                           </span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <Badge className="bg-zinc-500/20 text-zinc-700 dark:text-zinc-300 border border-zinc-400/30 font-mono">
+                          <Badge className="bg-amber-500/20 text-amber-700 dark:text-amber-300 border border-amber-400/30 font-mono">
                             429
                           </Badge>
                           <span className="text-sm text-gray-700 dark:text-white/80">
@@ -1645,7 +1645,7 @@ export default function ApiDocsPage() {
                           </span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <Badge className="bg-zinc-500/20 text-zinc-700 dark:text-zinc-300 border border-zinc-400/30 font-mono">
+                          <Badge className="bg-rose-500/20 text-rose-700 dark:text-rose-300 border border-rose-400/30 font-mono">
                             500
                           </Badge>
                           <span className="text-sm text-gray-700 dark:text-white/80">
@@ -1664,4 +1664,3 @@ export default function ApiDocsPage() {
     </Navbar>
   );
 }
-

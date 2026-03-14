@@ -32,7 +32,7 @@ export default function AdminPlaceholder({
         </div>
         <Card className="border border-white/10 dark:border-white/10">
           <CardHeader className="flex flex-row items-center gap-2">
-            <Info className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
+            <Info className="h-5 w-5 text-sky-600 dark:text-sky-400" />
             <CardTitle>Coming soon</CardTitle>
             <CardDescription>
               This section is under development. It will match the style and
@@ -46,4 +46,3 @@ export default function AdminPlaceholder({
     </PageContentWrapper>
   );
 }
-

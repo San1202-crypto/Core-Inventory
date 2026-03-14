@@ -25,11 +25,11 @@ import type { ImportHistoryForPage } from "@/types";
 function getStatusColor(status: string): string {
   switch (status) {
     case "completed":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300";
     case "failed":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300";
     case "processing":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300";
     default:
       return "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300";
   }
@@ -155,7 +155,7 @@ export function createHistoryColumns(
       id: "successRows",
       header: "Success",
       cell: ({ row }) => (
-        <span className="text-zinc-600 dark:text-zinc-400 font-medium">
+        <span className="text-green-600 dark:text-green-400 font-medium">
           {row.original.successRows}
         </span>
       ),
@@ -164,7 +164,7 @@ export function createHistoryColumns(
       id: "failedRows",
       header: "Failed",
       cell: ({ row }) => (
-        <span className="text-zinc-600 dark:text-zinc-400 font-medium">
+        <span className="text-red-600 dark:text-red-400 font-medium">
           {row.original.failedRows}
         </span>
       ),
@@ -189,4 +189,3 @@ export function createHistoryColumns(
     },
   ];
 }
-

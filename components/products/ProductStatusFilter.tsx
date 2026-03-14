@@ -45,11 +45,11 @@ export function StatusDropDown({
   function returnColor(status: string) {
     switch (status) {
       case "Available":
-        return "text-zinc-600 bg-zinc-100";
+        return "text-green-600 bg-green-100";
       case "Stock Out":
-        return "text-zinc-600 bg-zinc-100";
+        return "text-red-600 bg-red-100";
       case "Stock Low":
-        return "text-zinc-600 bg-zinc-100";
+        return "text-orange-600 bg-orange-100";
       default:
         return "";
     }
@@ -74,14 +74,14 @@ export function StatusDropDown({
         <PopoverTrigger asChild>
           <Button
             variant="secondary"
-            className="h-10 w-full sm:w-auto rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/25 via-zinc-500/15 to-zinc-500/10 dark:from-zinc-500/25 dark:via-zinc-500/15 dark:to-zinc-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(0,0,0,0.2)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/40 hover:from-zinc-500/35 hover:via-zinc-500/25 hover:to-zinc-500/15 dark:hover:border-zinc-300/40 dark:hover:from-zinc-500/35 dark:hover:via-zinc-500/25 dark:hover:to-zinc-500/15"
+            className="h-10 w-full sm:w-auto rounded-[28px] border border-rose-400/30 dark:border-rose-400/30 bg-gradient-to-r from-rose-500/25 via-rose-500/15 to-rose-500/10 dark:from-rose-500/25 dark:via-rose-500/15 dark:to-rose-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(225,29,72,0.2)] backdrop-blur-sm transition duration-200 hover:border-rose-300/40 hover:from-rose-500/35 hover:via-rose-500/25 hover:to-rose-500/15 dark:hover:border-rose-300/40 dark:hover:from-rose-500/35 dark:hover:via-rose-500/25 dark:hover:to-rose-500/15"
           >
             <LuGitPullRequestDraft />
             Status
           </Button>
         </PopoverTrigger>
         <PopoverContent
-          className="p-0 w-48 poppins rounded-[28px] border border-zinc-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.2)] [&_[cmdk-input-wrapper]]:border-b [&_[cmdk-input-wrapper]]:border-gray-300/50 [&_[cmdk-input-wrapper]]:dark:border-white/10 [&_[cmdk-input-wrapper]]:bg-white/10 [&_[cmdk-input-wrapper]]:dark:bg-white/5 [&_[cmdk-input-wrapper]]:backdrop-blur-sm"
+          className="p-0 w-48 poppins rounded-[28px] border border-rose-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm shadow-[0_10px_30px_rgba(225,29,72,0.15)] [&_[cmdk-input-wrapper]]:border-b [&_[cmdk-input-wrapper]]:border-gray-300/50 [&_[cmdk-input-wrapper]]:dark:border-white/10 [&_[cmdk-input-wrapper]]:bg-white/10 [&_[cmdk-input-wrapper]]:dark:bg-white/5 [&_[cmdk-input-wrapper]]:backdrop-blur-sm"
           side="bottom"
           align="center"
         >
@@ -94,7 +94,7 @@ export function StatusDropDown({
               <CommandGroup>
                 {statuses.map((status) => (
                   <CommandItem
-                    className="h-10 mb-2 flex items-center text-gray-700 dark:text-white/80 focus:bg-zinc-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
+                    className="h-10 mb-2 flex items-center text-gray-700 dark:text-white/80 focus:bg-rose-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
                     key={status.value}
                     value={status.value}
                     onClick={() => handleCheckboxChange(status.value)}
@@ -102,7 +102,7 @@ export function StatusDropDown({
                     <Checkbox
                       checked={selectedStatuses.includes(status.value)}
                       onCheckedChange={() => handleCheckboxChange(status.value)}
-                      className="size-4 rounded-[4px] mr-2 border-white/20 bg-white/5 backdrop-blur-sm focus:ring-zinc-500/50 focus:ring-2"
+                      className="size-4 rounded-[4px] mr-2 border-white/20 bg-white/5 backdrop-blur-sm focus:ring-rose-500/50 focus:ring-2"
                     />
                     <div
                       className={`flex items-center gap-1 ${returnColor(
@@ -123,7 +123,7 @@ export function StatusDropDown({
               <Separator className="bg-gray-300/50 dark:bg-white/10" />
               <Button
                 variant="ghost"
-                className="text-[12px] mb-1 text-gray-700 dark:text-white/80 hover:text-gray-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/10"
+                className="text-[12px] mb-1 text-gray-700 dark:text-white/80 hover:text-gray-900 dark:hover:text-white hover:bg-rose-100 dark:hover:bg-white/10"
                 onClick={clearFilters}
               >
                 Clear Filters
@@ -135,4 +135,3 @@ export function StatusDropDown({
     </div>
   );
 }
-

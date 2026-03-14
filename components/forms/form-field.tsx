@@ -108,7 +108,7 @@ export function FormField({
         )}
       </div>
       {displayError && (
-        <div className="text-zinc-500 flex gap-1 items-center text-[13px]">
+        <div className="text-red-500 flex gap-1 items-center text-[13px]">
           <MdError />
           <p>{String(displayError)}</p>
         </div>
@@ -116,5 +116,4 @@ export function FormField({
     </div>
   );
 }
-
 

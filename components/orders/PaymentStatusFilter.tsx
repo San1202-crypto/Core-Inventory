@@ -68,11 +68,11 @@ export function PaymentStatusDropDown({
       case "unpaid":
         return "text-gray-600 bg-gray-100";
       case "paid":
-        return "text-zinc-600 bg-zinc-100";
+        return "text-green-600 bg-green-100";
       case "partial":
-        return "text-zinc-600 bg-zinc-100";
+        return "text-yellow-600 bg-yellow-100";
       case "refunded":
-        return "text-zinc-600 bg-zinc-100";
+        return "text-red-600 bg-red-100";
       default:
         return "";
     }
@@ -97,14 +97,14 @@ export function PaymentStatusDropDown({
         <PopoverTrigger asChild>
           <Button
             variant="secondary"
-            className="h-10 rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/30 via-zinc-500/15 to-zinc-500/5 dark:from-zinc-500/30 dark:via-zinc-500/15 dark:to-zinc-500/5 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(0,0,0,0.2)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/60 hover:from-zinc-500/35 hover:via-zinc-500/25 hover:to-zinc-500/15 dark:hover:border-zinc-300/60 dark:hover:from-zinc-500/35 dark:hover:via-zinc-500/25 dark:hover:to-zinc-500/15"
+            className="h-10 rounded-[28px] border border-amber-400/30 dark:border-amber-400/30 bg-gradient-to-r from-amber-500/30 via-amber-500/15 to-amber-500/5 dark:from-amber-500/30 dark:via-amber-500/15 dark:to-amber-500/5 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(245,158,11,0.2)] backdrop-blur-sm transition duration-200 hover:border-amber-300/60 hover:from-amber-500/35 hover:via-amber-500/25 hover:to-amber-500/15 dark:hover:border-amber-300/60 dark:hover:from-amber-500/35 dark:hover:via-amber-500/25 dark:hover:to-amber-500/15"
           >
             <CreditCard className="h-4 w-4 mr-1" />
             Payment
           </Button>
         </PopoverTrigger>
         <PopoverContent
-          className="p-0 w-48 poppins rounded-[28px] border border-zinc-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.2)] [&_[cmdk-input-wrapper]]:border-b [&_[cmdk-input-wrapper]]:border-gray-300/50 [&_[cmdk-input-wrapper]]:dark:border-white/10 [&_[cmdk-input-wrapper]]:bg-white/10 [&_[cmdk-input-wrapper]]:dark:bg-white/5 [&_[cmdk-input-wrapper]]:backdrop-blur-sm"
+          className="p-0 w-48 poppins rounded-[28px] border border-amber-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm shadow-[0_10px_30px_rgba(245,158,11,0.15)] [&_[cmdk-input-wrapper]]:border-b [&_[cmdk-input-wrapper]]:border-gray-300/50 [&_[cmdk-input-wrapper]]:dark:border-white/10 [&_[cmdk-input-wrapper]]:bg-white/10 [&_[cmdk-input-wrapper]]:dark:bg-white/5 [&_[cmdk-input-wrapper]]:backdrop-blur-sm"
           side="bottom"
           align="center"
         >
@@ -117,7 +117,7 @@ export function PaymentStatusDropDown({
               <CommandGroup>
                 {paymentStatuses.map((status) => (
                   <CommandItem
-                    className="h-10 mb-2 flex items-center text-gray-700 dark:text-white/80 focus:bg-zinc-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
+                    className="h-10 mb-2 flex items-center text-gray-700 dark:text-white/80 focus:bg-amber-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
                     key={status.value}
                     value={status.value}
                     onClick={() => handleCheckboxChange(status.value)}
@@ -125,7 +125,7 @@ export function PaymentStatusDropDown({
                     <Checkbox
                       checked={selectedPaymentStatuses.includes(status.value)}
                       onCheckedChange={() => handleCheckboxChange(status.value)}
-                      className="size-4 rounded-[4px] mr-2 border-white/20 bg-white/5 backdrop-blur-sm focus:ring-zinc-500/50 focus:ring-2"
+                      className="size-4 rounded-[4px] mr-2 border-white/20 bg-white/5 backdrop-blur-sm focus:ring-amber-500/50 focus:ring-2"
                     />
                     <div
                       className={`flex items-center gap-1 ${returnColor(
@@ -146,7 +146,7 @@ export function PaymentStatusDropDown({
               <Separator className="bg-gray-300/50 dark:bg-white/10" />
               <Button
                 variant="ghost"
-                className="text-[12px] mb-1 text-gray-700 dark:text-white/80 hover:text-gray-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/10"
+                className="text-[12px] mb-1 text-gray-700 dark:text-white/80 hover:text-gray-900 dark:hover:text-white hover:bg-amber-100 dark:hover:bg-white/10"
                 onClick={clearFilters}
               >
                 Clear Filters
@@ -158,4 +158,3 @@ export function PaymentStatusDropDown({
     </div>
   );
 }
-

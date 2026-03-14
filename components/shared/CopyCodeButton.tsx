@@ -54,7 +54,7 @@ export function CopyCodeButton({
       aria-label={ariaLabel}
     >
       {copied ? (
-        <Check className="h-4 w-4 text-zinc-600" />
+        <Check className="h-4 w-4 text-green-600" />
       ) : (
         <Copy className="h-4 w-4" />
       )}
@@ -62,4 +62,3 @@ export function CopyCodeButton({
     </Button>
   );
 }
-

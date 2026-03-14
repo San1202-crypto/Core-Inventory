@@ -48,25 +48,25 @@ const CARRIER_INFO: Record<
 > = {
   usps: {
     name: "USPS",
-    color: "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-300",
+    color: "bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300",
     trackingUrl: (tn) =>
       `https://tools.usps.com/go/TrackConfirmAction_input?origTrackNum=${tn}`,
   },
   ups: {
     name: "UPS",
     color:
-      "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-300",
+      "bg-amber-100 text-amber-800 dark:bg-amber-900/50 dark:text-amber-300",
     trackingUrl: (tn) => `https://www.ups.com/track?tracknum=${tn}`,
   },
   fedex: {
     name: "FedEx",
     color:
-      "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-300",
+      "bg-purple-100 text-purple-800 dark:bg-purple-900/50 dark:text-purple-300",
     trackingUrl: (tn) => `https://www.fedex.com/fedextrack/?trknbr=${tn}`,
   },
   dhl: {
     name: "DHL",
-    color: "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-300",
+    color: "bg-red-100 text-red-800 dark:bg-red-900/50 dark:text-red-300",
     trackingUrl: (tn) =>
       `https://www.dhl.com/en/express/tracking.html?AWB=${tn}`,
   },
@@ -120,11 +120,11 @@ export default function OrderTrackingInfo({
   return (
     <article
       className={cn(
-        "rounded-[28px] border border-zinc-400/20 dark:border-zinc-400/30 p-4 sm:p-5 backdrop-blur-sm transition-all duration-300",
+        "rounded-[28px] border border-emerald-400/20 dark:border-emerald-400/30 p-4 sm:p-5 backdrop-blur-sm transition-all duration-300",
         "bg-white/60 dark:bg-white/5",
-        "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent dark:from-zinc-500/25 dark:via-zinc-500/10 dark:to-zinc-500/5",
-        "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)]",
-        "hover:border-zinc-300/40 dark:hover:border-zinc-300/50",
+        "bg-gradient-to-br from-emerald-500/15 via-emerald-500/5 to-transparent dark:from-emerald-500/25 dark:via-emerald-500/10 dark:to-emerald-500/5",
+        "shadow-[0_15px_40px_rgba(16,185,129,0.15)] dark:shadow-[0_30px_80px_rgba(16,185,129,0.25)]",
+        "hover:border-emerald-300/40 dark:hover:border-emerald-300/50",
         className,
       )}
     >
@@ -132,9 +132,9 @@ export default function OrderTrackingInfo({
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             {order.status === "delivered" ? (
-              <CheckCircle className="h-5 w-5 text-zinc-500 dark:text-zinc-400" />
+              <CheckCircle className="h-5 w-5 text-green-500 dark:text-emerald-400" />
             ) : (
-              <Truck className="h-5 w-5 text-primary dark:text-zinc-400" />
+              <Truck className="h-5 w-5 text-primary dark:text-emerald-400" />
             )}
             <h3 className="text-base font-semibold text-gray-900 dark:text-white">
               {order.status === "delivered"
@@ -169,7 +169,7 @@ export default function OrderTrackingInfo({
         {/* Track Package + Download Label PDF — same gradient shadow style as Update Order / Cancel Order */}
         <div className="flex flex-col sm:flex-row gap-2">
           {trackingUrl && (
-            <Button asChild className="flex-1 gap-2 rounded-xl border border-zinc-400/30 bg-gradient-to-r from-zinc-500/70 via-zinc-500/50 to-zinc-500/30 dark:from-zinc-500/70 dark:via-zinc-500/50 dark:to-zinc-500/30 text-white shadow-[0_15px_35px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_35px_rgba(0,0,0,0.2)] backdrop-blur-sm hover:border-zinc-300/50 hover:from-zinc-500/80 hover:via-zinc-500/60 hover:to-zinc-500/40 dark:hover:border-zinc-300/50 transition-all duration-300 h-10">
+            <Button asChild className="flex-1 gap-2 rounded-xl border border-sky-400/30 bg-gradient-to-r from-sky-500/70 via-sky-500/50 to-sky-500/30 dark:from-sky-500/70 dark:via-sky-500/50 dark:to-sky-500/30 text-white shadow-[0_15px_35px_rgba(2,132,199,0.45)] dark:shadow-[0_15px_35px_rgba(2,132,199,0.25)] backdrop-blur-sm hover:border-sky-300/50 hover:from-sky-500/80 hover:via-sky-500/60 hover:to-sky-500/40 dark:hover:border-sky-300/50 transition-all duration-300 h-10">
               <a
                 href={trackingUrl}
                 target="_blank"
@@ -183,7 +183,7 @@ export default function OrderTrackingInfo({
             </Button>
           )}
           {order.labelUrl && (
-            <Button asChild className="flex-1 gap-2 rounded-xl border border-zinc-400/30 bg-gradient-to-r from-zinc-500/70 via-zinc-500/50 to-zinc-500/30 dark:from-zinc-500/70 dark:via-zinc-500/50 dark:to-zinc-500/30 text-white shadow-[0_15px_35px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_35px_rgba(0,0,0,0.2)] backdrop-blur-sm hover:border-zinc-300/50 hover:from-zinc-500/80 hover:via-zinc-500/60 hover:to-zinc-500/40 dark:hover:border-zinc-300/50 transition-all duration-300 h-10">
+            <Button asChild className="flex-1 gap-2 rounded-xl border border-violet-400/30 bg-gradient-to-r from-violet-500/70 via-violet-500/50 to-violet-500/30 dark:from-violet-500/70 dark:via-violet-500/50 dark:to-violet-500/30 text-white shadow-[0_15px_35px_rgba(139,92,246,0.45)] dark:shadow-[0_15px_35px_rgba(139,92,246,0.25)] backdrop-blur-sm hover:border-violet-300/50 hover:from-violet-500/80 hover:via-violet-500/60 hover:to-violet-500/40 dark:hover:border-violet-300/50 transition-all duration-300 h-10">
               <a
                 href={order.labelUrl}
                 target="_blank"
@@ -201,4 +201,3 @@ export default function OrderTrackingInfo({
     </article>
   );
 }
-

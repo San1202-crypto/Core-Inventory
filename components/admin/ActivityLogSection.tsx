@@ -46,33 +46,33 @@ const PERIODS: { value: ActivityLogPeriod; label: string }[] = [
 
 const actionColors: Record<AuditAction, string> = {
   create:
-    "bg-zinc-100 text-zinc-700 dark:bg-zinc-900/30 dark:text-zinc-400",
-  update: "bg-zinc-100 text-zinc-700 dark:bg-zinc-900/30 dark:text-zinc-400",
-  delete: "bg-zinc-100 text-zinc-700 dark:bg-zinc-900/30 dark:text-zinc-400",
+    "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400",
+  update: "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400",
+  delete: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400",
   login:
-    "bg-zinc-100 text-zinc-700 dark:bg-zinc-900/30 dark:text-zinc-400",
+    "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400",
   logout: "bg-gray-100 text-gray-700 dark:bg-gray-900/30 dark:text-gray-400",
-  view: "bg-zinc-100 text-zinc-700 dark:bg-zinc-900/30 dark:text-zinc-400",
+  view: "bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-400",
   export:
-    "bg-zinc-100 text-zinc-700 dark:bg-zinc-900/30 dark:text-zinc-400",
+    "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400",
   import:
-    "bg-zinc-100 text-zinc-700 dark:bg-zinc-900/30 dark:text-zinc-400",
-  send: "bg-zinc-100 text-zinc-700 dark:bg-zinc-900/30 dark:text-zinc-400",
+    "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400",
+  send: "bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400",
   payment:
-    "bg-zinc-100 text-zinc-700 dark:bg-zinc-900/30 dark:text-zinc-400",
-  ship: "bg-zinc-100 text-zinc-700 dark:bg-zinc-900/30 dark:text-zinc-400",
+    "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400",
+  ship: "bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-400",
   settings_change:
-    "bg-zinc-100 text-zinc-700 dark:bg-zinc-900/30 dark:text-zinc-400",
+    "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400",
 };
 
 const variantConfig = {
-  border: "border-zinc-400/20",
+  border: "border-violet-400/20",
   gradient:
-    "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
+    "bg-gradient-to-br from-violet-500/15 via-violet-500/5 to-transparent",
   shadow:
-    "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
+    "shadow-[0_15px_40px_rgba(139,92,246,0.15)] dark:shadow-[0_15px_40px_rgba(139,92,246,0.1)]",
   iconBg:
-    "border-zinc-300/30 bg-zinc-100/50 dark:border-zinc-400/30 dark:bg-zinc-500/20",
+    "border-violet-300/30 bg-violet-100/50 dark:border-violet-400/30 dark:bg-violet-500/20",
 };
 
 /** Build activity details: action + entity, then dynamic lines from details (status, tracking, product, fields updated, etc.). */
@@ -309,7 +309,7 @@ export default function ActivityLogSection({
           return link ? (
             <Link
               href={link}
-              className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
+              className="text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
             >
               {log.entityType} {log.entityId?.slice(-6)}
             </Link>
@@ -381,7 +381,7 @@ export default function ActivityLogSection({
               placeholder="Search by user, action, entity..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="h-10 pl-9 pr-10 w-full rounded-[28px] bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-zinc-400/30 dark:border-white/20 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+              className="h-10 pl-9 pr-10 w-full rounded-[28px] bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-sky-400/30 dark:border-white/20 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-white/40 focus-visible:border-sky-400 focus-visible:ring-sky-500/50 shadow-[0_10px_30px_rgba(2,132,199,0.15)]"
             />
             {searchTerm && (
               <Button
@@ -401,17 +401,17 @@ export default function ActivityLogSection({
             >
               <SelectTrigger
                 className={cn(
-                  "w-full sm:w-[180px] h-10 rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30",
-                  "bg-gradient-to-r from-zinc-500/25 via-zinc-500/15 to-zinc-500/10 dark:from-zinc-500/25 dark:via-zinc-500/15 dark:to-zinc-500/10",
-                  "text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(0,0,0,0.2)] backdrop-blur-sm",
-                  "transition duration-200 hover:border-zinc-300/40 hover:from-zinc-500/35 hover:via-zinc-500/25 hover:to-zinc-500/15",
-                  "dark:hover:border-zinc-300/40 dark:hover:from-zinc-500/35 dark:hover:via-zinc-500/25 dark:hover:to-zinc-500/15",
+                  "w-full sm:w-[180px] h-10 rounded-[28px] border border-sky-400/30 dark:border-sky-400/30",
+                  "bg-gradient-to-r from-sky-500/25 via-sky-500/15 to-sky-500/10 dark:from-sky-500/25 dark:via-sky-500/15 dark:to-sky-500/10",
+                  "text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(2,132,199,0.2)] backdrop-blur-sm",
+                  "transition duration-200 hover:border-sky-300/40 hover:from-sky-500/35 hover:via-sky-500/25 hover:to-sky-500/15",
+                  "dark:hover:border-sky-300/40 dark:hover:from-sky-500/35 dark:hover:via-sky-500/25 dark:hover:to-sky-500/15",
                 )}
               >
                 <SelectValue />
               </SelectTrigger>
               <SelectContent
-                className="rounded-xl border-zinc-400/20 bg-white/95 dark:bg-popover/95 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+                className="rounded-xl border-sky-400/20 bg-white/95 dark:bg-popover/95 shadow-[0_10px_30px_rgba(2,132,199,0.15)]"
                 position="popper"
               >
                 {PERIODS.map((p) => (
@@ -428,9 +428,9 @@ export default function ActivityLogSection({
           ) : (
             <div
               className={cn(
-                "w-full sm:w-[180px] h-10 rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30",
-                "bg-gradient-to-r from-zinc-500/25 via-zinc-500/15 to-zinc-500/10 dark:from-zinc-500/25 dark:via-zinc-500/15 dark:to-zinc-500/10",
-                "text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(0,0,0,0.2)] backdrop-blur-sm",
+                "w-full sm:w-[180px] h-10 rounded-[28px] border border-sky-400/30 dark:border-sky-400/30",
+                "bg-gradient-to-r from-sky-500/25 via-sky-500/15 to-sky-500/10 dark:from-sky-500/25 dark:via-sky-500/15 dark:to-sky-500/10",
+                "text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(2,132,199,0.2)] backdrop-blur-sm",
                 "flex items-center justify-between px-3 py-2.5 text-sm",
               )}
             >
@@ -455,13 +455,13 @@ export default function ActivityLogSection({
             : "No activity in this period."}
         </p>
       ) : (
-        <div className="overflow-x-auto rounded-xl border border-zinc-200/30 dark:border-white/10">
+        <div className="overflow-x-auto rounded-xl border border-violet-200/30 dark:border-white/10">
           <Table>
             <TableHeader>
               {table.getHeaderGroups().map((headerGroup) => (
                 <TableRow
                   key={headerGroup.id}
-                  className="border-zinc-200/30 dark:border-white/10 bg-white/40 dark:bg-white/5 hover:bg-transparent"
+                  className="border-violet-200/30 dark:border-white/10 bg-white/40 dark:bg-white/5 hover:bg-transparent"
                 >
                   {headerGroup.headers.map((header) => (
                     <TableHead
@@ -483,7 +483,7 @@ export default function ActivityLogSection({
               {table.getRowModel().rows.map((row) => (
                 <TableRow
                   key={row.id}
-                  className="border-zinc-100/30 dark:border-white/5 hover:bg-white/30 dark:hover:bg-white/5"
+                  className="border-violet-100/30 dark:border-white/5 hover:bg-white/30 dark:hover:bg-white/5"
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id} className="py-2.5 px-2">
@@ -502,4 +502,3 @@ export default function ActivityLogSection({
     </article>
   );
 }
-

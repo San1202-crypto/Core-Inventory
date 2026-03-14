@@ -126,7 +126,7 @@ export default function OrderActions({
         {order.status !== "cancelled" && (
           <>
             <DropdownMenuItem
-              className="text-zinc-600 dark:text-zinc-400"
+              className="text-red-600 dark:text-red-400"
               onClick={handleCancelOrder}
               disabled={isDeleting || disableOrderActions}
             >
@@ -139,4 +139,3 @@ export default function OrderActions({
     </DropdownMenu>
   );
 }
-

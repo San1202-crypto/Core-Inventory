@@ -53,7 +53,7 @@ export default function BusinessInsightsSidebar({
               className={cn(
                 "flex items-center justify-center rounded-lg w-9 h-9 transition-colors",
                 isActive
-                  ? "bg-zinc-500/15 dark:bg-zinc-500/20 text-zinc-700 dark:text-zinc-300"
+                  ? "bg-sky-500/15 dark:bg-sky-500/20 text-sky-700 dark:text-sky-300"
                   : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10",
               )}
             >
@@ -82,7 +82,7 @@ export default function BusinessInsightsSidebar({
             className={cn(
               "flex items-center gap-2 rounded-lg pl-8 pr-3 py-2 text-left text-sm font-medium transition-colors w-full",
               isActive
-                ? "bg-zinc-500/15 dark:bg-zinc-500/20 text-zinc-700 dark:text-zinc-300"
+                ? "bg-sky-500/15 dark:bg-sky-500/20 text-sky-700 dark:text-sky-300"
                 : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10",
             )}
           >
@@ -94,4 +94,3 @@ export default function BusinessInsightsSidebar({
     </nav>
   );
 }
-

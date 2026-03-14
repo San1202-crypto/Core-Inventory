@@ -57,57 +57,57 @@ const variantConfig: Record<
   }
 > = {
   violet: {
-    border: "border-zinc-400/20",
+    border: "border-violet-400/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
+      "bg-gradient-to-br from-violet-500/15 via-violet-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+      "shadow-[0_15px_40px_rgba(139,92,246,0.15)] dark:shadow-[0_15px_40px_rgba(139,92,246,0.1)]",
+    hoverBorder: "hover:border-violet-300/40",
+    iconBg: "border-violet-300/30 bg-violet-100/50",
   },
   sky: {
-    border: "border-zinc-400/20",
-    gradient: "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
+    border: "border-sky-400/20",
+    gradient: "bg-gradient-to-br from-sky-500/15 via-sky-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+      "shadow-[0_15px_40px_rgba(2,132,199,0.15)] dark:shadow-[0_15px_40px_rgba(2,132,199,0.1)]",
+    hoverBorder: "hover:border-sky-300/40",
+    iconBg: "border-sky-300/30 bg-sky-100/50",
   },
   emerald: {
-    border: "border-zinc-400/20",
+    border: "border-emerald-400/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
+      "bg-gradient-to-br from-emerald-500/15 via-emerald-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+      "shadow-[0_15px_40px_rgba(16,185,129,0.15)] dark:shadow-[0_15px_40px_rgba(16,185,129,0.1)]",
+    hoverBorder: "hover:border-emerald-300/40",
+    iconBg: "border-emerald-300/30 bg-emerald-100/50",
   },
   amber: {
-    border: "border-zinc-400/20",
+    border: "border-amber-400/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
+      "bg-gradient-to-br from-amber-500/15 via-amber-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+      "shadow-[0_15px_40px_rgba(245,158,11,0.12)] dark:shadow-[0_15px_40px_rgba(245,158,11,0.08)]",
+    hoverBorder: "hover:border-amber-300/40",
+    iconBg: "border-amber-300/30 bg-amber-100/50",
   },
   rose: {
-    border: "border-zinc-400/20",
+    border: "border-rose-400/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
+      "bg-gradient-to-br from-rose-500/15 via-rose-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+      "shadow-[0_15px_40px_rgba(225,29,72,0.15)] dark:shadow-[0_15px_40px_rgba(225,29,72,0.1)]",
+    hoverBorder: "hover:border-rose-300/40",
+    iconBg: "border-rose-300/30 bg-rose-100/50",
   },
   blue: {
-    border: "border-zinc-400/20",
+    border: "border-blue-400/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
+      "bg-gradient-to-br from-blue-500/15 via-blue-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.05)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.1)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+      "shadow-[0_15px_40px_rgba(59,130,246,0.15)] dark:shadow-[0_15px_40px_rgba(59,130,246,0.1)]",
+    hoverBorder: "hover:border-blue-300/40",
+    iconBg: "border-blue-300/30 bg-blue-100/50",
   },
 };
 
@@ -161,13 +161,13 @@ const ROLE_OPTIONS: { value: UserRole; label: string }[] = [
 function getRoleColor(role: string | null): string {
   switch (role ?? "") {
     case "admin":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-violet-100 text-violet-800 dark:bg-violet-900/30 dark:text-violet-300";
     case "supplier":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300";
     case "client":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-sky-100 text-sky-800 dark:bg-sky-900/30 dark:text-sky-300";
     case "retailer":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
+      return "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300";
     default:
       return "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300";
   }
@@ -289,10 +289,10 @@ export default function AdminUserManagementDetailContent() {
               className={cn(
                 "p-2.5 rounded-xl border",
                 variantConfig.violet.iconBg,
-                "dark:border-zinc-400/30 dark:bg-zinc-500/20",
+                "dark:border-violet-400/30 dark:bg-violet-500/20",
               )}
             >
-              <User className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
+              <User className="h-5 w-5 text-violet-600 dark:text-violet-400" />
             </div>
             <div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -366,7 +366,7 @@ export default function AdminUserManagementDetailContent() {
                           setNameTouched(true);
                         }}
                         disabled={isUpdating}
-                        className="rounded-[28px] border-zinc-200/50 dark:border-white/10"
+                        className="rounded-[28px] border-violet-200/50 dark:border-white/10"
                       />
                       {nameTouched && (
                         <Button
@@ -428,10 +428,10 @@ export default function AdminUserManagementDetailContent() {
                 className={cn(
                   "p-2.5 rounded-xl border",
                   variantConfig.sky.iconBg,
-                  "dark:border-zinc-400/30 dark:bg-zinc-500/20",
+                  "dark:border-sky-400/30 dark:bg-sky-500/20",
                 )}
               >
-                <DollarSign className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
+                <DollarSign className="h-5 w-5 text-sky-600 dark:text-sky-400" />
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -448,9 +448,9 @@ export default function AdminUserManagementDetailContent() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               <Link
                 href="/admin/orders"
-                className="flex items-center gap-2 p-3 rounded-xl border border-zinc-200/40 dark:border-white/10 bg-white/30 dark:bg-white/5 hover:bg-white/50 dark:hover:bg-white/10 transition-colors"
+                className="flex items-center gap-2 p-3 rounded-xl border border-sky-200/40 dark:border-white/10 bg-white/30 dark:bg-white/5 hover:bg-white/50 dark:hover:bg-white/10 transition-colors"
               >
-                <ShoppingCart className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
+                <ShoppingCart className="h-5 w-5 text-sky-600 dark:text-sky-400" />
                 <div>
                   <p className="text-2xl font-semibold text-gray-900 dark:text-white">
                     {overview.orderCount}
@@ -462,9 +462,9 @@ export default function AdminUserManagementDetailContent() {
               </Link>
               <Link
                 href="/admin/invoices"
-                className="flex items-center gap-2 p-3 rounded-xl border border-zinc-200/40 dark:border-white/10 bg-white/30 dark:bg-white/5 hover:bg-white/50 dark:hover:bg-white/10 transition-colors"
+                className="flex items-center gap-2 p-3 rounded-xl border border-sky-200/40 dark:border-white/10 bg-white/30 dark:bg-white/5 hover:bg-white/50 dark:hover:bg-white/10 transition-colors"
               >
-                <FileText className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
+                <FileText className="h-5 w-5 text-sky-600 dark:text-sky-400" />
                 <div>
                   <p className="text-2xl font-semibold text-gray-900 dark:text-white">
                     {overview.invoiceCount}
@@ -474,8 +474,8 @@ export default function AdminUserManagementDetailContent() {
                   </p>
                 </div>
               </Link>
-              <div className="flex items-center gap-2 p-3 rounded-xl border border-zinc-200/40 dark:border-white/10 bg-white/30 dark:bg-white/5">
-                <DollarSign className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
+              <div className="flex items-center gap-2 p-3 rounded-xl border border-violet-200/40 dark:border-white/10 bg-white/30 dark:bg-white/5">
+                <DollarSign className="h-5 w-5 text-violet-600 dark:text-violet-400" />
                 <div>
                   <p className="text-2xl font-semibold text-gray-900 dark:text-white">
                     ${(overview.totalRevenue ?? 0).toLocaleString()}
@@ -485,8 +485,8 @@ export default function AdminUserManagementDetailContent() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-center gap-2 p-3 rounded-xl border border-zinc-200/40 dark:border-white/10 bg-white/30 dark:bg-white/5">
-                <DollarSign className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
+              <div className="flex items-center gap-2 p-3 rounded-xl border border-emerald-200/40 dark:border-white/10 bg-white/30 dark:bg-white/5">
+                <DollarSign className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
                 <div>
                   <p className="text-2xl font-semibold text-gray-900 dark:text-white">
                     ${overview.totalSpent.toLocaleString()}
@@ -496,8 +496,8 @@ export default function AdminUserManagementDetailContent() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-center gap-2 p-3 rounded-xl border border-zinc-200/40 dark:border-white/10 bg-white/30 dark:bg-white/5">
-                <DollarSign className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
+              <div className="flex items-center gap-2 p-3 rounded-xl border border-amber-200/40 dark:border-white/10 bg-white/30 dark:bg-white/5">
+                <DollarSign className="h-5 w-5 text-amber-600 dark:text-amber-400" />
                 <div>
                   <p className="text-2xl font-semibold text-gray-900 dark:text-white">
                     ${overview.totalDue.toLocaleString()}
@@ -508,12 +508,12 @@ export default function AdminUserManagementDetailContent() {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4 pt-4 border-t border-zinc-200/40 dark:border-white/10">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4 pt-4 border-t border-sky-200/40 dark:border-white/10">
               <Link
                 href="/admin/products"
-                className="flex items-center gap-2 p-3 rounded-xl border border-zinc-200/40 dark:border-white/10 bg-white/30 dark:bg-white/5 hover:bg-white/50 dark:hover:bg-white/10 transition-colors"
+                className="flex items-center gap-2 p-3 rounded-xl border border-violet-200/40 dark:border-white/10 bg-white/30 dark:bg-white/5 hover:bg-white/50 dark:hover:bg-white/10 transition-colors"
               >
-                <Package className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
+                <Package className="h-5 w-5 text-violet-600 dark:text-violet-400" />
                 <div>
                   <p className="text-xl font-semibold text-gray-900 dark:text-white">
                     {overview.productCount}
@@ -525,9 +525,9 @@ export default function AdminUserManagementDetailContent() {
               </Link>
               <Link
                 href="/admin/supplier-portal"
-                className="flex items-center gap-2 p-3 rounded-xl border border-zinc-200/40 dark:border-white/10 bg-white/30 dark:bg-white/5 hover:bg-white/50 dark:hover:bg-white/10 transition-colors"
+                className="flex items-center gap-2 p-3 rounded-xl border border-violet-200/40 dark:border-white/10 bg-white/30 dark:bg-white/5 hover:bg-white/50 dark:hover:bg-white/10 transition-colors"
               >
-                <Truck className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
+                <Truck className="h-5 w-5 text-violet-600 dark:text-violet-400" />
                 <div>
                   <p className="text-xl font-semibold text-gray-900 dark:text-white">
                     {overview.supplierCount}
@@ -539,9 +539,9 @@ export default function AdminUserManagementDetailContent() {
               </Link>
               <Link
                 href="/admin/products"
-                className="flex items-center gap-2 p-3 rounded-xl border border-zinc-200/40 dark:border-white/10 bg-white/30 dark:bg-white/5 hover:bg-white/50 dark:hover:bg-white/10 transition-colors"
+                className="flex items-center gap-2 p-3 rounded-xl border border-violet-200/40 dark:border-white/10 bg-white/30 dark:bg-white/5 hover:bg-white/50 dark:hover:bg-white/10 transition-colors"
               >
-                <Tag className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
+                <Tag className="h-5 w-5 text-violet-600 dark:text-violet-400" />
                 <div>
                   <p className="text-xl font-semibold text-gray-900 dark:text-white">
                     {overview.categoryCount}
@@ -553,9 +553,9 @@ export default function AdminUserManagementDetailContent() {
               </Link>
               <Link
                 href="/admin/warehouses"
-                className="flex items-center gap-2 p-3 rounded-xl border border-zinc-200/40 dark:border-white/10 bg-white/30 dark:bg-white/5 hover:bg-white/50 dark:hover:bg-white/10 transition-colors"
+                className="flex items-center gap-2 p-3 rounded-xl border border-violet-200/40 dark:border-white/10 bg-white/30 dark:bg-white/5 hover:bg-white/50 dark:hover:bg-white/10 transition-colors"
               >
-                <Building2 className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
+                <Building2 className="h-5 w-5 text-violet-600 dark:text-violet-400" />
                 <div>
                   <p className="text-xl font-semibold text-gray-900 dark:text-white">
                     {overview.warehouseCount}
@@ -570,18 +570,18 @@ export default function AdminUserManagementDetailContent() {
         )}
 
         {/* Danger Zone */}
-        <GlassCard variant="rose" className="border-zinc-300/30">
+        <GlassCard variant="rose" className="border-rose-300/30">
           <div className="flex items-center gap-3 mb-4">
             <div
               className={cn(
-                "p-2.5 rounded-xl border border-zinc-300/30 bg-zinc-100/50",
-                "dark:border-zinc-400/30 dark:bg-zinc-500/20",
+                "p-2.5 rounded-xl border border-rose-300/30 bg-rose-100/50",
+                "dark:border-rose-400/30 dark:bg-rose-500/20",
               )}
             >
-              <Trash2 className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
+              <Trash2 className="h-5 w-5 text-rose-600 dark:text-rose-400" />
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-zinc-600 dark:text-zinc-400">
+              <h3 className="text-lg font-semibold text-rose-600 dark:text-rose-400">
                 Danger Zone
               </h3>
               <p className="text-xs text-gray-600 dark:text-gray-400">
@@ -621,7 +621,7 @@ export default function AdminUserManagementDetailContent() {
                 <AlertDialogAction
                   onClick={handleDelete}
                   disabled={isDeleting}
-                  className="bg-zinc-600 hover:bg-zinc-700"
+                  className="bg-red-600 hover:bg-red-700"
                 >
                   {isDeleting ? (
                     <>
@@ -640,4 +640,3 @@ export default function AdminUserManagementDetailContent() {
     </PageContentWrapper>
   );
 }
-

@@ -71,8 +71,8 @@ export default function AdminSettingsPage() {
         <div className="space-y-6">
           {/* Header */}
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded-lg bg-zinc-100 dark:bg-zinc-900/30">
-              <Settings className="h-6 w-6 text-zinc-600 dark:text-zinc-400" />
+            <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30">
+              <Settings className="h-6 w-6 text-blue-600 dark:text-blue-400" />
             </div>
             <div>
               <h1 className="text-2xl font-semibold tracking-tight">
@@ -91,4 +91,3 @@ export default function AdminSettingsPage() {
     </Navbar>
   );
 }
-

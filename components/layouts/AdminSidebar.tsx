@@ -19,9 +19,12 @@ import {
   User,
   FileText,
   UserCircle,
-  ArrowDownLeft,
+  Activity,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Navbar from "@/components/layouts/Navbar";
+import { PageContentWrapper } from "@/components/shared";
+import { MoveHistory } from "@/modules/stock-movement/components/MoveHistory";
 import { useAuth } from "@/contexts";
 import { Button } from "@/components/ui/button";
 import { useAdminCounts } from "@/hooks/queries";
@@ -113,9 +116,14 @@ const MANAGEMENT_ITEMS: NavItem[] = [
     countKey: "users",
   },
   {
-    href: "/admin/receipts",
-    label: "Receipts",
-    icon: ArrowDownLeft,
+    href: "/admin/activity-history",
+    label: "Activity History",
+    icon: History,
+  },
+  {
+    href: "/inventory/move-history",
+    label: "Move History",
+    icon: Activity,
   },
 ];
 
@@ -143,7 +151,7 @@ export default function AdminSidebar({ collapsed = false }: { collapsed?: boolea
       isSub && !collapsed ? "pl-8" : "",
       collapsed ? "justify-center px-0 w-9 h-9 mx-auto" : "",
       pathname === href || (href !== "/admin" && pathname.startsWith(href))
-        ? "bg-zinc-500/15 dark:bg-zinc-500/20 text-zinc-700 dark:text-zinc-300"
+        ? "bg-sky-500/15 dark:bg-sky-500/20 text-sky-700 dark:text-sky-300"
         : "hover:bg-gray-100 dark:hover:bg-white/10 text-gray-700 dark:text-gray-300",
     );
 
@@ -264,4 +272,3 @@ export default function AdminSidebar({ collapsed = false }: { collapsed?: boolea
     </nav>
   );
 }
-

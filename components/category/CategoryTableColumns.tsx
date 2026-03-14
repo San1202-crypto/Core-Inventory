@@ -85,7 +85,7 @@ export const createCategoryColumns = (
       return (
         <Link
           href={`/categories/${category.id}`}
-          className="font-semibold text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
+          className="font-semibold text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
         >
           {category.name}
         </Link>
@@ -104,7 +104,7 @@ export const createCategoryColumns = (
           variant={status ? "default" : "secondary"}
           className={`${
             status
-              ? "bg-zinc-100 text-zinc-600 dark:bg-zinc-900/30 dark:text-zinc-400"
+              ? "bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400"
               : "bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400"
           }`}
         >
@@ -208,4 +208,3 @@ export const createCategoryColumns = (
     size: 10,
   },
 ];
-

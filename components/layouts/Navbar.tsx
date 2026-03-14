@@ -244,11 +244,11 @@ export default function Navbar({ children }: NavbarProps) {
 
   // If children prop is provided, wrap with full layout, otherwise just return navbar
   const navbarContent = (
-    <header className="sticky top-0 z-50 w-full h-[72px] min-h-[72px] border-b border-gray-200/50 dark:border-white/10 bg-gradient-to-br from-white/90 via-white/85 to-white/80 dark:from-white/10 dark:via-white/10 dark:to-white/5 backdrop-blur-2xl shadow-[0_10px_30px_rgba(0,0,0,0.2)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.25)] will-change-transform transform-gpu">
+    <header className="sticky top-0 z-50 w-full h-[72px] min-h-[72px] border-b border-gray-200/50 dark:border-white/10 bg-gradient-to-br from-white/90 via-white/85 to-white/80 dark:from-white/10 dark:via-white/10 dark:to-white/5 backdrop-blur-2xl shadow-[0_10px_30px_rgba(2,132,199,0.15)] dark:shadow-[0_10px_30px_rgba(15,23,42,0.25)] will-change-transform transform-gpu">
       {/* Skip to main content - visible on focus for keyboard/screen reader users (WCAG 2.1) */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-zinc-600 focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-sky-600 focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
       >
         Skip to main content
       </a>
@@ -259,7 +259,7 @@ export default function Navbar({ children }: NavbarProps) {
             role="button"
             tabIndex={0}
             aria-label="Go to home"
-            className="group flex aspect-square size-10 items-center justify-center rounded-xl border border-zinc-400/40 dark:border-zinc-400/30 bg-gradient-to-br from-zinc-500/30 via-zinc-500/15 to-zinc-500/8 dark:from-zinc-500/20 dark:via-zinc-500/15 dark:to-zinc-500/10 shadow-[0_5px_20px_rgba(0,0,0,0.2)] dark:shadow-[0_5px_20px_rgba(0,0,0,0.2)] backdrop-blur-sm cursor-pointer transition-all duration-200 hover:border-zinc-400/60 dark:hover:border-zinc-400/40 hover:from-zinc-500/40 hover:via-zinc-500/20 hover:to-zinc-500/10 dark:hover:from-zinc-500/30 dark:hover:via-zinc-500/20 dark:hover:to-zinc-500/15 hover:shadow-[0_10px_35px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_10px_35px_rgba(0,0,0,0.2)]"
+            className="group flex aspect-square size-10 items-center justify-center rounded-xl border border-rose-400/40 dark:border-rose-400/30 bg-gradient-to-br from-rose-500/30 via-rose-500/15 to-rose-500/8 dark:from-rose-500/20 dark:via-rose-500/15 dark:to-rose-500/10 shadow-[0_5px_20px_rgba(225,29,72,0.3)] dark:shadow-[0_5px_20px_rgba(225,29,72,0.25)] backdrop-blur-sm cursor-pointer transition-all duration-200 hover:border-rose-400/60 dark:hover:border-rose-400/40 hover:from-rose-500/40 hover:via-rose-500/20 hover:to-rose-500/10 dark:hover:from-rose-500/30 dark:hover:via-rose-500/20 dark:hover:to-rose-500/15 hover:shadow-[0_10px_35px_rgba(225,29,72,0.5)] dark:hover:shadow-[0_10px_35px_rgba(225,29,72,0.4)]"
             onClick={() => handleNavigation(homePath)}
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {
@@ -268,9 +268,9 @@ export default function Navbar({ children }: NavbarProps) {
               }
             }}
           >
-            <AiFillProduct className="text-2xl text-zinc-600 dark:text-zinc-400 transition-transform group-hover:scale-110 drop-shadow-[0_2px_8px_rgba(0,0,0,0.2)]" />
+            <AiFillProduct className="text-2xl text-rose-600 dark:text-rose-400 transition-transform group-hover:scale-110 drop-shadow-[0_2px_8px_rgba(225,29,72,0.4)]" />
           </div>
-          <h1 className="text-lg font-semibold tracking-tight bg-gradient-to-r from-zinc-600 to-gray-900 dark:from-zinc-400 dark:to-gray-100 bg-clip-text text-transparent lg:text-xl transition-all duration-300 ease-in-out hover:from-zinc-700 hover:to-gray-950 dark:hover:from-zinc-300 dark:hover:to-gray-50 cursor-pointer">
+          <h1 className="text-lg font-semibold tracking-tight bg-gradient-to-r from-rose-600 to-gray-900 dark:from-rose-400 dark:to-gray-100 bg-clip-text text-transparent lg:text-xl transition-all duration-300 ease-in-out hover:from-rose-700 hover:to-gray-950 dark:hover:from-rose-300 dark:hover:to-gray-50 cursor-pointer">
             Stock Inventory
           </h1>
         </div>
@@ -286,7 +286,7 @@ export default function Navbar({ children }: NavbarProps) {
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="text-sm font-medium text-gray-700 dark:text-muted-foreground will-change-[background,box-shadow,color] transition-[background-image,box-shadow,color] duration-300 ease-in-out hover:text-zinc-600 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-zinc-500/10 hover:via-zinc-500/5 hover:to-zinc-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm hover:shadow-[0_5px_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_5px_15px_rgba(255,255,255,0.15)] rounded-md px-3 py-2 border-0 focus:border-0 focus-visible:border-0 focus-visible:ring-0 focus:ring-0 data-[state=open]:border-0"
+                      className="text-sm font-medium text-gray-700 dark:text-muted-foreground will-change-[background,box-shadow,color] transition-[background-image,box-shadow,color] duration-300 ease-in-out hover:text-sky-600 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-sky-500/10 hover:via-sky-500/5 hover:to-sky-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm hover:shadow-[0_5px_15px_rgba(2,132,199,0.25)] dark:hover:shadow-[0_5px_15px_rgba(255,255,255,0.15)] rounded-md px-3 py-2 border-0 focus:border-0 focus-visible:border-0 focus-visible:ring-0 focus:ring-0 data-[state=open]:border-0"
                     >
                       <span>{item.label}</span>
                       <ChevronDown className="ml-1 h-4 w-4" />
@@ -301,7 +301,7 @@ export default function Navbar({ children }: NavbarProps) {
                       <DropdownMenuItem
                         key={sub.path}
                         onSelect={() => handleNavigation(sub.path)}
-                        className="text-gray-700 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-zinc-500/10 hover:via-zinc-500/5 hover:to-zinc-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 cursor-pointer"
+                        className="text-gray-700 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-sky-500/10 hover:via-sky-500/5 hover:to-sky-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 cursor-pointer"
                       >
                         {sub.label}
                       </DropdownMenuItem>
@@ -317,7 +317,7 @@ export default function Navbar({ children }: NavbarProps) {
                 variant="ghost"
                 size="sm"
                 onClick={() => handleNavigation(item.path)}
-                className="text-sm font-medium text-gray-700 dark:text-muted-foreground will-change-[background,box-shadow,color] transition-[background-image,box-shadow,color] duration-300 ease-in-out hover:text-zinc-600 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-zinc-500/10 hover:via-zinc-500/5 hover:to-zinc-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm hover:shadow-[0_5px_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_5px_15px_rgba(255,255,255,0.15)] rounded-md px-3 py-2"
+                className="text-sm font-medium text-gray-700 dark:text-muted-foreground will-change-[background,box-shadow,color] transition-[background-image,box-shadow,color] duration-300 ease-in-out hover:text-sky-600 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-sky-500/10 hover:via-sky-500/5 hover:to-sky-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm hover:shadow-[0_5px_15px_rgba(2,132,199,0.25)] dark:hover:shadow-[0_5px_15px_rgba(255,255,255,0.15)] rounded-md px-3 py-2"
               >
                 {item.label}
               </Button>
@@ -331,8 +331,8 @@ export default function Navbar({ children }: NavbarProps) {
           {/* Show skeleton during auth check, then show bell when user is available */}
           {isCheckingAuth ? (
             // Skeleton placeholder during auth check to maintain layout - matches NotificationBell styling
-            <div className="relative h-8 w-8 sm:h-10 sm:w-10 rounded-full border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/25 via-zinc-500/15 to-zinc-500/10 dark:from-zinc-500/25 dark:via-zinc-500/15 dark:to-zinc-500/10 shadow-[0_10px_30px_rgba(0,0,0,0.2)] backdrop-blur-sm animate-pulse flex items-center justify-center">
-              <Bell className="h-4 w-4 sm:h-5 sm:w-5 text-zinc-400/50 dark:text-zinc-300/50" />
+            <div className="relative h-8 w-8 sm:h-10 sm:w-10 rounded-full border border-rose-400/30 dark:border-rose-400/30 bg-gradient-to-r from-rose-500/25 via-rose-500/15 to-rose-500/10 dark:from-rose-500/25 dark:via-rose-500/15 dark:to-rose-500/10 shadow-[0_10px_30px_rgba(225,29,72,0.2)] backdrop-blur-sm animate-pulse flex items-center justify-center">
+              <Bell className="h-4 w-4 sm:h-5 sm:w-5 text-rose-400/50 dark:text-rose-300/50" />
             </div>
           ) : user ? (
             <NotificationBell />
@@ -348,7 +348,7 @@ export default function Navbar({ children }: NavbarProps) {
                 <Button
                   variant="ghost"
                   aria-label="Open account menu"
-                  className="relative h-10 w-10 min-h-10 min-w-10 rounded-full border-2 border-zinc-400/50 dark:border-white/20 bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5 dark:from-white/10 dark:via-white/10 dark:to-white/5 backdrop-blur-sm hover:border-zinc-400/70 dark:hover:border-white/30 hover:from-zinc-500/35 hover:via-zinc-500/15 hover:to-zinc-500/8 dark:hover:from-white/15 dark:hover:via-white/15 dark:hover:to-white/8 transition-all duration-200 shadow-[0_5px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] ring-2 ring-zinc-400/30 dark:ring-white/20 hover:ring-zinc-400/50 dark:hover:ring-white/30 p-0 overflow-hidden focus-visible:outline-none focus:outline-none focus-visible:ring-0 focus:ring-0"
+                  className="relative h-10 w-10 min-h-10 min-w-10 rounded-full border-2 border-sky-400/50 dark:border-white/20 bg-gradient-to-br from-sky-500/25 via-sky-500/10 to-sky-500/5 dark:from-white/10 dark:via-white/10 dark:to-white/5 backdrop-blur-sm hover:border-sky-400/70 dark:hover:border-white/30 hover:from-sky-500/35 hover:via-sky-500/15 hover:to-sky-500/8 dark:hover:from-white/15 dark:hover:via-white/15 dark:hover:to-white/8 transition-all duration-200 shadow-[0_5px_20px_rgba(2,132,199,0.3)] hover:shadow-[0_10px_30px_rgba(2,132,199,0.5)] ring-2 ring-sky-400/30 dark:ring-white/20 hover:ring-sky-400/50 dark:hover:ring-white/30 p-0 overflow-hidden focus-visible:outline-none focus:outline-none focus-visible:ring-0 focus:ring-0"
                 >
                   {isCheckingAuth ? (
                     <div className="h-10 w-10 rounded-full bg-gray-200 dark:bg-gray-700 animate-pulse" />
@@ -432,8 +432,8 @@ export default function Navbar({ children }: NavbarProps) {
                   disabled={isLoggingOut}
                   className={DROPDOWN_ITEM_CLASS}
                 >
-                  <LogOut className="mr-2 h-4 w-4 text-zinc-500 dark:text-zinc-400" />
-                  <span className="text-zinc-500 dark:text-zinc-400">
+                  <LogOut className="mr-2 h-4 w-4 text-red-500 dark:text-red-400" />
+                  <span className="text-red-500 dark:text-red-400">
                     {isLoggingOut ? "Logging Out..." : "Logout"}
                   </span>
                 </DropdownMenuItem>
@@ -451,7 +451,7 @@ export default function Navbar({ children }: NavbarProps) {
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-menu-panel"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="h-8 w-8 sm:h-10 sm:w-10 text-gray-900 dark:text-foreground hover:bg-gradient-to-br hover:from-zinc-500/10 hover:via-zinc-500/5 hover:to-zinc-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm transition-all duration-300 ease-in-out"
+              className="h-8 w-8 sm:h-10 sm:w-10 text-gray-900 dark:text-foreground hover:bg-gradient-to-br hover:from-sky-500/10 hover:via-sky-500/5 hover:to-sky-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm transition-all duration-300 ease-in-out"
             >
               {isMobileMenuOpen ? (
                 <X className="h-4 w-4 sm:h-5 sm:w-5" />
@@ -478,7 +478,7 @@ export default function Navbar({ children }: NavbarProps) {
                 <div className="h-10 w-10 rounded-full bg-gray-200 dark:bg-gray-700 animate-pulse" />
               ) : (
                 avatarUrl && (
-                  <div className="relative flex h-10 w-10 items-center justify-center rounded-full border-2 border-zinc-400/50 dark:border-white/20 bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5 dark:from-white/10 dark:via-white/10 dark:to-white/5 backdrop-blur-sm overflow-hidden ring-2 ring-zinc-400/30 dark:ring-white/20 shadow-[0_5px_20px_rgba(0,0,0,0.2)]">
+                  <div className="relative flex h-10 w-10 items-center justify-center rounded-full border-2 border-sky-400/50 dark:border-white/20 bg-gradient-to-br from-sky-500/25 via-sky-500/10 to-sky-500/5 dark:from-white/10 dark:via-white/10 dark:to-white/5 backdrop-blur-sm overflow-hidden ring-2 ring-sky-400/30 dark:ring-white/20 shadow-[0_5px_20px_rgba(2,132,199,0.3)]">
                     <Image
                       src={avatarUrl}
                       alt={user?.name || "User"}
@@ -519,7 +519,7 @@ export default function Navbar({ children }: NavbarProps) {
                           <Button
                             key={sub.path}
                             variant="ghost"
-                            className="w-full justify-start text-gray-600 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-zinc-500/10 hover:via-zinc-500/5 hover:to-zinc-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm transition-all duration-300 ease-in-out px-3 py-2.5 h-auto min-h-[40px] text-sm"
+                            className="w-full justify-start text-gray-600 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-sky-500/10 hover:via-sky-500/5 hover:to-sky-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm transition-all duration-300 ease-in-out px-3 py-2.5 h-auto min-h-[40px] text-sm"
                             onClick={() => {
                               handleNavigation(sub.path);
                             }}
@@ -536,7 +536,7 @@ export default function Navbar({ children }: NavbarProps) {
                   <Button
                     key={item.path}
                     variant="ghost"
-                    className="w-full justify-start text-gray-700 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-zinc-500/10 hover:via-zinc-500/5 hover:to-zinc-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm transition-all duration-300 ease-in-out px-3 py-3.5 h-auto min-h-[44px]"
+                    className="w-full justify-start text-gray-700 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-sky-500/10 hover:via-sky-500/5 hover:to-sky-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm transition-all duration-300 ease-in-out px-3 py-3.5 h-auto min-h-[44px]"
                     onClick={() => handleNavigation(item.path)}
                   >
                     {item.label}
@@ -550,7 +550,7 @@ export default function Navbar({ children }: NavbarProps) {
             {/* Support Tickets */}
             <Button
               variant="ghost"
-              className="w-full justify-start text-gray-700 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-zinc-500/10 hover:via-zinc-500/5 hover:to-zinc-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm transition-all duration-300 ease-in-out px-3 py-3.5 h-auto min-h-[44px]"
+              className="w-full justify-start text-gray-700 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-sky-500/10 hover:via-sky-500/5 hover:to-sky-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm transition-all duration-300 ease-in-out px-3 py-3.5 h-auto min-h-[44px]"
               onClick={() => {
                 router.push("/support-tickets");
                 setIsMobileMenuOpen(false);
@@ -563,7 +563,7 @@ export default function Navbar({ children }: NavbarProps) {
             {/* Email Preferences */}
             <Button
               variant="ghost"
-              className="w-full justify-start text-gray-700 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-zinc-500/10 hover:via-zinc-500/5 hover:to-zinc-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm transition-all duration-300 ease-in-out px-3 py-3.5 h-auto min-h-[44px]"
+              className="w-full justify-start text-gray-700 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-sky-500/10 hover:via-sky-500/5 hover:to-sky-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm transition-all duration-300 ease-in-out px-3 py-3.5 h-auto min-h-[44px]"
               onClick={() => {
                 router.push("/settings/email-preferences");
                 setIsMobileMenuOpen(false);
@@ -589,7 +589,7 @@ export default function Navbar({ children }: NavbarProps) {
             {/* API Status */}
             <Button
               variant="ghost"
-              className="w-full justify-start text-gray-700 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-zinc-500/10 hover:via-zinc-500/5 hover:to-zinc-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm transition-all duration-300 ease-in-out px-3 py-3.5 h-auto min-h-[44px]"
+              className="w-full justify-start text-gray-700 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-sky-500/10 hover:via-sky-500/5 hover:to-sky-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm transition-all duration-300 ease-in-out px-3 py-3.5 h-auto min-h-[44px]"
               onClick={() => {
                 router.push("/api-status");
                 setIsMobileMenuOpen(false);
@@ -604,7 +604,7 @@ export default function Navbar({ children }: NavbarProps) {
             {/* Logout */}
             <Button
               variant="ghost"
-              className="w-full justify-start text-gray-700 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-zinc-500/10 hover:via-zinc-500/5 hover:to-zinc-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm transition-all duration-300 ease-in-out px-3 py-3.5 h-auto min-h-[44px]"
+              className="w-full justify-start text-gray-700 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-rose-500/10 hover:via-rose-500/5 hover:to-rose-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm transition-all duration-300 ease-in-out px-3 py-3.5 h-auto min-h-[44px]"
               onClick={handleLogout}
               disabled={isLoggingOut}
             >
@@ -620,10 +620,10 @@ export default function Navbar({ children }: NavbarProps) {
   // If children provided, wrap with full layout structure
   if (children) {
     return (
-      <div className="flex h-screen overflow-hidden relative min-h-screen bg-background dark:bg-background">
+      <div className="flex h-screen overflow-hidden relative min-h-screen bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.15),transparent_55%),radial-gradient(circle_at_bottom,_rgba(236,72,153,0.12),transparent_65%)] dark:bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.15),transparent_55%),radial-gradient(circle_at_bottom,_rgba(236,72,153,0.12),transparent_65%)]">
         <ScrollControl />
         {/* Background overlay layer */}
-        <div className="pointer-events-none absolute inset-0  dark:"></div>
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.3),transparent_60%)] dark:bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.05),transparent_60%)]"></div>
 
         <div className="poppins relative z-10 flex h-screen w-full overflow-hidden flex-col">
           {navbarContent}
@@ -654,4 +654,3 @@ export default function Navbar({ children }: NavbarProps) {
   // Otherwise just return the navbar (for backward compatibility)
   return navbarContent;
 }
-

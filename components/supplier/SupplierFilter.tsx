@@ -55,14 +55,14 @@ export function SuppliersDropDown({
         <PopoverTrigger asChild>
           <Button
             variant={"secondary"}
-            className="h-10 w-full sm:w-auto rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/25 via-zinc-500/15 to-zinc-500/10 dark:from-zinc-500/25 dark:via-zinc-500/15 dark:to-zinc-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(0,0,0,0.2)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/40 hover:from-zinc-500/35 hover:via-zinc-500/25 hover:to-zinc-500/15 dark:hover:border-zinc-300/40 dark:hover:from-zinc-500/35 dark:hover:via-zinc-500/25 dark:hover:to-zinc-500/15"
+            className="h-10 w-full sm:w-auto rounded-[28px] border border-emerald-400/30 dark:border-emerald-400/30 bg-gradient-to-r from-emerald-500/25 via-emerald-500/15 to-emerald-500/10 dark:from-emerald-500/25 dark:via-emerald-500/15 dark:to-emerald-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(16,185,129,0.2)] backdrop-blur-sm transition duration-200 hover:border-emerald-300/40 hover:from-emerald-500/35 hover:via-emerald-500/25 hover:to-emerald-500/15 dark:hover:border-emerald-300/40 dark:hover:from-emerald-500/35 dark:hover:via-emerald-500/25 dark:hover:to-emerald-500/15"
           >
             <LuGitPullRequestDraft />
             Suppliers
           </Button>
         </PopoverTrigger>
         <PopoverContent
-          className="p-0 w-56 poppins rounded-[28px] border border-zinc-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.2)] [&_[cmdk-input-wrapper]]:border-b [&_[cmdk-input-wrapper]]:border-gray-300/50 [&_[cmdk-input-wrapper]]:dark:border-white/10 [&_[cmdk-input-wrapper]]:bg-white/10 [&_[cmdk-input-wrapper]]:dark:bg-white/5 [&_[cmdk-input-wrapper]]:backdrop-blur-sm"
+          className="p-0 w-56 poppins rounded-[28px] border border-emerald-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm shadow-[0_10px_30px_rgba(16,185,129,0.15)] [&_[cmdk-input-wrapper]]:border-b [&_[cmdk-input-wrapper]]:border-gray-300/50 [&_[cmdk-input-wrapper]]:dark:border-white/10 [&_[cmdk-input-wrapper]]:bg-white/10 [&_[cmdk-input-wrapper]]:dark:bg-white/5 [&_[cmdk-input-wrapper]]:backdrop-blur-sm"
           side="bottom"
           align="end"
         >
@@ -78,13 +78,13 @@ export function SuppliersDropDown({
               <CommandGroup>
                 {suppliers.map((supplier) => (
                   <CommandItem
-                    className="h-9 text-gray-700 dark:text-white/80 focus:bg-zinc-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
+                    className="h-9 text-gray-700 dark:text-white/80 focus:bg-emerald-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
                     key={supplier.id}
                   >
                     <Checkbox
                       checked={selectedSuppliers.includes(supplier.id)} // Use supplier ID
                       onClick={() => handleCheckboxChange(supplier.id)} // Pass supplier ID
-                      className="size-4 rounded-[4px] border-white/20 bg-white/5 backdrop-blur-sm focus:ring-zinc-500/50 focus:ring-2"
+                      className="size-4 rounded-[4px] border-white/20 bg-white/5 backdrop-blur-sm focus:ring-emerald-500/50 focus:ring-2"
                     />
                     <div
                       className={`flex items-center gap-1 p-1 rounded-lg px-3 text-[14px]`}
@@ -100,7 +100,7 @@ export function SuppliersDropDown({
               <Button
                 onClick={clearFilters}
                 variant={"ghost"}
-                className="text-[12px] mb-1 text-gray-700 dark:text-white/80 hover:text-gray-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/10"
+                className="text-[12px] mb-1 text-gray-700 dark:text-white/80 hover:text-gray-900 dark:hover:text-white hover:bg-emerald-100 dark:hover:bg-white/10"
               >
                 Clear Filters
               </Button>
@@ -111,4 +111,3 @@ export function SuppliersDropDown({
     </div>
   );
 }
-

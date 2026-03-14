@@ -11,10 +11,9 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MdError } from "react-icons/md";
-import { Upload, X, Loader2, AlertTriangle } from "lucide-react";
+import { Upload, X, Loader2 } from "lucide-react";
 import { useFormContext } from "react-hook-form";
 import { useToast } from "@/hooks/use-toast";
-import { useEffect } from "react";
 
 export default function ImageField() {
   const {
@@ -26,23 +25,6 @@ export default function ImageField() {
   const { toast } = useToast();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [isUploading, setIsUploading] = useState(false);
-  const [isConfigured, setIsConfigured] = useState<boolean | null>(null);
-
-  // Check if ImageKit is configured on mount
-  useEffect(() => {
-    async function checkConfig() {
-      try {
-        const response = await fetch("/api/health");
-        const data = await response.json();
-        const status = data.data?.services?.imagekit?.status;
-        setIsConfigured(status === "OK");
-      } catch (error) {
-        console.error("Failed to check ImageKit configuration:", error);
-        setIsConfigured(false);
-      }
-    }
-    checkConfig();
-  }, []);
 
   // Watch imageUrl and imageFileId values
   const imageUrl = watch("imageUrl");
@@ -151,17 +133,9 @@ export default function ImageField() {
 
   return (
     <div className="mt-5 flex flex-col gap-2">
-      <div className="flex items-center justify-between">
-        <Label htmlFor="product-image" className="text-white/80">
-          Product Image
-        </Label>
-        {isConfigured === false && (
-          <div className="flex items-center gap-1.5 text-amber-400 text-xs bg-amber-400/10 px-2 py-1 rounded-md border border-amber-400/20">
-            <AlertTriangle className="h-3 w-3" />
-            <span>Image upload not configured</span>
-          </div>
-        )}
-      </div>
+      <Label htmlFor="product-image" className="text-white/80">
+        Product Image
+      </Label>
 
       {/* Hidden input for form registration */}
       <Input
@@ -183,7 +157,7 @@ export default function ImageField() {
             alt="Product preview"
             width={256}
             height={128}
-            className="w-full h-32 object-cover rounded-lg border border-zinc-400/30"
+            className="w-full h-32 object-cover rounded-lg border border-rose-400/30"
             unoptimized={imageUrl.includes("ik.imagekit.io")} // ImageKit handles optimization
           />
           <Button
@@ -205,8 +179,8 @@ export default function ImageField() {
             type="button"
             variant="secondary"
             onClick={() => fileInputRef.current?.click()}
-            disabled={isUploading || isConfigured === false}
-            className="h-10 rounded-md border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/30 via-zinc-500/20 to-zinc-500/15 dark:from-zinc-500/30 dark:via-zinc-500/20 dark:to-zinc-500/15 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(0,0,0,0.2)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/40 hover:from-zinc-500/40 hover:via-zinc-500/30 hover:to-zinc-500/20 dark:hover:border-zinc-300/40 dark:hover:from-zinc-500/40 dark:hover:via-zinc-500/30 dark:hover:to-zinc-500/20 disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={isUploading}
+            className="h-10 rounded-md border border-rose-400/30 dark:border-rose-400/30 bg-gradient-to-r from-rose-500/30 via-rose-500/20 to-rose-500/15 dark:from-rose-500/30 dark:via-rose-500/20 dark:to-rose-500/15 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(225,29,72,0.2)] backdrop-blur-sm transition duration-200 hover:border-rose-300/40 hover:from-rose-500/40 hover:via-rose-500/30 hover:to-rose-500/20 dark:hover:border-rose-300/40 dark:hover:from-rose-500/40 dark:hover:via-rose-500/30 dark:hover:to-rose-500/20 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isUploading ? (
               <>
@@ -220,11 +194,6 @@ export default function ImageField() {
               </>
             )}
           </Button>
-          {isConfigured === false && (
-            <p className="text-[11px] text-white/50 italic max-w-[200px]">
-              Set ImageKit credentials in .env to enable uploads.
-            </p>
-          )}
           <Input
             ref={fileInputRef}
             type="file"
@@ -232,13 +201,12 @@ export default function ImageField() {
             onChange={handleImageSelect}
             className="hidden"
             id="product-image"
-            disabled={isConfigured === false}
           />
         </div>
       )}
 
       {errors.imageUrl && (
-        <div className="text-zinc-500 flex gap-1 items-center text-[13px]">
+        <div className="text-red-500 flex gap-1 items-center text-[13px]">
           <MdError />
           <p>{String(errors.imageUrl.message)}</p>
         </div>
@@ -246,4 +214,3 @@ export default function ImageField() {
     </div>
   );
 }
-

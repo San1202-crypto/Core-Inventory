@@ -232,11 +232,11 @@ export function ForecastingCard({ products, className }: ForecastingCardProps) {
   const getUrgencyColor = (urgency: string) => {
     switch (urgency) {
       case "high":
-        return "text-zinc-600 bg-zinc-100";
+        return "text-red-600 bg-red-100";
       case "medium":
-        return "text-zinc-600 bg-zinc-100";
+        return "text-orange-600 bg-orange-100";
       case "low":
-        return "text-zinc-600 bg-zinc-100";
+        return "text-yellow-600 bg-yellow-100";
       default:
         return "text-gray-600 bg-gray-100";
     }
@@ -249,11 +249,11 @@ export function ForecastingCard({ products, className }: ForecastingCardProps) {
 
     switch (trend) {
       case "up":
-        return <TrendingUp className="h-4 w-4 text-zinc-500" />;
+        return <TrendingUp className="h-4 w-4 text-green-500" />;
       case "down":
-        return <TrendingDown className="h-4 w-4 text-zinc-500" />;
+        return <TrendingDown className="h-4 w-4 text-red-500" />;
       default:
-        return <BarChart3 className="h-4 w-4 text-zinc-500" />;
+        return <BarChart3 className="h-4 w-4 text-blue-500" />;
     }
   };
 
@@ -261,10 +261,10 @@ export function ForecastingCard({ products, className }: ForecastingCardProps) {
     <article
       className={cn(
         "group rounded-[20px] border backdrop-blur-sm transition overflow-hidden",
-        "border-zinc-400/20",
-        "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
-        "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-        "hover:border-zinc-300/40",
+        "border-violet-400/20",
+        "bg-gradient-to-br from-violet-500/15 via-violet-500/5 to-transparent",
+        "shadow-[0_15px_40px_rgba(139,92,246,0.15)] dark:shadow-[0_15px_40px_rgba(139,92,246,0.1)]",
+        "hover:border-violet-300/40",
         className,
       )}
     >
@@ -279,24 +279,24 @@ export function ForecastingCard({ products, className }: ForecastingCardProps) {
       <div className="px-4 sm:px-5 pb-4 sm:pb-5 space-y-6">
         {/* Key Metrics */}
         <div className="grid grid-cols-3 gap-4">
-          <div className="text-center p-3 rounded-xl border border-zinc-400/20 bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent">
-            <div className="text-2xl font-semibold text-zinc-600 dark:text-zinc-400">
+          <div className="text-center p-3 rounded-xl border border-blue-400/20 bg-gradient-to-br from-blue-500/15 via-blue-500/5 to-transparent">
+            <div className="text-2xl font-semibold text-blue-600 dark:text-blue-400">
               {forecastData.totalProducts}
             </div>
             <div className="text-sm text-gray-600 dark:text-white/70">
               Total Products
             </div>
           </div>
-          <div className="text-center p-3 rounded-xl border border-zinc-400/20 bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent">
-            <div className="text-2xl font-semibold text-zinc-600 dark:text-zinc-400">
+          <div className="text-center p-3 rounded-xl border border-amber-400/20 bg-gradient-to-br from-amber-500/15 via-amber-500/5 to-transparent">
+            <div className="text-2xl font-semibold text-amber-600 dark:text-amber-400">
               {forecastData.lowStockProducts}
             </div>
             <div className="text-sm text-gray-600 dark:text-white/70">
               Low Stock
             </div>
           </div>
-          <div className="text-center p-3 rounded-xl border border-zinc-400/20 bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent">
-            <div className="text-2xl font-semibold text-zinc-600 dark:text-zinc-400">
+          <div className="text-center p-3 rounded-xl border border-rose-400/20 bg-gradient-to-br from-rose-500/15 via-rose-500/5 to-transparent">
+            <div className="text-2xl font-semibold text-rose-600 dark:text-rose-400">
               {forecastData.outOfStockProducts}
             </div>
             <div className="text-sm text-gray-600 dark:text-white/70">
@@ -406,7 +406,7 @@ export function ForecastingCard({ products, className }: ForecastingCardProps) {
         <div className="flex flex-col sm:flex-row gap-3 pt-4">
           <Button
             variant="outline"
-            className="flex-1 rounded-xl border-zinc-400/30 bg-gradient-to-r from-zinc-500/10 to-transparent hover:from-zinc-500/20 hover:border-zinc-300/50"
+            className="flex-1 rounded-xl border-emerald-400/30 bg-gradient-to-r from-emerald-500/10 to-transparent hover:from-emerald-500/20 hover:border-emerald-300/50"
             onClick={handleGenerateReport}
           >
             <Package className="mr-2 h-4 w-4" />
@@ -414,7 +414,7 @@ export function ForecastingCard({ products, className }: ForecastingCardProps) {
           </Button>
           <Button
             variant="outline"
-            className="flex-1 rounded-xl border-zinc-400/30 bg-gradient-to-r from-zinc-500/10 to-transparent hover:from-zinc-500/20 hover:border-zinc-300/50"
+            className="flex-1 rounded-xl border-blue-400/30 bg-gradient-to-r from-blue-500/10 to-transparent hover:from-blue-500/20 hover:border-blue-300/50"
             onClick={handleViewDetails}
           >
             <TrendingUp className="mr-2 h-4 w-4" />
@@ -425,4 +425,3 @@ export function ForecastingCard({ products, className }: ForecastingCardProps) {
     </article>
   );
 }
-
