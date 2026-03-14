@@ -20,6 +20,7 @@ import {
   FileText,
   UserCircle,
   ArrowDownLeft,
+  FileWarning,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/contexts";
@@ -116,6 +117,11 @@ const MANAGEMENT_ITEMS: NavItem[] = [
     href: "/admin/receipts",
     label: "Receipts",
     icon: ArrowDownLeft,
+  },
+  {
+    href: "/admin/inventory-adjustments",
+    label: "Inventory Adjustments",
+    icon: FileWarning,
   },
 ];
 

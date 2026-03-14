@@ -41,67 +41,68 @@ const variantConfig: Record<
   }
 > = {
   sky: {
-    border: "border-zinc-400/30",
-    gradient: "bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5",
+    border: "border-primary/20",
+    gradient:
+      "bg-gradient-to-br from-primary/5 via-primary/2 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
     shadow:
-      "shadow-[0_20px_50px_rgba(0,0,0,0.2)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/50",
+      "shadow-[0_15px_40px_rgba(26,22,20,0.06)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
   },
   emerald: {
-    border: "border-zinc-400/30",
+    border: "border-primary/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5",
+      "bg-gradient-to-br from-primary/5 via-primary/2 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
     shadow:
-      "shadow-[0_20px_50px_rgba(0,0,0,0.2)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/50",
+      "shadow-[0_15px_40px_rgba(26,22,20,0.06)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
   },
   amber: {
-    border: "border-zinc-400/30",
+    border: "border-primary/25",
     gradient:
-      "bg-gradient-to-br from-zinc-500/30 via-zinc-500/15 to-zinc-500/5",
+      "bg-gradient-to-br from-primary/8 via-primary/3 to-transparent dark:from-white/12 dark:via-white/6 dark:to-white/3",
     shadow:
-      "shadow-[0_20px_50px_rgba(0,0,0,0.2)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/60",
+      "shadow-[0_15px_45px_rgba(26,22,20,0.1)] dark:shadow-[0_40px_100px_rgba(0,0,0,0.4)]",
+    hoverBorder: "hover:border-primary/60",
   },
   rose: {
-    border: "border-zinc-400/30",
+    border: "border-primary/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5",
+      "bg-gradient-to-br from-primary/5 via-primary/2 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
     shadow:
-      "shadow-[0_20px_50px_rgba(0,0,0,0.2)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/50",
+      "shadow-[0_15px_40px_rgba(26,22,20,0.06)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
   },
   violet: {
-    border: "border-zinc-400/30",
+    border: "border-primary/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5",
+      "bg-gradient-to-br from-primary/5 via-primary/2 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
     shadow:
-      "shadow-[0_20px_50px_rgba(0,0,0,0.2)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/50",
+      "shadow-[0_15px_40px_rgba(26,22,20,0.06)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
   },
   blue: {
-    border: "border-zinc-400/30",
+    border: "border-primary/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5",
+      "bg-gradient-to-br from-primary/5 via-primary/2 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
     shadow:
-      "shadow-[0_20px_50px_rgba(0,0,0,0.25)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.05)]",
-    hoverBorder: "hover:border-zinc-300/50",
+      "shadow-[0_15px_40px_rgba(26,22,20,0.06)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
   },
   orange: {
-    border: "border-zinc-400/30",
+    border: "border-primary/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5",
+      "bg-gradient-to-br from-primary/5 via-primary/2 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
     shadow:
-      "shadow-[0_20px_50px_rgba(0,0,0,0.25)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.15)]",
-    hoverBorder: "hover:border-zinc-300/50",
+      "shadow-[0_15px_40px_rgba(26,22,20,0.06)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
   },
   teal: {
-    border: "border-zinc-400/30",
+    border: "border-primary/20",
     gradient:
-      "bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5",
+      "bg-gradient-to-br from-primary/5 via-primary/2 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
     shadow:
-      "shadow-[0_20px_50px_rgba(0,0,0,0.2)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/50",
+      "shadow-[0_15px_40px_rgba(26,22,20,0.06)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
   },
 };
 
@@ -112,7 +113,7 @@ export function AnalyticsCard({
   icon: Icon,
   trend,
   className,
-  iconColor = "text-gray-900 dark:text-white",
+  iconColor = "text-primary/70",
   variant = "blue",
 }: AnalyticsCardProps) {
   const config = variantConfig[variant];
@@ -133,7 +134,7 @@ export function AnalyticsCard({
           <p className="text-xs uppercase tracking-[0.3em] text-gray-700 dark:text-white/60 font-medium shrink-0">
             {title}
           </p>
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-gray-300/30 bg-gray-100/50 shadow-inner shadow-primary/20 backdrop-blur dark:border-white/15 dark:bg-white/10">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-primary/20 bg-primary/5 shadow-inner shadow-primary/20 backdrop-blur">
             <Icon className={cn("h-5 w-5", iconColor)} />
           </div>
         </div>
@@ -148,10 +149,7 @@ export function AnalyticsCard({
         {trend && (
           <div className="flex items-center mt-2">
             <span
-              className={cn(
-                "text-xs font-medium",
-                trend.isPositive ? "text-zinc-600" : "text-zinc-600",
-              )}
+              className="text-xs font-medium text-primary/70"
             >
               {trend.isPositive ? "+" : ""}
               {trend.value}%

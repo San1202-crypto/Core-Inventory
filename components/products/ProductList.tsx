@@ -195,24 +195,24 @@ const ProductList = React.memo(() => {
 
   const cardVariantClasses = {
     violet:
-      "border-zinc-400/30 bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5 shadow-[0_20px_50px_rgba(0,0,0,0.2)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.2)]",
+      "border-primary/20 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2 shadow-[0_15px_40px_rgba(26,22,20,0.08)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
     emerald:
-      "border-zinc-400/30 bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5 shadow-[0_20px_50px_rgba(0,0,0,0.2)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.2)]",
+      "border-primary/20 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2 shadow-[0_15px_40px_rgba(26,22,20,0.08)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
     amber:
-      "border-zinc-400/30 bg-gradient-to-br from-zinc-500/30 via-zinc-500/15 to-zinc-500/5 shadow-[0_20px_50px_rgba(0,0,0,0.2)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.2)]",
-    blue: "border-zinc-400/30 bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5 shadow-[0_20px_50px_rgba(0,0,0,0.25)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.05)]",
+      "border-primary/25 bg-gradient-to-br from-primary/12 via-primary/6 to-transparent dark:from-white/12 dark:via-white/6 dark:to-white/3 shadow-[0_15px_45px_rgba(26,22,20,0.12)] dark:shadow-[0_40px_100px_rgba(0,0,0,0.4)]",
+    blue: "border-primary/20 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2 shadow-[0_15px_40px_rgba(26,22,20,0.08)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
   };
 
   return (
     <div className="flex flex-col poppins">
       {/* Product Inventory Section Header — supplier sees own products + Product Owner; admin/user sees full copy */}
       <div className="pb-6 flex flex-col items-start text-left">
-        <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white pb-2">
+        <h2 className="text-xl sm:text-2xl font-semibold text-primary/80 pb-2">
           {isSupplierProductsPage
             ? "My Products"
             : "Product Inventory Management"}
         </h2>
-        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+        <p className="text-sm sm:text-base text-primary/60">
           {isSupplierProductsPage
             ? "Products supplied by you. View stock, categories, and which store owner manages each product. Use filters and search to find items quickly."
             : "Efficiently manage your product catalog with advanced filtering, search capabilities, and real-time stock tracking. Monitor inventory levels, organize by categories and suppliers, and maintain optimal stock control."}
@@ -246,7 +246,6 @@ const ProductList = React.memo(() => {
                     value={d.totalProducts}
                     description="Products in your catalog"
                     icon={Package}
-                    variant="rose"
                     badges={[
                       {
                         label: "Available",
@@ -267,7 +266,6 @@ const ProductList = React.memo(() => {
                     value={formatCurrency(d.productValue ?? 0)}
                     description="Total Product value assigned by owner"
                     icon={DollarSign}
-                    variant="violet"
                     badges={[
                       {
                         label: "Orders",
@@ -296,7 +294,6 @@ const ProductList = React.memo(() => {
                     value={d.totalOrders}
                     description="Orders containing your products"
                     icon={Truck}
-                    variant="emerald"
                     badges={[
                       {
                         label: "Pending",
@@ -329,7 +326,6 @@ const ProductList = React.memo(() => {
                     value={formatCurrency(d.totalRevenue ?? 0)}
                     description="Revenue from your products (excl. cancelled)"
                     icon={DollarSign}
-                    variant="amber"
                     badges={[
                       {
                         label: "Paid",
@@ -376,7 +372,6 @@ const ProductList = React.memo(() => {
                 value={dashboard.counts.products}
                 description="Products availability"
                 icon={Package}
-                variant="rose"
                 badges={[
                   {
                     label: "Available",
@@ -397,7 +392,6 @@ const ProductList = React.memo(() => {
                 value={formatCurrency(dashboard.totalInventoryValue ?? 0)}
                 description="Total inventory value"
                 icon={DollarSign}
-                variant="violet"
                 badges={[
                   {
                     label: "Orders",
@@ -431,7 +425,6 @@ const ProductList = React.memo(() => {
                 value={dashboard.counts.suppliers}
                 description="Suppliers"
                 icon={Truck}
-                variant="emerald"
                 badges={[
                   {
                     label: "Active",
@@ -448,7 +441,6 @@ const ProductList = React.memo(() => {
                 value={dashboard.counts.categories}
                 description="Product categories"
                 icon={FolderTree}
-                variant="amber"
                 badges={[
                   {
                     label: "Active",
@@ -481,7 +473,6 @@ const ProductList = React.memo(() => {
                 value={productsPageStats.counts.products}
                 description="Products availability"
                 icon={Package}
-                variant="rose"
                 badges={[
                   {
                     label: "Available",
@@ -507,7 +498,6 @@ const ProductList = React.memo(() => {
                 )}
                 description="Total inventory value"
                 icon={DollarSign}
-                variant="violet"
                 badges={[
                   {
                     label: "Orders",
@@ -545,7 +535,6 @@ const ProductList = React.memo(() => {
                 value={productsPageStats.counts.suppliers}
                 description="Suppliers"
                 icon={Truck}
-                variant="emerald"
                 badges={[
                   {
                     label: "Active",
@@ -564,7 +553,6 @@ const ProductList = React.memo(() => {
                 value={productsPageStats.counts.categories}
                 description="Product categories"
                 icon={FolderTree}
-                variant="amber"
                 badges={[
                   {
                     label: "Active",

@@ -49,11 +49,11 @@ const getRoboHashAvatarUrl = (nameOrId: string): string => {
 
 /** Plain dropdown panel: solid background for readability in light and dark mode */
 const DROPDOWN_CONTENT_CLASS =
-  "bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white shadow-lg dark:shadow-black/30 rounded-md";
+  "bg-primary/5 dark:bg-primary/5 border border-primary/20 text-primary/80 backdrop-blur-xl shadow-lg dark:shadow-black/30 rounded-xl";
 
 /** Plain dropdown item: readable text and subtle hover (no heavy gradients) */
 const DROPDOWN_ITEM_CLASS =
-  "w-full justify-start text-gray-700 dark:text-white/90 hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-200 ease-in-out px-3 py-3 h-auto min-h-[44px] cursor-pointer focus:bg-gray-100 dark:focus:bg-white/10";
+  "w-full justify-start text-primary/70 hover:bg-primary/10 transition-all duration-200 ease-in-out px-3 py-3 h-auto min-h-[44px] cursor-pointer focus:bg-primary/15 rounded-lg";
 
 /**
  * Theme toggle component (inline ModeToggle)
@@ -68,32 +68,32 @@ function ModeToggle() {
           variant="ghost"
           size="icon"
           aria-label="Toggle theme"
-          className="h-8 w-8 sm:h-10 sm:w-10 focus-visible:outline-none focus:outline-none focus-visible:ring-0 focus:ring-0"
+          className="h-10 w-10 text-foreground border border-foreground/10 rounded-none hover:bg-foreground hover:text-background transition-all duration-300"
         >
-          <Sun className="h-4 w-4 sm:h-[1.2rem] sm:w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-4 w-4 sm:h-[1.2rem] sm:w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align="end"
-        className={`w-48 ${DROPDOWN_CONTENT_CLASS}`}
+        className="w-48 rounded-none border border-foreground bg-background text-foreground shadow-2xl p-1"
       >
         <DropdownMenuItem
           onClick={() => setTheme("light")}
-          className={DROPDOWN_ITEM_CLASS}
+          className="text-[12px] font-bold uppercase py-2 hover:bg-foreground hover:text-background rounded-none cursor-pointer"
         >
           Light
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme("dark")}
-          className={DROPDOWN_ITEM_CLASS}
+          className="text-[12px] font-bold uppercase py-2 hover:bg-foreground hover:text-background rounded-none cursor-pointer"
         >
           Dark
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme("system")}
-          className={DROPDOWN_ITEM_CLASS}
+          className="text-[12px] font-bold uppercase py-2 hover:bg-foreground hover:text-background rounded-none cursor-pointer"
         >
           System
         </DropdownMenuItem>
@@ -151,7 +151,7 @@ export default function Navbar({ children }: NavbarProps) {
       await fetch("/api/auth/logout", {
         method: "POST",
         credentials: "include",
-      }).catch(() => {});
+      }).catch(() => { });
       window.location.href = "/login";
       return;
     } catch (error) {
@@ -176,11 +176,11 @@ export default function Navbar({ children }: NavbarProps) {
   type NavItem =
     | { label: string; path: string; hasDropdown: false }
     | {
-        label: string;
-        path: string;
-        hasDropdown: true;
-        dropdownItems: Array<{ label: string; path: string }>;
-      };
+      label: string;
+      path: string;
+      hasDropdown: true;
+      dropdownItems: Array<{ label: string; path: string }>;
+    };
 
   const adminNavItems: NavItem[] = [
     { label: "Dashboard", path: "/", hasDropdown: false },
@@ -207,9 +207,10 @@ export default function Navbar({ children }: NavbarProps) {
   ];
 
   const supplierNavItems: NavItem[] = [
-    { label: "Supplier Portal", path: "/supplier", hasDropdown: false },
-    { label: "My Products", path: "/products", hasDropdown: false },
-    { label: "View Orders", path: "/orders", hasDropdown: false },
+    { label: "Portal Dashboard", path: "/supplier", hasDropdown: false },
+    { label: "My Products", path: "/supplier/products", hasDropdown: false },
+    { label: "My Orders", path: "/supplier/orders", hasDropdown: false },
+    { label: "Adjustments", path: "/supplier/inventory-adjustments", hasDropdown: false },
   ];
 
   // Role from auth when available; else infer from pathname so client/supplier see correct nav on refresh (no admin flash).
@@ -244,39 +245,29 @@ export default function Navbar({ children }: NavbarProps) {
 
   // If children prop is provided, wrap with full layout, otherwise just return navbar
   const navbarContent = (
-    <header className="sticky top-0 z-50 w-full h-[72px] min-h-[72px] border-b border-gray-200/50 dark:border-white/10 bg-gradient-to-br from-white/90 via-white/85 to-white/80 dark:from-white/10 dark:via-white/10 dark:to-white/5 backdrop-blur-2xl shadow-[0_10px_30px_rgba(0,0,0,0.2)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.25)] will-change-transform transform-gpu">
+    <header className="sticky top-0 z-50 w-full h-[72px] min-h-[72px] border-b border-foreground/10 bg-background/80 backdrop-blur-md transition-all duration-300">
       {/* Skip to main content - visible on focus for keyboard/screen reader users (WCAG 2.1) */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-zinc-600 focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-none focus:bg-foreground focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-background focus:outline-none"
       >
         Skip to main content
       </a>
       <div className="mx-auto flex w-full h-full max-w-9xl items-center justify-between gap-2 sm:gap-4 px-2 sm:px-4 lg:px-6 overflow-x-hidden">
         {/* Left Section - Logo and Brand */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 group cursor-pointer" onClick={() => handleNavigation(homePath)}>
           <div
-            role="button"
-            tabIndex={0}
-            aria-label="Go to home"
-            className="group flex aspect-square size-10 items-center justify-center rounded-xl border border-zinc-400/40 dark:border-zinc-400/30 bg-gradient-to-br from-zinc-500/30 via-zinc-500/15 to-zinc-500/8 dark:from-zinc-500/20 dark:via-zinc-500/15 dark:to-zinc-500/10 shadow-[0_5px_20px_rgba(0,0,0,0.2)] dark:shadow-[0_5px_20px_rgba(0,0,0,0.2)] backdrop-blur-sm cursor-pointer transition-all duration-200 hover:border-zinc-400/60 dark:hover:border-zinc-400/40 hover:from-zinc-500/40 hover:via-zinc-500/20 hover:to-zinc-500/10 dark:hover:from-zinc-500/30 dark:hover:via-zinc-500/20 dark:hover:to-zinc-500/15 hover:shadow-[0_10px_35px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_10px_35px_rgba(0,0,0,0.2)]"
-            onClick={() => handleNavigation(homePath)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                handleNavigation(homePath);
-              }
-            }}
+            className="flex aspect-square size-10 items-center justify-center rounded-none border border-foreground bg-foreground text-background transition-all duration-300 group-hover:bg-transparent group-hover:text-foreground"
           >
-            <AiFillProduct className="text-2xl text-zinc-600 dark:text-zinc-400 transition-transform group-hover:scale-110 drop-shadow-[0_2px_8px_rgba(0,0,0,0.2)]" />
+            <AiFillProduct className="text-2xl" />
           </div>
-          <h1 className="text-lg font-semibold tracking-tight bg-gradient-to-r from-zinc-600 to-gray-900 dark:from-zinc-400 dark:to-gray-100 bg-clip-text text-transparent lg:text-xl transition-all duration-300 ease-in-out hover:from-zinc-700 hover:to-gray-950 dark:hover:from-zinc-300 dark:hover:to-gray-50 cursor-pointer">
-            Stock Inventory
+          <h1 className="text-xl font-black tracking-tighter text-foreground uppercase">
+            Inventory
           </h1>
         </div>
 
         {/* Desktop Navigation (XL screens) */}
-        <nav className="hidden xl:flex items-center gap-1">
+        <nav className="hidden xl:flex items-center gap-2 px-4">
           {navItems.map((item) => {
             // API dropdown
             if (item.hasDropdown && "dropdownItems" in item) {
@@ -286,22 +277,22 @@ export default function Navbar({ children }: NavbarProps) {
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="text-sm font-medium text-gray-700 dark:text-muted-foreground will-change-[background,box-shadow,color] transition-[background-image,box-shadow,color] duration-300 ease-in-out hover:text-zinc-600 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-zinc-500/10 hover:via-zinc-500/5 hover:to-zinc-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm hover:shadow-[0_5px_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_5px_15px_rgba(255,255,255,0.15)] rounded-md px-3 py-2 border-0 focus:border-0 focus-visible:border-0 focus-visible:ring-0 focus:ring-0 data-[state=open]:border-0"
+                      className="text-[11px] font-black uppercase tracking-widest text-foreground/60 hover:text-foreground transition-all duration-300 px-2 py-1 bg-transparent hover:bg-transparent"
                     >
                       <span>{item.label}</span>
-                      <ChevronDown className="ml-1 h-4 w-4" />
+                      <ChevronDown className="ml-1 h-3 w-3" />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent
                     align="start"
                     sideOffset={2}
-                    className="w-48 border border-white/10 dark:border-white/10 bg-gradient-to-br from-white/80 via-white/70 to-white/60 dark:from-white/10 dark:via-white/10 dark:to-white/5 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.2)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.4)] text-gray-900 dark:text-white"
+                    className="border border-foreground bg-background text-foreground rounded-none shadow-2xl"
                   >
                     {item.dropdownItems.map((sub) => (
                       <DropdownMenuItem
                         key={sub.path}
                         onSelect={() => handleNavigation(sub.path)}
-                        className="text-gray-700 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-zinc-500/10 hover:via-zinc-500/5 hover:to-zinc-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 cursor-pointer"
+                        className="text-[10px] font-black uppercase tracking-wider hover:bg-foreground hover:text-background cursor-pointer rounded-none"
                       >
                         {sub.label}
                       </DropdownMenuItem>
@@ -317,83 +308,86 @@ export default function Navbar({ children }: NavbarProps) {
                 variant="ghost"
                 size="sm"
                 onClick={() => handleNavigation(item.path)}
-                className="text-sm font-medium text-gray-700 dark:text-muted-foreground will-change-[background,box-shadow,color] transition-[background-image,box-shadow,color] duration-300 ease-in-out hover:text-zinc-600 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-zinc-500/10 hover:via-zinc-500/5 hover:to-zinc-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm hover:shadow-[0_5px_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_5px_15px_rgba(255,255,255,0.15)] rounded-md px-3 py-2"
+                className="text-[11px] font-black uppercase tracking-widest text-foreground/60 hover:text-foreground transition-all duration-300 px-2 py-1 bg-transparent hover:bg-transparent relative group"
               >
                 {item.label}
+                <span className="absolute left-2 bottom-0 w-0 h-[2px] bg-foreground transition-all duration-300 group-hover:w-[calc(100%-1rem)]"></span>
               </Button>
             );
           })}
         </nav>
 
         {/* Right Section - Actions */}
-        <div className="flex items-center gap-1 sm:gap-2 shrink-0">
-          {/* Notification Bell - Always render to prevent flickering during auth check */}
-          {/* Show skeleton during auth check, then show bell when user is available */}
-          {isCheckingAuth ? (
-            // Skeleton placeholder during auth check to maintain layout - matches NotificationBell styling
-            <div className="relative h-8 w-8 sm:h-10 sm:w-10 rounded-full border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/25 via-zinc-500/15 to-zinc-500/10 dark:from-zinc-500/25 dark:via-zinc-500/15 dark:to-zinc-500/10 shadow-[0_10px_30px_rgba(0,0,0,0.2)] backdrop-blur-sm animate-pulse flex items-center justify-center">
-              <Bell className="h-4 w-4 sm:h-5 sm:w-5 text-zinc-400/50 dark:text-zinc-300/50" />
-            </div>
-          ) : user ? (
-            <NotificationBell />
-          ) : null}
+        <div className="flex items-center gap-2 shrink-0">
+          <div className="flex items-center gap-1 border border-foreground/10 p-1">
+            {/* Notification Bell */}
+            {isCheckingAuth ? (
+              <div className="relative h-9 w-9 rounded-none border border-foreground/5 bg-muted/5 animate-pulse flex items-center justify-center">
+                <Bell className="h-4 w-4 text-foreground/20" />
+              </div>
+            ) : user ? (
+              <NotificationBell />
+            ) : null}
 
-          {/* Mode Toggle */}
-          <ModeToggle />
+            {/* Mode Toggle */}
+            <ModeToggle />
+          </div>
 
-          {/* Avatar Dropdown (Desktop - LG and above) */}
+          {/* Avatar Dropdown (Desktop) */}
           <div className="hidden lg:block">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="ghost"
-                  aria-label="Open account menu"
-                  className="relative h-10 w-10 min-h-10 min-w-10 rounded-full border-2 border-zinc-400/50 dark:border-white/20 bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5 dark:from-white/10 dark:via-white/10 dark:to-white/5 backdrop-blur-sm hover:border-zinc-400/70 dark:hover:border-white/30 hover:from-zinc-500/35 hover:via-zinc-500/15 hover:to-zinc-500/8 dark:hover:from-white/15 dark:hover:via-white/15 dark:hover:to-white/8 transition-all duration-200 shadow-[0_5px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] ring-2 ring-zinc-400/30 dark:ring-white/20 hover:ring-zinc-400/50 dark:hover:ring-white/30 p-0 overflow-hidden focus-visible:outline-none focus:outline-none focus-visible:ring-0 focus:ring-0"
+                  className="flex items-center gap-2 h-9 px-2 rounded-none border border-foreground/30 bg-background hover:bg-foreground hover:text-background transition-all duration-300 p-0 overflow-hidden group"
                 >
                   {isCheckingAuth ? (
-                    <div className="h-10 w-10 rounded-full bg-gray-200 dark:bg-gray-700 animate-pulse" />
+                    <div className="h-5 w-5 bg-muted animate-pulse rounded-none" />
                   ) : avatarUrl ? (
-                    <Image
-                      src={avatarUrl}
-                      alt={user?.name || "User"}
-                      width={40}
-                      height={40}
-                      className="rounded-full object-cover"
-                      unoptimized
-                      priority
-                    />
+                    <div className="relative h-5 w-5 border border-foreground/20 overflow-hidden">
+                      <Image
+                        src={avatarUrl}
+                        alt={user?.name || "User"}
+                        fill
+                        className="object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                        unoptimized
+                      />
+                    </div>
                   ) : (
-                    <span className="text-sm font-semibold text-gray-900 dark:text-foreground">
+                    <span className="text-[9px] font-black">
                       {user?.email?.[0]?.toUpperCase() || "U"}
                     </span>
                   )}
+                  <span className="text-[10px] font-black uppercase tracking-widest">
+                    Profile
+                  </span>
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="end"
-                className={`w-56 ${DROPDOWN_CONTENT_CLASS}`}
+                className={`w-56 rounded-none border border-foreground bg-background text-foreground shadow-2xl`}
               >
                 <DropdownMenuLabel className="font-normal px-3 py-2">
                   <div className="flex flex-col space-y-1">
                     {user?.name && (
-                      <p className="text-sm leading-none text-gray-900 dark:text-white">
+                      <p className="text-sm font-black uppercase text-foreground">
                         {user.name}
                       </p>
                     )}
-                    <p className="text-xs text-gray-600 dark:text-gray-400">
+                    <p className="text-xs text-foreground/50">
                       {user?.email}
                     </p>
                   </div>
                 </DropdownMenuLabel>
-                <DropdownMenuSeparator className="bg-gray-200 dark:bg-gray-700" />
+                <DropdownMenuSeparator className="bg-foreground/10" />
                 <DropdownMenuItem
                   onClick={() => {
                     router.push("/support-tickets");
                     setIsMobileMenuOpen(false);
                   }}
-                  className={DROPDOWN_ITEM_CLASS}
+                  className="flex items-center gap-2 px-3 py-2 text-[12px] font-bold uppercase transition-colors hover:bg-foreground hover:text-background rounded-none cursor-pointer"
                 >
-                  <MessageSquare className="mr-2 h-4 w-4" />
+                  <MessageSquare className="h-4 w-4" />
                   <span>Support Tickets</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem
@@ -401,9 +395,9 @@ export default function Navbar({ children }: NavbarProps) {
                     router.push("/settings/email-preferences");
                     setIsMobileMenuOpen(false);
                   }}
-                  className={DROPDOWN_ITEM_CLASS}
+                  className="flex items-center gap-2 px-3 py-2 text-[12px] font-bold uppercase transition-colors hover:bg-foreground hover:text-background rounded-none cursor-pointer"
                 >
-                  <Settings className="mr-2 h-4 w-4" />
+                  <Settings className="h-4 w-4" />
                   <span>Email Preferences</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem
@@ -411,9 +405,9 @@ export default function Navbar({ children }: NavbarProps) {
                     router.push("/api-docs");
                     setIsMobileMenuOpen(false);
                   }}
-                  className={DROPDOWN_ITEM_CLASS}
+                  className="flex items-center gap-2 px-3 py-2 text-[12px] font-bold uppercase transition-colors hover:bg-foreground hover:text-background rounded-none cursor-pointer"
                 >
-                  <FileCode className="mr-2 h-4 w-4" />
+                  <FileCode className="h-4 w-4" />
                   <span>API Documentation</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem
@@ -421,19 +415,19 @@ export default function Navbar({ children }: NavbarProps) {
                     router.push("/api-status");
                     setIsMobileMenuOpen(false);
                   }}
-                  className={DROPDOWN_ITEM_CLASS}
+                  className="flex items-center gap-2 px-3 py-2 text-[12px] font-bold uppercase transition-colors hover:bg-foreground hover:text-background rounded-none cursor-pointer"
                 >
-                  <Activity className="mr-2 h-4 w-4" />
+                  <Activity className="h-4 w-4" />
                   <span>API Status</span>
                 </DropdownMenuItem>
-                <DropdownMenuSeparator className="bg-gray-200 dark:bg-gray-700" />
+                <DropdownMenuSeparator className="bg-foreground/10" />
                 <DropdownMenuItem
                   onClick={handleLogout}
                   disabled={isLoggingOut}
-                  className={DROPDOWN_ITEM_CLASS}
+                  className="flex items-center gap-2 px-3 py-2 text-[12px] font-bold uppercase transition-colors hover:bg-destructive hover:text-destructive-foreground rounded-none cursor-pointer"
                 >
-                  <LogOut className="mr-2 h-4 w-4 text-zinc-500 dark:text-zinc-400" />
-                  <span className="text-zinc-500 dark:text-zinc-400">
+                  <LogOut className="h-4 w-4" />
+                  <span>
                     {isLoggingOut ? "Logging Out..." : "Logout"}
                   </span>
                 </DropdownMenuItem>
@@ -441,175 +435,71 @@ export default function Navbar({ children }: NavbarProps) {
             </DropdownMenu>
           </div>
 
-          {/* Mobile: Burger Menu Only (LG and below) */}
+          {/* Mobile Menu Button */}
           <div className="flex items-center lg:hidden">
-            {/* Burger Menu Button */}
             <Button
               variant="ghost"
               size="icon"
-              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-              aria-expanded={isMobileMenuOpen}
-              aria-controls="mobile-menu-panel"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="h-8 w-8 sm:h-10 sm:w-10 text-gray-900 dark:text-foreground hover:bg-gradient-to-br hover:from-zinc-500/10 hover:via-zinc-500/5 hover:to-zinc-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm transition-all duration-300 ease-in-out"
+              className="h-10 w-10 text-foreground border border-foreground/10 rounded-none"
             >
               {isMobileMenuOpen ? (
-                <X className="h-4 w-4 sm:h-5 sm:w-5" />
+                <X className="h-5 w-5" />
               ) : (
-                <Menu className="h-4 w-4 sm:h-5 sm:w-5" />
+                <Menu className="h-5 w-5" />
               )}
             </Button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown (LG and below) */}
+      {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
         <div
-          id="mobile-menu-panel"
-          role="navigation"
-          aria-label="Mobile navigation"
-          className="xl:hidden border-t border-white/10 dark:border-white/10 bg-gradient-to-br from-white/95 via-white/90 to-white/85 dark:from-white/10 dark:via-white/10 dark:to-white/5 backdrop-blur-xl max-h-[calc(100vh-3.5rem)] overflow-y-auto"
+          className="xl:hidden border-t border-foreground bg-background px-4 py-8 space-y-8 min-h-screen"
         >
-          <div className="mx-auto w-full max-w-9xl px-2 sm:px-4 lg:px-6 sm:py-6 space-y-3">
-            {/* User Email with Avatar */}
-            <div className="flex items-center gap-3 px-2 py-2">
-              {isCheckingAuth ? (
-                <div className="h-10 w-10 rounded-full bg-gray-200 dark:bg-gray-700 animate-pulse" />
-              ) : (
-                avatarUrl && (
-                  <div className="relative flex h-10 w-10 items-center justify-center rounded-full border-2 border-zinc-400/50 dark:border-white/20 bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5 dark:from-white/10 dark:via-white/10 dark:to-white/5 backdrop-blur-sm overflow-hidden ring-2 ring-zinc-400/30 dark:ring-white/20 shadow-[0_5px_20px_rgba(0,0,0,0.2)]">
-                    <Image
-                      src={avatarUrl}
-                      alt={user?.name || "User"}
-                      width={40}
-                      height={40}
-                      className="rounded-full object-cover"
-                      unoptimized
-                    />
-                  </div>
-                )
-              )}
-              <div className="flex flex-col">
-                {!isCheckingAuth && user?.name && (
-                  <p className="text-sm text-gray-700 dark:text-muted-foreground">
-                    {user.name}
-                  </p>
-                )}
-                <p className="text-xs text-gray-600 dark:text-muted-foreground">
-                  {isCheckingAuth ? "Loading..." : user?.email}
-                </p>
+          <div className="flex items-center gap-3">
+            {avatarUrl && (
+              <div className="h-12 w-12 border border-foreground rounded-none overflow-hidden">
+                <Image
+                  src={avatarUrl}
+                  alt={user?.name || "User"}
+                  width={48}
+                  height={48}
+                  className="grayscale"
+                  unoptimized
+                />
               </div>
+            )}
+            <div>
+              <p className="text-sm font-black uppercase">{user?.name}</p>
+              <p className="text-xs text-foreground/50">{user?.email}</p>
             </div>
+          </div>
 
-            <Separator className="bg-gray-300/50 dark:bg-white/10" />
+          <nav className="flex flex-col gap-4">
+            {navItems.map((item) => (
+              <Button
+                key={item.path}
+                variant="ghost"
+                className="justify-start text-lg font-black uppercase tracking-widest px-0 hover:translate-x-2 transition-transform h-auto"
+                onClick={() => handleNavigation(item.path)}
+              >
+                {item.label}
+              </Button>
+            ))}
+          </nav>
 
-            {/* Navigation Items */}
-            <nav className="space-y-1">
-              {navItems.map((item) => {
-                // API dropdown (mobile: label + sub-links)
-                if (item.hasDropdown && "dropdownItems" in item) {
-                  return (
-                    <div key={item.label} className="space-y-1">
-                      <p className="px-3 py-2 text-xs font-semibold text-gray-500 dark:text-muted-foreground uppercase tracking-wider">
-                        {item.label}
-                      </p>
-                      <div className="pl-4 space-y-1">
-                        {item.dropdownItems.map((sub) => (
-                          <Button
-                            key={sub.path}
-                            variant="ghost"
-                            className="w-full justify-start text-gray-600 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-zinc-500/10 hover:via-zinc-500/5 hover:to-zinc-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm transition-all duration-300 ease-in-out px-3 py-2.5 h-auto min-h-[40px] text-sm"
-                            onClick={() => {
-                              handleNavigation(sub.path);
-                            }}
-                          >
-                            {sub.label}
-                          </Button>
-                        ))}
-                      </div>
-                    </div>
-                  );
-                }
-                // Regular navigation items (including Dashboard)
-                return (
-                  <Button
-                    key={item.path}
-                    variant="ghost"
-                    className="w-full justify-start text-gray-700 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-zinc-500/10 hover:via-zinc-500/5 hover:to-zinc-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm transition-all duration-300 ease-in-out px-3 py-3.5 h-auto min-h-[44px]"
-                    onClick={() => handleNavigation(item.path)}
-                  >
-                    {item.label}
-                  </Button>
-                );
-              })}
-            </nav>
+          <Separator className="bg-foreground/10" />
 
-            <Separator className="bg-gray-300/50 dark:bg-white/10" />
-
-            {/* Support Tickets */}
+          <div className="flex flex-col gap-4">
             <Button
               variant="ghost"
-              className="w-full justify-start text-gray-700 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-zinc-500/10 hover:via-zinc-500/5 hover:to-zinc-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm transition-all duration-300 ease-in-out px-3 py-3.5 h-auto min-h-[44px]"
-              onClick={() => {
-                router.push("/support-tickets");
-                setIsMobileMenuOpen(false);
-              }}
-            >
-              <MessageSquare className="mr-2 h-4 w-4" />
-              Support Tickets
-            </Button>
-
-            {/* Email Preferences */}
-            <Button
-              variant="ghost"
-              className="w-full justify-start text-gray-700 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-zinc-500/10 hover:via-zinc-500/5 hover:to-zinc-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm transition-all duration-300 ease-in-out px-3 py-3.5 h-auto min-h-[44px]"
-              onClick={() => {
-                router.push("/settings/email-preferences");
-                setIsMobileMenuOpen(false);
-              }}
-            >
-              <Settings className="mr-2 h-4 w-4" />
-              Email Preferences
-            </Button>
-
-            {/* API Documentation */}
-            <Button
-              variant="ghost"
-              className="w-full justify-start text-gray-700 dark:text-white/80 hover:backdrop-grey-100 dark:hover:backdrop-white/10 transition-all duration-200 ease-in-out px-3 py-3 h-auto min-h-[44px]"
-              onClick={() => {
-                router.push("/api-docs");
-                setIsMobileMenuOpen(false);
-              }}
-            >
-              <FileCode className="mr-2 h-4 w-4" />
-              API Documentation
-            </Button>
-
-            {/* API Status */}
-            <Button
-              variant="ghost"
-              className="w-full justify-start text-gray-700 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-zinc-500/10 hover:via-zinc-500/5 hover:to-zinc-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm transition-all duration-300 ease-in-out px-3 py-3.5 h-auto min-h-[44px]"
-              onClick={() => {
-                router.push("/api-status");
-                setIsMobileMenuOpen(false);
-              }}
-            >
-              <Activity className="mr-2 h-4 w-4" />
-              API Status
-            </Button>
-
-            <Separator className="bg-gray-300/50 dark:bg-white/10" />
-
-            {/* Logout */}
-            <Button
-              variant="ghost"
-              className="w-full justify-start text-gray-700 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground hover:bg-gradient-to-br hover:from-zinc-500/10 hover:via-zinc-500/5 hover:to-zinc-500/5 dark:hover:from-white/10 dark:hover:via-white/5 dark:hover:to-white/5 hover:backdrop-blur-sm transition-all duration-300 ease-in-out px-3 py-3.5 h-auto min-h-[44px]"
+              className="justify-start text-sm font-bold uppercase tracking-wider px-0 h-auto"
               onClick={handleLogout}
-              disabled={isLoggingOut}
             >
               <LogOut className="mr-2 h-4 w-4" />
-              {isLoggingOut ? "Logging Out..." : "Logout"}
+              Logout
             </Button>
           </div>
         </div>
@@ -636,7 +526,7 @@ export default function Navbar({ children }: NavbarProps) {
               <div
                 className={
                   pathname?.startsWith("/admin") ||
-                  pathname?.startsWith("/business-insights")
+                    pathname?.startsWith("/business-insights")
                     ? "mx-auto w-full max-w-9xl flex-1 sm:pr-4"
                     : "mx-auto w-full max-w-9xl p-1 sm:p-0 sm:px-4 lg:px-6 sm:py-6 flex-1"
                 }

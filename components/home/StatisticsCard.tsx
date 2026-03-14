@@ -78,67 +78,52 @@ const variantConfig: Record<
   }
 > = {
   sky: {
-    border: "border-zinc-400/30",
-    gradient: "bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5",
-    shadow:
-      "shadow-[0_30px_80px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/50",
+    border: "border-primary/20",
+    gradient: "bg-gradient-to-br from-primary/5 via-primary/2 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
+    shadow: "shadow-[0_15px_40px_rgba(26,22,20,0.06)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
   },
   emerald: {
-    border: "border-zinc-400/30",
-    gradient:
-      "bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5",
-    shadow:
-      "shadow-[0_30px_80px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/50",
+    border: "border-primary/20",
+    gradient: "bg-gradient-to-br from-primary/8 via-primary/3 to-transparent dark:from-white/12 dark:via-white/6 dark:to-white/3",
+    shadow: "shadow-[0_15px_40px_rgba(26,22,20,0.08)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.35)]",
+    hoverBorder: "hover:border-primary/50",
   },
   amber: {
-    border: "border-zinc-400/30",
-    gradient:
-      "bg-gradient-to-br from-zinc-500/30 via-zinc-500/15 to-zinc-500/5",
-    shadow:
-      "shadow-[0_30px_80px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/60",
+    border: "border-primary/25",
+    gradient: "bg-gradient-to-br from-primary/10 via-primary/4 to-transparent dark:from-white/15 dark:via-white/8 dark:to-white/4",
+    shadow: "shadow-[0_15px_45px_rgba(26,22,20,0.1)] dark:shadow-[0_40px_100px_rgba(0,0,0,0.4)]",
+    hoverBorder: "hover:border-primary/60",
   },
   rose: {
-    border: "border-zinc-400/30",
-    gradient:
-      "bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5",
-    shadow:
-      "shadow-[0_30px_80px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/50",
+    border: "border-primary/20",
+    gradient: "bg-gradient-to-br from-primary/5 via-primary/2 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
+    shadow: "shadow-[0_15px_40px_rgba(26,22,20,0.06)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
   },
   violet: {
-    border: "border-zinc-400/30",
-    gradient:
-      "bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5",
-    shadow:
-      "shadow-[0_30px_80px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/50",
+    border: "border-primary/20",
+    gradient: "bg-gradient-to-br from-primary/6 via-primary/2 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
+    shadow: "shadow-[0_15px_40px_rgba(26,22,20,0.07)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.32)]",
+    hoverBorder: "hover:border-primary/45",
   },
   blue: {
-    border: "border-zinc-400/30",
-    gradient:
-      "bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5",
-    shadow:
-      "shadow-[0_30px_80px_rgba(0,0,0,0.35)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.25)]",
-    hoverBorder: "hover:border-zinc-300/50",
+    border: "border-primary/20",
+    gradient: "bg-gradient-to-br from-primary/5 via-primary/2 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
+    shadow: "shadow-[0_15px_40px_rgba(26,22,20,0.06)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
   },
   orange: {
-    border: "border-zinc-400/30",
-    gradient:
-      "bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5",
-    shadow:
-      "shadow-[0_30px_80px_rgba(0,0,0,0.35)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.25)]",
-    hoverBorder: "hover:border-zinc-300/50",
+    border: "border-primary/20",
+    gradient: "bg-gradient-to-br from-primary/5 via-primary/2 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
+    shadow: "shadow-[0_15px_40px_rgba(26,22,20,0.06)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
   },
   teal: {
-    border: "border-zinc-400/30",
-    gradient:
-      "bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5",
-    shadow:
-      "shadow-[0_30px_80px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/50",
+    border: "border-primary/20",
+    gradient: "bg-gradient-to-br from-primary/5 via-primary/2 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
+    shadow: "shadow-[0_15px_40px_rgba(26,22,20,0.06)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
   },
 };
 
@@ -151,51 +136,44 @@ export function StatisticsCard({
   value,
   description,
   icon: Icon,
-  variant = "sky",
-  badges = [],
   className,
+  badges = [],
 }: StatisticsCardProps) {
-  const config = variantConfig[variant];
-
   return (
     <article
       className={cn(
-        "group rounded-[28px] border min-h-[210px] h-full flex flex-col p-4 sm:p-6 backdrop-blur-sm transition min-w-0 overflow-visible",
-        config.border,
-        config.gradient,
-        config.shadow,
-        config.hoverBorder,
+        "group rounded-none border border-foreground/10 bg-background min-h-[210px] h-full flex flex-col p-6 transition-all duration-300 hover:border-foreground/40 hover:shadow-2xl min-w-0 overflow-visible",
         className,
       )}
     >
       <div className="flex flex-1 flex-col min-h-0 min-w-0 w-full overflow-visible">
         {/* Title and icon inline so badges get full width below */}
-        <div className="flex items-center justify-between gap-2 shrink-0">
-          <p className="text-xs uppercase tracking-[0.45em] text-gray-700 dark:text-white/60 min-w-0">
+        <div className="flex items-center justify-between gap-2 shrink-0 mb-4">
+          <p className="text-[10px] font-black uppercase tracking-[0.4em] text-foreground/40 min-w-0 group-hover:text-foreground transition-colors">
             {title}
           </p>
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-gray-300/30 bg-gray-100/50 shadow-inner shadow-primary/30 backdrop-blur dark:border-white/15 dark:bg-white/10">
-            <Icon className="h-5 w-5 text-gray-900 dark:text-white" />
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-none border border-foreground/10 bg-muted/5 group-hover:bg-foreground group-hover:text-background transition-colors duration-300">
+            <Icon className="h-5 w-5" />
           </div>
         </div>
-        <p className="text-2xl font-semibold text-gray-900 dark:text-white">
+        <p className="text-3xl font-black text-foreground uppercase tracking-tighter">
           {value}
         </p>
         {description && (
-          <p className="mt-2 text-sm text-gray-600 dark:text-white/70">
+          <p className="mt-1 text-[11px] font-bold uppercase tracking-widest text-foreground/30">
             {description}
           </p>
         )}
         {badges.length > 0 && (
-          <div className="mt-3 flex w-full min-w-0 flex-wrap gap-2 overflow-visible">
+          <div className="mt-6 flex w-full min-w-0 flex-wrap gap-2 overflow-visible">
             {badges.map((badge, index) => (
               <Badge
                 key={index}
-                variant={badge.variant || "outline"}
-                className="text-xs border-gray-300/50 bg-gray-100/80 text-gray-800 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.1)] dark:border-white/10 dark:bg-white/5 dark:text-white/80"
+                variant="outline"
+                className="text-[10px] font-black uppercase tracking-widest border-foreground/10 bg-transparent text-foreground/60 rounded-none px-2 py-1"
               >
-                <span className="font-medium">{badge.label}:</span>{" "}
-                <span className="ml-1">{badge.value}</span>
+                <span>{badge.label}:</span>{" "}
+                <span className="ml-1 text-foreground">{badge.value}</span>
               </Badge>
             ))}
           </div>

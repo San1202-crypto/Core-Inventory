@@ -138,7 +138,7 @@ export function createProductColumns(
         <div className="flex flex-col">
           <div className="flex items-center gap-2">
             <span className={isLowStock || isOutOfStock ? "font-semibold" : ""}>
-              {available}
+              {available} {row.original.unitOfMeasure || ""}
             </span>
             {isLowStock && (
               <AlertTriangle className="h-4 w-4 text-zinc-500" />

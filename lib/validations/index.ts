@@ -86,3 +86,11 @@ export {
   type UpdateStockAllocationFormData,
   type CreateStockTransferFormData,
 } from "./stock-allocation";
+
+export {
+  inventoryAdjustmentItemSchema,
+  inventoryAdjustmentSchema,
+  createInventoryAdjustmentSchema,
+  updateInventoryAdjustmentSchema,
+  type InventoryAdjustmentFormData,
+} from "./inventory-adjustment";

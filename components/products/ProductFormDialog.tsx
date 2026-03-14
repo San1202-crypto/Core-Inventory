@@ -33,6 +33,7 @@ import ProductName from "./form-fields/NameField";
 import SKU from "./form-fields/SKUField";
 import Quantity from "./form-fields/QuantityField";
 import Price from "./form-fields/PriceField";
+import UnitOfMeasureField from "./form-fields/UnitOfMeasureField";
 import ImageField from "./form-fields/ImageField";
 import ExpirationDateField from "./form-fields/ExpirationDateField";
 import { Product } from "@/types";
@@ -62,6 +63,7 @@ export default function AddProductDialog({
       price: "" as unknown as number,
       imageUrl: "",
       imageFileId: "",
+      unitOfMeasure: "units",
       expirationDate: "",
     },
   });
@@ -106,6 +108,7 @@ export default function AddProductDialog({
         price: selectedProduct.price,
         imageUrl: selectedProduct.imageUrl || "",
         imageFileId: selectedProduct.imageFileId || "",
+        unitOfMeasure: selectedProduct.unitOfMeasure || "units",
         expirationDate: selectedProduct.expirationDate
           ? new Date(selectedProduct.expirationDate).toISOString().split("T")[0]
           : "",
@@ -121,6 +124,7 @@ export default function AddProductDialog({
         price: "" as unknown as number,
         imageUrl: "",
         imageFileId: "",
+        unitOfMeasure: "units",
         expirationDate: "",
       });
       setSelectedCategory("");
@@ -160,6 +164,7 @@ export default function AddProductDialog({
           categoryId: selectedCategory,
           supplierId: selectedSupplier,
           userId: userId,
+          unitOfMeasure: data.unitOfMeasure || "units",
           imageUrl: data.imageUrl || undefined,
           imageFileId: data.imageFileId || undefined,
           expirationDate: expirationDate || undefined,
@@ -179,6 +184,7 @@ export default function AddProductDialog({
           status,
           categoryId: selectedCategory,
           supplierId: selectedSupplier,
+          unitOfMeasure: data.unitOfMeasure || "units",
           imageUrl: data.imageUrl || undefined,
           imageFileId: data.imageFileId || undefined,
           expirationDate: expirationDate,
@@ -239,6 +245,7 @@ export default function AddProductDialog({
               <SKU allProducts={allProducts} />
               <Quantity />
               <Price />
+              <UnitOfMeasureField />
               <ExpirationDateField />
               <ImageField />
               <div className="mt-5 flex flex-col gap-2">

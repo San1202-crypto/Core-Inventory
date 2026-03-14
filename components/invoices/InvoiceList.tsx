@@ -39,7 +39,7 @@ import type { InvoiceWithSource } from "./InvoiceTableColumns";
 import type { InvoiceSourceFilterValue } from "./InvoiceSourceFilter";
 
 const formatCurrency = (value: number) =>
-  `$${value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  `Rs ${value.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 
 const InvoiceTable = dynamic(
   () =>
@@ -214,7 +214,7 @@ const InvoiceList = React.memo(
       <div className="flex flex-col poppins">
         {/* Invoice Management Section Header */}
         <div className="pb-6 flex flex-col items-start text-left">
-          <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white pb-2">
+          <h2 className="text-xl sm:text-2xl font-semibold text-primary/80 pb-2">
             {isAdminCombined
               ? "Store Invoices Management (self + client)"
               : isClientInvoices
@@ -223,7 +223,7 @@ const InvoiceList = React.memo(
                   ? "My Invoices"
                   : "Invoice Management"}
           </h2>
-          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+          <p className="text-sm sm:text-base text-primary/60">
             {isAdminCombined
               ? "Invoices for your orders and for client orders. Filter by invoice type, status, and search."
               : isClientInvoices
@@ -252,7 +252,6 @@ const InvoiceList = React.memo(
                   )}
                   description="Total inventory value"
                   icon={DollarSign}
-                  variant="violet"
                   badges={[
                     {
                       label: "Orders",
@@ -295,7 +294,6 @@ const InvoiceList = React.memo(
                   )}
                   description="Profits (excl. cancelled)"
                   icon={DollarSign}
-                  variant="emerald"
                   badges={[
                     {
                       label: "Paid",
@@ -347,7 +345,6 @@ const InvoiceList = React.memo(
                   value={invoicesPageStats.counts.orders}
                   description="Total orders placed (self + client)"
                   icon={ShoppingCart}
-                  variant="blue"
                   badges={[
                     {
                       label: "Pending",
@@ -403,7 +400,6 @@ const InvoiceList = React.memo(
                   value={invoicesPageStats.counts.invoices}
                   description="Total invoices (store-wide)"
                   icon={FileText}
-                  variant="sky"
                   badges={[
                     {
                       label: "Paid",
@@ -475,7 +471,6 @@ const InvoiceList = React.memo(
                   value={clientPortalDashboard.totalOrders}
                   description="Your order history"
                   icon={ShoppingCart}
-                  variant="violet"
                   badges={[
                     {
                       label: "Orders",
@@ -506,7 +501,6 @@ const InvoiceList = React.memo(
                   value={clientPortalDashboard.ordersAwaitingPayment ?? 0}
                   description="Orders awaiting payment"
                   icon={Clock}
-                  variant="amber"
                   badges={[
                     {
                       label: "Paid",
@@ -539,7 +533,6 @@ const InvoiceList = React.memo(
                   value={formatCurrency(clientPortalDashboard.totalSpent)}
                   description="Total order value"
                   icon={DollarSign}
-                  variant="emerald"
                   badges={[
                     {
                       label: "Paid",
@@ -578,7 +571,6 @@ const InvoiceList = React.memo(
                   value={clientPortalDashboard.invoiceBreakdown?.total ?? 0}
                   description="Total invoices"
                   icon={FileText}
-                  variant="sky"
                   badges={[
                     {
                       label: "Paid",
@@ -628,7 +620,6 @@ const InvoiceList = React.memo(
                   value={dashboard.counts?.invoices ?? 0}
                   description="Total invoices (store-wide)"
                   icon={FileText}
-                  variant="sky"
                   badges={[
                     {
                       label: "Paid",
@@ -667,7 +658,6 @@ const InvoiceList = React.memo(
                   )}
                   description="Revenue (excl. cancelled)"
                   icon={CreditCard}
-                  variant="amber"
                   badges={[
                     {
                       label: "Paid",
@@ -703,7 +693,6 @@ const InvoiceList = React.memo(
                   )}
                   description="Total inventory value"
                   icon={DollarSign}
-                  variant="violet"
                   badges={[
                     {
                       label: "Orders",
@@ -739,7 +728,6 @@ const InvoiceList = React.memo(
                   value={dashboard.counts?.orders ?? 0}
                   description="Total orders placed (self + client)"
                   icon={ShoppingCart}
-                  variant="blue"
                   badges={[
                     {
                       label: "Pending",

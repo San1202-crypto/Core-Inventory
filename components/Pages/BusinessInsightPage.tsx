@@ -64,7 +64,13 @@ import { exportToExcel, exportToCSV } from "@/lib/export";
 import type { ProductForHome } from "@/lib/server/home-data";
 import type { OrderForPage } from "@/lib/server/orders-data";
 
-const COLORS = ["#000000", "#333333", "#666666", "#999999", "#CCCCCC"];
+const COLORS = [
+  "hsl(var(--primary))",
+  "hsl(var(--primary) / 0.8)",
+  "hsl(var(--primary) / 0.6)",
+  "hsl(var(--primary) / 0.4)",
+  "hsl(var(--primary) / 0.2)",
+];
 
 export type BusinessInsightPageProps = {
   initialProducts?: ProductForHome[];
@@ -817,7 +823,7 @@ export default function BusinessInsightPage({
             </div>
             <Button
               onClick={handleExportAnalytics}
-              className="flex items-center gap-2 flex-shrink-0 rounded-xl border-zinc-400/30 bg-gradient-to-r from-zinc-500/20 via-zinc-500/10 to-transparent hover:from-zinc-500/30 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+              className="flex items-center gap-2 flex-shrink-0 rounded-xl border border-primary/20 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent hover:from-primary/15 shadow-[0_10px_30px_rgba(26,22,20,0.08)] text-primary"
               disabled={showSkeleton}
             >
               <Download className="h-4 w-4" />
@@ -827,7 +833,7 @@ export default function BusinessInsightPage({
 
           {/* Date Range Filter */}
           <div className="pb-6">
-            <div className="rounded-[16px] border border-zinc-400/20 bg-gradient-to-r from-zinc-500/10 via-zinc-500/5 to-transparent p-4 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
+            <div className="rounded-[16px] border border-primary/20 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent p-4 backdrop-blur-sm shadow-[0_10px_30px_rgba(26,22,20,0.08)]">
               <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                 <div className="flex items-center gap-2">
                   <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10">
@@ -914,28 +920,24 @@ export default function BusinessInsightPage({
                   title="Total Products"
                   value={analyticsData.totalProducts}
                   icon={Package}
-                  variant="blue"
                   description="Products in inventory"
                 />
                 <AnalyticsCard
                   title="Total Value"
                   value={`$${analyticsData.totalValue.toLocaleString()}`}
                   icon={DollarSign}
-                  variant="emerald"
                   description="Total inventory value"
                 />
                 <AnalyticsCard
                   title="Low Stock Items"
                   value={analyticsData.lowStockItems}
                   icon={AlertTriangle}
-                  variant="amber"
                   description="Items with quantity <= 20"
                 />
                 <AnalyticsCard
                   title="Out of Stock"
                   value={analyticsData.outOfStockItems}
                   icon={ShoppingCart}
-                  variant="rose"
                   description="Items with zero quantity"
                 />
               </>
@@ -983,7 +985,6 @@ export default function BusinessInsightPage({
                         <ChartCard
                           title="Category Distribution"
                           icon={PieChartIcon}
-                          variant="violet"
                         >
                           <ResponsiveChartContainer>
                             <PieChart>
@@ -1090,11 +1091,17 @@ export default function BusinessInsightPage({
                       >
                         <ResponsiveChartContainer>
                           <BarChart data={orderTrendByMonth}>
-                            <CartesianGrid strokeDasharray="3 3" />
-                            <XAxis dataKey="month" />
-                            <YAxis />
-                            <Tooltip />
-                            <Bar dataKey="orderCount" fill="#8884D8" />
+                            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="hsl(var(--primary) / 0.1)" />
+                            <XAxis dataKey="month" stroke="hsl(var(--muted-foreground))" fontSize={12} tickLine={false} axisLine={false} />
+                            <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(value) => `$${value}`} />
+                            <Tooltip
+                              contentStyle={{
+                                backgroundColor: "hsl(var(--background))",
+                                border: "1px solid hsl(var(--border))",
+                                borderRadius: "12px",
+                              }}
+                            />
+                            <Bar dataKey="orderCount" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
                           </BarChart>
                         </ResponsiveChartContainer>
                       </ChartCard>
@@ -1108,15 +1115,20 @@ export default function BusinessInsightPage({
                     <ChartCard
                       title="Status Distribution"
                       icon={Activity}
-                      variant="blue"
                     >
                       <ResponsiveChartContainer>
                         <BarChart data={analyticsData.statusDistribution}>
-                          <CartesianGrid strokeDasharray="3 3" />
-                          <XAxis dataKey="name" />
-                          <YAxis />
-                          <Tooltip />
-                          <Bar dataKey="value" fill="#8884d8" />
+                          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="hsl(var(--primary) / 0.1)" />
+                          <XAxis dataKey="name" stroke="hsl(var(--muted-foreground))" fontSize={12} tickLine={false} axisLine={false} />
+                          <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} tickLine={false} axisLine={false} />
+                          <Tooltip
+                            contentStyle={{
+                              backgroundColor: "hsl(var(--background))",
+                              border: "1px solid hsl(var(--border))",
+                              borderRadius: "12px",
+                            }}
+                          />
+                          <Bar dataKey="value" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
                         </BarChart>
                       </ResponsiveChartContainer>
                     </ChartCard>
@@ -1125,15 +1137,20 @@ export default function BusinessInsightPage({
                     <ChartCard
                       title="Price Range Distribution"
                       icon={BarChart3}
-                      variant="teal"
                     >
                       <ResponsiveChartContainer>
                         <BarChart data={analyticsData.priceRangeDistribution}>
-                          <CartesianGrid strokeDasharray="3 3" />
-                          <XAxis dataKey="name" />
-                          <YAxis />
-                          <Tooltip />
-                          <Bar dataKey="value" fill="#00C49F" />
+                          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="hsl(var(--primary) / 0.1)" />
+                          <XAxis dataKey="name" stroke="hsl(var(--muted-foreground))" fontSize={12} tickLine={false} axisLine={false} />
+                          <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} tickLine={false} axisLine={false} />
+                          <Tooltip
+                            contentStyle={{
+                              backgroundColor: "hsl(var(--background))",
+                              border: "1px solid hsl(var(--border))",
+                              borderRadius: "12px",
+                            }}
+                          />
+                          <Bar dataKey="value" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
                         </BarChart>
                       </ResponsiveChartContainer>
                     </ChartCard>
@@ -1142,7 +1159,6 @@ export default function BusinessInsightPage({
                     <ChartCard
                       title="Category by Value"
                       icon={PieChartIcon}
-                      variant="amber"
                     >
                       <ResponsiveChartContainer>
                         <BarChart
@@ -1169,7 +1185,6 @@ export default function BusinessInsightPage({
                     <ChartCard
                       title="Supplier Performance"
                       icon={Users}
-                      variant="orange"
                     >
                       <ResponsiveChartContainer>
                         <BarChart
@@ -1200,17 +1215,21 @@ export default function BusinessInsightPage({
                     <ChartCard
                       title="Top Products by Value"
                       icon={TrendingUp}
-                      variant="emerald"
                     >
                       <ResponsiveChartContainer>
                         <BarChart
                           data={analyticsData.topProducts}
                           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
                         >
-                          <CartesianGrid strokeDasharray="3 3" />
-                          <XAxis dataKey="name" />
-                          <YAxis />
+                          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="hsl(var(--primary) / 0.1)" />
+                          <XAxis dataKey="name" stroke="hsl(var(--muted-foreground))" fontSize={12} tickLine={false} axisLine={false} />
+                          <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} tickLine={false} axisLine={false} />
                           <Tooltip
+                            contentStyle={{
+                              backgroundColor: "hsl(var(--background))",
+                              border: "1px solid hsl(var(--border))",
+                              borderRadius: "12px",
+                            }}
                             formatter={(value) => [
                               value
                                 ? `$${Number(value).toLocaleString()}`
@@ -1219,7 +1238,7 @@ export default function BusinessInsightPage({
                             ]}
                             labelFormatter={(label) => `Product: ${label}`}
                           />
-                          <Bar dataKey="value" fill="#FFBB28" />
+                          <Bar dataKey="value" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
                         </BarChart>
                       </ResponsiveChartContainer>
                     </ChartCard>
@@ -1228,19 +1247,26 @@ export default function BusinessInsightPage({
                     <ChartCard
                       title="Monthly Product Addition"
                       icon={TrendingDown}
-                      variant="rose"
                     >
                       <ResponsiveChartContainer>
                         <LineChart data={analyticsData.monthlyTrend}>
-                          <CartesianGrid strokeDasharray="3 3" />
-                          <XAxis dataKey="month" />
-                          <YAxis />
-                          <Tooltip />
+                          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="hsl(var(--primary) / 0.1)" />
+                          <XAxis dataKey="month" stroke="hsl(var(--muted-foreground))" fontSize={12} tickLine={false} axisLine={false} />
+                          <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} tickLine={false} axisLine={false} />
+                          <Tooltip
+                            contentStyle={{
+                              backgroundColor: "hsl(var(--background))",
+                              border: "1px solid hsl(var(--border))",
+                              borderRadius: "12px",
+                            }}
+                          />
                           <Line
                             type="monotone"
                             dataKey="monthlyAdded"
-                            stroke="#FF8042"
-                            strokeWidth={2}
+                            stroke="hsl(var(--primary))"
+                            strokeWidth={3}
+                            dot={{ fill: "hsl(var(--primary))", strokeWidth: 2, r: 4 }}
+                            activeDot={{ r: 6, strokeWidth: 0 }}
                           />
                         </LineChart>
                       </ResponsiveChartContainer>
@@ -1253,7 +1279,6 @@ export default function BusinessInsightPage({
                   <ChartCard
                     title="Low Stock Alerts"
                     icon={AlertTriangle}
-                    variant="rose"
                   >
                     <div>
                       {analyticsData.lowStockProducts.length > 0 ? (
@@ -1286,7 +1311,7 @@ export default function BusinessInsightPage({
                         </div>
                       ) : (
                         <div className="text-center py-8">
-                          <AlertTriangle className="h-12 w-12 text-zinc-500 mx-auto mb-4" />
+                          <AlertTriangle className="h-12 w-12 text-primary/40 mx-auto mb-4" />
                           <p className="text-gray-600 dark:text-white/60">
                             No low stock alerts at the moment!
                           </p>
@@ -1302,9 +1327,9 @@ export default function BusinessInsightPage({
           {/* Additional Insights */}
           <div className="pb-6 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4">
             {/* Quick Insights Card */}
-            <article className="rounded-[20px] border border-zinc-400/20 bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent p-4 sm:p-5 backdrop-blur-sm shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)] transition hover:border-zinc-300/40">
+            <article className="rounded-[20px] border border-primary/20 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-4 sm:p-5 backdrop-blur-sm shadow-[0_15px_40px_rgba(26,22,20,0.08)] transition hover:border-primary/30">
               <div className="flex items-center gap-2 mb-4">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-primary/20 bg-primary/5 dark:bg-white/5">
                   <Eye className="h-4 w-4 text-gray-900 dark:text-white" />
                 </div>
                 <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">
@@ -1340,7 +1365,7 @@ export default function BusinessInsightPage({
             </article>
 
             {/* Performance Card */}
-            <article className="rounded-[20px] border border-zinc-400/20 bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent p-4 sm:p-5 backdrop-blur-sm shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)] transition hover:border-zinc-300/40">
+            <article className="rounded-[20px] border border-primary/20 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-4 sm:p-5 backdrop-blur-sm shadow-[0_15px_40px_rgba(26,22,20,0.08)] transition hover:border-primary/30">
               <div className="flex items-center gap-2 mb-4">
                 <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10">
                   <Users className="h-4 w-4 text-gray-900 dark:text-white" />
@@ -1386,7 +1411,7 @@ export default function BusinessInsightPage({
             </article>
 
             {/* QR Code Card */}
-            <article className="rounded-[20px] border border-zinc-400/20 bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent p-4 sm:p-5 backdrop-blur-sm shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)] transition hover:border-zinc-300/40">
+            <article className="rounded-[20px] border border-primary/20 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-4 sm:p-5 backdrop-blur-sm shadow-[0_15px_40px_rgba(26,22,20,0.08)] transition hover:border-primary/30">
               <div className="flex items-center gap-2 mb-4">
                 <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10">
                   <QrCode className="h-4 w-4 text-gray-900 dark:text-white" />
@@ -1404,7 +1429,7 @@ export default function BusinessInsightPage({
             </article>
 
             {/* AI Insights Card */}
-            <article className="rounded-[20px] border border-zinc-400/20 bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent p-4 sm:p-5 backdrop-blur-sm shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)] transition hover:border-zinc-300/40">
+            <article className="rounded-[20px] border border-primary/20 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-4 sm:p-5 backdrop-blur-sm shadow-[0_15px_40px_rgba(26,22,20,0.08)] transition hover:border-primary/30">
               <div className="flex items-center gap-2 mb-4">
                 <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10">
                   <Sparkles className="h-4 w-4 text-gray-900 dark:text-white" />
@@ -1441,7 +1466,7 @@ export default function BusinessInsightPage({
                   <Button
                     variant="outline"
                     size="sm"
-                    className="rounded-xl border-zinc-400/30 hover:border-zinc-300/50"
+                    className="rounded-xl border border-primary/20 hover:border-primary/40 hover:bg-primary/5"
                     onClick={handleGenerateAiInsights}
                     disabled={aiInsightsLoading || showSkeleton}
                   >

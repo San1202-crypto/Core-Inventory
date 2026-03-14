@@ -66,75 +66,60 @@ const variantConfig: Record<
   }
 > = {
   sky: {
-    border: "border-zinc-400/20",
-    gradient: "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
-    shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+    border: "border-primary/20",
+    gradient: "bg-gradient-to-br from-primary/10 via-primary/5 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
+    shadow: "shadow-[0_15px_40px_rgba(26,22,20,0.08)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
+    iconBg: "border-primary/20 bg-primary/5",
   },
   emerald: {
-    border: "border-zinc-400/20",
-    gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
-    shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+    border: "border-primary/20",
+    gradient: "bg-gradient-to-br from-primary/10 via-primary/5 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
+    shadow: "shadow-[0_15px_40px_rgba(26,22,20,0.08)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
+    iconBg: "border-primary/20 bg-primary/5",
   },
   amber: {
-    border: "border-zinc-400/20",
-    gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
-    shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+    border: "border-primary/25",
+    gradient: "bg-gradient-to-br from-primary/12 via-primary/6 to-transparent dark:from-white/12 dark:via-white/6 dark:to-white/3",
+    shadow: "shadow-[0_15px_45px_rgba(26,22,20,0.12)] dark:shadow-[0_40px_100px_rgba(0,0,0,0.4)]",
+    hoverBorder: "hover:border-primary/45",
+    iconBg: "border-primary/25 bg-primary/8",
   },
   rose: {
-    border: "border-zinc-400/20",
-    gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
-    shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+    border: "border-primary/20",
+    gradient: "bg-gradient-to-br from-primary/10 via-primary/5 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
+    shadow: "shadow-[0_15px_40px_rgba(26,22,20,0.08)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
+    iconBg: "border-primary/20 bg-primary/5",
   },
   violet: {
-    border: "border-zinc-400/20",
-    gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
-    shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+    border: "border-primary/20",
+    gradient: "bg-gradient-to-br from-primary/10 via-primary/5 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
+    shadow: "shadow-[0_15px_40px_rgba(26,22,20,0.08)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
+    iconBg: "border-primary/20 bg-primary/5",
   },
   blue: {
-    border: "border-zinc-400/20",
-    gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
-    shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.05)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.1)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+    border: "border-primary/20",
+    gradient: "bg-gradient-to-br from-primary/10 via-primary/5 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
+    shadow: "shadow-[0_15px_40px_rgba(26,22,20,0.08)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
+    iconBg: "border-primary/20 bg-primary/5",
   },
   orange: {
-    border: "border-zinc-400/20",
-    gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
-    shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.1)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+    border: "border-primary/20",
+    gradient: "bg-gradient-to-br from-primary/10 via-primary/5 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
+    shadow: "shadow-[0_15px_40px_rgba(26,22,20,0.08)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
+    iconBg: "border-primary/20 bg-primary/5",
   },
   teal: {
-    border: "border-zinc-400/20",
-    gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
-    shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+    border: "border-primary/20",
+    gradient: "bg-gradient-to-br from-primary/10 via-primary/5 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
+    shadow: "shadow-[0_15px_40px_rgba(26,22,20,0.08)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
+    iconBg: "border-primary/20 bg-primary/5",
   },
 };
 
@@ -424,14 +409,8 @@ export default function CategoryDetailPage({
             {/* Category Information */}
             <GlassCard variant="orange">
               <div className="flex items-center gap-3 mb-4">
-                <div
-                  className={cn(
-                    "p-2.5 rounded-xl border",
-                    variantConfig.orange.iconBg,
-                    "dark:border-zinc-400/30 dark:bg-zinc-500/20",
-                  )}
-                >
-                  <Tag className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
+                <div className="p-2.5 rounded-xl border border-primary/20 bg-primary/5">
+                  <Tag className="h-5 w-5 text-primary/70" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                   Category Information
@@ -439,8 +418,8 @@ export default function CategoryDetailPage({
               </div>
 
               <div className="space-y-4">
-                <div className="flex items-center gap-2 text-sm p-3 rounded-xl bg-gradient-to-r from-zinc-100/50 via-zinc-50/30 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent border border-zinc-200/30 dark:border-zinc-400/10">
-                  <Tag className="h-4 w-4 text-zinc-500 dark:text-zinc-400" />
+                <div className="flex items-center gap-2 text-sm p-3 rounded-xl bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border border-primary/20">
+                  <Tag className="h-4 w-4 text-primary/60" />
                   <span className="text-gray-600 dark:text-gray-400">
                     Name:
                   </span>
@@ -450,7 +429,7 @@ export default function CategoryDetailPage({
                 </div>
 
                 {category.description && (
-                  <div className="p-3 rounded-xl bg-gradient-to-r from-zinc-100/50 via-zinc-50/30 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent border border-zinc-200/30 dark:border-zinc-400/10">
+                  <div className="p-3 rounded-xl bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border border-primary/20">
                     <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
                       Description:
                     </p>
@@ -461,7 +440,7 @@ export default function CategoryDetailPage({
                 )}
 
                 {category.notes && (
-                  <div className="p-3 rounded-xl bg-gradient-to-r from-zinc-100/50 via-zinc-50/30 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent border border-zinc-200/30 dark:border-zinc-400/10">
+                  <div className="p-3 rounded-xl bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border border-primary/20">
                     <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
                       Notes:
                     </p>
@@ -471,8 +450,8 @@ export default function CategoryDetailPage({
                   </div>
                 )}
 
-                <div className="flex items-center gap-2 text-sm p-3 rounded-xl bg-gradient-to-r from-zinc-100/50 via-zinc-50/30 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent border border-zinc-200/30 dark:border-zinc-400/10">
-                  <Calendar className="h-4 w-4 text-zinc-500 dark:text-zinc-400" />
+                <div className="flex items-center gap-2 text-sm p-3 rounded-xl bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border border-primary/20">
+                  <Calendar className="h-4 w-4 text-primary/60" />
                   <span className="text-gray-600 dark:text-gray-400">
                     Created:
                   </span>
@@ -483,8 +462,8 @@ export default function CategoryDetailPage({
                 </div>
 
                 {updatedAt && (
-                  <div className="flex items-center gap-2 text-sm p-3 rounded-xl bg-gradient-to-r from-zinc-100/50 via-zinc-50/30 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent border border-zinc-200/30 dark:border-zinc-400/10">
-                    <Calendar className="h-4 w-4 text-zinc-500 dark:text-zinc-400" />
+                  <div className="flex items-center gap-2 text-sm p-3 rounded-xl bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border border-primary/20">
+                    <Calendar className="h-4 w-4 text-primary/60" />
                     <span className="text-gray-600 dark:text-gray-400">
                       Updated:
                     </span>
@@ -497,9 +476,9 @@ export default function CategoryDetailPage({
 
                 {/* Creator Information */}
                 {category.creator && (
-                  <div className="p-3 rounded-xl bg-gradient-to-r from-zinc-100/50 via-zinc-50/30 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent border border-zinc-200/30 dark:border-zinc-400/10 space-y-2">
+                  <div className="p-3 rounded-xl bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border border-primary/20 space-y-2">
                     <div className="flex items-center gap-2 text-sm">
-                      <User className="h-4 w-4 text-zinc-500 dark:text-zinc-400" />
+                      <User className="h-4 w-4 text-primary/60" />
                       <span className="text-gray-600 dark:text-gray-400">
                         Created by:
                       </span>
@@ -508,7 +487,7 @@ export default function CategoryDetailPage({
                       </span>
                     </div>
                     <div className="flex items-center gap-2 text-sm">
-                      <Mail className="h-4 w-4 text-zinc-500 dark:text-zinc-400" />
+                      <Mail className="h-4 w-4 text-primary/60" />
                       <span className="text-gray-600 dark:text-gray-400">
                         Email:
                       </span>
@@ -521,9 +500,9 @@ export default function CategoryDetailPage({
 
                 {/* Updater Information */}
                 {category.updater && (
-                  <div className="p-3 rounded-xl bg-gradient-to-r from-zinc-100/50 via-zinc-50/30 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent border border-zinc-200/30 dark:border-zinc-400/10 space-y-2">
+                  <div className="p-3 rounded-xl bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border border-primary/20 space-y-2">
                     <div className="flex items-center gap-2 text-sm">
-                      <User className="h-4 w-4 text-zinc-500 dark:text-zinc-400" />
+                      <User className="h-4 w-4 text-primary/60" />
                       <span className="text-gray-600 dark:text-gray-400">
                         Updated by:
                       </span>
@@ -532,7 +511,7 @@ export default function CategoryDetailPage({
                       </span>
                     </div>
                     <div className="flex items-center gap-2 text-sm">
-                      <Mail className="h-4 w-4 text-zinc-500 dark:text-zinc-400" />
+                      <Mail className="h-4 w-4 text-primary/60" />
                       <span className="text-gray-600 dark:text-gray-400">
                         Email:
                       </span>
@@ -548,14 +527,8 @@ export default function CategoryDetailPage({
             {/* Statistics */}
             <GlassCard variant="teal">
               <div className="flex items-center gap-3 mb-2">
-                <div
-                  className={cn(
-                    "p-2.5 rounded-xl border",
-                    variantConfig.teal.iconBg,
-                    "dark:border-zinc-400/30 dark:bg-zinc-500/20",
-                  )}
-                >
-                  <BarChart3 className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
+                <div className="p-2.5 rounded-xl border border-primary/20 bg-primary/5">
+                  <BarChart3 className="h-5 w-5 text-primary/70" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -568,7 +541,7 @@ export default function CategoryDetailPage({
               </div>
 
               <div className="space-y-3 mt-4">
-                <div className="flex justify-between items-center p-3 rounded-xl bg-gradient-to-r from-zinc-100/50 via-zinc-50/30 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent border border-zinc-200/30 dark:border-zinc-400/10">
+                <div className="flex justify-between items-center p-3 rounded-xl bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border border-primary/20">
                   <span className="text-sm text-gray-600 dark:text-gray-400">
                     Total Products:
                   </span>
@@ -577,7 +550,7 @@ export default function CategoryDetailPage({
                   </span>
                 </div>
 
-                <div className="flex justify-between items-center p-3 rounded-xl bg-gradient-to-r from-zinc-100/50 via-zinc-50/30 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent border border-zinc-200/30 dark:border-zinc-400/10">
+                <div className="flex justify-between items-center p-3 rounded-xl bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border border-primary/20">
                   <span className="text-sm text-gray-600 dark:text-gray-400">
                     Total Quantity Sold:
                   </span>
@@ -586,7 +559,7 @@ export default function CategoryDetailPage({
                   </span>
                 </div>
 
-                <div className="flex justify-between items-center p-3 rounded-xl bg-gradient-to-r from-zinc-100/50 via-zinc-50/30 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent border border-zinc-200/30 dark:border-zinc-400/10">
+                <div className="flex justify-between items-center p-3 rounded-xl bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border border-primary/20">
                   <span className="text-sm text-gray-600 dark:text-gray-400">
                     Total Revenue:
                   </span>
@@ -595,7 +568,7 @@ export default function CategoryDetailPage({
                   </span>
                 </div>
 
-                <div className="flex justify-between items-center p-3 rounded-xl bg-gradient-to-r from-zinc-100/50 via-zinc-50/30 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent border border-zinc-200/30 dark:border-zinc-400/10">
+                <div className="flex justify-between items-center p-3 rounded-xl bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border border-primary/20">
                   <span className="text-sm text-gray-600 dark:text-gray-400">
                     Orders Containing Products:
                   </span>
@@ -604,9 +577,9 @@ export default function CategoryDetailPage({
                   </span>
                 </div>
 
-                <Separator className="my-3 bg-zinc-200/50 dark:bg-zinc-400/20" />
+                <Separator className="my-3 bg-primary/10" />
 
-                <div className="flex justify-between items-center p-3 rounded-xl bg-gradient-to-r from-zinc-100/50 via-zinc-50/30 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent border border-zinc-200/30 dark:border-zinc-400/10">
+                <div className="flex justify-between items-center p-3 rounded-xl bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border border-primary/20">
                   <span className="text-sm text-gray-600 dark:text-gray-400">
                     Current Stock Value:
                   </span>
@@ -622,14 +595,8 @@ export default function CategoryDetailPage({
           {category.products && category.products.length > 0 && (
             <GlassCard variant="sky">
               <div className="flex items-center gap-3 mb-2">
-                <div
-                  className={cn(
-                    "p-2.5 rounded-xl border",
-                    variantConfig.sky.iconBg,
-                    "dark:border-zinc-400/30 dark:bg-zinc-500/20",
-                  )}
-                >
-                  <Package className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
+                <div className="p-2.5 rounded-xl border border-primary/20 bg-primary/5">
+                  <Package className="h-5 w-5 text-primary/70" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -647,10 +614,10 @@ export default function CategoryDetailPage({
                   <Link
                     key={product.id}
                     href={`/products/${product.id}`}
-                    className="flex items-center gap-3 p-4 rounded-xl border border-zinc-200/40 dark:border-zinc-400/20 bg-gradient-to-r from-zinc-100/40 via-zinc-50/20 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent hover:border-zinc-300/60 dark:hover:border-zinc-400/40 hover:from-zinc-100/60 dark:hover:from-zinc-500/20 transition-all duration-300"
+                    className="flex items-center gap-3 p-4 rounded-xl border border-primary/10 bg-gradient-to-r from-primary/5 to-transparent hover:border-primary/30 transition-all duration-300"
                   >
                     {product.imageUrl && (
-                      <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-white/50 dark:bg-white/5 border border-zinc-200/30 dark:border-zinc-400/20 flex-shrink-0">
+                      <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-primary/5 border border-primary/10 flex-shrink-0">
                         <Image
                           src={product.imageUrl ?? ""}
                           width={64}
@@ -682,14 +649,8 @@ export default function CategoryDetailPage({
           {category.recentOrders && category.recentOrders.length > 0 && (
             <GlassCard variant="violet">
               <div className="flex items-center gap-3 mb-2">
-                <div
-                  className={cn(
-                    "p-2.5 rounded-xl border",
-                    variantConfig.violet.iconBg,
-                    "dark:border-zinc-400/30 dark:bg-zinc-500/20",
-                  )}
-                >
-                  <ShoppingCart className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
+                <div className="p-2.5 rounded-xl border border-primary/20 bg-primary/5">
+                  <ShoppingCart className="h-5 w-5 text-primary/70" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -706,7 +667,7 @@ export default function CategoryDetailPage({
                   <Link
                     key={order.id}
                     href={`/orders/${order.orderId}`}
-                    className="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-xl border border-zinc-200/40 dark:border-zinc-400/20 bg-gradient-to-r from-zinc-100/40 via-zinc-50/20 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent hover:border-zinc-300/60 dark:hover:border-zinc-400/40 hover:from-zinc-100/60 dark:hover:from-zinc-500/20 transition-all duration-300"
+                    className="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-xl border border-primary/10 bg-gradient-to-r from-primary/5 to-transparent hover:border-primary/30 transition-all duration-300"
                   >
                     <div className="flex-1">
                       <h4 className="font-medium text-gray-900 dark:text-white">
@@ -738,16 +699,7 @@ export default function CategoryDetailPage({
                         )}
                       </p>
                       <Badge
-                        className={cn(
-                          "text-xs mt-1 border",
-                          order.orderStatus === "cancelled" &&
-                            "bg-zinc-500/20 text-zinc-700 dark:text-zinc-300 border-zinc-400/30",
-                          order.orderStatus === "delivered" &&
-                            "bg-zinc-500/20 text-zinc-700 dark:text-zinc-300 border-zinc-400/30",
-                          order.orderStatus !== "cancelled" &&
-                            order.orderStatus !== "delivered" &&
-                            "bg-zinc-500/20 text-zinc-700 dark:text-zinc-300 border-zinc-400/30",
-                        )}
+                        className="text-xs mt-1 border bg-primary/5 text-primary/80 dark:text-primary/90 border-primary/20"
                       >
                         {order.orderStatus
                           ? order.orderStatus.charAt(0).toUpperCase() +
@@ -774,7 +726,7 @@ export default function CategoryDetailPage({
             <Button
               onClick={handleEditCategory}
               disabled={isClientRole}
-              className="w-full sm:w-auto gap-2 rounded-xl border border-zinc-400/30 bg-gradient-to-r from-zinc-500/70 via-zinc-500/50 to-zinc-500/30 text-white shadow-[0_10px_25px_rgba(0,0,0,0.35)] backdrop-blur-sm hover:border-zinc-300/50 hover:from-zinc-500/80 hover:via-zinc-500/60 hover:to-zinc-500/40 transition-all duration-300 disabled:opacity-50"
+              className="w-full sm:w-auto gap-2 rounded-xl border border-primary/20 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent text-primary/80 hover:from-primary/15 transition-all duration-300 disabled:opacity-50"
             >
               <Edit className="h-4 w-4 shrink-0" />
               Edit Category
@@ -782,7 +734,7 @@ export default function CategoryDetailPage({
             <Button
               onClick={handleDuplicateCategory}
               disabled={isCopying || isClientRole}
-              className="w-full sm:w-auto gap-2 rounded-xl border border-zinc-400/30 bg-gradient-to-r from-zinc-500/70 via-zinc-500/50 to-zinc-500/30 text-white shadow-[0_10px_25px_rgba(0,0,0,0.2)] backdrop-blur-sm hover:border-zinc-300/50 hover:from-zinc-500/80 hover:via-zinc-500/60 hover:to-zinc-500/40 transition-all duration-300 disabled:opacity-50"
+              className="w-full sm:w-auto gap-2 rounded-xl border border-primary/20 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent text-primary/80 hover:from-primary/15 transition-all duration-300 disabled:opacity-50"
             >
               <Copy className="h-4 w-4 shrink-0" />
               {isCopying ? "Duplicating..." : "Create Duplicate"}
@@ -790,7 +742,7 @@ export default function CategoryDetailPage({
             <Button
               onClick={() => setDeleteDialogOpen(true)}
               disabled={isDeleting || isClientRole}
-              className="w-full sm:w-auto gap-2 rounded-xl border border-zinc-400/30 bg-gradient-to-r from-zinc-500/70 via-zinc-500/50 to-zinc-500/30 text-white shadow-[0_10px_25px_rgba(0,0,0,0.2)] backdrop-blur-sm hover:border-zinc-300/50 hover:from-zinc-500/80 hover:via-zinc-500/60 hover:to-zinc-500/40 transition-all duration-300 disabled:opacity-50"
+              className="w-full sm:w-auto gap-2 rounded-xl border border-primary/20 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent text-primary/80 hover:from-primary/15 transition-all duration-300 disabled:opacity-50"
             >
               <Trash2 className="h-4 w-4 shrink-0" />
               {isDeleting ? "Deleting..." : "Delete Category"}

@@ -70,7 +70,7 @@ function formatDate(date: Date | string): string {
  * Format currency
  */
 function formatCurrency(amount: number): string {
-  return `$${amount.toFixed(2)}`;
+  return `Rs ${amount.toFixed(2)}`;
 }
 
 /**

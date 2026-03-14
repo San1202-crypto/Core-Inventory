@@ -170,3 +170,12 @@ export {
   useGenerateShippingLabel,
   useAddTrackingNumber,
 } from "./use-shipping";
+
+// Inventory Adjustments hooks
+export {
+  useInventoryAdjustments,
+  useInventoryAdjustment,
+  useCreateInventoryAdjustment,
+  useUpdateInventoryAdjustment,
+  useDeleteInventoryAdjustment,
+} from "./useInventoryAdjustments";

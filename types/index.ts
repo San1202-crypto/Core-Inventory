@@ -144,6 +144,15 @@ export type {
   WarehouseStockSummary,
 } from "./stock-allocation";
 
+// Inventory Adjustment types
+export type {
+  InventoryAdjustmentStatus,
+  InventoryAdjustmentItem,
+  InventoryAdjustment,
+  CreateInventoryAdjustmentInput,
+  UpdateInventoryAdjustmentInput,
+} from "./inventory-adjustment";
+
 // Forecasting types
 export type {
   ProductSalesHistory,

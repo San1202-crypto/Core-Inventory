@@ -64,84 +64,67 @@ const variantConfig: Record<
   }
 > = {
   sky: {
-    border: "border-zinc-400/20",
-    gradient: "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
-    shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+    border: "border-primary/20",
+    gradient: "bg-gradient-to-br from-primary/10 via-primary/5 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
+    shadow: "shadow-[0_15px_40px_rgba(26,22,20,0.08)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
+    iconBg: "border-primary/20 bg-primary/5",
   },
   emerald: {
-    border: "border-zinc-400/20",
-    gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
-    shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+    border: "border-primary/20",
+    gradient: "bg-gradient-to-br from-primary/10 via-primary/5 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
+    shadow: "shadow-[0_15px_40px_rgba(26,22,20,0.08)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
+    iconBg: "border-primary/20 bg-primary/5",
   },
   amber: {
-    border: "border-zinc-400/20",
-    gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
-    shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+    border: "border-primary/25",
+    gradient: "bg-gradient-to-br from-primary/12 via-primary/6 to-transparent dark:from-white/12 dark:via-white/6 dark:to-white/3",
+    shadow: "shadow-[0_15px_45px_rgba(26,22,20,0.12)] dark:shadow-[0_40px_100px_rgba(0,0,0,0.4)]",
+    hoverBorder: "hover:border-primary/45",
+    iconBg: "border-primary/25 bg-primary/8",
   },
   rose: {
-    border: "border-zinc-400/20",
-    gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
-    shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+    border: "border-primary/20",
+    gradient: "bg-gradient-to-br from-primary/10 via-primary/5 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
+    shadow: "shadow-[0_15px_40px_rgba(26,22,20,0.08)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
+    iconBg: "border-primary/20 bg-primary/5",
   },
   violet: {
-    border: "border-zinc-400/20",
-    gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
-    shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+    border: "border-primary/20",
+    gradient: "bg-gradient-to-br from-primary/10 via-primary/5 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
+    shadow: "shadow-[0_15px_40px_rgba(26,22,20,0.08)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
+    iconBg: "border-primary/20 bg-primary/5",
   },
   blue: {
-    border: "border-zinc-400/20",
-    gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
-    shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.05)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.1)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+    border: "border-primary/20",
+    gradient: "bg-gradient-to-br from-primary/10 via-primary/5 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
+    shadow: "shadow-[0_15px_40px_rgba(26,22,20,0.08)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
+    iconBg: "border-primary/20 bg-primary/5",
   },
   orange: {
-    border: "border-zinc-400/20",
-    gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
-    shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.1)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+    border: "border-primary/20",
+    gradient: "bg-gradient-to-br from-primary/10 via-primary/5 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
+    shadow: "shadow-[0_15px_40px_rgba(26,22,20,0.08)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
+    iconBg: "border-primary/20 bg-primary/5",
   },
   teal: {
-    border: "border-zinc-400/20",
-    gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
-    shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+    border: "border-primary/20",
+    gradient: "bg-gradient-to-br from-primary/10 via-primary/5 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
+    shadow: "shadow-[0_15px_40px_rgba(26,22,20,0.08)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
+    iconBg: "border-primary/20 bg-primary/5",
   },
   cyan: {
-    border: "border-zinc-400/20",
-    gradient:
-      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
-    shadow:
-      "shadow-[0_15px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.1)]",
-    hoverBorder: "hover:border-zinc-300/40",
-    iconBg: "border-zinc-300/30 bg-zinc-100/50",
+    border: "border-primary/20",
+    gradient: "bg-gradient-to-br from-primary/10 via-primary/5 to-transparent dark:from-white/10 dark:via-white/5 dark:to-white/2",
+    shadow: "shadow-[0_15px_40px_rgba(26,22,20,0.08)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]",
+    hoverBorder: "hover:border-primary/40",
+    iconBg: "border-primary/20 bg-primary/5",
   },
 };
 
@@ -177,30 +160,12 @@ function GlassCard({
 
 /** Badge classes for Warehouse Status (Active/Inactive) — distinct colors for light and dark mode */
 function getWarehouseStatusBadgeClasses(active: boolean): string {
-  return active
-    ? "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-200 border border-zinc-300/40"
-    : "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-200 border border-zinc-300/40";
+  return "bg-primary/5 text-primary/80 dark:text-primary/90 border border-primary/20";
 }
 
 /** Badge classes for Warehouse Type — distinct colors per type, light and dark mode */
 function getWarehouseTypeBadgeClasses(type: string): string {
-  const t = (type || "").toLowerCase();
-  switch (t) {
-    case "main":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-200 border border-zinc-300/40";
-    case "secondary":
-      return "bg-slate-100 text-slate-800 dark:bg-slate-700/50 dark:text-slate-200 border border-slate-300/40";
-    case "storage":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-200 border border-zinc-300/40";
-    case "distribution":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-200 border border-zinc-300/40";
-    case "retail":
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-200 border border-zinc-300/40";
-    case "other":
-      return "bg-gray-100 text-gray-700 dark:bg-gray-700/50 dark:text-gray-200 border border-gray-300/40";
-    default:
-      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-200 border border-zinc-300/40";
-  }
+  return "bg-primary/5 text-primary/80 dark:text-primary/90 border border-primary/20";
 }
 
 export type WarehouseDetailPageProps = { embedInAdmin?: boolean };

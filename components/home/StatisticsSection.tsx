@@ -21,7 +21,7 @@ import { StatisticsCardSkeleton } from "./StatisticsCardSkeleton";
 import { useDashboard } from "@/hooks/queries/use-dashboard";
 
 const formatCurrency = (value: number) =>
-  `$${value.toLocaleString(undefined, {
+  `Rs ${value.toLocaleString('en-IN', {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   })}`;
@@ -66,7 +66,6 @@ export function StatisticsSection() {
             value={stats.counts?.products ?? 0}
             description="Products availability"
             icon={Package}
-            variant="rose"
             badges={[
               { label: "Available", value: stats.productStatusBreakdown?.available ?? 0 },
               { label: "Stock low", value: stats.productStatusBreakdown?.stockLow ?? 0 },
@@ -78,7 +77,6 @@ export function StatisticsSection() {
             value={formatCurrency(stats.totalInventoryValue ?? 0)}
             description="Total inventory value"
             icon={DollarSign}
-            variant="violet"
             badges={[
               {
                 label: "Orders",
@@ -104,7 +102,6 @@ export function StatisticsSection() {
             value={formatCurrency(revenueFromOrders)}
             description="Profits (excl. cancelled)"
             icon={DollarSign}
-            variant="emerald"
             badges={[
               {
                 label: "Paid",
@@ -135,7 +132,6 @@ export function StatisticsSection() {
             value={stats.counts?.orders}
             description="Total orders placed (self + client)"
             icon={ShoppingCart}
-            variant="blue"
             badges={[
               {
                 label: "Pending",
@@ -169,7 +165,6 @@ export function StatisticsSection() {
             value={stats.counts?.invoices}
             description="Total invoices (store-wide)"
             icon={FileText}
-            variant="sky"
             badges={[
               {
                 label: "Paid",
@@ -203,7 +198,6 @@ export function StatisticsSection() {
             value={stats.counts?.warehouses}
             description="Storage locations"
             icon={Warehouse}
-            variant="teal"
             badges={[
               { label: "Active", value: stats.warehouseAnalytics?.activeWarehouses ?? 0 },
               { label: "Inactive", value: stats.warehouseAnalytics?.inactiveWarehouses ?? 0 },
@@ -214,7 +208,6 @@ export function StatisticsSection() {
             value={stats.counts?.suppliers}
             description="Suppliers"
             icon={Truck}
-            variant="emerald"
             badges={[
               { label: "Active", value: stats.supplierStatusBreakdown?.active ?? 0 },
               { label: "Inactive", value: stats.supplierStatusBreakdown?.inactive ?? 0 },
@@ -225,7 +218,6 @@ export function StatisticsSection() {
             value={stats.counts?.categories}
             description="Product categories"
             icon={FolderTree}
-            variant="amber"
             badges={[
               { label: "Active", value: stats.categoryStatusBreakdown?.active ?? 0 },
               { label: "Inactive", value: stats.categoryStatusBreakdown?.inactive ?? 0 },

@@ -59,7 +59,7 @@ function CatalogStatusBadge({ status }: { status: string }) {
       variant={isActive ? "default" : "secondary"}
       className={cn(
         isActive &&
-          "border-transparent bg-zinc-600 text-white hover:bg-zinc-700 dark:bg-zinc-600 dark:hover:bg-zinc-700",
+        "border-transparent bg-zinc-600 text-white hover:bg-zinc-700 dark:bg-zinc-600 dark:hover:bg-zinc-700",
       )}
     >
       {status}
@@ -320,16 +320,16 @@ export default function ClientPortalPage() {
                 },
                 ...(dashboard.totalOrders > 0
                   ? [
-                      {
-                        label: "Avg/Order",
-                        value: `$${(
-                          dashboard.totalSpent / dashboard.totalOrders
-                        ).toLocaleString(undefined, {
-                          minimumFractionDigits: 2,
-                          maximumFractionDigits: 2,
-                        })}`,
-                      },
-                    ]
+                    {
+                      label: "Avg/Order",
+                      value: `$${(
+                        dashboard.totalSpent / dashboard.totalOrders
+                      ).toLocaleString(undefined, {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      })}`,
+                    },
+                  ]
                   : []),
               ]}
             />

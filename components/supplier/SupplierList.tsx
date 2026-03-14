@@ -111,10 +111,10 @@ const SupplierList = React.memo(() => {
     <div className="flex flex-col poppins">
       {/* Supplier Management Section Header — same alignment as products page */}
       <div className="pb-6 flex flex-col items-start text-left">
-        <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white pb-2">
+        <h2 className="text-xl sm:text-2xl font-semibold text-primary/80 pb-2">
           Supplier Management
         </h2>
-        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+        <p className="text-sm sm:text-base text-primary/60">
           Manage your supplier relationships efficiently. Track supplier
           information, status, and maintain detailed records for better
           inventory management and procurement planning.
@@ -137,7 +137,6 @@ const SupplierList = React.memo(() => {
                 value={suppliersPageStats.counts.products}
                 description="Products availability"
                 icon={Package}
-                variant="rose"
                 badges={[
                   {
                     label: "Available",
@@ -163,7 +162,6 @@ const SupplierList = React.memo(() => {
                 )}
                 description="Total inventory value"
                 icon={DollarSign}
-                variant="violet"
                 badges={[
                   {
                     label: "Orders",
@@ -201,7 +199,6 @@ const SupplierList = React.memo(() => {
                 value={suppliersPageStats.counts.suppliers}
                 description="Suppliers"
                 icon={Truck}
-                variant="emerald"
                 badges={[
                   {
                     label: "Active",
@@ -220,7 +217,6 @@ const SupplierList = React.memo(() => {
                 value={suppliersPageStats.counts.categories}
                 description="Product categories"
                 icon={FolderTree}
-                variant="amber"
                 badges={[
                   {
                     label: "Active",

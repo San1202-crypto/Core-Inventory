@@ -208,8 +208,8 @@ export default function AdminDashboardOverview({
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-semibold">
-                $
-                {stats.totalRevenue.toLocaleString(undefined, {
+                Rs{" "}
+                {stats.totalRevenue.toLocaleString('en-IN', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                 })}

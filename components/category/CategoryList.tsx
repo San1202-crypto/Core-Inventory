@@ -111,10 +111,10 @@ const CategoryList = React.memo(() => {
     <div className="flex flex-col poppins">
       {/* Category Management Section Header — same alignment as products page */}
       <div className="pb-6 flex flex-col items-start text-left">
-        <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white pb-2">
+        <h2 className="text-xl sm:text-2xl font-semibold text-primary/80 pb-2">
           Category Management
         </h2>
-        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+        <p className="text-sm sm:text-base text-primary/60">
           Organize your inventory with a comprehensive category system. Create,
           manage, and maintain product categories to streamline your inventory
           organization and improve product discoverability.
@@ -137,7 +137,6 @@ const CategoryList = React.memo(() => {
                 value={categoriesPageStats.counts.products}
                 description="Products availability"
                 icon={Package}
-                variant="rose"
                 badges={[
                   {
                     label: "Available",
@@ -164,7 +163,6 @@ const CategoryList = React.memo(() => {
                 )}
                 description="Total inventory value"
                 icon={DollarSign}
-                variant="violet"
                 badges={[
                   {
                     label: "Orders",
@@ -202,7 +200,6 @@ const CategoryList = React.memo(() => {
                 value={categoriesPageStats.counts.suppliers}
                 description="Suppliers"
                 icon={Truck}
-                variant="emerald"
                 badges={[
                   {
                     label: "Active",
@@ -222,7 +219,6 @@ const CategoryList = React.memo(() => {
                 value={categoriesPageStats.counts.categories}
                 description="Product categories"
                 icon={FolderTree}
-                variant="amber"
                 badges={[
                   {
                     label: "Active",

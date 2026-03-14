@@ -85,7 +85,7 @@ export async function GET(request: NextRequest) {
     let orderProductOwnerMap = new Map<string, { name: string | null; email: string }>();
     if (isClient && orders.length > 0) {
       const allProductIds = [
-        ...new Set(orders.flatMap((o) => o.items.map((item) => item.productId))),
+        ...new Set(orders.flatMap((o) => (o.items as any[]).map((item) => item.productId))),
       ];
       const products = allProductIds.length > 0
         ? await prisma.product.findMany({
@@ -244,7 +244,7 @@ export async function POST(request: NextRequest) {
     });
 
     // Notify product owners that a client placed an order containing their products (async, non-blocking)
-    const productIds = order.items.map((item) => item.productId);
+    const productIds = ((order as any).items as any[]).map((item: any) => item.productId);
     if (productIds.length > 0) {
       const products = await prisma.product.findMany({
         where: { id: { in: productIds } },
@@ -289,9 +289,9 @@ export async function POST(request: NextRequest) {
             orderDate: order.createdAt.toISOString(),
             clientName: shippingAddr.name || "Customer",
             clientEmail: shippingAddr.email,
-            items: order.items.map((item) => ({
+            items: ((order as any).items as any[]).map((item: any) => ({
               productName: item.productName,
-              sku: item.sku || undefined,
+              sku: (item as any).sku || undefined,
               quantity: item.quantity,
               price: item.price,
               subtotal: item.subtotal,
@@ -347,16 +347,16 @@ export async function POST(request: NextRequest) {
       updatedAt: order.updatedAt?.toISOString() || null,
       createdBy: order.createdBy,
       updatedBy: order.updatedBy,
-      items: order.items.map((item) => ({
-        id: item.id,
-        orderId: item.orderId,
-        productId: item.productId,
-        productName: item.productName,
-        sku: item.sku,
-        quantity: item.quantity,
-        price: item.price,
-        subtotal: item.subtotal,
-        createdAt: item.createdAt.toISOString(),
+      items: ((order as any).items as any[]).map((itemIn: any) => ({
+        id: itemIn.id,
+        orderId: itemIn.orderId,
+        productId: itemIn.productId,
+        productName: itemIn.productName,
+        sku: itemIn.sku,
+        quantity: itemIn.quantity,
+        price: itemIn.price,
+        subtotal: itemIn.subtotal,
+        createdAt: itemIn.createdAt.toISOString(),
       })),
     };
 

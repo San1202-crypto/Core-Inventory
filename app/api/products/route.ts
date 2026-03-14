@@ -141,6 +141,7 @@ export async function GET(request: NextRequest) {
       imageUrl: product.imageUrl || null,
       imageFileId: product.imageFileId || null,
       expirationDate: product.expirationDate?.toISOString() || null,
+      unitOfMeasure: product.unitOfMeasure || "units",
       ...(isSupplier && {
         productOwnerName: ownerNameMap.get(product.userId) ?? null,
       }),
@@ -189,6 +190,7 @@ export async function POST(request: NextRequest) {
       imageUrl,
       imageFileId,
       expirationDate,
+      unitOfMeasure,
     } = body;
 
     // Validate required fields
@@ -226,6 +228,7 @@ export async function POST(request: NextRequest) {
         imageUrl: imageUrl || null,
         imageFileId: imageFileId || null,
         expirationDate: expirationDate ? new Date(expirationDate) : null,
+        unitOfMeasure: unitOfMeasure || "units",
         createdAt: new Date(),
         updatedAt: null, // Set to null on creation - will be set when updated
       },
@@ -323,6 +326,7 @@ export async function POST(request: NextRequest) {
       createdAt: product.createdAt.toISOString(),
       updatedAt: product.updatedAt?.toISOString() || null,
       qrCodeUrl: product.qrCodeUrl || null,
+      unitOfMeasure: product.unitOfMeasure || "units",
     };
 
     return NextResponse.json(transformedProduct, { status: 201 });
@@ -366,6 +370,7 @@ export async function PUT(request: NextRequest) {
       imageUrl,
       imageFileId,
       expirationDate,
+      unitOfMeasure,
     } = body;
 
     if (!id) {
@@ -433,6 +438,7 @@ export async function PUT(request: NextRequest) {
               ? null
               : new Date(expirationDate),
         }),
+        ...(unitOfMeasure !== undefined && { unitOfMeasure }),
         updatedBy: session.id, // Track who updated the product
         updatedAt: new Date(), // Update timestamp
       },
@@ -576,6 +582,7 @@ export async function PUT(request: NextRequest) {
       imageUrl: product.imageUrl || null,
       imageFileId: product.imageFileId || null,
       expirationDate: product.expirationDate?.toISOString() || null,
+      unitOfMeasure: product.unitOfMeasure || "units",
     };
 
     return NextResponse.json(transformedProduct);
