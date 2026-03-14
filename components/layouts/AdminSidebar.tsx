@@ -19,6 +19,7 @@ import {
   User,
   FileText,
   UserCircle,
+  ArrowDownLeft,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/contexts";
@@ -112,9 +113,9 @@ const MANAGEMENT_ITEMS: NavItem[] = [
     countKey: "users",
   },
   {
-    href: "/admin/activity-history",
-    label: "Activity History",
-    icon: History,
+    href: "/admin/receipts",
+    label: "Receipts",
+    icon: ArrowDownLeft,
   },
 ];
 
