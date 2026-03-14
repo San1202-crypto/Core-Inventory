@@ -7,19 +7,35 @@
 import ImageKit, { toFile } from "@imagekit/nodejs";
 
 /**
+ * Check if ImageKit is configured
+ * @returns boolean
+ */
+export function isImageKitConfigured(): boolean {
+  return !!(
+    process.env.IMAGEKIT_PUBLIC_KEY &&
+    process.env.IMAGEKIT_PRIVATE_KEY &&
+    process.env.IMAGEKIT_URL_ENDPOINT
+  );
+}
+
+/**
  * Get ImageKit instance (lazy initialization)
  * Initializes only when needed to avoid build-time errors
  */
 function getImageKitInstance(): ImageKit {
   const privateKey = process.env.IMAGEKIT_PRIVATE_KEY;
+  const publicKey = process.env.IMAGEKIT_PUBLIC_KEY;
+  const urlEndpoint = process.env.IMAGEKIT_URL_ENDPOINT;
 
-  if (!privateKey) {
+  if (!privateKey || !publicKey || !urlEndpoint) {
     throw new Error(
-      "ImageKit credentials are missing. Please set IMAGEKIT_PRIVATE_KEY environment variable."
+      "ImageKit configuration is incomplete. Please set IMAGEKIT_PUBLIC_KEY, IMAGEKIT_PRIVATE_KEY, and IMAGEKIT_URL_ENDPOINT environment variables."
     );
   }
 
-  return new ImageKit({ privateKey });
+  return new ImageKit({
+    privateKey,
+  });
 }
 
 /**

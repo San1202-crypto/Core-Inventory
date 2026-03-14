@@ -232,8 +232,12 @@ export async function GET(request: NextRequest) {
       response.cookies.delete("oauth_state");
       response.cookies.delete("oauth_callback");
 
-      const { invalidateAllServerCaches } = await import("@/lib/cache");
-      await invalidateAllServerCaches().catch(() => {});
+      try {
+        const { invalidateAllServerCaches } = await import("@/lib/cache");
+        await invalidateAllServerCaches();
+      } catch (e) {
+        logger.warn("Could not invalidate cache after OAuth login", e);
+      }
 
       logger.info(`User authenticated via Google OAuth: ${email}`);
       return response;

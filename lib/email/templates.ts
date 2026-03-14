@@ -367,3 +367,71 @@ This is an automated email from Stock Inventory Management. Please do not reply 
     textContent,
   };
 }
+/**
+ * Generate password reset OTP email
+ *
+ * @param otp - 6-digit verification code
+ * @returns EmailContent - Email content with HTML and text versions
+ */
+export function generatePasswordResetEmail(otp: string): EmailContent {
+  const subject = generateUniqueSubject("Password Reset Verification Code");
+
+  const htmlContent = `
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Reset</title>
+  </head>
+  <body style="margin: 0; padding: 0; background-color: #f5f5f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f5f5f5;">
+      <tr>
+        <td align="center" style="padding: 20px 0;">
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+            <tr>
+              <td style="padding: 40px;">
+                <h1 style="color: #1e293b; margin: 0 0 20px 0; font-size: 24px; font-weight: 700;">Reset Your Password</h1>
+                <p style="font-size: 16px; line-height: 1.6; color: #475569; margin: 0 0 24px 0;">We received a request to reset your password. Use the verification code below to proceed:</p>
+                
+                <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 24px; text-align: center; margin-bottom: 24px;">
+                  <span style="font-family: monospace; font-size: 32px; font-weight: 700; color: #2563eb; letter-spacing: 8px;">${otp}</span>
+                </div>
+                
+                <p style="font-size: 14px; line-height: 1.6; color: #64748b; margin: 0 0 24px 0;">This code will expire in 10 minutes. If you did not request this, you can safely ignore this email.</p>
+                
+                <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 0 0 24px 0;">
+                
+                <p style="font-size: 12px; color: #94a3b8; margin: 0; text-align: center;">
+                  Stockly Inventory Management System • Automated Notification
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+  `.trim();
+
+  const textContent = `
+Reset Your Password
+
+We received a request to reset your password. Use the verification code below to proceed:
+
+Verification Code: ${otp}
+
+This code will expire in 10 minutes. If you did not request this, you can safely ignore this email.
+
+---
+Stockly Inventory Management System
+Automated Notification
+  `.trim();
+
+  return {
+    subject,
+    htmlContent,
+    textContent,
+  };
+}

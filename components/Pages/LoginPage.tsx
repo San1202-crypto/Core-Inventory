@@ -503,6 +503,14 @@ export default function LoginPage() {
                     Sign up
                   </Link>
                 </p>
+                <p className="mt-2">
+                  <Link
+                    href="/auth/forgot-password"
+                    className="text-gray-500 dark:text-white/50 hover:text-sky-600 dark:hover:text-sky-400 text-xs transition-colors"
+                  >
+                    Forgot your password?
+                  </Link>
+                </p>
               </div>
             </div>
           </div>

@@ -9,6 +9,7 @@ import { logger } from "@/lib/logger";
 import {
   uploadProductImageToImageKit,
   deleteProductImageFromImageKit,
+  isImageKitConfigured,
 } from "@/lib/imagekit";
 import { withRateLimit, defaultRateLimits } from "@/lib/api/rate-limit";
 
@@ -30,6 +31,17 @@ export async function POST(request: NextRequest) {
     const session = await getSessionFromRequest(request);
     if (!session) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
+    // Check if ImageKit is configured
+    if (!isImageKitConfigured()) {
+      return NextResponse.json(
+        {
+          error: "Service Not Available",
+          message: "Image upload is not configured. Please set ImageKit credentials in the environment.",
+        },
+        { status: 503 }
+      );
     }
 
     // Parse multipart form data
