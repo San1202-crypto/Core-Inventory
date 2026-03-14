@@ -227,7 +227,7 @@ export default function WarehouseFilters({
               setSearchTerm(e.target.value);
               setPagination((prev) => ({ ...prev, pageIndex: 0 }));
             }}
-            className="h-10 pl-9 pr-10 w-full rounded-[28px] bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-teal-400/30 dark:border-white/20 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-white/40 focus-visible:border-teal-400 focus-visible:ring-teal-500/50 shadow-[0_10px_30px_rgba(20,184,166,0.15)]"
+            className="h-10 pl-9 pr-10 w-full rounded-[28px] bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-zinc-400/30 dark:border-white/20 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
           />
           {searchTerm && (
             <Button
@@ -245,7 +245,7 @@ export default function WarehouseFilters({
         <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap">
           {!selectMounted ? (
             <div
-              className="h-10 w-full sm:w-[180px] rounded-[28px] border border-cyan-400/30 dark:border-cyan-400/30 bg-gradient-to-r from-cyan-500/25 via-cyan-500/15 to-cyan-500/10 dark:from-cyan-500/25 dark:via-cyan-500/15 dark:to-cyan-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(6,182,212,0.2)] backdrop-blur-sm font-medium flex items-center justify-between px-3 py-2.5 text-sm"
+              className="h-10 w-full sm:w-[180px] rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/25 via-zinc-500/15 to-zinc-500/10 dark:from-zinc-500/25 dark:via-zinc-500/15 dark:to-zinc-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(0,0,0,0.2)] backdrop-blur-sm font-medium flex items-center justify-between px-3 py-2.5 text-sm"
               aria-hidden
             >
               <span className="text-gray-700 dark:text-white/90">
@@ -265,25 +265,25 @@ export default function WarehouseFilters({
                 setPagination((prev) => ({ ...prev, pageIndex: 0 }));
               }}
             >
-              <SelectTrigger className="h-10 w-full sm:w-[180px] rounded-[28px] border border-cyan-400/30 dark:border-cyan-400/30 bg-gradient-to-r from-cyan-500/25 via-cyan-500/15 to-cyan-500/10 dark:from-cyan-500/25 dark:via-cyan-500/15 dark:to-cyan-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(6,182,212,0.2)] backdrop-blur-sm transition duration-200 hover:border-cyan-300/40 hover:from-cyan-500/35 hover:via-cyan-500/25 hover:to-cyan-500/15 dark:hover:border-cyan-300/40 dark:hover:from-cyan-500/35 dark:hover:via-cyan-500/25 dark:hover:to-cyan-500/15 font-medium">
+              <SelectTrigger className="h-10 w-full sm:w-[180px] rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/25 via-zinc-500/15 to-zinc-500/10 dark:from-zinc-500/25 dark:via-zinc-500/15 dark:to-zinc-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(0,0,0,0.2)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/40 hover:from-zinc-500/35 hover:via-zinc-500/25 hover:to-zinc-500/15 dark:hover:border-zinc-300/40 dark:hover:from-zinc-500/35 dark:hover:via-zinc-500/25 dark:hover:to-zinc-500/15 font-medium">
                 <SelectValue placeholder="All Warehouses" />
               </SelectTrigger>
-              <SelectContent className="rounded-[28px] border border-cyan-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm shadow-[0_10px_30px_rgba(6,182,212,0.15)]">
+              <SelectContent className="rounded-[28px] border border-zinc-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.15)]">
                 <SelectItem
                   value="all"
-                  className="text-gray-700 dark:text-white/80 focus:bg-cyan-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
+                  className="text-gray-700 dark:text-white/80 focus:bg-zinc-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
                 >
                   All Warehouses
                 </SelectItem>
                 <SelectItem
                   value="active"
-                  className="text-gray-700 dark:text-white/80 focus:bg-cyan-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
+                  className="text-gray-700 dark:text-white/80 focus:bg-zinc-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
                 >
                   Active
                 </SelectItem>
                 <SelectItem
                   value="inactive"
-                  className="text-gray-700 dark:text-white/80 focus:bg-cyan-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
+                  className="text-gray-700 dark:text-white/80 focus:bg-zinc-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
                 >
                   Inactive
                 </SelectItem>
@@ -298,7 +298,7 @@ export default function WarehouseFilters({
             <DropdownMenuTrigger asChild>
               <Button
                 variant="outline"
-                className="h-10 w-full sm:w-auto flex items-center gap-2 rounded-[28px] border border-teal-400/30 dark:border-teal-400/30 bg-gradient-to-r from-teal-500/25 via-teal-500/15 to-teal-500/10 dark:from-teal-500/25 dark:via-teal-500/15 dark:to-teal-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(20,184,166,0.2)] backdrop-blur-sm transition duration-200 hover:border-teal-300/40 hover:from-teal-500/35 hover:via-teal-500/25 hover:to-teal-500/15 dark:hover:border-teal-300/40 dark:hover:from-teal-500/35 dark:hover:via-teal-500/25 dark:hover:to-teal-500/15"
+                className="h-10 w-full sm:w-auto flex items-center gap-2 rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/25 via-zinc-500/15 to-zinc-500/10 dark:from-zinc-500/25 dark:via-zinc-500/15 dark:to-zinc-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(0,0,0,0.2)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/40 hover:from-zinc-500/35 hover:via-zinc-500/25 hover:to-zinc-500/15 dark:hover:border-zinc-300/40 dark:hover:from-zinc-500/35 dark:hover:via-zinc-500/25 dark:hover:to-zinc-500/15"
               >
                 <Download className="h-4 w-4" />
                 Export Warehouses
@@ -307,18 +307,18 @@ export default function WarehouseFilters({
             </DropdownMenuTrigger>
             <DropdownMenuContent
               align="end"
-              className="rounded-[28px] border border-teal-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm"
+              className="rounded-[28px] border border-zinc-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm"
             >
               <DropdownMenuItem
                 onClick={exportToCSV}
-                className="cursor-pointer text-gray-700 dark:text-white/80 hover:text-gray-900 dark:hover:text-white focus:bg-teal-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
+                className="cursor-pointer text-gray-700 dark:text-white/80 hover:text-gray-900 dark:hover:text-white focus:bg-zinc-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
               >
                 <FiFileText className="mr-2 h-4 w-4" />
                 Export as CSV
               </DropdownMenuItem>
               <DropdownMenuItem
                 onClick={exportToExcel}
-                className="cursor-pointer text-gray-700 dark:text-white/80 hover:text-gray-900 dark:hover:text-white focus:bg-teal-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
+                className="cursor-pointer text-gray-700 dark:text-white/80 hover:text-gray-900 dark:hover:text-white focus:bg-zinc-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
               >
                 <FiGrid className="mr-2 h-4 w-4" />
                 Export as Excel
@@ -356,10 +356,10 @@ function FilterArea({
     <div className="flex flex-col sm:flex-row gap-3 poppins">
       {/* Status Filter */}
       {hasActiveFilter && (
-        <div className="inline-flex items-center gap-1 px-2 py-1 text-xs border border-teal-400/30 bg-gradient-to-r from-teal-500/25 via-teal-500/10 to-teal-500/5 text-gray-700 dark:text-white rounded-md backdrop-blur-sm shadow-[0_10px_30px_rgba(20,184,166,0.2)]">
+        <div className="inline-flex items-center gap-1 px-2 py-1 text-xs border border-zinc-400/30 bg-gradient-to-r from-zinc-500/25 via-zinc-500/10 to-zinc-500/5 text-gray-700 dark:text-white rounded-md backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
           <span className="text-gray-700 dark:text-white/80">Status:</span>
           <div className="flex gap-1 items-center">
-            <Badge className="border border-teal-400/30 bg-gradient-to-r from-teal-500/25 via-teal-500/10 to-teal-500/5 text-white backdrop-blur-sm">
+            <Badge className="border border-zinc-400/30 bg-gradient-to-r from-zinc-500/25 via-zinc-500/10 to-zinc-500/5 text-white backdrop-blur-sm">
               {statusFilter === "active" ? "Active" : "Inactive"}
             </Badge>
           </div>
@@ -388,3 +388,4 @@ function FilterArea({
     </div>
   );
 }
+

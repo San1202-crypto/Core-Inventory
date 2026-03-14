@@ -36,57 +36,57 @@ const variantConfig: Record<
   }
 > = {
   sky: {
-    border: "border-sky-400/20",
-    gradient: "bg-gradient-to-br from-sky-500/15 via-sky-500/5 to-transparent",
+    border: "border-zinc-400/20",
+    gradient: "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(2,132,199,0.15)] dark:shadow-[0_15px_40px_rgba(2,132,199,0.1)]",
-    hoverBorder: "hover:border-sky-300/40",
-    iconBg: "border-sky-300/30 bg-sky-100/50",
+      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
+    hoverBorder: "hover:border-zinc-300/40",
+    iconBg: "border-zinc-300/30 bg-zinc-100/50",
   },
   emerald: {
-    border: "border-emerald-400/20",
+    border: "border-zinc-400/20",
     gradient:
-      "bg-gradient-to-br from-emerald-500/15 via-emerald-500/5 to-transparent",
+      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(16,185,129,0.15)] dark:shadow-[0_15px_40px_rgba(16,185,129,0.1)]",
-    hoverBorder: "hover:border-emerald-300/40",
-    iconBg: "border-emerald-300/30 bg-emerald-100/50",
+      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
+    hoverBorder: "hover:border-zinc-300/40",
+    iconBg: "border-zinc-300/30 bg-zinc-100/50",
   },
   amber: {
-    border: "border-amber-400/20",
+    border: "border-zinc-400/20",
     gradient:
-      "bg-gradient-to-br from-amber-500/15 via-amber-500/5 to-transparent",
+      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(245,158,11,0.12)] dark:shadow-[0_15px_40px_rgba(245,158,11,0.08)]",
-    hoverBorder: "hover:border-amber-300/40",
-    iconBg: "border-amber-300/30 bg-amber-100/50",
+      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
+    hoverBorder: "hover:border-zinc-300/40",
+    iconBg: "border-zinc-300/30 bg-zinc-100/50",
   },
   violet: {
-    border: "border-violet-400/20",
+    border: "border-zinc-400/20",
     gradient:
-      "bg-gradient-to-br from-violet-500/15 via-violet-500/5 to-transparent",
+      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(139,92,246,0.15)] dark:shadow-[0_15px_40px_rgba(139,92,246,0.1)]",
-    hoverBorder: "hover:border-violet-300/40",
-    iconBg: "border-violet-300/30 bg-violet-100/50",
+      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
+    hoverBorder: "hover:border-zinc-300/40",
+    iconBg: "border-zinc-300/30 bg-zinc-100/50",
   },
   blue: {
-    border: "border-blue-400/20",
+    border: "border-zinc-400/20",
     gradient:
-      "bg-gradient-to-br from-blue-500/15 via-blue-500/5 to-transparent",
+      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(59,130,246,0.15)] dark:shadow-[0_15px_40px_rgba(59,130,246,0.1)]",
-    hoverBorder: "hover:border-blue-300/40",
-    iconBg: "border-blue-300/30 bg-blue-100/50",
+      "shadow-[0_15px_40px_rgba(0,0,0,0.05)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.1)]",
+    hoverBorder: "hover:border-zinc-300/40",
+    iconBg: "border-zinc-300/30 bg-zinc-100/50",
   },
   teal: {
-    border: "border-teal-400/20",
+    border: "border-zinc-400/20",
     gradient:
-      "bg-gradient-to-br from-teal-500/15 via-teal-500/5 to-transparent",
+      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(20,184,166,0.15)] dark:shadow-[0_15px_40px_rgba(20,184,166,0.1)]",
-    hoverBorder: "hover:border-teal-300/40",
-    iconBg: "border-teal-300/30 bg-teal-100/50",
+      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
+    hoverBorder: "hover:border-zinc-300/40",
+    iconBg: "border-zinc-300/30 bg-zinc-100/50",
   },
 };
 
@@ -123,18 +123,18 @@ export type AdminClientPortalContentProps = {
 function getStatusColor(status: string): string {
   switch (status) {
     case "pending":
-      return "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
     case "confirmed":
     case "paid":
-      return "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
     case "processing":
     case "sent":
-      return "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
     case "completed":
-      return "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
     case "cancelled":
     case "overdue":
-      return "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
     default:
       return "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300";
   }
@@ -220,10 +220,10 @@ export default function AdminClientPortalContent({
                 className={cn(
                   "p-2.5 rounded-xl border",
                   variantConfig.sky.iconBg,
-                  "dark:border-sky-400/30 dark:bg-sky-500/20",
+                  "dark:border-zinc-400/30 dark:bg-zinc-500/20",
                 )}
               >
-                <ShoppingCart className="h-5 w-5 text-sky-600 dark:text-sky-400" />
+                <ShoppingCart className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
               </div>
               <div>
                 <h3 className="text-md sm:text-lg font-semibold text-gray-900 dark:text-white">
@@ -243,7 +243,7 @@ export default function AdminClientPortalContent({
                 No client orders yet.
               </p>
             ) : (
-              <ul className="divide-y divide-sky-200/40 dark:divide-white/10">
+              <ul className="divide-y divide-zinc-200/40 dark:divide-white/10">
                 {(stats.recentOrders ?? []).map((o) => (
                   <li
                     key={o.id}
@@ -252,7 +252,7 @@ export default function AdminClientPortalContent({
                     <div className="min-w-0">
                       <Link
                         href={`/admin/orders/${o.id}`}
-                        className="font-medium text-sm text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300 truncate block"
+                        className="font-medium text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300 truncate block"
                       >
                         {o.orderNumber}
                       </Link>
@@ -278,7 +278,7 @@ export default function AdminClientPortalContent({
                 variant="ghost"
                 size="sm"
                 asChild
-                className="mt-3 w-full rounded-xl border border-sky-200/40 dark:border-white/10"
+                className="mt-3 w-full rounded-xl border border-zinc-200/40 dark:border-white/10"
               >
                 <Link href="/admin/orders" className="gap-1">
                   View all orders <ArrowRight className="h-4 w-4" />
@@ -294,10 +294,10 @@ export default function AdminClientPortalContent({
                 className={cn(
                   "p-2.5 rounded-xl border",
                   variantConfig.emerald.iconBg,
-                  "dark:border-emerald-400/30 dark:bg-emerald-500/20",
+                  "dark:border-zinc-400/30 dark:bg-zinc-500/20",
                 )}
               >
-                <FileText className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+                <FileText className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
               </div>
               <div>
                 <h3 className="text-md sm:text-lg font-semibold text-gray-900 dark:text-white">
@@ -317,7 +317,7 @@ export default function AdminClientPortalContent({
                 No client invoices yet.
               </p>
             ) : (
-              <ul className="divide-y divide-emerald-200/40 dark:divide-white/10">
+              <ul className="divide-y divide-zinc-200/40 dark:divide-white/10">
                 {stats.recentInvoices.map((i) => (
                   <li
                     key={i.id}
@@ -326,7 +326,7 @@ export default function AdminClientPortalContent({
                     <div className="min-w-0">
                       <Link
                         href={`/admin/invoices/${i.id}`}
-                        className="font-medium text-sm text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300 truncate block"
+                        className="font-medium text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300 truncate block"
                       >
                         {i.invoiceNumber}
                       </Link>
@@ -352,7 +352,7 @@ export default function AdminClientPortalContent({
                 variant="ghost"
                 size="sm"
                 asChild
-                className="mt-3 w-full rounded-xl border border-emerald-200/40 dark:border-white/10"
+                className="mt-3 w-full rounded-xl border border-zinc-200/40 dark:border-white/10"
               >
                 <Link href="/admin/invoices" className="gap-1">
                   View all invoices <ArrowRight className="h-4 w-4" />
@@ -369,10 +369,10 @@ export default function AdminClientPortalContent({
               className={cn(
                 "p-2.5 rounded-xl border",
                 variantConfig.violet.iconBg,
-                "dark:border-violet-400/30 dark:bg-violet-500/20",
+                "dark:border-zinc-400/30 dark:bg-zinc-500/20",
               )}
             >
-              <Users className="h-5 w-5 text-violet-600 dark:text-violet-400" />
+              <Users className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
             </div>
             <div>
               <h3 className="text-md sm:text-lg font-semibold text-gray-900 dark:text-white">
@@ -396,7 +396,7 @@ export default function AdminClientPortalContent({
             <div className="overflow-x-auto">
               <table className="min-w-full text-sm">
                 <thead>
-                  <tr className="border-b border-violet-200/40 dark:border-white/10 text-left text-gray-600 dark:text-gray-400">
+                  <tr className="border-b border-zinc-200/40 dark:border-white/10 text-left text-gray-600 dark:text-gray-400">
                     <th className="py-2 pr-4">Name</th>
                     <th className="py-2 pr-4 hidden sm:table-cell">Email</th>
                     <th className="py-2 pr-4 text-right">Orders</th>
@@ -404,13 +404,13 @@ export default function AdminClientPortalContent({
                     <th className="py-2 text-right">Total Spent</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-violet-200/40 dark:divide-white/10">
+                <tbody className="divide-y divide-zinc-200/40 dark:divide-white/10">
                   {stats.clients.map((c) => (
                     <tr key={c.id}>
                       <td className="py-2 pr-4">
                         <Link
                           href={`/admin/user-management/${c.id}`}
-                          className="font-medium text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
+                          className="font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
                         >
                           {c.name}
                         </Link>
@@ -438,7 +438,7 @@ export default function AdminClientPortalContent({
               variant="ghost"
               size="sm"
               asChild
-              className="mt-4 w-full rounded-xl border border-violet-200/40 dark:border-white/10"
+              className="mt-4 w-full rounded-xl border border-zinc-200/40 dark:border-white/10"
             >
               <Link href="/admin/user-management" className="gap-1">
                 Manage users <ArrowRight className="h-4 w-4" />
@@ -450,3 +450,4 @@ export default function AdminClientPortalContent({
     </PageContentWrapper>
   );
 }
+

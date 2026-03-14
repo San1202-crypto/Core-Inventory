@@ -157,7 +157,7 @@ export default function ImageField() {
             alt="Product preview"
             width={256}
             height={128}
-            className="w-full h-32 object-cover rounded-lg border border-rose-400/30"
+            className="w-full h-32 object-cover rounded-lg border border-zinc-400/30"
             unoptimized={imageUrl.includes("ik.imagekit.io")} // ImageKit handles optimization
           />
           <Button
@@ -180,7 +180,7 @@ export default function ImageField() {
             variant="secondary"
             onClick={() => fileInputRef.current?.click()}
             disabled={isUploading}
-            className="h-10 rounded-md border border-rose-400/30 dark:border-rose-400/30 bg-gradient-to-r from-rose-500/30 via-rose-500/20 to-rose-500/15 dark:from-rose-500/30 dark:via-rose-500/20 dark:to-rose-500/15 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(225,29,72,0.2)] backdrop-blur-sm transition duration-200 hover:border-rose-300/40 hover:from-rose-500/40 hover:via-rose-500/30 hover:to-rose-500/20 dark:hover:border-rose-300/40 dark:hover:from-rose-500/40 dark:hover:via-rose-500/30 dark:hover:to-rose-500/20 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="h-10 rounded-md border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/30 via-zinc-500/20 to-zinc-500/15 dark:from-zinc-500/30 dark:via-zinc-500/20 dark:to-zinc-500/15 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(0,0,0,0.2)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/40 hover:from-zinc-500/40 hover:via-zinc-500/30 hover:to-zinc-500/20 dark:hover:border-zinc-300/40 dark:hover:from-zinc-500/40 dark:hover:via-zinc-500/30 dark:hover:to-zinc-500/20 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isUploading ? (
               <>
@@ -206,7 +206,7 @@ export default function ImageField() {
       )}
 
       {errors.imageUrl && (
-        <div className="text-red-500 flex gap-1 items-center text-[13px]">
+        <div className="text-zinc-500 flex gap-1 items-center text-[13px]">
           <MdError />
           <p>{String(errors.imageUrl.message)}</p>
         </div>
@@ -214,3 +214,4 @@ export default function ImageField() {
     </div>
   );
 }
+

@@ -148,7 +148,7 @@ export default function HomePage({
             your personal orders, products, and activity only, visit{" "}
             <Link
               href="/admin/my-activity"
-              className="font-medium text-sky-600 hover:text-sky-800"
+              className="font-medium text-zinc-600 hover:text-zinc-800"
             >
               My Activities
             </Link>
@@ -185,3 +185,4 @@ export default function HomePage({
     </Navbar>
   );
 }
+

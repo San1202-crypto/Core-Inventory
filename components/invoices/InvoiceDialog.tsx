@@ -52,7 +52,7 @@ const fmt = (v: number) =>
 /**
  * Invoice Dialog Component
  * Generates invoices from orders
- * Uses indigo glassmorphic styling (border-indigo-400/30, shadow indigo)
+ * Uses indigo glassmorphic styling (border-zinc-400/30, shadow indigo)
  */
 export default function InvoiceDialog({
   children,
@@ -414,7 +414,7 @@ export default function InvoiceDialog({
     <Dialog open={open} onOpenChange={setOpen}>
       {children && <DialogTrigger asChild>{children}</DialogTrigger>}
       <DialogContent
-        className="p-4 sm:p-7 sm:px-8 poppins max-h-[90vh] overflow-y-auto border-indigo-400/30 dark:border-indigo-400/30 shadow-[0_30px_80px_rgba(99,102,241,0.45)] dark:shadow-[0_30px_80px_rgba(99,102,241,0.25)]"
+        className="p-4 sm:p-7 sm:px-8 poppins max-h-[90vh] overflow-y-auto border-zinc-400/30 dark:border-zinc-400/30 shadow-[0_30px_80px_rgba(99,102,241,0.45)] dark:shadow-[0_30px_80px_rgba(99,102,241,0.25)]"
         onOpenAutoFocus={(e) => e.preventDefault()}
       >
         <DialogHeader>
@@ -444,11 +444,11 @@ export default function InvoiceDialog({
                       editFormMethods.setValue("status", value as InvoiceStatus)
                     }
                   >
-                    <SelectTrigger className="h-11 w-full border-indigo-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus:border-indigo-400 focus:ring-indigo-500/50 shadow-[0_10px_30px_rgba(99,102,241,0.15)]">
+                    <SelectTrigger className="h-11 w-full border-zinc-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus:border-zinc-400 focus:ring-zinc-500/50 shadow-[0_10px_30px_rgba(99,102,241,0.15)]">
                       <SelectValue placeholder="Select Status" />
                     </SelectTrigger>
                     <SelectContent
-                      className="border-indigo-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm z-[100]"
+                      className="border-zinc-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm z-[100]"
                       position="popper"
                       sideOffset={5}
                       align="start"
@@ -469,11 +469,11 @@ export default function InvoiceDialog({
                   placeholder="0.00"
                   allowNegative={false}
                   labelClassName="text-white/80"
-                  inputClassName="h-11 border-indigo-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus-visible:border-indigo-400 focus-visible:ring-indigo-500/50 shadow-[0_10px_30px_rgba(99,102,241,0.15)]"
+                  inputClassName="h-11 border-zinc-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(99,102,241,0.15)]"
                 />
 
                 {/* Order Pricing Summary (read-only — values come from the order) */}
-                <div className="sm:col-span-2 p-4 border border-indigo-400/20 rounded-lg bg-white/5 space-y-2">
+                <div className="sm:col-span-2 p-4 border border-zinc-400/20 rounded-lg bg-white/5 space-y-2">
                   <div className="flex justify-between text-sm text-white/70">
                     <span>Subtotal:</span>
                     <span>{fmt(editingInvoice.subtotal ?? 0)}</span>
@@ -493,10 +493,10 @@ export default function InvoiceDialog({
                   {(editingInvoice.discount ?? 0) > 0 && (
                     <div className="flex justify-between text-sm text-white/70">
                       <span>Discount:</span>
-                      <span className="text-red-400">-{fmt(editingInvoice.discount ?? 0)}</span>
+                      <span className="text-zinc-400">-{fmt(editingInvoice.discount ?? 0)}</span>
                     </div>
                   )}
-                  <div className="flex justify-between text-base font-semibold text-white pt-2 border-t border-indigo-400/20">
+                  <div className="flex justify-between text-base font-semibold text-white pt-2 border-t border-zinc-400/20">
                     <span>Total:</span>
                     <span>{fmt(editingInvoice.total ?? 0)}</span>
                   </div>
@@ -508,7 +508,7 @@ export default function InvoiceDialog({
                   label="Due Date"
                   type="date"
                   labelClassName="text-white/80"
-                  inputClassName="border-indigo-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus-visible:border-indigo-400 focus-visible:ring-indigo-500/50 shadow-[0_10px_30px_rgba(99,102,241,0.15)]"
+                  inputClassName="border-zinc-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(99,102,241,0.15)]"
                 />
 
                 {/* Sent At */}
@@ -518,7 +518,7 @@ export default function InvoiceDialog({
                     label="Sent At"
                     type="date"
                     labelClassName="text-white/80"
-                    inputClassName="border-indigo-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus-visible:border-indigo-400 focus-visible:ring-indigo-500/50 shadow-[0_10px_30px_rgba(99,102,241,0.15)]"
+                    inputClassName="border-zinc-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(99,102,241,0.15)]"
                   />
                 ) : null}
 
@@ -529,7 +529,7 @@ export default function InvoiceDialog({
                     label="Paid At"
                     type="date"
                     labelClassName="text-white/80"
-                    inputClassName="border-indigo-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus-visible:border-indigo-400 focus-visible:ring-indigo-500/50 shadow-[0_10px_30px_rgba(99,102,241,0.15)]"
+                    inputClassName="border-zinc-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(99,102,241,0.15)]"
                   />
                 ) : null}
 
@@ -540,7 +540,7 @@ export default function InvoiceDialog({
                     label="Cancelled At"
                     type="date"
                     labelClassName="text-white/80"
-                    inputClassName="border-indigo-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus-visible:border-indigo-400 focus-visible:ring-indigo-500/50 shadow-[0_10px_30px_rgba(99,102,241,0.15)]"
+                    inputClassName="border-zinc-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(99,102,241,0.15)]"
                   />
                 ) : null}
 
@@ -552,7 +552,7 @@ export default function InvoiceDialog({
                   type="url"
                   labelClassName="text-white/80"
                   className="sm:col-span-2"
-                  inputClassName="border-indigo-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus-visible:border-indigo-400 focus-visible:ring-indigo-500/50 shadow-[0_10px_30px_rgba(99,102,241,0.15)]"
+                  inputClassName="border-zinc-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(99,102,241,0.15)]"
                 />
 
                 {/* Notes */}
@@ -562,7 +562,7 @@ export default function InvoiceDialog({
                     label="Notes"
                     placeholder="Enter invoice notes..."
                     labelClassName="text-white/80"
-                    inputClassName="border-indigo-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus-visible:border-indigo-400 focus-visible:ring-indigo-500/50 shadow-[0_10px_30px_rgba(99,102,241,0.15)]"
+                    inputClassName="border-zinc-400/30 dark:border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(99,102,241,0.15)]"
                   />
                 </div>
               </div>
@@ -577,7 +577,7 @@ export default function InvoiceDialog({
                 </Button>
                 <Button
                   type="submit"
-                  className="h-11 w-full sm:w-auto px-11 inline-flex items-center justify-center rounded-xl border border-indigo-400/30 dark:border-indigo-400/30 bg-gradient-to-r from-indigo-500/70 via-indigo-500/50 to-indigo-500/30 text-white shadow-[0_15px_35px_rgba(99,102,241,0.45)] backdrop-blur-sm transition duration-200 hover:border-indigo-300/40 hover:from-indigo-500/80 hover:via-indigo-500/60 hover:to-indigo-500/40 hover:shadow-[0_20px_45px_rgba(99,102,241,0.6)]"
+                  className="h-11 w-full sm:w-auto px-11 inline-flex items-center justify-center rounded-xl border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/70 via-zinc-500/50 to-zinc-500/30 text-white shadow-[0_15px_35px_rgba(99,102,241,0.45)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/40 hover:from-zinc-500/80 hover:via-zinc-500/60 hover:to-zinc-500/40 hover:shadow-[0_20px_45px_rgba(99,102,241,0.6)]"
                   disabled={isUpdating}
                 >
                   {isUpdating ? "Updating..." : "Update Invoice"}
@@ -592,12 +592,12 @@ export default function InvoiceDialog({
             {/* Order Selection */}
             <div className="space-y-2">
               <Label htmlFor="order-select" className="text-sm font-medium text-white/80">
-                Select Order <span className="text-red-400">*</span>
+                Select Order <span className="text-zinc-400">*</span>
               </Label>
               <Select value={selectedOrderId} onValueChange={setSelectedOrderId}>
                 <SelectTrigger
                   id="order-select"
-                  className="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/40 focus-visible:border-indigo-400 focus-visible:ring-indigo-500/50 shadow-[0_10px_30px_rgba(99,102,241,0.15)]"
+                  className="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(99,102,241,0.15)]"
                 >
                   <SelectValue placeholder="Select an order..." />
                 </SelectTrigger>
@@ -624,7 +624,7 @@ export default function InvoiceDialog({
             <div className="space-y-2">
               <Label htmlFor="due-date" className="text-sm font-medium text-white/80 flex items-center gap-2">
                 <CalendarIcon className="h-4 w-4" />
-                Due Date <span className="text-red-400">*</span>
+                Due Date <span className="text-zinc-400">*</span>
               </Label>
               <div className="relative">
                 <Input
@@ -632,7 +632,7 @@ export default function InvoiceDialog({
                   type="date"
                   value={dueDate}
                   onChange={(e) => setDueDate(e.target.value)}
-                  className="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/40 focus-visible:border-indigo-400 focus-visible:ring-indigo-500/50 shadow-[0_10px_30px_rgba(99,102,241,0.15)] pr-10"
+                  className="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(99,102,241,0.15)] pr-10"
                   min={new Date().toISOString().split("T")[0]}
                 />
                 <CalendarIcon className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-white dark:text-white/40 pointer-events-none" />
@@ -641,7 +641,7 @@ export default function InvoiceDialog({
 
             {/* Order Pricing Summary (read-only — values calculated at order time) */}
             {selectedOrder && (
-              <div className="p-4 border border-indigo-400/20 rounded-lg bg-white/5 space-y-2">
+              <div className="p-4 border border-zinc-400/20 rounded-lg bg-white/5 space-y-2">
                 <div className="flex justify-between text-sm text-white/70">
                   <span>Subtotal:</span>
                   <span>{fmt(selectedOrder.subtotal ?? 0)}</span>
@@ -661,10 +661,10 @@ export default function InvoiceDialog({
                 {(selectedOrder.discount ?? 0) > 0 && (
                   <div className="flex justify-between text-sm text-white/70">
                     <span>Discount:</span>
-                    <span className="text-red-400">-{fmt(selectedOrder.discount ?? 0)}</span>
+                    <span className="text-zinc-400">-{fmt(selectedOrder.discount ?? 0)}</span>
                   </div>
                 )}
-                <div className="flex justify-between text-base font-semibold text-white pt-2 border-t border-indigo-400/20">
+                <div className="flex justify-between text-base font-semibold text-white pt-2 border-t border-zinc-400/20">
                   <span>Invoice Total:</span>
                   <span>{fmt(selectedOrder.total ?? 0)}</span>
                 </div>
@@ -685,7 +685,7 @@ export default function InvoiceDialog({
                 onChange={(e) => setNotes(e.target.value)}
                 placeholder="Add any additional notes for this invoice..."
                 rows={3}
-                className="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/40 focus-visible:border-indigo-400 focus-visible:ring-indigo-500/50 shadow-[0_10px_30px_rgba(99,102,241,0.15)]"
+                className="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(99,102,241,0.15)]"
               />
             </div>
           </div>
@@ -701,7 +701,7 @@ export default function InvoiceDialog({
             </Button>
             <Button
               type="submit"
-              className="h-11 w-full sm:w-auto px-11 inline-flex items-center justify-center rounded-xl border border-indigo-400/30 bg-gradient-to-r from-indigo-500/70 via-indigo-500/50 to-indigo-500/30 text-white shadow-[0_15px_35px_rgba(99,102,241,0.45)] backdrop-blur-sm transition duration-200 hover:border-indigo-300/40 hover:from-indigo-500/80 hover:via-indigo-500/60 hover:to-indigo-500/40 hover:shadow-[0_20px_45px_rgba(99,102,241,0.6)]"
+              className="h-11 w-full sm:w-auto px-11 inline-flex items-center justify-center rounded-xl border border-zinc-400/30 bg-gradient-to-r from-zinc-500/70 via-zinc-500/50 to-zinc-500/30 text-white shadow-[0_15px_35px_rgba(99,102,241,0.45)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/40 hover:from-zinc-500/80 hover:via-zinc-500/60 hover:to-zinc-500/40 hover:shadow-[0_20px_45px_rgba(99,102,241,0.6)]"
               disabled={isCreating || !selectedOrderId || !dueDate}
             >
               <FileText className="h-4 w-4 mr-2" />
@@ -714,3 +714,4 @@ export default function InvoiceDialog({
     </Dialog>
   );
 }
+

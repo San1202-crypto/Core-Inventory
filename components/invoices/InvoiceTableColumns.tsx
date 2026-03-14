@@ -29,11 +29,11 @@ function getStatusColor(status: string): string {
     case "draft":
       return "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300";
     case "sent":
-      return "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
     case "paid":
-      return "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
     case "overdue":
-      return "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
     case "cancelled":
       return "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300";
     default:
@@ -150,7 +150,7 @@ export const createInvoiceColumns = (
         <div className="flex flex-col gap-0.5">
           <Link
             href={invoiceHref(invoice.id)}
-            className="font-semibold text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
+            className="font-semibold text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
           >
             {invoice.invoiceNumber}
           </Link>
@@ -164,8 +164,8 @@ export const createInvoiceColumns = (
               <Badge
                 className={
                   invoice._source === "personal"
-                    ? "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 text-xs"
-                    : "bg-violet-100 text-violet-800 dark:bg-violet-900/30 dark:text-violet-300 text-xs"
+                    ? "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300 text-xs"
+                    : "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300 text-xs"
                 }
               >
                 {invoice._source === "personal" ? "Self" : "Client"}
@@ -212,7 +212,7 @@ export const createInvoiceColumns = (
     cell: ({ getValue }) => {
       const amountDue = getValue<number>();
       return (
-        <span className={`font-semibold ${amountDue > 0 ? "text-red-600 dark:text-red-400" : "text-green-600 dark:text-green-400"}`}>
+        <span className={`font-semibold ${amountDue > 0 ? "text-zinc-600 dark:text-zinc-400" : "text-zinc-600 dark:text-zinc-400"}`}>
           ${amountDue.toFixed(2)}
         </span>
       );
@@ -230,7 +230,7 @@ export const createInvoiceColumns = (
       const isOverdue = dueDate < today;
       
       return (
-        <span className={`text-sm ${isOverdue ? "text-red-600 dark:text-red-400" : ""}`}>
+        <span className={`text-sm ${isOverdue ? "text-zinc-600 dark:text-zinc-400" : ""}`}>
           {format(new Date(date), "MMM dd, yyyy")}
         </span>
       );
@@ -263,3 +263,4 @@ export const createInvoiceColumns = (
   },
 ];
 };
+

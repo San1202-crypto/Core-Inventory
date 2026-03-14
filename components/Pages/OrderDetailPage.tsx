@@ -68,75 +68,75 @@ const variantConfig: Record<
   }
 > = {
   sky: {
-    border: "border-sky-400/20",
-    gradient: "bg-gradient-to-br from-sky-500/15 via-sky-500/5 to-transparent",
+    border: "border-zinc-400/20",
+    gradient: "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(2,132,199,0.15)] dark:shadow-[0_15px_40px_rgba(2,132,199,0.1)]",
-    hoverBorder: "hover:border-sky-300/40",
-    iconBg: "border-sky-300/30 bg-sky-100/50",
+      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
+    hoverBorder: "hover:border-zinc-300/40",
+    iconBg: "border-zinc-300/30 bg-zinc-100/50",
   },
   emerald: {
-    border: "border-emerald-400/20",
+    border: "border-zinc-400/20",
     gradient:
-      "bg-gradient-to-br from-emerald-500/15 via-emerald-500/5 to-transparent",
+      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(16,185,129,0.15)] dark:shadow-[0_15px_40px_rgba(16,185,129,0.1)]",
-    hoverBorder: "hover:border-emerald-300/40",
-    iconBg: "border-emerald-300/30 bg-emerald-100/50",
+      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
+    hoverBorder: "hover:border-zinc-300/40",
+    iconBg: "border-zinc-300/30 bg-zinc-100/50",
   },
   amber: {
-    border: "border-amber-400/20",
+    border: "border-zinc-400/20",
     gradient:
-      "bg-gradient-to-br from-amber-500/15 via-amber-500/5 to-transparent",
+      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(245,158,11,0.12)] dark:shadow-[0_15px_40px_rgba(245,158,11,0.08)]",
-    hoverBorder: "hover:border-amber-300/40",
-    iconBg: "border-amber-300/30 bg-amber-100/50",
+      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
+    hoverBorder: "hover:border-zinc-300/40",
+    iconBg: "border-zinc-300/30 bg-zinc-100/50",
   },
   rose: {
-    border: "border-rose-400/20",
+    border: "border-zinc-400/20",
     gradient:
-      "bg-gradient-to-br from-rose-500/15 via-rose-500/5 to-transparent",
+      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(225,29,72,0.15)] dark:shadow-[0_15px_40px_rgba(225,29,72,0.1)]",
-    hoverBorder: "hover:border-rose-300/40",
-    iconBg: "border-rose-300/30 bg-rose-100/50",
+      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
+    hoverBorder: "hover:border-zinc-300/40",
+    iconBg: "border-zinc-300/30 bg-zinc-100/50",
   },
   violet: {
-    border: "border-violet-400/20",
+    border: "border-zinc-400/20",
     gradient:
-      "bg-gradient-to-br from-violet-500/15 via-violet-500/5 to-transparent",
+      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(139,92,246,0.15)] dark:shadow-[0_15px_40px_rgba(139,92,246,0.1)]",
-    hoverBorder: "hover:border-violet-300/40",
-    iconBg: "border-violet-300/30 bg-violet-100/50",
+      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
+    hoverBorder: "hover:border-zinc-300/40",
+    iconBg: "border-zinc-300/30 bg-zinc-100/50",
   },
   blue: {
-    border: "border-blue-400/20",
+    border: "border-zinc-400/20",
     gradient:
-      "bg-gradient-to-br from-blue-500/15 via-blue-500/5 to-transparent",
+      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(59,130,246,0.15)] dark:shadow-[0_15px_40px_rgba(59,130,246,0.1)]",
-    hoverBorder: "hover:border-blue-300/40",
-    iconBg: "border-blue-300/30 bg-blue-100/50",
+      "shadow-[0_15px_40px_rgba(0,0,0,0.05)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.1)]",
+    hoverBorder: "hover:border-zinc-300/40",
+    iconBg: "border-zinc-300/30 bg-zinc-100/50",
   },
   orange: {
-    border: "border-orange-400/20",
+    border: "border-zinc-400/20",
     gradient:
-      "bg-gradient-to-br from-orange-500/15 via-orange-500/5 to-transparent",
+      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(249,115,22,0.15)] dark:shadow-[0_15px_40px_rgba(249,115,22,0.1)]",
-    hoverBorder: "hover:border-orange-300/40",
-    iconBg: "border-orange-300/30 bg-orange-100/50",
+      "shadow-[0_15px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.1)]",
+    hoverBorder: "hover:border-zinc-300/40",
+    iconBg: "border-zinc-300/30 bg-zinc-100/50",
   },
   teal: {
-    border: "border-teal-400/20",
+    border: "border-zinc-400/20",
     gradient:
-      "bg-gradient-to-br from-teal-500/15 via-teal-500/5 to-transparent",
+      "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
     shadow:
-      "shadow-[0_15px_40px_rgba(20,184,166,0.15)] dark:shadow-[0_15px_40px_rgba(20,184,166,0.1)]",
-    hoverBorder: "hover:border-teal-300/40",
-    iconBg: "border-teal-300/30 bg-teal-100/50",
+      "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
+    hoverBorder: "hover:border-zinc-300/40",
+    iconBg: "border-zinc-300/30 bg-zinc-100/50",
   },
 };
 
@@ -177,17 +177,17 @@ function GlassCard({
 function getStatusBadgeClasses(status: OrderStatus): string {
   switch (status) {
     case "pending":
-      return "bg-amber-100 text-amber-800 dark:bg-amber-900/50 dark:text-amber-200 border border-amber-300/40";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-200 border border-zinc-300/40";
     case "confirmed":
-      return "bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-200 border border-blue-300/40";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-200 border border-zinc-300/40";
     case "processing":
-      return "bg-violet-100 text-violet-800 dark:bg-violet-900/50 dark:text-violet-200 border border-violet-300/40";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-200 border border-zinc-300/40";
     case "shipped":
-      return "bg-indigo-100 text-indigo-800 dark:bg-indigo-900/50 dark:text-indigo-200 border border-indigo-300/40";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-200 border border-zinc-300/40";
     case "delivered":
-      return "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/50 dark:text-emerald-200 border border-emerald-300/40";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-200 border border-zinc-300/40";
     case "cancelled":
-      return "bg-red-100 text-red-800 dark:bg-red-900/50 dark:text-red-200 border border-red-300/40";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-200 border border-zinc-300/40";
     default:
       return "bg-gray-100 text-gray-800 dark:bg-gray-900/50 dark:text-gray-200 border border-gray-300/40";
   }
@@ -199,13 +199,13 @@ function getStatusBadgeClasses(status: OrderStatus): string {
 function getPaymentStatusBadgeClasses(status: PaymentStatus): string {
   switch (status) {
     case "paid":
-      return "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/50 dark:text-emerald-200 border border-emerald-300/40";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-200 border border-zinc-300/40";
     case "partial":
-      return "bg-amber-100 text-amber-800 dark:bg-amber-900/50 dark:text-amber-200 border border-amber-300/40";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-200 border border-zinc-300/40";
     case "unpaid":
       return "bg-gray-100 text-gray-700 dark:bg-gray-800/50 dark:text-gray-200 border border-gray-300/40";
     case "refunded":
-      return "bg-red-100 text-red-800 dark:bg-red-900/50 dark:text-red-200 border border-red-300/40";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-200 border border-zinc-300/40";
     default:
       return "bg-gray-100 text-gray-700 dark:bg-gray-800/50 dark:text-gray-200 border border-gray-300/40";
   }
@@ -544,10 +544,10 @@ export default function OrderDetailPage() {
                 className={cn(
                   "p-2.5 rounded-xl border",
                   variantConfig.sky.iconBg,
-                  "dark:border-sky-400/30 dark:bg-sky-500/20",
+                  "dark:border-zinc-400/30 dark:bg-zinc-500/20",
                 )}
               >
-                <Package className="h-5 w-5 text-sky-600 dark:text-sky-400" />
+                <Package className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -564,7 +564,7 @@ export default function OrderDetailPage() {
               {order.items.map((item) => (
                 <div
                   key={item.id}
-                  className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-xl border border-sky-200/40 dark:border-sky-400/20 bg-gradient-to-r from-sky-100/40 via-sky-50/20 to-transparent dark:from-sky-500/10 dark:via-sky-500/5 dark:to-transparent"
+                  className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-xl border border-zinc-200/40 dark:border-zinc-400/20 bg-gradient-to-r from-zinc-100/40 via-zinc-50/20 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent"
                 >
                   <div className="flex-1 min-w-0">
                     <h4 className="font-medium text-gray-900 dark:text-white">
@@ -580,7 +580,7 @@ export default function OrderDetailPage() {
                     </p>
                   </div>
                   <div className="text-left sm:text-right mt-2 sm:mt-0 flex flex-col items-end gap-2">
-                    <p className="font-semibold text-sky-600 dark:text-sky-400 text-lg">
+                    <p className="font-semibold text-zinc-600 dark:text-zinc-400 text-lg">
                       ${item.subtotal.toFixed(2)}
                     </p>
                     {order.paymentStatus === "paid" && (
@@ -607,10 +607,10 @@ export default function OrderDetailPage() {
                   className={cn(
                     "p-2.5 rounded-xl border",
                     variantConfig.orange.iconBg,
-                    "dark:border-orange-400/30 dark:bg-orange-500/20",
+                    "dark:border-zinc-400/30 dark:bg-zinc-500/20",
                   )}
                 >
-                  <FileText className="h-5 w-5 text-orange-600 dark:text-orange-400" />
+                  <FileText className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                   Order Information
@@ -618,8 +618,8 @@ export default function OrderDetailPage() {
               </div>
 
               <div className="space-y-3">
-                <div className="flex items-center gap-2 text-sm p-3 rounded-xl bg-gradient-to-r from-orange-100/50 via-orange-50/30 to-transparent dark:from-orange-500/10 dark:via-orange-500/5 dark:to-transparent border border-orange-200/30 dark:border-orange-400/10">
-                  <Calendar className="h-4 w-4 text-orange-500 dark:text-orange-400" />
+                <div className="flex items-center gap-2 text-sm p-3 rounded-xl bg-gradient-to-r from-zinc-100/50 via-zinc-50/30 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent border border-zinc-200/30 dark:border-zinc-400/10">
+                  <Calendar className="h-4 w-4 text-zinc-500 dark:text-zinc-400" />
                   <span className="text-gray-600 dark:text-gray-400">
                     Created:
                   </span>
@@ -629,8 +629,8 @@ export default function OrderDetailPage() {
                   </span>
                 </div>
                 {updatedAt && (
-                  <div className="flex items-center gap-2 text-sm p-3 rounded-xl bg-gradient-to-r from-amber-100/50 via-amber-50/30 to-transparent dark:from-amber-500/10 dark:via-amber-500/5 dark:to-transparent border border-amber-200/30 dark:border-amber-400/10">
-                    <Calendar className="h-4 w-4 text-amber-500 dark:text-amber-400" />
+                  <div className="flex items-center gap-2 text-sm p-3 rounded-xl bg-gradient-to-r from-zinc-100/50 via-zinc-50/30 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent border border-zinc-200/30 dark:border-zinc-400/10">
+                    <Calendar className="h-4 w-4 text-zinc-500 dark:text-zinc-400" />
                     <span className="text-gray-600 dark:text-gray-400">
                       Updated:
                     </span>
@@ -641,8 +641,8 @@ export default function OrderDetailPage() {
                   </div>
                 )}
                 {shippedAt && (
-                  <div className="flex items-center gap-2 text-sm p-3 rounded-xl bg-gradient-to-r from-sky-100/50 via-sky-50/30 to-transparent dark:from-sky-500/10 dark:via-sky-500/5 dark:to-transparent border border-sky-200/30 dark:border-sky-400/10">
-                    <Truck className="h-4 w-4 text-sky-500 dark:text-sky-400" />
+                  <div className="flex items-center gap-2 text-sm p-3 rounded-xl bg-gradient-to-r from-zinc-100/50 via-zinc-50/30 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent border border-zinc-200/30 dark:border-zinc-400/10">
+                    <Truck className="h-4 w-4 text-zinc-500 dark:text-zinc-400" />
                     <span className="text-gray-600 dark:text-gray-400">
                       Shipped:
                     </span>
@@ -653,8 +653,8 @@ export default function OrderDetailPage() {
                   </div>
                 )}
                 {deliveredAt && (
-                  <div className="flex items-center gap-2 text-sm p-3 rounded-xl bg-gradient-to-r from-emerald-100/50 via-emerald-50/30 to-transparent dark:from-emerald-500/10 dark:via-emerald-500/5 dark:to-transparent border border-emerald-200/30 dark:border-emerald-400/10">
-                    <Package className="h-4 w-4 text-emerald-500 dark:text-emerald-400" />
+                  <div className="flex items-center gap-2 text-sm p-3 rounded-xl bg-gradient-to-r from-zinc-100/50 via-zinc-50/30 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent border border-zinc-200/30 dark:border-zinc-400/10">
+                    <Package className="h-4 w-4 text-zinc-500 dark:text-zinc-400" />
                     <span className="text-gray-600 dark:text-gray-400">
                       Delivered:
                     </span>
@@ -665,8 +665,8 @@ export default function OrderDetailPage() {
                   </div>
                 )}
                 {estimatedDelivery && (
-                  <div className="flex items-center gap-2 text-sm p-3 rounded-xl bg-gradient-to-r from-violet-100/50 via-violet-50/30 to-transparent dark:from-violet-500/10 dark:via-violet-500/5 dark:to-transparent border border-violet-200/30 dark:border-violet-400/10">
-                    <Calendar className="h-4 w-4 text-violet-500 dark:text-violet-400" />
+                  <div className="flex items-center gap-2 text-sm p-3 rounded-xl bg-gradient-to-r from-zinc-100/50 via-zinc-50/30 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent border border-zinc-200/30 dark:border-zinc-400/10">
+                    <Calendar className="h-4 w-4 text-zinc-500 dark:text-zinc-400" />
                     <span className="text-gray-600 dark:text-gray-400">
                       Estimated Delivery:
                     </span>
@@ -676,8 +676,8 @@ export default function OrderDetailPage() {
                   </div>
                 )}
                 {order.trackingNumber && (
-                  <div className="flex items-center gap-2 text-sm p-3 rounded-xl bg-gradient-to-r from-blue-100/50 via-blue-50/30 to-transparent dark:from-blue-500/10 dark:via-blue-500/5 dark:to-transparent border border-blue-200/30 dark:border-blue-400/10">
-                    <Truck className="h-4 w-4 text-blue-500 dark:text-blue-400" />
+                  <div className="flex items-center gap-2 text-sm p-3 rounded-xl bg-gradient-to-r from-zinc-100/50 via-zinc-50/30 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent border border-zinc-200/30 dark:border-zinc-400/10">
+                    <Truck className="h-4 w-4 text-zinc-500 dark:text-zinc-400" />
                     <span className="text-gray-600 dark:text-gray-400">
                       Tracking:
                     </span>
@@ -686,7 +686,7 @@ export default function OrderDetailPage() {
                         href={order.trackingUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-medium text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
+                        className="font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
                       >
                         {order.trackingNumber}
                       </a>
@@ -698,7 +698,7 @@ export default function OrderDetailPage() {
                   </div>
                 )}
                 {order.notes && (
-                  <div className="p-3 rounded-xl bg-gradient-to-r from-teal-100/50 via-teal-50/30 to-transparent dark:from-teal-500/10 dark:via-teal-500/5 dark:to-transparent border border-teal-200/30 dark:border-teal-400/10">
+                  <div className="p-3 rounded-xl bg-gradient-to-r from-zinc-100/50 via-zinc-50/30 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent border border-zinc-200/30 dark:border-zinc-400/10">
                     <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
                       Notes:
                     </p>
@@ -721,17 +721,17 @@ export default function OrderDetailPage() {
                     className={cn(
                       "p-2.5 rounded-xl border",
                       variantConfig.teal.iconBg,
-                      "dark:border-teal-400/30 dark:bg-teal-500/20",
+                      "dark:border-zinc-400/30 dark:bg-zinc-500/20",
                     )}
                   >
-                    <Package className="h-5 w-5 text-teal-600 dark:text-teal-400" />
+                    <Package className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                     Parties &amp; roles
                   </h3>
                 </div>
                 <div className="space-y-3 text-sm">
-                  <div className="p-3 rounded-xl bg-gradient-to-r from-teal-100/50 via-teal-50/30 to-transparent dark:from-teal-500/10 dark:via-teal-500/5 dark:to-transparent border border-teal-200/30 dark:border-teal-400/10">
+                  <div className="p-3 rounded-xl bg-gradient-to-r from-zinc-100/50 via-zinc-50/30 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent border border-zinc-200/30 dark:border-zinc-400/10">
                     <p className="text-gray-600 dark:text-gray-400 font-medium mb-0.5">
                       Ordered by
                     </p>
@@ -744,7 +744,7 @@ export default function OrderDetailPage() {
                       )}
                     </p>
                   </div>
-                  <div className="p-3 rounded-xl bg-gradient-to-r from-teal-100/50 via-teal-50/30 to-transparent dark:from-teal-500/10 dark:via-teal-500/5 dark:to-transparent border border-teal-200/30 dark:border-teal-400/10">
+                  <div className="p-3 rounded-xl bg-gradient-to-r from-zinc-100/50 via-zinc-50/30 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent border border-zinc-200/30 dark:border-zinc-400/10">
                     <p className="text-gray-600 dark:text-gray-400 font-medium mb-0.5">
                       Customer / Ship to
                     </p>
@@ -763,7 +763,7 @@ export default function OrderDetailPage() {
                   </div>
                   {order.orderProductOwners &&
                     order.orderProductOwners.length > 0 && (
-                      <div className="p-3 rounded-xl bg-gradient-to-r from-teal-100/50 via-teal-50/30 to-transparent dark:from-teal-500/10 dark:via-teal-500/5 dark:to-transparent border border-teal-200/30 dark:border-teal-400/10">
+                      <div className="p-3 rounded-xl bg-gradient-to-r from-zinc-100/50 via-zinc-50/30 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent border border-zinc-200/30 dark:border-zinc-400/10">
                         <p className="text-gray-600 dark:text-gray-400 font-medium mb-1">
                           Product owner(s)
                         </p>
@@ -771,7 +771,7 @@ export default function OrderDetailPage() {
                           {order.orderProductOwners.map((owner) => (
                             <span
                               key={owner.userId}
-                              className="inline-flex items-center gap-1 rounded-md bg-white/50 dark:bg-white/10 px-2 py-1 text-xs border border-teal-200/30 dark:border-teal-400/20"
+                              className="inline-flex items-center gap-1 rounded-md bg-white/50 dark:bg-white/10 px-2 py-1 text-xs border border-zinc-200/30 dark:border-zinc-400/20"
                             >
                               {owner.name ?? owner.email}
                               {owner.name && (
@@ -798,16 +798,16 @@ export default function OrderDetailPage() {
                       className={cn(
                         "p-2.5 rounded-xl border",
                         variantConfig.violet.iconBg,
-                        "dark:border-violet-400/30 dark:bg-violet-500/20",
+                        "dark:border-zinc-400/30 dark:bg-zinc-500/20",
                       )}
                     >
-                      <MapPin className="h-5 w-5 text-violet-600 dark:text-violet-400" />
+                      <MapPin className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                       Shipping Address
                     </h3>
                   </div>
-                  <p className="text-sm text-gray-900 dark:text-white p-3 rounded-xl bg-gradient-to-r from-violet-100/40 via-violet-50/20 to-transparent dark:from-violet-500/10 dark:via-violet-500/5 dark:to-transparent border border-violet-200/30 dark:border-violet-400/10">
+                  <p className="text-sm text-gray-900 dark:text-white p-3 rounded-xl bg-gradient-to-r from-zinc-100/40 via-zinc-50/20 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent border border-zinc-200/30 dark:border-zinc-400/10">
                     {formatAddress(order.shippingAddress)}
                   </p>
                 </GlassCard>
@@ -821,16 +821,16 @@ export default function OrderDetailPage() {
                       className={cn(
                         "p-2.5 rounded-xl border",
                         variantConfig.blue.iconBg,
-                        "dark:border-blue-400/30 dark:bg-blue-500/20",
+                        "dark:border-zinc-400/30 dark:bg-zinc-500/20",
                       )}
                     >
-                      <CreditCard className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                      <CreditCard className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                       Billing Address
                     </h3>
                   </div>
-                  <p className="text-sm text-gray-900 dark:text-white p-3 rounded-xl bg-gradient-to-r from-blue-100/40 via-blue-50/20 to-transparent dark:from-blue-500/10 dark:via-blue-500/5 dark:to-transparent border border-blue-200/30 dark:border-blue-400/10">
+                  <p className="text-sm text-gray-900 dark:text-white p-3 rounded-xl bg-gradient-to-r from-zinc-100/40 via-zinc-50/20 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent border border-zinc-200/30 dark:border-zinc-400/10">
                     {formatAddress(order.billingAddress)}
                   </p>
                 </GlassCard>
@@ -843,10 +843,10 @@ export default function OrderDetailPage() {
                     className={cn(
                       "p-2.5 rounded-xl border",
                       variantConfig.teal.iconBg,
-                      "dark:border-teal-400/30 dark:bg-teal-500/20",
+                      "dark:border-zinc-400/30 dark:bg-zinc-500/20",
                     )}
                   >
-                    <DollarSign className="h-5 w-5 text-teal-600 dark:text-teal-400" />
+                    <DollarSign className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                     Order Summary
@@ -854,7 +854,7 @@ export default function OrderDetailPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <div className="flex justify-between text-sm p-2 rounded-lg bg-gradient-to-r from-sky-100/40 via-sky-50/20 to-transparent dark:from-sky-500/10 dark:via-sky-500/5 dark:to-transparent">
+                  <div className="flex justify-between text-sm p-2 rounded-lg bg-gradient-to-r from-zinc-100/40 via-zinc-50/20 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent">
                     <span className="text-gray-600 dark:text-gray-400">
                       Subtotal:
                     </span>
@@ -863,7 +863,7 @@ export default function OrderDetailPage() {
                     </span>
                   </div>
                   {order.tax && order.tax > 0 && (
-                    <div className="flex justify-between text-sm p-2 rounded-lg bg-gradient-to-r from-amber-100/40 via-amber-50/20 to-transparent dark:from-amber-500/10 dark:via-amber-500/5 dark:to-transparent">
+                    <div className="flex justify-between text-sm p-2 rounded-lg bg-gradient-to-r from-zinc-100/40 via-zinc-50/20 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent">
                       <span className="text-gray-600 dark:text-gray-400">
                         Tax:
                       </span>
@@ -873,7 +873,7 @@ export default function OrderDetailPage() {
                     </div>
                   )}
                   {order.shipping && order.shipping > 0 && (
-                    <div className="flex justify-between text-sm p-2 rounded-lg bg-gradient-to-r from-violet-100/40 via-violet-50/20 to-transparent dark:from-violet-500/10 dark:via-violet-500/5 dark:to-transparent">
+                    <div className="flex justify-between text-sm p-2 rounded-lg bg-gradient-to-r from-zinc-100/40 via-zinc-50/20 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent">
                       <span className="text-gray-600 dark:text-gray-400">
                         Shipping:
                       </span>
@@ -883,21 +883,21 @@ export default function OrderDetailPage() {
                     </div>
                   )}
                   {order.discount && order.discount > 0 && (
-                    <div className="flex justify-between text-sm p-2 rounded-lg bg-gradient-to-r from-rose-100/40 via-rose-50/20 to-transparent dark:from-rose-500/10 dark:via-rose-500/5 dark:to-transparent">
+                    <div className="flex justify-between text-sm p-2 rounded-lg bg-gradient-to-r from-zinc-100/40 via-zinc-50/20 to-transparent dark:from-zinc-500/10 dark:via-zinc-500/5 dark:to-transparent">
                       <span className="text-gray-600 dark:text-gray-400">
                         Discount:
                       </span>
-                      <span className="font-medium text-rose-600 dark:text-rose-400">
+                      <span className="font-medium text-zinc-600 dark:text-zinc-400">
                         -${order.discount.toFixed(2)}
                       </span>
                     </div>
                   )}
-                  <Separator className="my-2 bg-teal-200/50 dark:bg-teal-400/20" />
-                  <div className="flex justify-between text-lg font-semibold p-3 rounded-xl bg-gradient-to-r from-emerald-100/50 via-emerald-50/30 to-transparent dark:from-emerald-500/15 dark:via-emerald-500/10 dark:to-transparent border border-emerald-200/30 dark:border-emerald-400/20">
+                  <Separator className="my-2 bg-zinc-200/50 dark:bg-zinc-400/20" />
+                  <div className="flex justify-between text-lg font-semibold p-3 rounded-xl bg-gradient-to-r from-zinc-100/50 via-zinc-50/30 to-transparent dark:from-zinc-500/15 dark:via-zinc-500/10 dark:to-transparent border border-zinc-200/30 dark:border-zinc-400/20">
                     <span className="text-gray-900 dark:text-white">
                       Total:
                     </span>
-                    <span className="text-emerald-600 dark:text-emerald-400">
+                    <span className="text-zinc-600 dark:text-zinc-400">
                       ${order.total.toFixed(2)}
                     </span>
                   </div>
@@ -922,7 +922,7 @@ export default function OrderDetailPage() {
                   <Button
                     onClick={handleUpdateOrder}
                     disabled={disableOrderActions}
-                    className="w-full sm:w-auto gap-2 rounded-xl border border-blue-400/30 bg-gradient-to-r from-blue-500/70 via-blue-500/50 to-blue-500/30 text-white shadow-[0_10px_25px_rgba(59,130,246,0.35)] backdrop-blur-sm hover:border-blue-300/50 hover:from-blue-500/80 hover:via-blue-500/60 hover:to-blue-500/40 transition-all duration-300 disabled:opacity-50"
+                    className="w-full sm:w-auto gap-2 rounded-xl border border-zinc-400/30 bg-gradient-to-r from-zinc-500/70 via-zinc-500/50 to-zinc-500/30 text-white shadow-[0_10px_25px_rgba(0,0,0,0.35)] backdrop-blur-sm hover:border-zinc-300/50 hover:from-zinc-500/80 hover:via-zinc-500/60 hover:to-zinc-500/40 transition-all duration-300 disabled:opacity-50"
                   >
                     <Edit className="h-4 w-4 shrink-0" />
                     Update Order
@@ -956,7 +956,7 @@ export default function OrderDetailPage() {
                       trigger={
                         <Button
                           disabled={isSupplierRole}
-                          className="w-full sm:w-auto gap-2 rounded-xl border border-emerald-400/30 bg-gradient-to-r from-emerald-500/70 via-emerald-500/50 to-emerald-500/30 text-white shadow-[0_10px_25px_rgba(16,185,129,0.35)] backdrop-blur-sm hover:border-emerald-300/50 hover:from-emerald-500/80 hover:via-emerald-500/60 hover:to-emerald-500/40 transition-all duration-300 disabled:opacity-50"
+                          className="w-full sm:w-auto gap-2 rounded-xl border border-zinc-400/30 bg-gradient-to-r from-zinc-500/70 via-zinc-500/50 to-zinc-500/30 text-white shadow-[0_10px_25px_rgba(0,0,0,0.2)] backdrop-blur-sm hover:border-zinc-300/50 hover:from-zinc-500/80 hover:via-zinc-500/60 hover:to-zinc-500/40 transition-all duration-300 disabled:opacity-50"
                         >
                           <CreditCard className="h-4 w-4 shrink-0" />
                           Pay ${order.total.toFixed(2)}
@@ -982,7 +982,7 @@ export default function OrderDetailPage() {
                   trigger={
                     <Button
                       disabled={disableOrderActions}
-                      className="w-full sm:w-auto gap-2 rounded-xl border border-violet-400/30 bg-gradient-to-r from-violet-500/70 via-violet-500/50 to-violet-500/30 text-white shadow-[0_10px_25px_rgba(139,92,246,0.35)] backdrop-blur-sm hover:border-violet-300/50 hover:from-violet-500/80 hover:via-violet-500/60 hover:to-violet-500/40 transition-all duration-300 disabled:opacity-50"
+                      className="w-full sm:w-auto gap-2 rounded-xl border border-zinc-400/30 bg-gradient-to-r from-zinc-500/70 via-zinc-500/50 to-zinc-500/30 text-white shadow-[0_10px_25px_rgba(0,0,0,0.2)] backdrop-blur-sm hover:border-zinc-300/50 hover:from-zinc-500/80 hover:via-zinc-500/60 hover:to-zinc-500/40 transition-all duration-300 disabled:opacity-50"
                     >
                       <Truck className="h-4 w-4 shrink-0" />
                       Ship Order
@@ -997,7 +997,7 @@ export default function OrderDetailPage() {
                     <Button
                       onClick={() => setCancelDialogOpen(true)}
                       disabled={isCancelling || disableOrderActions}
-                      className="w-full sm:w-auto gap-2 rounded-xl border border-rose-400/30 bg-gradient-to-r from-rose-500/70 via-rose-500/50 to-rose-500/30 text-white shadow-[0_10px_25px_rgba(225,29,72,0.35)] backdrop-blur-sm hover:border-rose-300/50 hover:from-rose-500/80 hover:via-rose-500/60 hover:to-rose-500/40 transition-all duration-300 disabled:opacity-50"
+                      className="w-full sm:w-auto gap-2 rounded-xl border border-zinc-400/30 bg-gradient-to-r from-zinc-500/70 via-zinc-500/50 to-zinc-500/30 text-white shadow-[0_10px_25px_rgba(0,0,0,0.2)] backdrop-blur-sm hover:border-zinc-300/50 hover:from-zinc-500/80 hover:via-zinc-500/60 hover:to-zinc-500/40 transition-all duration-300 disabled:opacity-50"
                     >
                       <Trash2 className="h-4 w-4 shrink-0" />
                       {isCancelling ? "Cancelling..." : "Cancel Order"}
@@ -1047,3 +1047,4 @@ export default function OrderDetailPage() {
     </Navbar>
   );
 }
+

@@ -163,13 +163,13 @@ export default function AdminHistoryDetailContent({
                   </div>
                   <div>
                     <dt className="text-muted-foreground">Successful</dt>
-                    <dd className="text-green-600 dark:text-green-400 font-semibold">
+                    <dd className="text-zinc-600 dark:text-zinc-400 font-semibold">
                       {r.successRows}
                     </dd>
                   </div>
                   <div>
                     <dt className="text-muted-foreground">Failed</dt>
-                    <dd className="text-red-600 dark:text-red-400 font-semibold">
+                    <dd className="text-zinc-600 dark:text-zinc-400 font-semibold">
                       {r.failedRows}
                     </dd>
                   </div>
@@ -217,3 +217,4 @@ export default function AdminHistoryDetailContent({
     </PageContentWrapper>
   );
 }
+

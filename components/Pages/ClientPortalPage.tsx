@@ -59,7 +59,7 @@ function CatalogStatusBadge({ status }: { status: string }) {
       variant={isActive ? "default" : "secondary"}
       className={cn(
         isActive &&
-          "border-transparent bg-emerald-600 text-white hover:bg-emerald-700 dark:bg-emerald-600 dark:hover:bg-emerald-700",
+          "border-transparent bg-zinc-600 text-white hover:bg-zinc-700 dark:bg-zinc-600 dark:hover:bg-zinc-700",
       )}
     >
       {status}
@@ -72,11 +72,11 @@ function ProductStatusBadge({ status }: { status: string }) {
   const normalized = (status || "").toLowerCase().replace(/\s+/g, "_");
   const style =
     normalized === "available"
-      ? "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300 border-emerald-300/30"
+      ? "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/40 dark:text-zinc-300 border-zinc-300/30"
       : normalized === "stock_low"
-        ? "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300 border-amber-300/30"
+        ? "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/40 dark:text-zinc-300 border-zinc-300/30"
         : normalized === "stock_out"
-          ? "bg-red-100 text-red-800 dark:bg-red-900/40 dark:text-red-300 border-red-300/30"
+          ? "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/40 dark:text-zinc-300 border-zinc-300/30"
           : "bg-muted text-muted-foreground";
   return (
     <Badge variant="outline" className={style}>
@@ -88,17 +88,17 @@ function ProductStatusBadge({ status }: { status: string }) {
 /** Order status badge colors — match admin/OrderTableColumns (soft bg + text) */
 const ORDER_STATUS_STYLE: Record<string, string> = {
   pending:
-    "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300 border-amber-300/30",
+    "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300 border-zinc-300/30",
   confirmed:
-    "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 border-blue-300/30",
+    "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300 border-zinc-300/30",
   processing:
-    "bg-violet-100 text-violet-800 dark:bg-violet-900/30 dark:text-violet-300 border-violet-300/30",
+    "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300 border-zinc-300/30",
   shipped:
-    "bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 border-indigo-300/30",
+    "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300 border-zinc-300/30",
   delivered:
-    "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 border-emerald-300/30",
+    "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300 border-zinc-300/30",
   cancelled:
-    "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300 border-red-300/30",
+    "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300 border-zinc-300/30",
 };
 
 /**
@@ -119,10 +119,10 @@ function getOrderStatusBadge(status: string) {
 const INVOICE_STATUS_STYLE: Record<string, string> = {
   draft:
     "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300 border-gray-300/30",
-  sent: "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 border-blue-300/30",
-  paid: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 border-emerald-300/30",
+  sent: "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300 border-zinc-300/30",
+  paid: "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300 border-zinc-300/30",
   overdue:
-    "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300 border-red-300/30",
+    "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300 border-zinc-300/30",
   cancelled:
     "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300 border-gray-300/30",
 };
@@ -374,16 +374,16 @@ export default function ClientPortalPage() {
           {dashboard.monthlySpending.length > 0 && (
             <article
               className={cn(
-                "rounded-[28px] border border-emerald-400/20 dark:border-emerald-400/30 p-4 sm:p-6 backdrop-blur-sm transition-all",
+                "rounded-[28px] border border-zinc-400/20 dark:border-zinc-400/30 p-4 sm:p-6 backdrop-blur-sm transition-all",
                 "bg-white/60 dark:bg-white/5",
-                "bg-gradient-to-br from-emerald-500/15 via-emerald-500/5 to-transparent dark:from-emerald-500/25 dark:via-emerald-500/10 dark:to-emerald-500/5",
-                "shadow-[0_15px_40px_rgba(16,185,129,0.15)] dark:shadow-[0_30px_80px_rgba(16,185,129,0.25)]",
-                "hover:border-emerald-300/40",
+                "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent dark:from-zinc-500/25 dark:via-zinc-500/10 dark:to-zinc-500/5",
+                "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)]",
+                "hover:border-zinc-300/40",
               )}
             >
               <div className="mb-4">
                 <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-900 dark:text-white">
-                  <TrendingUp className="h-5 w-5 text-emerald-500 dark:text-emerald-400" />
+                  <TrendingUp className="h-5 w-5 text-zinc-500 dark:text-zinc-400" />
                   Monthly Spending
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-white/70 mt-1">
@@ -419,16 +419,16 @@ export default function ClientPortalPage() {
           <article
             id="catalog"
             className={cn(
-              "rounded-[28px] border border-sky-400/20 dark:border-sky-400/30 p-4 sm:p-6 backdrop-blur-sm transition-all",
+              "rounded-[28px] border border-zinc-400/20 dark:border-zinc-400/30 p-4 sm:p-6 backdrop-blur-sm transition-all",
               "bg-white/60 dark:bg-white/5",
-              "bg-gradient-to-br from-sky-500/15 via-sky-500/5 to-transparent dark:from-sky-500/25 dark:via-sky-500/10 dark:to-sky-500/5",
-              "shadow-[0_15px_40px_rgba(2,132,199,0.15)] dark:shadow-[0_30px_80px_rgba(2,132,199,0.25)]",
-              "hover:border-sky-300/40",
+              "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent dark:from-zinc-500/25 dark:via-zinc-500/10 dark:to-zinc-500/5",
+              "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)]",
+              "hover:border-zinc-300/40",
             )}
           >
             <div className="mb-6">
               <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-900 dark:text-white">
-                <Store className="h-5 w-5 text-sky-500 dark:text-sky-400" />
+                <Store className="h-5 w-5 text-zinc-500 dark:text-zinc-400" />
                 Catalog — What&apos;s available
               </h3>
               <p className="text-sm text-gray-600 dark:text-white/70 mt-1">
@@ -461,7 +461,7 @@ export default function ClientPortalPage() {
                 <>
                   <div>
                     <p className="text-sm font-medium mb-2 flex items-center gap-2">
-                      <Layers className="h-4 w-4 text-sky-500" />
+                      <Layers className="h-4 w-4 text-zinc-500" />
                       Suppliers
                     </p>
                     <div className="overflow-x-auto rounded-md border">
@@ -491,7 +491,7 @@ export default function ClientPortalPage() {
                                 <TableCell className="font-medium">
                                   <Link
                                     href={`/suppliers/${s.id}`}
-                                    className="text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
+                                    className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
                                   >
                                     {s.name}
                                   </Link>
@@ -511,7 +511,7 @@ export default function ClientPortalPage() {
                   </div>
                   <div>
                     <p className="text-sm font-medium mb-2 flex items-center gap-2">
-                      <Boxes className="h-4 w-4 text-violet-500" />
+                      <Boxes className="h-4 w-4 text-zinc-500" />
                       Categories
                     </p>
                     <div className="overflow-x-auto rounded-md border">
@@ -542,7 +542,7 @@ export default function ClientPortalPage() {
                                 <TableCell className="font-medium">
                                   <Link
                                     href={`/categories/${c.id}`}
-                                    className="text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
+                                    className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
                                   >
                                     {c.name}
                                   </Link>
@@ -554,7 +554,7 @@ export default function ClientPortalPage() {
                                   {c.categoryCreatorId ? (
                                     <Link
                                       href={`/products?ownerId=${c.categoryCreatorId}`}
-                                      className="text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
+                                      className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
                                     >
                                       {c.categoryCreatorName ?? "—"}
                                     </Link>
@@ -574,7 +574,7 @@ export default function ClientPortalPage() {
                   </div>
                   <div>
                     <p className="text-sm font-medium mb-2 flex items-center gap-2">
-                      <Package className="h-4 w-4 text-emerald-500" />
+                      <Package className="h-4 w-4 text-zinc-500" />
                       Products
                     </p>
                     <div className="overflow-x-auto rounded-md border">
@@ -606,7 +606,7 @@ export default function ClientPortalPage() {
                                 <TableCell className="font-medium">
                                   <Link
                                     href={`/products/${p.id}`}
-                                    className="text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
+                                    className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
                                   >
                                     {p.name}
                                   </Link>
@@ -617,7 +617,7 @@ export default function ClientPortalPage() {
                                 <TableCell>
                                   <Link
                                     href={`/categories/${p.categoryId}`}
-                                    className="text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
+                                    className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
                                   >
                                     {p.categoryName}
                                   </Link>
@@ -625,7 +625,7 @@ export default function ClientPortalPage() {
                                 <TableCell>
                                   <Link
                                     href={`/suppliers/${p.supplierId}`}
-                                    className="text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
+                                    className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
                                   >
                                     {p.supplierName}
                                   </Link>
@@ -634,7 +634,7 @@ export default function ClientPortalPage() {
                                   {p.productOwnerId ? (
                                     <Link
                                       href={`/products?ownerId=${p.productOwnerId}`}
-                                      className="text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
+                                      className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
                                     >
                                       {p.productOwnerName ?? "—"}
                                     </Link>
@@ -664,16 +664,16 @@ export default function ClientPortalPage() {
             {/* Recent Orders — glassmorphic */}
             <article
               className={cn(
-                "rounded-[28px] border border-sky-400/20 dark:border-sky-400/30 p-4 sm:p-6 backdrop-blur-sm transition-all",
+                "rounded-[28px] border border-zinc-400/20 dark:border-zinc-400/30 p-4 sm:p-6 backdrop-blur-sm transition-all",
                 "bg-white/60 dark:bg-white/5",
-                "bg-gradient-to-br from-sky-500/15 via-sky-500/5 to-transparent dark:from-sky-500/25 dark:via-sky-500/10 dark:to-sky-500/5",
-                "shadow-[0_15px_40px_rgba(2,132,199,0.15)] dark:shadow-[0_30px_80px_rgba(2,132,199,0.25)]",
-                "hover:border-sky-300/40",
+                "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent dark:from-zinc-500/25 dark:via-zinc-500/10 dark:to-zinc-500/5",
+                "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)]",
+                "hover:border-zinc-300/40",
               )}
             >
               <div className="mb-4">
                 <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-900 dark:text-white">
-                  <ShoppingCart className="h-5 w-5 text-sky-500 dark:text-sky-400" />
+                  <ShoppingCart className="h-5 w-5 text-zinc-500 dark:text-zinc-400" />
                   Recent Orders
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-white/70 mt-1">
@@ -701,7 +701,7 @@ export default function ClientPortalPage() {
                             <TableCell>
                               <Link
                                 href={`/orders/${order.id}`}
-                                className="text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
+                                className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
                               >
                                 {order.orderNumber}
                               </Link>
@@ -737,16 +737,16 @@ export default function ClientPortalPage() {
             {/* Recent Invoices — glassmorphic */}
             <article
               className={cn(
-                "rounded-[28px] border border-violet-400/20 dark:border-violet-400/30 p-4 sm:p-6 backdrop-blur-sm transition-all",
+                "rounded-[28px] border border-zinc-400/20 dark:border-zinc-400/30 p-4 sm:p-6 backdrop-blur-sm transition-all",
                 "bg-white/60 dark:bg-white/5",
-                "bg-gradient-to-br from-violet-500/15 via-violet-500/5 to-transparent dark:from-violet-500/25 dark:via-violet-500/10 dark:to-violet-500/5",
-                "shadow-[0_15px_40px_rgba(139,92,246,0.15)] dark:shadow-[0_30px_80px_rgba(139,92,246,0.25)]",
-                "hover:border-violet-300/40",
+                "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent dark:from-zinc-500/25 dark:via-zinc-500/10 dark:to-zinc-500/5",
+                "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)]",
+                "hover:border-zinc-300/40",
               )}
             >
               <div className="mb-4">
                 <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-900 dark:text-white">
-                  <FileText className="h-5 w-5 text-violet-500 dark:text-violet-400" />
+                  <FileText className="h-5 w-5 text-zinc-500 dark:text-zinc-400" />
                   Recent Invoices
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-white/70 mt-1">
@@ -774,7 +774,7 @@ export default function ClientPortalPage() {
                             <TableCell>
                               <Link
                                 href={`/invoices/${invoice.id}`}
-                                className="text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
+                                className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
                               >
                                 {invoice.invoiceNumber}
                               </Link>
@@ -811,11 +811,11 @@ export default function ClientPortalPage() {
           {/* Quick Links — glassmorphic */}
           <article
             className={cn(
-              "rounded-[28px] border border-violet-400/20 dark:border-violet-400/30 p-4 sm:p-6 backdrop-blur-sm transition-all",
+              "rounded-[28px] border border-zinc-400/20 dark:border-zinc-400/30 p-4 sm:p-6 backdrop-blur-sm transition-all",
               "bg-white/60 dark:bg-white/5",
-              "bg-gradient-to-br from-violet-500/15 via-violet-500/5 to-transparent dark:from-violet-500/25 dark:via-violet-500/10 dark:to-violet-500/5",
-              "shadow-[0_15px_40px_rgba(139,92,246,0.15)] dark:shadow-[0_30px_80px_rgba(139,92,246,0.25)]",
-              "hover:border-violet-300/40",
+              "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent dark:from-zinc-500/25 dark:via-zinc-500/10 dark:to-zinc-500/5",
+              "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)]",
+              "hover:border-zinc-300/40",
             )}
           >
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
@@ -853,3 +853,4 @@ export default function ClientPortalPage() {
     </Navbar>
   );
 }
+

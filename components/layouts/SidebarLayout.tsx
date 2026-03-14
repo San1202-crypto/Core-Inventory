@@ -102,10 +102,10 @@ export default function SidebarLayout({
         : "";
 
   return (
-    <div className="relative flex h-screen w-full overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.15),transparent_55%),radial-gradient(circle_at_bottom,_rgba(236,72,153,0.12),transparent_65%)] dark:bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.15),transparent_55%),radial-gradient(circle_at_bottom,_rgba(236,72,153,0.12),transparent_65%)]">
+    <div className="relative flex h-screen w-full overflow-hidden bg-background dark:bg-background">
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-sky-600 focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-zinc-600 focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
       >
         Skip to main content
       </a>
@@ -119,7 +119,7 @@ export default function SidebarLayout({
             href="/"
             className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-colors"
           >
-            <LayoutDashboard className="h-5 w-5 text-sky-600 dark:text-sky-400" />
+            <LayoutDashboard className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
             {sidebarTitle}
           </Link>
           <Link
@@ -141,7 +141,7 @@ export default function SidebarLayout({
                 className={cn(
                   "flex items-center gap-2 rounded-lg px-3 py-2 text-sm transition-colors",
                   isActive
-                    ? "bg-sky-500/15 dark:bg-sky-500/20 text-sky-700 dark:text-sky-300 font-medium"
+                    ? "bg-zinc-500/15 dark:bg-zinc-500/20 text-zinc-700 dark:text-zinc-300 font-medium"
                     : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10 hover:text-gray-900 dark:hover:text-white",
                 )}
               >
@@ -166,7 +166,7 @@ export default function SidebarLayout({
                     unoptimized
                   />
                 ) : (
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-sky-500/20 text-sm font-medium text-sky-700 dark:text-sky-300">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-500/20 text-sm font-medium text-zinc-700 dark:text-zinc-300">
                     {user.email?.[0]?.toUpperCase() || "U"}
                   </span>
                 )}
@@ -180,7 +180,7 @@ export default function SidebarLayout({
               <Button
                 variant="ghost"
                 size="sm"
-                className="w-full justify-start text-gray-700 dark:text-gray-300 hover:bg-rose-500/10 hover:text-rose-700 dark:hover:text-rose-300"
+                className="w-full justify-start text-gray-700 dark:text-gray-300 hover:bg-zinc-500/10 hover:text-zinc-700 dark:hover:text-zinc-300"
                 onClick={handleLogout}
                 disabled={isLoggingOut}
               >
@@ -204,3 +204,4 @@ export default function SidebarLayout({
     </div>
   );
 }
+

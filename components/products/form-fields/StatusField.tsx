@@ -24,11 +24,11 @@ export default function Status({
   const getStatusClass = (status: string) => {
     switch (status) {
       case "Available":
-        return "bg-green-100 text-green-600";
+        return "bg-zinc-100 text-zinc-600";
       case "Stock Out":
-        return "bg-red-100 text-red-600";
+        return "bg-zinc-100 text-zinc-600";
       case "Stock Low":
-        return "bg-orange-100 text-orange-600";
+        return "bg-zinc-100 text-zinc-600";
       default:
         return "";
     }
@@ -62,3 +62,4 @@ export default function Status({
     </div>
   );
 }
+

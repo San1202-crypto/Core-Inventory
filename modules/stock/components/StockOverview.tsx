@@ -188,7 +188,7 @@ export default function StockOverview() {
                <Package className="h-4 w-4 text-gray-400" />
              </div>
              <input
-               className="pl-10 h-10 w-full rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none transition-all"
+               className="pl-10 h-10 w-full rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-zinc-500 focus:outline-none transition-all"
                placeholder="Search by product name or SKU..."
                value={searchTerm}
                onChange={(e) => setSearchTerm(e.target.value)}
@@ -251,16 +251,16 @@ export default function StockOverview() {
                   return (
                     <tr 
                       key={group.productId} 
-                      className="group hover:bg-sky-50/50 dark:hover:bg-sky-900/10 cursor-pointer transition-colors"
+                      className="group hover:bg-zinc-50/50 dark:hover:bg-zinc-900/10 cursor-pointer transition-colors"
                       onClick={() => setSelectedProductStock(group.stocks)}
                     >
                       <td className="px-6 py-4">
                         <div className="flex items-center gap-3">
-                          <div className="p-2 bg-gray-100 dark:bg-gray-800 rounded-lg group-hover:bg-sky-100 dark:group-hover:bg-sky-900/40 transition-colors">
-                            <Package className="h-5 w-5 text-gray-500 dark:text-gray-400 group-hover:text-sky-600 dark:group-hover:text-sky-400" />
+                          <div className="p-2 bg-gray-100 dark:bg-gray-800 rounded-lg group-hover:bg-zinc-100 dark:group-hover:bg-zinc-900/40 transition-colors">
+                            <Package className="h-5 w-5 text-gray-500 dark:text-gray-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-400" />
                           </div>
                           <div>
-                            <p className="font-semibold text-gray-900 dark:text-white group-hover:text-sky-700 dark:group-hover:text-sky-300">
+                            <p className="font-semibold text-gray-900 dark:text-white group-hover:text-zinc-700 dark:group-hover:text-zinc-300">
                               {group.productName}
                             </p>
                             <div className="flex gap-2 mt-1">
@@ -270,7 +270,7 @@ export default function StockOverview() {
                                 </Badge>
                               )}
                               {isLowStock && (
-                                <Badge variant="outline" className="text-[10px] h-4 px-1.5 py-0 border-amber-500 text-amber-600 dark:text-amber-400 flex items-center gap-1 w-fit uppercase font-bold">
+                                <Badge variant="outline" className="text-[10px] h-4 px-1.5 py-0 border-zinc-500 text-zinc-600 dark:text-zinc-400 flex items-center gap-1 w-fit uppercase font-bold">
                                   Low stock
                                 </Badge>
                               )}
@@ -288,7 +288,7 @@ export default function StockOverview() {
                       </td>
                       <td className="px-6 py-4 text-right">
                         {group.totalReserved > 0 ? (
-                          <span className="font-medium text-amber-600 dark:text-amber-400">
+                          <span className="font-medium text-zinc-600 dark:text-zinc-400">
                             {group.totalReserved}
                           </span>
                         ) : (
@@ -296,7 +296,7 @@ export default function StockOverview() {
                         )}
                       </td>
                       <td className="px-6 py-4 text-right">
-                        <span className={`font-bold text-base ${isOutOfStock ? 'text-rose-500' : isLowStock ? 'text-amber-500' : 'text-emerald-500 dark:text-emerald-400'}`}>
+                        <span className={`font-bold text-base ${isOutOfStock ? 'text-zinc-500' : isLowStock ? 'text-zinc-500' : 'text-zinc-500 dark:text-zinc-400'}`}>
                           {available}
                         </span>
                       </td>
@@ -304,7 +304,7 @@ export default function StockOverview() {
                         <Button 
                           variant="ghost" 
                           size="sm" 
-                          className="text-sky-600 hover:text-sky-700 hover:bg-sky-50 dark:hover:bg-sky-900/30 font-medium"
+                          className="text-zinc-600 hover:text-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 font-medium"
                         >
                           {group.stocks.length} {group.stocks.length === 1 ? 'Location' : 'Locations'}
                           <Info className="ml-2 h-4 w-4" />
@@ -328,3 +328,4 @@ export default function StockOverview() {
     </div>
   );
 }
+

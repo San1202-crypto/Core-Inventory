@@ -28,22 +28,22 @@ import { Textarea } from "@/components/ui/textarea";
 import type { SupportTicket } from "@/types";
 
 const variantConfig = {
-  border: "border-sky-400/20",
-  gradient: "bg-gradient-to-br from-sky-500/15 via-sky-500/5 to-transparent",
+  border: "border-zinc-400/20",
+  gradient: "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent",
   shadow:
-    "shadow-[0_15px_40px_rgba(2,132,199,0.15)] dark:shadow-[0_15px_40px_rgba(2,132,199,0.1)]",
+    "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)]",
   iconBg:
-    "border-sky-300/30 bg-sky-100/50 dark:border-sky-400/30 dark:bg-sky-500/20",
+    "border-zinc-300/30 bg-zinc-100/50 dark:border-zinc-400/30 dark:bg-zinc-500/20",
 };
 
 function statusColor(status: string): string {
   switch (status) {
     case "open":
-      return "bg-sky-100 text-sky-800 dark:bg-sky-900/30 dark:text-sky-300";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
     case "in_progress":
-      return "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
     case "resolved":
-      return "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
     case "closed":
       return "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300";
     default:
@@ -91,7 +91,7 @@ export default function SupportTicketDetailContent({
             <Link
               href="/support-tickets"
               className={cn(
-                "inline-flex items-center gap-2 rounded-xl border border-sky-400/30 dark:border-sky-400/30",
+                "inline-flex items-center gap-2 rounded-xl border border-zinc-400/30 dark:border-zinc-400/30",
                 "bg-white/60 dark:bg-white/5 backdrop-blur-sm",
                 "hover:bg-white/80 dark:hover:bg-white/10",
                 "text-gray-700 dark:text-gray-300 text-sm font-medium px-3 py-2",
@@ -118,11 +118,11 @@ export default function SupportTicketDetailContent({
                   variantConfig.iconBg,
                 )}
               >
-                <MessageSquare className="h-6 w-6 text-sky-600 dark:text-sky-400" />
+                <MessageSquare className="h-6 w-6 text-zinc-600 dark:text-zinc-400" />
               </div>
               <div className="min-w-0 flex-1">
                 {ticket.ticketNumber && (
-                  <p className="text-xs font-mono text-sky-600 dark:text-sky-400 mb-1">
+                  <p className="text-xs font-mono text-zinc-600 dark:text-zinc-400 mb-1">
                     {ticket.ticketNumber}
                   </p>
                 )}
@@ -132,7 +132,7 @@ export default function SupportTicketDetailContent({
                 <div className="flex flex-wrap items-center gap-2 mt-2">
                   <Badge
                     className={cn(
-                      "rounded-full text-xs font-medium border border-sky-300/30 shadow-[0_4px_12px_rgba(2,132,199,0.2)]",
+                      "rounded-full text-xs font-medium border border-zinc-300/30 shadow-[0_4px_12px_rgba(0,0,0,0.2)]",
                       statusColor(ticket.status),
                     )}
                   >
@@ -140,7 +140,7 @@ export default function SupportTicketDetailContent({
                   </Badge>
                   <Badge
                     variant="secondary"
-                    className="rounded-full text-xs border border-sky-300/30 shadow-[0_4px_12px_rgba(2,132,199,0.15)]"
+                    className="rounded-full text-xs border border-zinc-300/30 shadow-[0_4px_12px_rgba(0,0,0,0.2)]"
                   >
                     {ticket.priority}
                   </Badge>
@@ -191,7 +191,7 @@ export default function SupportTicketDetailContent({
                 )}
               </div>
             </div>
-            <div className="rounded-xl bg-white/40 dark:bg-white/5 border border-sky-200/30 dark:border-white/10 p-4">
+            <div className="rounded-xl bg-white/40 dark:bg-white/5 border border-zinc-200/30 dark:border-white/10 p-4">
               <p className="text-sm text-gray-700 dark:text-gray-300 whitespace-pre-wrap">
                 {ticket.description}
               </p>
@@ -233,7 +233,7 @@ export default function SupportTicketDetailContent({
                     <li
                       key={r.id}
                       className={cn(
-                        "rounded-xl border border-sky-200/40 dark:border-white/10 p-4",
+                        "rounded-xl border border-zinc-200/40 dark:border-white/10 p-4",
                         "bg-white/50 dark:bg-white/5",
                       )}
                     >
@@ -246,7 +246,7 @@ export default function SupportTicketDetailContent({
                           alt=""
                           width={32}
                           height={32}
-                          className="h-8 w-8 rounded-full object-cover border border-sky-200/90 dark:border-white/30 flex-shrink-0"
+                          className="h-8 w-8 rounded-full object-cover border border-zinc-200/90 dark:border-white/30 flex-shrink-0"
                           unoptimized
                           onError={(e) => {
                             const target = e.currentTarget;
@@ -282,15 +282,15 @@ export default function SupportTicketDetailContent({
                 value={replyBody}
                 onChange={(e) => setReplyBody(e.target.value)}
                 disabled={createReply.isPending}
-                className="min-h-[100px] rounded-xl border-sky-400/30 dark:border-white/20 bg-white/80 dark:bg-white/5 text-gray-900 dark:text-white placeholder:text-gray-500 resize-none"
+                className="min-h-[100px] rounded-xl border-zinc-400/30 dark:border-white/20 bg-white/80 dark:bg-white/5 text-gray-900 dark:text-white placeholder:text-gray-500 resize-none"
               />
               <Button
                 type="submit"
                 disabled={createReply.isPending || !replyBody.trim()}
                 className={cn(
-                  "rounded-xl border border-sky-400/30 bg-gradient-to-r from-sky-500/60 to-sky-500/40 text-white gap-2",
-                  "shadow-[0_10px_30px_rgba(2,132,199,0.25)]",
-                  "hover:from-sky-500/70 hover:to-sky-500/50",
+                  "rounded-xl border border-zinc-400/30 bg-gradient-to-r from-zinc-500/60 to-zinc-500/40 text-white gap-2",
+                  "shadow-[0_10px_30px_rgba(0,0,0,0.2)]",
+                  "hover:from-zinc-500/70 hover:to-zinc-500/50",
                 )}
               >
                 {createReply.isPending ? (
@@ -309,3 +309,4 @@ export default function SupportTicketDetailContent({
     </Navbar>
   );
 }
+

@@ -49,17 +49,17 @@ import { cn } from "@/lib/utils";
 function getStatusBadge(status: string) {
   const statusStyles: Record<string, string> = {
     pending:
-      "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300 border-amber-300/30",
+      "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/40 dark:text-zinc-300 border-zinc-300/30",
     confirmed:
-      "bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 border-blue-300/30",
+      "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/40 dark:text-zinc-300 border-zinc-300/30",
     processing:
-      "bg-violet-100 text-violet-800 dark:bg-violet-900/40 dark:text-violet-300 border-violet-300/30",
+      "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/40 dark:text-zinc-300 border-zinc-300/30",
     shipped:
-      "bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-300 border-indigo-300/30",
+      "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/40 dark:text-zinc-300 border-zinc-300/30",
     delivered:
-      "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300 border-emerald-300/30",
+      "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/40 dark:text-zinc-300 border-zinc-300/30",
     cancelled:
-      "bg-red-100 text-red-800 dark:bg-red-900/40 dark:text-red-300 border-red-300/30",
+      "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/40 dark:text-zinc-300 border-zinc-300/30",
   };
   const className =
     statusStyles[status] ??
@@ -320,16 +320,16 @@ export default function SupplierPortalPage() {
           {dashboard.monthlyRevenue.length > 0 && (
             <article
               className={cn(
-                "rounded-[28px] border border-emerald-400/20 dark:border-emerald-400/30 p-4 sm:p-6 backdrop-blur-sm transition-all",
+                "rounded-[28px] border border-zinc-400/20 dark:border-zinc-400/30 p-4 sm:p-6 backdrop-blur-sm transition-all",
                 "bg-white/60 dark:bg-white/5",
-                "bg-gradient-to-br from-emerald-500/15 via-emerald-500/5 to-transparent dark:from-emerald-500/25 dark:via-emerald-500/10 dark:to-emerald-500/5",
-                "shadow-[0_15px_40px_rgba(16,185,129,0.15)] dark:shadow-[0_30px_80px_rgba(16,185,129,0.25)]",
-                "hover:border-emerald-300/40",
+                "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent dark:from-zinc-500/25 dark:via-zinc-500/10 dark:to-zinc-500/5",
+                "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)]",
+                "hover:border-zinc-300/40",
               )}
             >
               <div className="mb-4">
                 <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-900 dark:text-white">
-                  <TrendingUp className="h-5 w-5 text-emerald-500 dark:text-emerald-400" />
+                  <TrendingUp className="h-5 w-5 text-zinc-500 dark:text-zinc-400" />
                   Monthly Revenue
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-white/70 mt-1">
@@ -366,16 +366,16 @@ export default function SupplierPortalPage() {
             {/* Recent Orders — glassmorphic */}
             <article
               className={cn(
-                "rounded-[28px] border border-sky-400/20 dark:border-sky-400/30 p-4 sm:p-6 backdrop-blur-sm transition-all",
+                "rounded-[28px] border border-zinc-400/20 dark:border-zinc-400/30 p-4 sm:p-6 backdrop-blur-sm transition-all",
                 "bg-white/60 dark:bg-white/5",
-                "bg-gradient-to-br from-sky-500/15 via-sky-500/5 to-transparent dark:from-sky-500/25 dark:via-sky-500/10 dark:to-sky-500/5",
-                "shadow-[0_15px_40px_rgba(2,132,199,0.15)] dark:shadow-[0_30px_80px_rgba(2,132,199,0.25)]",
-                "hover:border-sky-300/40",
+                "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent dark:from-zinc-500/25 dark:via-zinc-500/10 dark:to-zinc-500/5",
+                "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)]",
+                "hover:border-zinc-300/40",
               )}
             >
               <div className="mb-4">
                 <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-900 dark:text-white">
-                  <ShoppingCart className="h-5 w-5 text-sky-500 dark:text-sky-400" />
+                  <ShoppingCart className="h-5 w-5 text-zinc-500 dark:text-zinc-400" />
                   Recent Orders
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-white/70 mt-1">
@@ -403,7 +403,7 @@ export default function SupplierPortalPage() {
                             <TableCell>
                               <Link
                                 href={`/orders/${order.id}`}
-                                className="text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
+                                className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
                               >
                                 {order.orderNumber}
                               </Link>
@@ -427,16 +427,16 @@ export default function SupplierPortalPage() {
             <article
               id="products"
               className={cn(
-                "rounded-[28px] border border-amber-400/20 dark:border-amber-400/30 p-4 sm:p-6 backdrop-blur-sm transition-all",
+                "rounded-[28px] border border-zinc-400/20 dark:border-zinc-400/30 p-4 sm:p-6 backdrop-blur-sm transition-all",
                 "bg-white/60 dark:bg-white/5",
-                "bg-gradient-to-br from-amber-500/15 via-amber-500/5 to-transparent dark:from-amber-500/25 dark:via-amber-500/10 dark:to-amber-500/5",
-                "shadow-[0_15px_40px_rgba(245,158,11,0.15)] dark:shadow-[0_30px_80px_rgba(245,158,11,0.2)]",
-                "hover:border-amber-300/40",
+                "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent dark:from-zinc-500/25 dark:via-zinc-500/10 dark:to-zinc-500/5",
+                "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)]",
+                "hover:border-zinc-300/40",
               )}
             >
               <div className="mb-4">
                 <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-900 dark:text-white">
-                  <AlertTriangle className="h-5 w-5 text-amber-500 dark:text-amber-400" />
+                  <AlertTriangle className="h-5 w-5 text-zinc-500 dark:text-zinc-400" />
                   Low Stock Products
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-white/70 mt-1">
@@ -469,7 +469,7 @@ export default function SupplierPortalPage() {
                               <TableCell>
                                 <Link
                                   href={`/products/${product.id}`}
-                                  className="text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
+                                  className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
                                 >
                                   {product.name}
                                 </Link>
@@ -477,7 +477,7 @@ export default function SupplierPortalPage() {
                                   {product.sku}
                                 </p>
                               </TableCell>
-                              <TableCell className="text-right font-semibold text-red-600">
+                              <TableCell className="text-right font-semibold text-zinc-600">
                                 {product.quantity}
                               </TableCell>
                               <TableCell>
@@ -504,11 +504,11 @@ export default function SupplierPortalPage() {
           {/* Quick Links — glassmorphic */}
           <article
             className={cn(
-              "rounded-[28px] border border-violet-400/20 dark:border-violet-400/30 p-4 sm:p-6 backdrop-blur-sm transition-all",
+              "rounded-[28px] border border-zinc-400/20 dark:border-zinc-400/30 p-4 sm:p-6 backdrop-blur-sm transition-all",
               "bg-white/60 dark:bg-white/5",
-              "bg-gradient-to-br from-violet-500/15 via-violet-500/5 to-transparent dark:from-violet-500/25 dark:via-violet-500/10 dark:to-violet-500/5",
-              "shadow-[0_15px_40px_rgba(139,92,246,0.15)] dark:shadow-[0_30px_80px_rgba(139,92,246,0.25)]",
-              "hover:border-violet-300/40",
+              "bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent dark:from-zinc-500/25 dark:via-zinc-500/10 dark:to-zinc-500/5",
+              "shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)]",
+              "hover:border-zinc-300/40",
             )}
           >
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
@@ -540,3 +540,4 @@ export default function SupplierPortalPage() {
     </Navbar>
   );
 }
+

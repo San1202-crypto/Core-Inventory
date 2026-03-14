@@ -131,8 +131,8 @@ export default function RootLayout({
               <SuppressApiErrorOverlay />
               <ThemeProvider
                 attribute="class"
-                defaultTheme="system"
-                enableSystem
+                defaultTheme="light"
+                enableSystem={false}
                 disableTransitionOnChange
               >
                 <TooltipProvider delayDuration={200}>

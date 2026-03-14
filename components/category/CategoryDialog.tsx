@@ -283,7 +283,7 @@ export default function AddCategoryDialog({
           <Button className="h-10 font-semibold">+Add Category</Button>
         )}
       </DialogTrigger>
-      <DialogContent className="p-4 sm:p-7 sm:px-8 poppins max-h-[90vh] overflow-y-auto border-sky-400/30 dark:border-sky-400/30 shadow-[0_30px_80px_rgba(2,132,199,0.35)] dark:shadow-[0_30px_80px_rgba(2,132,199,0.25)]">
+      <DialogContent className="p-4 sm:p-7 sm:px-8 poppins max-h-[90vh] overflow-y-auto border-zinc-400/30 dark:border-zinc-400/30 shadow-[0_30px_80px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)]">
         <DialogHeader>
           <DialogTitle className="text-[22px] text-white">
             {editingCategory ? "Edit Category" : "Add Category"}
@@ -305,7 +305,7 @@ export default function AddCategoryDialog({
                 value={newCategoryName}
                 onChange={(e) => setNewCategoryName(e.target.value)}
                 placeholder="Category Name"
-                className="mt-2 w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/40 focus-visible:border-sky-400 focus-visible:ring-sky-500/50 shadow-[0_10px_30px_rgba(2,132,199,0.15)]"
+                className="mt-2 w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
               />
             </div>
             <div className="pb-4">
@@ -318,7 +318,7 @@ export default function AddCategoryDialog({
                 placeholder="Enter category description..."
                 rows={3}
                 maxLength={500}
-                className="mt-2 w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/40 focus-visible:border-sky-400 focus-visible:ring-sky-500/50 shadow-[0_10px_30px_rgba(2,132,199,0.15)]"
+                className="mt-2 w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
               />
             </div>
             <div className="pb-4">
@@ -331,7 +331,7 @@ export default function AddCategoryDialog({
                 placeholder="Enter category notes..."
                 rows={3}
                 maxLength={1000}
-                className="mt-2 w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/40 focus-visible:border-sky-400 focus-visible:ring-sky-500/50 shadow-[0_10px_30px_rgba(2,132,199,0.15)]"
+                className="mt-2 w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
               />
             </div>
             <div className="pb-4 flex items-center gap-2">
@@ -339,7 +339,7 @@ export default function AddCategoryDialog({
                 id="edit-category-status"
                 checked={newCategoryStatus}
                 onCheckedChange={(checked) => setNewCategoryStatus(checked === true)}
-                className="border-sky-400/30 data-[state=checked]:bg-sky-500/70"
+                className="border-zinc-400/30 data-[state=checked]:bg-zinc-500/70"
               />
               <Label
                 htmlFor="edit-category-status"
@@ -358,7 +358,7 @@ export default function AddCategoryDialog({
               </Button>
               <Button
                 onClick={handleUpdateCategory}
-                className="h-11 w-full sm:w-auto px-11 inline-flex items-center justify-center rounded-xl border border-sky-400/30 bg-gradient-to-r from-sky-500/70 via-sky-500/50 to-sky-500/30 text-white shadow-[0_15px_35px_rgba(2,132,199,0.45)] backdrop-blur-sm transition duration-200 hover:border-sky-300/40 hover:from-sky-500/80 hover:via-sky-500/60 hover:to-sky-500/40 hover:shadow-[0_20px_45px_rgba(2,132,199,0.6)]"
+                className="h-11 w-full sm:w-auto px-11 inline-flex items-center justify-center rounded-xl border border-zinc-400/30 bg-gradient-to-r from-zinc-500/70 via-zinc-500/50 to-zinc-500/30 text-white shadow-[0_15px_35px_rgba(0,0,0,0.2)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/40 hover:from-zinc-500/80 hover:via-zinc-500/60 hover:to-zinc-500/40 hover:shadow-[0_20px_45px_rgba(0,0,0,0.2)]"
                 disabled={isEditing}
               >
                 {isEditing ? "Saving..." : "Save Changes"}
@@ -372,7 +372,7 @@ export default function AddCategoryDialog({
                 value={categoryName}
                 onChange={(e) => setCategoryName(e.target.value)}
                 placeholder="New Category"
-                className="mt-4 w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/40 focus-visible:border-sky-400 focus-visible:ring-sky-500/50 shadow-[0_10px_30px_rgba(2,132,199,0.15)]"
+                className="mt-4 w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
               />
             </div>
             <div className="pb-4">
@@ -385,7 +385,7 @@ export default function AddCategoryDialog({
                 placeholder="Enter category description..."
                 rows={3}
                 maxLength={500}
-                className="mt-2 w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/40 focus-visible:border-sky-400 focus-visible:ring-sky-500/50 shadow-[0_10px_30px_rgba(2,132,199,0.15)]"
+                className="mt-2 w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
               />
             </div>
             <div className="pb-4">
@@ -398,7 +398,7 @@ export default function AddCategoryDialog({
                 placeholder="Enter category notes..."
                 rows={3}
                 maxLength={1000}
-                className="mt-2 w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/40 focus-visible:border-sky-400 focus-visible:ring-sky-500/50 shadow-[0_10px_30px_rgba(2,132,199,0.15)]"
+                className="mt-2 w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
               />
             </div>
             <div className="pb-4 flex items-center gap-2">
@@ -406,7 +406,7 @@ export default function AddCategoryDialog({
                 id="category-status"
                 checked={categoryStatus}
                 onCheckedChange={(checked) => setCategoryStatus(checked === true)}
-                className="border-sky-400/30 data-[state=checked]:bg-sky-500/70"
+                className="border-zinc-400/30 data-[state=checked]:bg-zinc-500/70"
               />
               <Label
                 htmlFor="category-status"
@@ -426,7 +426,7 @@ export default function AddCategoryDialog({
               </DialogClose>
               <Button
                 onClick={handleAddCategory}
-                className="h-11 w-full sm:w-auto px-11 inline-flex items-center justify-center rounded-xl border border-sky-400/30 bg-gradient-to-r from-sky-500/70 via-sky-500/50 to-sky-500/30 text-white shadow-[0_15px_35px_rgba(2,132,199,0.45)] backdrop-blur-sm transition duration-200 hover:border-sky-300/40 hover:from-sky-500/80 hover:via-sky-500/60 hover:to-sky-500/40 hover:shadow-[0_20px_45px_rgba(2,132,199,0.6)]"
+                className="h-11 w-full sm:w-auto px-11 inline-flex items-center justify-center rounded-xl border border-zinc-400/30 bg-gradient-to-r from-zinc-500/70 via-zinc-500/50 to-zinc-500/30 text-white shadow-[0_15px_35px_rgba(0,0,0,0.2)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/40 hover:from-zinc-500/80 hover:via-zinc-500/60 hover:to-zinc-500/40 hover:shadow-[0_20px_45px_rgba(0,0,0,0.2)]"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Creating..." : "Add Category"}
@@ -445,7 +445,7 @@ export default function AddCategoryDialog({
               </span>
             )}
           </h3>
-          <div className="rounded-md border border-white/10 shadow-[0_30px_80px_rgba(2,132,199,0.35)] dark:shadow-[0_30px_80px_rgba(2,132,199,0.25)] bg-gradient-to-br from-white/20 via-white/15 to-white/10 dark:from-white/5 dark:via-white/5 dark:to-white/5 backdrop-blur-sm">
+          <div className="rounded-md border border-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)] bg-gradient-to-br from-white/20 via-white/15 to-white/10 dark:from-white/5 dark:via-white/5 dark:to-white/5 backdrop-blur-sm">
             <Table>
               <TableHeader>
                 {table.getHeaderGroups().map((headerGroup) => (
@@ -525,3 +525,4 @@ export default function AddCategoryDialog({
     </Dialog>
   );
 }
+

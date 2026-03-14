@@ -143,7 +143,7 @@ export default function AdminSidebar({ collapsed = false }: { collapsed?: boolea
       isSub && !collapsed ? "pl-8" : "",
       collapsed ? "justify-center px-0 w-9 h-9 mx-auto" : "",
       pathname === href || (href !== "/admin" && pathname.startsWith(href))
-        ? "bg-sky-500/15 dark:bg-sky-500/20 text-sky-700 dark:text-sky-300"
+        ? "bg-zinc-500/15 dark:bg-zinc-500/20 text-zinc-700 dark:text-zinc-300"
         : "hover:bg-gray-100 dark:hover:bg-white/10 text-gray-700 dark:text-gray-300",
     );
 
@@ -264,3 +264,4 @@ export default function AdminSidebar({ collapsed = false }: { collapsed?: boolea
     </nav>
   );
 }
+

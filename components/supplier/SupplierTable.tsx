@@ -115,7 +115,7 @@ export const SupplierTable = React.memo(function SupplierTable({
         <TableSkeleton rows={pagination.pageSize} columns={columns.length} />
       ) : (
         <>
-          <div className="rounded-[28px] border border-emerald-400/20 dark:border-white/10 shadow-[0_30px_80px_rgba(16,185,129,0.25)] dark:shadow-[0_30px_80px_rgba(16,185,129,0.15)] bg-gradient-to-br from-white/20 via-white/15 to-white/10 dark:from-white/5 dark:via-white/5 dark:to-white/5 backdrop-blur-sm overflow-hidden">
+          <div className="rounded-[28px] border border-zinc-400/20 dark:border-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)] bg-gradient-to-br from-white/20 via-white/15 to-white/10 dark:from-white/5 dark:via-white/5 dark:to-white/5 backdrop-blur-sm overflow-hidden">
             <Table>
               <TableHeader>
                 {table.getHeaderGroups().map((headerGroup) => (
@@ -181,7 +181,7 @@ export const SupplierTable = React.memo(function SupplierTable({
               </div>
               {!pageSizeSelectMounted ? (
                 <div
-                  className="h-10 rounded-[28px] border border-emerald-400/30 dark:border-emerald-400/30 bg-gradient-to-r from-emerald-500/25 via-emerald-500/15 to-emerald-500/10 text-gray-700 dark:text-white px-2 w-16 sm:w-20 flex items-center justify-between font-medium"
+                  className="h-10 rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/25 via-zinc-500/15 to-zinc-500/10 text-gray-700 dark:text-white px-2 w-16 sm:w-20 flex items-center justify-between font-medium"
                   aria-hidden
                 >
                   <span>{pagination.pageSize}</span>
@@ -197,19 +197,19 @@ export const SupplierTable = React.memo(function SupplierTable({
                     }))
                   }
                 >
-                  <SelectTrigger className="h-10 rounded-[28px] border border-emerald-400/30 dark:border-emerald-400/30 bg-gradient-to-r from-emerald-500/25 via-emerald-500/15 to-emerald-500/10 dark:from-emerald-500/25 dark:via-emerald-500/15 dark:to-emerald-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(16,185,129,0.2)] backdrop-blur-sm transition duration-200 hover:border-emerald-300/40 hover:from-emerald-500/35 hover:via-emerald-500/25 hover:to-emerald-500/15 dark:hover:border-emerald-300/40 dark:hover:from-emerald-500/35 dark:hover:via-emerald-500/25 dark:hover:to-emerald-500/15 font-medium px-2 w-16 sm:w-20">
+                  <SelectTrigger className="h-10 rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/25 via-zinc-500/15 to-zinc-500/10 dark:from-zinc-500/25 dark:via-zinc-500/15 dark:to-zinc-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(0,0,0,0.2)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/40 hover:from-zinc-500/35 hover:via-zinc-500/25 hover:to-zinc-500/15 dark:hover:border-zinc-300/40 dark:hover:from-zinc-500/35 dark:hover:via-zinc-500/25 dark:hover:to-zinc-500/15 font-medium px-2 w-16 sm:w-20">
                     <SelectValue placeholder={pagination.pageSize.toString()} />
                   </SelectTrigger>
                   <SelectContent
                     position="popper"
                     sideOffset={5}
-                    className="rounded-[28px] border border-emerald-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm shadow-[0_10px_30px_rgba(16,185,129,0.15)]"
+                    className="rounded-[28px] border border-zinc-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
                   >
                     {[4, 6, 8, 10, 15, 20, 30].map((size) => (
                       <SelectItem
                         key={size}
                         value={size.toString()}
-                        className="text-gray-700 dark:text-white/80 focus:bg-emerald-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
+                        className="text-gray-700 dark:text-white/80 focus:bg-zinc-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
                       >
                         {size}
                       </SelectItem>
@@ -226,7 +226,7 @@ export const SupplierTable = React.memo(function SupplierTable({
                 size="sm"
                 onClick={() => table.setPageIndex(0)}
                 disabled={!table.getCanPreviousPage()}
-                className="h-10 rounded-[28px] border border-emerald-400/30 dark:border-emerald-400/30 bg-gradient-to-r from-emerald-500/25 via-emerald-500/15 to-emerald-500/10 dark:from-emerald-500/25 dark:via-emerald-500/15 dark:to-emerald-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(16,185,129,0.2)] backdrop-blur-sm transition duration-200 hover:border-emerald-300/40 hover:from-emerald-500/35 hover:via-emerald-500/25 hover:to-emerald-500/15 dark:hover:border-emerald-300/40 dark:hover:from-emerald-500/35 dark:hover:via-emerald-500/25 dark:hover:to-emerald-500/15 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="h-10 rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/25 via-zinc-500/15 to-zinc-500/10 dark:from-zinc-500/25 dark:via-zinc-500/15 dark:to-zinc-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(0,0,0,0.2)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/40 hover:from-zinc-500/35 hover:via-zinc-500/25 hover:to-zinc-500/15 dark:hover:border-zinc-300/40 dark:hover:from-zinc-500/35 dark:hover:via-zinc-500/25 dark:hover:to-zinc-500/15 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <BiFirstPage />
               </Button>
@@ -235,7 +235,7 @@ export const SupplierTable = React.memo(function SupplierTable({
                 size="sm"
                 onClick={() => table.previousPage()}
                 disabled={!table.getCanPreviousPage()}
-                className="h-10 rounded-[28px] border border-emerald-400/30 dark:border-emerald-400/30 bg-gradient-to-r from-emerald-500/25 via-emerald-500/15 to-emerald-500/10 dark:from-emerald-500/25 dark:via-emerald-500/15 dark:to-emerald-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(16,185,129,0.2)] backdrop-blur-sm transition duration-200 hover:border-emerald-300/40 hover:from-emerald-500/35 hover:via-emerald-500/25 hover:to-emerald-500/15 dark:hover:border-emerald-300/40 dark:hover:from-emerald-500/35 dark:hover:via-emerald-500/25 dark:hover:to-emerald-500/15 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="h-10 rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/25 via-zinc-500/15 to-zinc-500/10 dark:from-zinc-500/25 dark:via-zinc-500/15 dark:to-zinc-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(0,0,0,0.2)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/40 hover:from-zinc-500/35 hover:via-zinc-500/25 hover:to-zinc-500/15 dark:hover:border-zinc-300/40 dark:hover:from-zinc-500/35 dark:hover:via-zinc-500/25 dark:hover:to-zinc-500/15 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <GrFormPrevious />
               </Button>
@@ -247,7 +247,7 @@ export const SupplierTable = React.memo(function SupplierTable({
                 size="sm"
                 onClick={() => table.nextPage()}
                 disabled={!table.getCanNextPage()}
-                className="h-10 rounded-[28px] border border-emerald-400/30 dark:border-emerald-400/30 bg-gradient-to-r from-emerald-500/25 via-emerald-500/15 to-emerald-500/10 dark:from-emerald-500/25 dark:via-emerald-500/15 dark:to-emerald-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(16,185,129,0.2)] backdrop-blur-sm transition duration-200 hover:border-emerald-300/40 hover:from-emerald-500/35 hover:via-emerald-500/25 hover:to-emerald-500/15 dark:hover:border-emerald-300/40 dark:hover:from-emerald-500/35 dark:hover:via-emerald-500/25 dark:hover:to-emerald-500/15 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="h-10 rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/25 via-zinc-500/15 to-zinc-500/10 dark:from-zinc-500/25 dark:via-zinc-500/15 dark:to-zinc-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(0,0,0,0.2)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/40 hover:from-zinc-500/35 hover:via-zinc-500/25 hover:to-zinc-500/15 dark:hover:border-zinc-300/40 dark:hover:from-zinc-500/35 dark:hover:via-zinc-500/25 dark:hover:to-zinc-500/15 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <GrFormNext />
               </Button>
@@ -256,7 +256,7 @@ export const SupplierTable = React.memo(function SupplierTable({
                 size="sm"
                 onClick={() => table.setPageIndex(table.getPageCount() - 1)}
                 disabled={!table.getCanNextPage()}
-                className="h-10 rounded-[28px] border border-emerald-400/30 dark:border-emerald-400/30 bg-gradient-to-r from-emerald-500/25 via-emerald-500/15 to-emerald-500/10 dark:from-emerald-500/25 dark:via-emerald-500/15 dark:to-emerald-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(16,185,129,0.2)] backdrop-blur-sm transition duration-200 hover:border-emerald-300/40 hover:from-emerald-500/35 hover:via-emerald-500/25 hover:to-emerald-500/15 dark:hover:border-emerald-300/40 dark:hover:from-emerald-500/35 dark:hover:via-emerald-500/25 dark:hover:to-emerald-500/15 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="h-10 rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/25 via-zinc-500/15 to-zinc-500/10 dark:from-zinc-500/25 dark:via-zinc-500/15 dark:to-zinc-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(0,0,0,0.2)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/40 hover:from-zinc-500/35 hover:via-zinc-500/25 hover:to-zinc-500/15 dark:hover:border-zinc-300/40 dark:hover:from-zinc-500/35 dark:hover:via-zinc-500/25 dark:hover:to-zinc-500/15 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <BiLastPage />
               </Button>
@@ -267,3 +267,4 @@ export const SupplierTable = React.memo(function SupplierTable({
     </div>
   );
 });
+

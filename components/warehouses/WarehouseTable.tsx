@@ -94,7 +94,7 @@ export const WarehouseTable = React.memo(function WarehouseTable({
         <TableSkeleton rows={pagination.pageSize} columns={columns.length} />
       ) : (
         <>
-          <div className="rounded-[28px] border border-sky-400/20 dark:border-white/10 shadow-[0_30px_80px_rgba(2,132,199,0.25)] dark:shadow-[0_30px_80px_rgba(2,132,199,0.15)] bg-gradient-to-br from-white/20 via-white/15 to-white/10 dark:from-white/5 dark:via-white/5 dark:to-white/5 backdrop-blur-sm overflow-hidden">
+          <div className="rounded-[28px] border border-zinc-400/20 dark:border-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)] bg-gradient-to-br from-white/20 via-white/15 to-white/10 dark:from-white/5 dark:via-white/5 dark:to-white/5 backdrop-blur-sm overflow-hidden">
             <Table>
               <TableHeader>
                 {table.getHeaderGroups().map((headerGroup) => (
@@ -158,7 +158,7 @@ export const WarehouseTable = React.memo(function WarehouseTable({
               </div>
               {!pageSizeSelectMounted ? (
                 <div
-                  className="h-10 rounded-[28px] border border-sky-400/30 dark:border-sky-400/30 bg-gradient-to-r from-sky-500/25 via-sky-500/15 to-sky-500/10 text-gray-700 dark:text-white w-16 sm:w-20 flex items-center justify-between px-2"
+                  className="h-10 rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/25 via-zinc-500/15 to-zinc-500/10 text-gray-700 dark:text-white w-16 sm:w-20 flex items-center justify-between px-2"
                   aria-hidden
                 >
                   <span>{pagination.pageSize}</span>
@@ -174,7 +174,7 @@ export const WarehouseTable = React.memo(function WarehouseTable({
                     }))
                   }
                 >
-                  <SelectTrigger className="h-10 rounded-[28px] border border-sky-400/30 dark:border-sky-400/30 bg-gradient-to-r from-sky-500/25 via-sky-500/15 to-sky-500/10 dark:from-sky-500/25 dark:via-sky-500/15 dark:to-sky-500/10 text-gray-700 dark:text-white w-16 sm:w-20">
+                  <SelectTrigger className="h-10 rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/25 via-zinc-500/15 to-zinc-500/10 dark:from-zinc-500/25 dark:via-zinc-500/15 dark:to-zinc-500/10 text-gray-700 dark:text-white w-16 sm:w-20">
                     <SelectValue placeholder={pagination.pageSize.toString()} />
                   </SelectTrigger>
                   <SelectContent position="popper" sideOffset={5}>
@@ -193,7 +193,7 @@ export const WarehouseTable = React.memo(function WarehouseTable({
                 size="sm"
                 onClick={() => table.setPageIndex(0)}
                 disabled={!table.getCanPreviousPage()}
-                className="h-10 rounded-[28px] border border-sky-400/30 dark:border-sky-400/30"
+                className="h-10 rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30"
               >
                 <BiFirstPage />
               </Button>
@@ -202,7 +202,7 @@ export const WarehouseTable = React.memo(function WarehouseTable({
                 size="sm"
                 onClick={() => table.previousPage()}
                 disabled={!table.getCanPreviousPage()}
-                className="h-10 rounded-[28px] border border-sky-400/30 dark:border-sky-400/30"
+                className="h-10 rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30"
               >
                 <GrFormPrevious />
               </Button>
@@ -214,7 +214,7 @@ export const WarehouseTable = React.memo(function WarehouseTable({
                 size="sm"
                 onClick={() => table.nextPage()}
                 disabled={!table.getCanNextPage()}
-                className="h-10 rounded-[28px] border border-sky-400/30 dark:border-sky-400/30"
+                className="h-10 rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30"
               >
                 <GrFormNext />
               </Button>
@@ -223,7 +223,7 @@ export const WarehouseTable = React.memo(function WarehouseTable({
                 size="sm"
                 onClick={() => table.setPageIndex(table.getPageCount() - 1)}
                 disabled={!table.getCanNextPage()}
-                className="h-10 rounded-[28px] border border-sky-400/30 dark:border-sky-400/30"
+                className="h-10 rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30"
               >
                 <BiLastPage />
               </Button>
@@ -234,3 +234,4 @@ export const WarehouseTable = React.memo(function WarehouseTable({
     </div>
   );
 });
+

@@ -186,7 +186,7 @@ export default function AdminProductReviewDetailContent() {
                     <dd>
                       <Link
                         href={`/admin/products/${r.productId}`}
-                        className="font-medium text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
+                        className="font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
                       >
                         {r.productName}
                       </Link>
@@ -202,7 +202,7 @@ export default function AdminProductReviewDetailContent() {
                     <dd className="space-y-0.5">
                       <Link
                         href={`/admin/user-management/${r.userId}`}
-                        className="font-medium text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
+                        className="font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
                       >
                         {r.reviewerName?.trim() ||
                           r.reviewerEmail ||
@@ -302,7 +302,7 @@ export default function AdminProductReviewDetailContent() {
                       className={cn(
                         "h-6 w-6",
                         n <= r.rating
-                          ? "fill-amber-400 text-amber-400"
+                          ? "fill-zinc-400 text-zinc-400"
                           : "text-muted-foreground/30",
                       )}
                     />
@@ -398,3 +398,4 @@ export default function AdminProductReviewDetailContent() {
     </PageContentWrapper>
   );
 }
+

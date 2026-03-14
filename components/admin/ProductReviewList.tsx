@@ -160,7 +160,7 @@ export default function ProductReviewList({
           <div className="flex-shrink-0">
             <ProductReviewDialog
               trigger={
-                <Button className="h-10 rounded-[28px] border border-violet-400/30 dark:border-violet-400/30 bg-gradient-to-r from-violet-500/70 via-violet-500/50 to-violet-500/30 dark:from-violet-500/70 dark:via-violet-500/50 dark:to-violet-500/30 text-white shadow-[0_10px_30px_rgba(139,92,246,0.3)] flex items-center gap-2">
+                <Button className="h-10 rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/70 via-zinc-500/50 to-zinc-500/30 dark:from-zinc-500/70 dark:via-zinc-500/50 dark:to-zinc-500/30 text-white shadow-[0_10px_30px_rgba(0,0,0,0.2)] flex items-center gap-2">
                   <Star className="h-4 w-4" />
                   Add Review
                 </Button>
@@ -183,3 +183,4 @@ export default function ProductReviewList({
     </div>
   );
 }
+

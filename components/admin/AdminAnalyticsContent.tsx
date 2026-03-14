@@ -597,7 +597,7 @@ export default function AdminAnalyticsContent({
         {stats && stats.orderAnalytics && (
           <div className="space-y-4">
             <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-              <ShoppingCart className="h-5 w-5 text-sky-600" />
+              <ShoppingCart className="h-5 w-5 text-zinc-600" />
               Order Analytics
             </h2>
 
@@ -832,7 +832,7 @@ export default function AdminAnalyticsContent({
                               >
                                 <Link
                                   href={`/admin/products/${p.productId}`}
-                                  className="text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
+                                  className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
                                 >
                                   {p.productName}
                                 </Link>
@@ -861,7 +861,7 @@ export default function AdminAnalyticsContent({
         {stats && stats.invoiceAnalytics && (
           <div className="space-y-4">
             <h2 className="text-xl font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-              <FileText className="h-5 w-5 text-amber-600" />
+              <FileText className="h-5 w-5 text-zinc-600" />
               Invoice Analytics
             </h2>
 
@@ -1082,7 +1082,7 @@ export default function AdminAnalyticsContent({
             return (
               <div className="space-y-4">
                 <h2 className="text-xl font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-                  <Warehouse className="h-5 w-5 text-amber-500" />
+                  <Warehouse className="h-5 w-5 text-zinc-500" />
                   Warehouse Analytics
                 </h2>
 
@@ -1205,7 +1205,7 @@ export default function AdminAnalyticsContent({
                       <li key={o.id}>
                         <Link
                           href={`/admin/orders/${o.id}`}
-                          className="text-sm font-medium text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300 flex items-center justify-between gap-2"
+                          className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300 flex items-center justify-between gap-2"
                         >
                           <span className="truncate">{o.orderNumber}</span>
                           <span className="text-muted-foreground shrink-0">
@@ -1249,7 +1249,7 @@ export default function AdminAnalyticsContent({
                       <li key={t.id}>
                         <Link
                           href={`/admin/support-tickets/${t.id}`}
-                          className="text-sm font-medium text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300 block truncate"
+                          className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300 block truncate"
                         >
                           {t.subject}
                         </Link>
@@ -1290,7 +1290,7 @@ export default function AdminAnalyticsContent({
                       <li key={r.id}>
                         <Link
                           href={`/admin/product-reviews/${r.id}`}
-                          className="text-sm font-medium text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300 block truncate"
+                          className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300 block truncate"
                         >
                           {r.productName} · {r.rating}★
                         </Link>
@@ -1331,7 +1331,7 @@ export default function AdminAnalyticsContent({
                       <li key={im.id}>
                         <Link
                           href={`/admin/activity-history/${im.id}`}
-                          className="text-sm font-medium text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300 block truncate"
+                          className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300 block truncate"
                         >
                           {im.importType} · {im.fileName}
                         </Link>
@@ -1406,3 +1406,4 @@ export default function AdminAnalyticsContent({
     </PageContentWrapper>
   );
 }
+

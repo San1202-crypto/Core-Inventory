@@ -49,7 +49,7 @@ export function QRCodeHover({
   // Don't render anything until mounted to prevent hydration mismatch
   if (!isMounted) {
     return (
-      <div className="flex items-center gap-1 text-blue-600">
+      <div className="flex items-center gap-1 text-zinc-600">
         <QrCode className="h-4 w-4" />
         {title}
       </div>
@@ -61,7 +61,7 @@ export function QRCodeHover({
       {/* Text Link - Click to open dialog */}
       <button
         type="button"
-        className="text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300 cursor-pointer flex items-center gap-1 transition-colors"
+        className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300 cursor-pointer flex items-center gap-1 transition-colors"
         onClick={() => setIsDialogOpen(true)}
         aria-label={`View QR code for ${title}`}
       >
@@ -72,7 +72,7 @@ export function QRCodeHover({
       {/* Dialog — same glassmorphic style as Product/Category dialogs */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogContent
-          className="p-4 sm:p-7 sm:px-8 poppins max-h-[90vh] overflow-y-auto border-violet-400/30 dark:border-violet-400/30 shadow-[0_30px_80px_rgba(139,92,246,0.35)] dark:shadow-[0_30px_80px_rgba(139,92,246,0.25)] bg-gradient-to-br from-gray-800/98 via-gray-700/95 to-gray-800/98 dark:from-black/20 dark:via-black/10 dark:to-black/5"
+          className="p-4 sm:p-7 sm:px-8 poppins max-h-[90vh] overflow-y-auto border-zinc-400/30 dark:border-zinc-400/30 shadow-[0_30px_80px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)] bg-gradient-to-br from-gray-800/98 via-gray-700/95 to-gray-800/98 dark:from-black/20 dark:via-black/10 dark:to-black/5"
           onOpenAutoFocus={(e) => e.preventDefault()}
         >
           <DialogHeader>
@@ -98,3 +98,4 @@ export function QRCodeHover({
     </>
   );
 }
+

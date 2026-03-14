@@ -51,19 +51,19 @@ export default function ExpirationDateField() {
           type="date"
           id="expiration-date"
           value={formattedDate}
-          className="h-11 bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-rose-400/30 dark:border-white/20 text-white placeholder:text-white/40 focus-visible:border-rose-400 focus-visible:ring-rose-500/50 shadow-[0_10px_30px_rgba(225,29,72,0.15)] pr-10 [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:right-0 [&::-webkit-calendar-picker-indicator]:w-full [&::-webkit-calendar-picker-indicator]:h-full"
+          className="h-11 bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-zinc-400/30 dark:border-white/20 text-white placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)] pr-10 [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:right-0 [&::-webkit-calendar-picker-indicator]:w-full [&::-webkit-calendar-picker-indicator]:h-full"
         />
         <button
           type="button"
           onClick={handleCalendarIconClick}
-          className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-white dark:text-white/40 hover:text-white dark:hover:text-white/60 transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-rose-400/50 rounded pointer-events-auto"
+          className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-white dark:text-white/40 hover:text-white dark:hover:text-white/60 transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-zinc-400/50 rounded pointer-events-auto"
           aria-label="Open calendar"
         >
           <CalendarIcon className="h-4 w-4" />
         </button>
       </div>
       {errors.expirationDate && (
-        <div className="text-red-500 flex gap-1 items-center text-[13px]">
+        <div className="text-zinc-500 flex gap-1 items-center text-[13px]">
           <MdError />
           <p>{String(errors.expirationDate.message)}</p>
         </div>
@@ -71,3 +71,4 @@ export default function ExpirationDateField() {
     </div>
   );
 }
+

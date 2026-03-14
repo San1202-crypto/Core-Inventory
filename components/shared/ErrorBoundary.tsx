@@ -70,7 +70,7 @@ export class ErrorBoundary extends Component<Props, State> {
         <div className="flex min-h-screen items-center justify-center p-4">
           <div className="max-w-md w-full space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-2xl font-semibold text-red-600">
+              <h2 className="text-2xl font-semibold text-zinc-600">
                 Something went wrong
               </h2>
               <p className="text-muted-foreground">
@@ -129,3 +129,4 @@ export function withErrorBoundary<P extends object>(
 
   return WrappedComponent;
 }
+

@@ -29,7 +29,7 @@ const nextConfig: NextConfig = {
   },
 
   // Production optimizations
-  poweredByHeader: false, // Remove X-Powered-By header for security
+  poweredByHeader: false, // Remove X-Powezinc-By header for security
 
   // Experimental features
   experimental: {
@@ -47,3 +47,4 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+

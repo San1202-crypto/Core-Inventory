@@ -46,17 +46,17 @@ function getStatusBadgeClass(status: string): string {
   const s = (status || "").toLowerCase();
   switch (s) {
     case "pending":
-      return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
     case "confirmed":
-      return "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
     case "processing":
-      return "bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
     case "shipped":
-      return "bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
     case "delivered":
-      return "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
     case "cancelled":
-      return "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
     default:
       return "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300";
   }
@@ -66,11 +66,11 @@ function getPaymentBadgeClass(status: string): string {
   const s = (status || "").toLowerCase();
   switch (s) {
     case "paid":
-      return "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
     case "unpaid":
-      return "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
     case "partial":
-      return "bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
     case "refunded":
       return "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300";
     default:
@@ -456,9 +456,9 @@ export default function AdminMyActivityContent() {
 
             <article
               className={cn(
-                "rounded-[28px] border border-teal-400/30 dark:border-teal-400/30",
-                "bg-gradient-to-br from-teal-500/25 via-teal-500/10 to-teal-500/5 dark:from-teal-500/25 dark:via-teal-500/10 dark:to-teal-500/5",
-                "shadow-[0_30px_80px_rgba(20,184,166,0.35)] dark:shadow-[0_30px_80px_rgba(20,184,166,0.25)]",
+                "rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30",
+                "bg-gradient-to-br from-zinc-500/25 via-zinc-500/10 to-zinc-500/5 dark:from-zinc-500/25 dark:via-zinc-500/10 dark:to-zinc-500/5",
+                "shadow-[0_30px_80px_rgba(0,0,0,0.2)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.2)]",
                 "p-4 sm:p-6 backdrop-blur-sm overflow-hidden",
               )}
             >
@@ -481,10 +481,10 @@ export default function AdminMyActivityContent() {
                     className={cn(
                       "h-10 pl-9 pr-4 w-full rounded-[28px]",
                       "bg-white/10 dark:bg-white/5 backdrop-blur-sm",
-                      "border border-sky-400/30 dark:border-white/20",
+                      "border border-zinc-400/30 dark:border-white/20",
                       "text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-white/40",
-                      "focus-visible:border-sky-400 focus-visible:ring-sky-500/50",
-                      "shadow-[0_10px_30px_rgba(2,132,199,0.15)]",
+                      "focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50",
+                      "shadow-[0_10px_30px_rgba(0,0,0,0.2)]",
                     )}
                   />
                 </div>
@@ -577,7 +577,7 @@ export default function AdminMyActivityContent() {
                         <TableCell className="text-right">
                           <Link
                             href={`/admin/orders/${order.id}`}
-                            className="inline-flex items-center gap-1 text-sm text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
+                            className="inline-flex items-center gap-1 text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
                           >
                             <Eye className="h-4 w-4" />
                             View
@@ -595,3 +595,4 @@ export default function AdminMyActivityContent() {
     </PageContentWrapper>
   );
 }
+

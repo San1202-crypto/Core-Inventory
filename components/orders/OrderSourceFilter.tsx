@@ -40,14 +40,14 @@ export function OrderSourceDropDown({ value, onChange }: OrderSourceDropDownProp
       <PopoverTrigger asChild>
         <Button
           variant="secondary"
-          className="h-10 rounded-[28px] border border-teal-400/30 dark:border-teal-400/30 bg-gradient-to-r from-teal-500/25 via-teal-500/15 to-teal-500/10 dark:from-teal-500/25 dark:via-teal-500/15 dark:to-teal-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(20,184,166,0.2)] backdrop-blur-sm transition duration-200 hover:border-teal-300/40"
+          className="h-10 rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/25 via-zinc-500/15 to-zinc-500/10 dark:from-zinc-500/25 dark:via-zinc-500/15 dark:to-zinc-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(0,0,0,0.2)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/40"
         >
           <LayoutGrid className="h-4 w-4 mr-1" />
           {getButtonLabel()}
         </Button>
       </PopoverTrigger>
       <PopoverContent
-        className="p-0 w-52 poppins rounded-[28px] border border-teal-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm shadow-[0_10px_30px_rgba(20,184,166,0.15)]"
+        className="p-0 w-52 poppins rounded-[28px] border border-zinc-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
         side="bottom"
         align="start"
       >
@@ -57,7 +57,7 @@ export function OrderSourceDropDown({ value, onChange }: OrderSourceDropDownProp
               {options.map((opt) => (
                 <CommandItem
                   key={opt.value}
-                  className="h-10 flex items-center text-gray-700 dark:text-white/80 focus:bg-teal-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white cursor-pointer"
+                  className="h-10 flex items-center text-gray-700 dark:text-white/80 focus:bg-zinc-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white cursor-pointer"
                   value={opt.value}
                   onSelect={() => {
                     onChange(opt.value);
@@ -72,7 +72,7 @@ export function OrderSourceDropDown({ value, onChange }: OrderSourceDropDownProp
             <Separator className="bg-gray-300/50 dark:bg-white/10" />
             <Button
               variant="ghost"
-              className="w-full text-[12px] text-gray-700 dark:text-white/80 hover:bg-teal-100 dark:hover:bg-white/10 rounded-none"
+              className="w-full text-[12px] text-gray-700 dark:text-white/80 hover:bg-zinc-100 dark:hover:bg-white/10 rounded-none"
               onClick={() => {
                 onChange("both");
                 setOpen(false);
@@ -86,3 +86,4 @@ export function OrderSourceDropDown({ value, onChange }: OrderSourceDropDownProp
     </Popover>
   );
 }
+

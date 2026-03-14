@@ -25,11 +25,11 @@ import type { ProductReview } from "@/types";
 function getStatusColor(status: string): string {
   switch (status) {
     case "pending":
-      return "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
     case "approved":
-      return "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
     case "rejected":
-      return "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300";
+      return "bg-zinc-100 text-zinc-800 dark:bg-zinc-900/30 dark:text-zinc-300";
     default:
       return "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300";
   }
@@ -45,32 +45,32 @@ function getRatingDisplay(rating: number): {
     case 5:
       return {
         label: "best",
-        starClass: "fill-amber-400 text-amber-400 dark:fill-amber-400 dark:text-amber-400",
-        textClass: "text-amber-700 dark:text-amber-300",
+        starClass: "fill-zinc-400 text-zinc-400 dark:fill-zinc-400 dark:text-zinc-400",
+        textClass: "text-zinc-700 dark:text-zinc-300",
       };
     case 4:
       return {
         label: "very good",
-        starClass: "fill-emerald-400 text-emerald-400 dark:fill-emerald-400 dark:text-emerald-400",
-        textClass: "text-emerald-700 dark:text-emerald-300",
+        starClass: "fill-zinc-400 text-zinc-400 dark:fill-zinc-400 dark:text-zinc-400",
+        textClass: "text-zinc-700 dark:text-zinc-300",
       };
     case 3:
       return {
         label: "good",
-        starClass: "fill-sky-400 text-sky-400 dark:fill-sky-400 dark:text-sky-400",
-        textClass: "text-sky-700 dark:text-sky-300",
+        starClass: "fill-zinc-400 text-zinc-400 dark:fill-zinc-400 dark:text-zinc-400",
+        textClass: "text-zinc-700 dark:text-zinc-300",
       };
     case 2:
       return {
         label: "not good",
-        starClass: "fill-orange-400 text-orange-400 dark:fill-orange-400 dark:text-orange-400",
-        textClass: "text-orange-700 dark:text-orange-300",
+        starClass: "fill-zinc-400 text-zinc-400 dark:fill-zinc-400 dark:text-zinc-400",
+        textClass: "text-zinc-700 dark:text-zinc-300",
       };
     case 1:
       return {
         label: "bad",
-        starClass: "fill-rose-400 text-rose-400 dark:fill-rose-400 dark:text-rose-400",
-        textClass: "text-rose-700 dark:text-rose-300",
+        starClass: "fill-zinc-400 text-zinc-400 dark:fill-zinc-400 dark:text-zinc-400",
+        textClass: "text-zinc-700 dark:text-zinc-300",
       };
     default:
       return {
@@ -270,3 +270,4 @@ export function createProductReviewColumns(
     },
   ];
 }
+

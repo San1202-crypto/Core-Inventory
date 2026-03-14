@@ -25,7 +25,7 @@ import { PageContentWrapper } from "@/components/shared";
 import { HelpTooltip } from "@/components/shared";
 
 const linkCardClass =
-  "block border border-white/10 dark:border-white/10 bg-gradient-to-br from-white/80 via-white/70 to-white/60 dark:from-white/10 dark:via-white/10 dark:to-white/5 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.08)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.25)] rounded-lg transition-all duration-200 hover:border-sky-400/40 dark:hover:border-sky-400/30 hover:from-sky-500/10 hover:via-sky-500/5 hover:to-sky-500/5 dark:hover:from-sky-500/20 dark:hover:via-sky-500/10 dark:hover:to-sky-500/5 hover:shadow-[0_10px_30px_rgba(2,132,199,0.2)] dark:hover:shadow-[0_10px_30px_rgba(2,132,199,0.2)]";
+  "block border border-white/10 dark:border-white/10 bg-gradient-to-br from-white/80 via-white/70 to-white/60 dark:from-white/10 dark:via-white/10 dark:to-white/5 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.08)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.25)] rounded-lg transition-all duration-200 hover:border-zinc-400/40 dark:hover:border-zinc-400/30 hover:from-zinc-500/10 hover:via-zinc-500/5 hover:to-zinc-500/5 dark:hover:from-zinc-500/20 dark:hover:via-zinc-500/10 dark:hover:to-zinc-500/5 hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)]";
 
 const disabledCardClass =
   "border border-white/10 dark:border-white/10 bg-gradient-to-br from-white/60 via-white/50 to-white/40 dark:from-white/5 dark:via-white/5 dark:to-white/5 rounded-lg opacity-75";
@@ -57,7 +57,7 @@ export default function AdminPage() {
                 <Card className="border-0 bg-transparent shadow-none">
                   <CardHeader className="pb-2">
                     <div className="flex items-center gap-2">
-                      <FiActivity className="h-5 w-5 text-sky-600 dark:text-sky-400" />
+                      <FiActivity className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
                       <CardTitle className="text-lg">
                         API & Project Status
                       </CardTitle>
@@ -76,7 +76,7 @@ export default function AdminPage() {
                 <Card className="border-0 bg-transparent shadow-none">
                   <CardHeader className="pb-2">
                     <div className="flex items-center gap-2">
-                      <FiFileText className="h-5 w-5 text-sky-600 dark:text-sky-400" />
+                      <FiFileText className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
                       <CardTitle className="text-lg">API Docs</CardTitle>
                     </div>
                     <CardDescription>
@@ -96,7 +96,7 @@ export default function AdminPage() {
                 <Card className="border-0 bg-transparent shadow-none">
                   <CardHeader className="pb-2">
                     <div className="flex items-center gap-2">
-                      <FiSettings className="h-5 w-5 text-sky-600 dark:text-sky-400" />
+                      <FiSettings className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
                       <CardTitle className="text-lg">
                         Email Preferences
                       </CardTitle>
@@ -115,7 +115,7 @@ export default function AdminPage() {
                 <Card className="border-0 bg-transparent shadow-none">
                   <CardHeader className="pb-2">
                     <div className="flex items-center gap-2">
-                      <FiBarChart2 className="h-5 w-5 text-sky-600 dark:text-sky-400" />
+                      <FiBarChart2 className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
                       <CardTitle className="text-lg">
                         Business Insights
                       </CardTitle>
@@ -134,7 +134,7 @@ export default function AdminPage() {
                 <Card className="border-0 bg-transparent shadow-none">
                   <CardHeader className="pb-2">
                     <div className="flex items-center gap-2">
-                      <FiShoppingCart className="h-5 w-5 text-sky-600 dark:text-sky-400" />
+                      <FiShoppingCart className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
                       <CardTitle className="text-lg">Client Portal</CardTitle>
                     </div>
                     <CardDescription>
@@ -190,3 +190,4 @@ export default function AdminPage() {
     </Navbar>
   );
 }
+

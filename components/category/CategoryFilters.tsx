@@ -237,7 +237,7 @@ export default function CategoryFilters({
             placeholder="Search by Category Name..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="h-10 pl-9 pr-10 w-full rounded-[28px] bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-sky-400/30 dark:border-white/20 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-white/40 focus-visible:border-sky-400 focus-visible:ring-sky-500/50 shadow-[0_10px_30px_rgba(2,132,199,0.15)]"
+            className="h-10 pl-9 pr-10 w-full rounded-[28px] bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-zinc-400/30 dark:border-white/20 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-white/40 focus-visible:border-zinc-400 focus-visible:ring-zinc-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
           />
           {searchTerm && (
             <Button
@@ -257,17 +257,17 @@ export default function CategoryFilters({
             value={statusFilter}
             onValueChange={(value) => setStatusFilter(value as StatusFilter)}
           >
-            <SelectTrigger className="h-10 w-full sm:w-[180px] rounded-[28px] border border-sky-400/30 dark:border-sky-400/30 bg-gradient-to-r from-sky-500/25 via-sky-500/15 to-sky-500/10 dark:from-sky-500/25 dark:via-sky-500/15 dark:to-sky-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(2,132,199,0.2)] backdrop-blur-sm transition duration-200 hover:border-sky-300/40 hover:from-sky-500/35 hover:via-sky-500/25 hover:to-sky-500/15 dark:hover:border-sky-300/40 dark:hover:from-sky-500/35 dark:hover:via-sky-500/25 dark:hover:to-sky-500/15 font-medium">
+            <SelectTrigger className="h-10 w-full sm:w-[180px] rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/25 via-zinc-500/15 to-zinc-500/10 dark:from-zinc-500/25 dark:via-zinc-500/15 dark:to-zinc-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(0,0,0,0.2)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/40 hover:from-zinc-500/35 hover:via-zinc-500/25 hover:to-zinc-500/15 dark:hover:border-zinc-300/40 dark:hover:from-zinc-500/35 dark:hover:via-zinc-500/25 dark:hover:to-zinc-500/15 font-medium">
               <SelectValue placeholder="All Categories" />
             </SelectTrigger>
-            <SelectContent className="rounded-[28px] border border-sky-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm shadow-[0_10px_30px_rgba(2,132,199,0.15)]">
-              <SelectItem value="all" className="text-gray-700 dark:text-white/80 focus:bg-sky-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white">
+            <SelectContent className="rounded-[28px] border border-zinc-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
+              <SelectItem value="all" className="text-gray-700 dark:text-white/80 focus:bg-zinc-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white">
                 All Categories
               </SelectItem>
-              <SelectItem value="active" className="text-gray-700 dark:text-white/80 focus:bg-sky-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white">
+              <SelectItem value="active" className="text-gray-700 dark:text-white/80 focus:bg-zinc-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white">
                 Active
               </SelectItem>
-              <SelectItem value="inactive" className="text-gray-700 dark:text-white/80 focus:bg-sky-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white">
+              <SelectItem value="inactive" className="text-gray-700 dark:text-white/80 focus:bg-zinc-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white">
                 Inactive
               </SelectItem>
             </SelectContent>
@@ -280,7 +280,7 @@ export default function CategoryFilters({
             <DropdownMenuTrigger asChild>
               <Button
                 variant="outline"
-                className="h-10 w-full sm:w-auto flex items-center gap-2 rounded-[28px] border border-violet-400/30 dark:border-violet-400/30 bg-gradient-to-r from-violet-500/25 via-violet-500/15 to-violet-500/10 dark:from-violet-500/25 dark:via-violet-500/15 dark:to-violet-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(139,92,246,0.2)] backdrop-blur-sm transition duration-200 hover:border-violet-300/40 hover:from-violet-500/35 hover:via-violet-500/25 hover:to-violet-500/15 dark:hover:border-violet-300/40 dark:hover:from-violet-500/35 dark:hover:via-violet-500/25 dark:hover:to-violet-500/15"
+                className="h-10 w-full sm:w-auto flex items-center gap-2 rounded-[28px] border border-zinc-400/30 dark:border-zinc-400/30 bg-gradient-to-r from-zinc-500/25 via-zinc-500/15 to-zinc-500/10 dark:from-zinc-500/25 dark:via-zinc-500/15 dark:to-zinc-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(0,0,0,0.2)] backdrop-blur-sm transition duration-200 hover:border-zinc-300/40 hover:from-zinc-500/35 hover:via-zinc-500/25 hover:to-zinc-500/15 dark:hover:border-zinc-300/40 dark:hover:from-zinc-500/35 dark:hover:via-zinc-500/25 dark:hover:to-zinc-500/15"
               >
                 <Download className="h-4 w-4" />
                 Export Categories
@@ -289,18 +289,18 @@ export default function CategoryFilters({
             </DropdownMenuTrigger>
             <DropdownMenuContent
               align="end"
-              className="rounded-[28px] border border-violet-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm"
+              className="rounded-[28px] border border-zinc-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm"
             >
               <DropdownMenuItem
                 onClick={exportToCSV}
-                className="cursor-pointer text-gray-700 dark:text-white/80 hover:text-gray-900 dark:hover:text-white focus:bg-violet-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
+                className="cursor-pointer text-gray-700 dark:text-white/80 hover:text-gray-900 dark:hover:text-white focus:bg-zinc-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
               >
                 <FiFileText className="mr-2 h-4 w-4" />
                 Export as CSV
               </DropdownMenuItem>
               <DropdownMenuItem
                 onClick={exportToExcel}
-                className="cursor-pointer text-gray-700 dark:text-white/80 hover:text-gray-900 dark:hover:text-white focus:bg-violet-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
+                className="cursor-pointer text-gray-700 dark:text-white/80 hover:text-gray-900 dark:hover:text-white focus:bg-zinc-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
               >
                 <FiGrid className="mr-2 h-4 w-4" />
                 Export as Excel
@@ -336,10 +336,10 @@ function FilterArea({
     <div className="flex flex-col sm:flex-row gap-3 poppins">
       {/* Status Filter */}
       {hasActiveFilter && (
-        <div className="inline-flex items-center gap-1 px-2 py-1 text-xs border border-sky-400/30 bg-gradient-to-r from-sky-500/25 via-sky-500/10 to-sky-500/5 text-gray-700 dark:text-white rounded-md backdrop-blur-sm shadow-[0_10px_30px_rgba(2,132,199,0.2)]">
+        <div className="inline-flex items-center gap-1 px-2 py-1 text-xs border border-zinc-400/30 bg-gradient-to-r from-zinc-500/25 via-zinc-500/10 to-zinc-500/5 text-gray-700 dark:text-white rounded-md backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
           <span className="text-gray-700 dark:text-white/80">Status:</span>
           <div className="flex gap-1 items-center">
-            <Badge className="border border-sky-400/30 bg-gradient-to-r from-sky-500/25 via-sky-500/10 to-sky-500/5 text-white backdrop-blur-sm">
+            <Badge className="border border-zinc-400/30 bg-gradient-to-r from-zinc-500/25 via-zinc-500/10 to-zinc-500/5 text-white backdrop-blur-sm">
               {statusFilter === "active" ? "Active" : "Inactive"}
             </Badge>
           </div>
@@ -368,4 +368,5 @@ function FilterArea({
     </div>
   );
 }
+
 

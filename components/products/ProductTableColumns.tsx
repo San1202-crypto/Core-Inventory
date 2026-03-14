@@ -98,7 +98,7 @@ export function createProductColumns(
           alt={row.original.name}
           width={48}
           height={48}
-          className="w-12 h-12 object-cover rounded-lg border border-rose-400/30"
+          className="w-12 h-12 object-cover rounded-lg border border-zinc-400/30"
           unoptimized={imageUrl.includes("ik.imagekit.io")} // ImageKit handles optimization
         />
       );
@@ -112,7 +112,7 @@ export function createProductColumns(
       return (
         <Link
           href={detailHref(detailBase, "products", product.id)}
-          className="font-semibold text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
+          className="font-semibold text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
         >
           {product.name}
         </Link>
@@ -141,9 +141,9 @@ export function createProductColumns(
               {available}
             </span>
             {isLowStock && (
-              <AlertTriangle className="h-4 w-4 text-orange-500" />
+              <AlertTriangle className="h-4 w-4 text-zinc-500" />
             )}
-            {isOutOfStock && <AlertTriangle className="h-4 w-4 text-red-500" />}
+            {isOutOfStock && <AlertTriangle className="h-4 w-4 text-zinc-500" />}
           </div>
           {reserved > 0 && (
             <span className="text-xs text-muted-foreground">
@@ -201,9 +201,9 @@ export function createProductColumns(
       // Color coding: red if expired, orange if expiring within 7 days, green otherwise
       let dateClass = "text-gray-900 dark:text-white";
       if (daysUntilExpiry < 0) {
-        dateClass = "text-red-600 dark:text-red-400 font-semibold";
+        dateClass = "text-zinc-600 dark:text-zinc-400 font-semibold";
       } else if (daysUntilExpiry <= 7) {
-        dateClass = "text-orange-600 dark:text-orange-400 font-semibold";
+        dateClass = "text-zinc-600 dark:text-zinc-400 font-semibold";
       }
 
       return (
@@ -227,13 +227,13 @@ export function createProductColumns(
 
       if (quantity > 20) {
         status = "Available";
-        colorClass = "bg-green-100 text-green-600";
+        colorClass = "bg-zinc-100 text-zinc-600";
       } else if (quantity > 0 && quantity <= 20) {
         status = "Stock Low";
-        colorClass = "bg-orange-100 text-orange-600";
+        colorClass = "bg-zinc-100 text-zinc-600";
       } else {
         status = "Stock Out";
-        colorClass = "bg-red-100 text-red-600";
+        colorClass = "bg-zinc-100 text-zinc-600";
       }
 
       return (
@@ -258,7 +258,7 @@ export function createProductColumns(
         return (
           <Link
             href={detailHref(detailBase, "categories", product.categoryId)}
-            className="font-semibold text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
+            className="font-semibold text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
           >
             {categoryName}
           </Link>
@@ -279,7 +279,7 @@ export function createProductColumns(
             return (
               <Link
                 href={detailHref(detailBase, "products", product.id)}
-                className="font-semibold text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
+                className="font-semibold text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
               >
                 {name}
               </Link>
@@ -301,7 +301,7 @@ export function createProductColumns(
               return (
                 <Link
                   href={detailHref(detailBase, "suppliers", product.supplierId)}
-                  className="font-semibold text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300"
+                  className="font-semibold text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
                 >
                   {supplierName}
                 </Link>
@@ -348,3 +348,4 @@ export function createProductColumns(
 }
 
 export const columns = createProductColumns("");
+

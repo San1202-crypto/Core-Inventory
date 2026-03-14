@@ -64,7 +64,7 @@ import { exportToExcel, exportToCSV } from "@/lib/export";
 import type { ProductForHome } from "@/lib/server/home-data";
 import type { OrderForPage } from "@/lib/server/orders-data";
 
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#8884D8"];
+const COLORS = ["#000000", "#333333", "#666666", "#999999", "#CCCCCC"];
 
 export type BusinessInsightPageProps = {
   initialProducts?: ProductForHome[];
@@ -817,7 +817,7 @@ export default function BusinessInsightPage({
             </div>
             <Button
               onClick={handleExportAnalytics}
-              className="flex items-center gap-2 flex-shrink-0 rounded-xl border-blue-400/30 bg-gradient-to-r from-blue-500/20 via-blue-500/10 to-transparent hover:from-blue-500/30 shadow-[0_10px_30px_rgba(59,130,246,0.2)]"
+              className="flex items-center gap-2 flex-shrink-0 rounded-xl border-zinc-400/30 bg-gradient-to-r from-zinc-500/20 via-zinc-500/10 to-transparent hover:from-zinc-500/30 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
               disabled={showSkeleton}
             >
               <Download className="h-4 w-4" />
@@ -827,10 +827,10 @@ export default function BusinessInsightPage({
 
           {/* Date Range Filter */}
           <div className="pb-6">
-            <div className="rounded-[16px] border border-violet-400/20 bg-gradient-to-r from-violet-500/10 via-violet-500/5 to-transparent p-4 backdrop-blur-sm shadow-[0_10px_30px_rgba(139,92,246,0.1)]">
+            <div className="rounded-[16px] border border-zinc-400/20 bg-gradient-to-r from-zinc-500/10 via-zinc-500/5 to-transparent p-4 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
               <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                 <div className="flex items-center gap-2">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-violet-300/30 bg-violet-100/50 dark:border-white/15 dark:bg-white/10">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10">
                     <Calendar className="h-4 w-4 text-gray-700 dark:text-white/80" />
                   </div>
                   <span className="text-sm font-medium text-gray-700 dark:text-white/80">
@@ -855,7 +855,7 @@ export default function BusinessInsightPage({
                           startDate: e.target.value,
                         }))
                       }
-                      className="flex-1 sm:flex-none px-3 py-2 text-sm rounded-xl border border-gray-300/30 bg-white/50 dark:bg-white/5 dark:border-white/10 text-gray-900 dark:text-white backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-violet-400/50 focus:border-transparent transition"
+                      className="flex-1 sm:flex-none px-3 py-2 text-sm rounded-xl border border-gray-300/30 bg-white/50 dark:bg-white/5 dark:border-white/10 text-gray-900 dark:text-white backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-zinc-400/50 focus:border-transparent transition"
                       max={dateRange.endDate || undefined}
                     />
                   </div>
@@ -876,7 +876,7 @@ export default function BusinessInsightPage({
                           endDate: e.target.value,
                         }))
                       }
-                      className="flex-1 sm:flex-none px-3 py-2 text-sm rounded-xl border border-gray-300/30 bg-white/50 dark:bg-white/5 dark:border-white/10 text-gray-900 dark:text-white backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-violet-400/50 focus:border-transparent transition"
+                      className="flex-1 sm:flex-none px-3 py-2 text-sm rounded-xl border border-gray-300/30 bg-white/50 dark:bg-white/5 dark:border-white/10 text-gray-900 dark:text-white backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-zinc-400/50 focus:border-transparent transition"
                       min={dateRange.startDate || undefined}
                     />
                   </div>
@@ -887,7 +887,7 @@ export default function BusinessInsightPage({
                       onClick={() =>
                         setDateRange({ startDate: "", endDate: "" })
                       }
-                      className="flex items-center gap-1 rounded-xl border-rose-400/30 hover:border-rose-300/50 hover:bg-rose-500/10"
+                      className="flex items-center gap-1 rounded-xl border-zinc-400/30 hover:border-zinc-300/50 hover:bg-zinc-500/10"
                     >
                       <X className="h-3 w-3" />
                       Clear
@@ -1262,7 +1262,7 @@ export default function BusinessInsightPage({
                             (product, index) => (
                               <div
                                 key={index}
-                                className="rounded-xl border border-amber-400/30 bg-gradient-to-br from-amber-500/15 via-amber-500/5 to-transparent p-4 backdrop-blur-sm"
+                                className="rounded-xl border border-zinc-400/30 bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent p-4 backdrop-blur-sm"
                               >
                                 <div className="flex items-center justify-between">
                                   <div>
@@ -1286,7 +1286,7 @@ export default function BusinessInsightPage({
                         </div>
                       ) : (
                         <div className="text-center py-8">
-                          <AlertTriangle className="h-12 w-12 text-emerald-500 mx-auto mb-4" />
+                          <AlertTriangle className="h-12 w-12 text-zinc-500 mx-auto mb-4" />
                           <p className="text-gray-600 dark:text-white/60">
                             No low stock alerts at the moment!
                           </p>
@@ -1302,9 +1302,9 @@ export default function BusinessInsightPage({
           {/* Additional Insights */}
           <div className="pb-6 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4">
             {/* Quick Insights Card */}
-            <article className="rounded-[20px] border border-sky-400/20 bg-gradient-to-br from-sky-500/15 via-sky-500/5 to-transparent p-4 sm:p-5 backdrop-blur-sm shadow-[0_15px_40px_rgba(2,132,199,0.15)] dark:shadow-[0_15px_40px_rgba(2,132,199,0.1)] transition hover:border-sky-300/40">
+            <article className="rounded-[20px] border border-zinc-400/20 bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent p-4 sm:p-5 backdrop-blur-sm shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)] transition hover:border-zinc-300/40">
               <div className="flex items-center gap-2 mb-4">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-sky-300/30 bg-sky-100/50 dark:border-white/15 dark:bg-white/10">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10">
                   <Eye className="h-4 w-4 text-gray-900 dark:text-white" />
                 </div>
                 <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">
@@ -1340,9 +1340,9 @@ export default function BusinessInsightPage({
             </article>
 
             {/* Performance Card */}
-            <article className="rounded-[20px] border border-emerald-400/20 bg-gradient-to-br from-emerald-500/15 via-emerald-500/5 to-transparent p-4 sm:p-5 backdrop-blur-sm shadow-[0_15px_40px_rgba(16,185,129,0.15)] dark:shadow-[0_15px_40px_rgba(16,185,129,0.1)] transition hover:border-emerald-300/40">
+            <article className="rounded-[20px] border border-zinc-400/20 bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent p-4 sm:p-5 backdrop-blur-sm shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)] transition hover:border-zinc-300/40">
               <div className="flex items-center gap-2 mb-4">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-emerald-300/30 bg-emerald-100/50 dark:border-white/15 dark:bg-white/10">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10">
                   <Users className="h-4 w-4 text-gray-900 dark:text-white" />
                 </div>
                 <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">
@@ -1386,9 +1386,9 @@ export default function BusinessInsightPage({
             </article>
 
             {/* QR Code Card */}
-            <article className="rounded-[20px] border border-violet-400/20 bg-gradient-to-br from-violet-500/15 via-violet-500/5 to-transparent p-4 sm:p-5 backdrop-blur-sm shadow-[0_15px_40px_rgba(139,92,246,0.15)] dark:shadow-[0_15px_40px_rgba(139,92,246,0.1)] transition hover:border-violet-300/40">
+            <article className="rounded-[20px] border border-zinc-400/20 bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent p-4 sm:p-5 backdrop-blur-sm shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)] transition hover:border-zinc-300/40">
               <div className="flex items-center gap-2 mb-4">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-violet-300/30 bg-violet-100/50 dark:border-white/15 dark:bg-white/10">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10">
                   <QrCode className="h-4 w-4 text-gray-900 dark:text-white" />
                 </div>
                 <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">
@@ -1404,9 +1404,9 @@ export default function BusinessInsightPage({
             </article>
 
             {/* AI Insights Card */}
-            <article className="rounded-[20px] border border-amber-400/20 bg-gradient-to-br from-amber-500/15 via-amber-500/5 to-transparent p-4 sm:p-5 backdrop-blur-sm shadow-[0_15px_40px_rgba(245,158,11,0.12)] dark:shadow-[0_15px_40px_rgba(245,158,11,0.08)] transition hover:border-amber-300/40">
+            <article className="rounded-[20px] border border-zinc-400/20 bg-gradient-to-br from-zinc-500/15 via-zinc-500/5 to-transparent p-4 sm:p-5 backdrop-blur-sm shadow-[0_15px_40px_rgba(0,0,0,0.2)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)] transition hover:border-zinc-300/40">
               <div className="flex items-center gap-2 mb-4">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-amber-300/30 bg-amber-100/50 dark:border-white/15 dark:bg-white/10">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10">
                   <Sparkles className="h-4 w-4 text-gray-900 dark:text-white" />
                 </div>
                 <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">
@@ -1426,7 +1426,7 @@ export default function BusinessInsightPage({
                   <Button
                     variant="outline"
                     size="sm"
-                    className="rounded-xl border-amber-400/30 hover:border-amber-300/50"
+                    className="rounded-xl border-zinc-400/30 hover:border-zinc-300/50"
                     onClick={handleGenerateAiInsights}
                     disabled={aiInsightsLoading}
                   >
@@ -1441,7 +1441,7 @@ export default function BusinessInsightPage({
                   <Button
                     variant="outline"
                     size="sm"
-                    className="rounded-xl border-amber-400/30 hover:border-amber-300/50"
+                    className="rounded-xl border-zinc-400/30 hover:border-zinc-300/50"
                     onClick={handleGenerateAiInsights}
                     disabled={aiInsightsLoading || showSkeleton}
                   >
@@ -1461,3 +1461,4 @@ export default function BusinessInsightPage({
     </Navbar>
   );
 }
+
