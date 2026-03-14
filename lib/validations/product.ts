@@ -46,6 +46,7 @@ export const productSchema = z.object({
     .regex(/^\d{4}-\d{2}-\d{2}$/, "Invalid date format. Use YYYY-MM-DD format")
     .optional()
     .or(z.literal("")),
+  unitOfMeasure: z.string().min(1, "Unit of Measure is required").default("unit"),
 });
 
 /**
@@ -69,6 +70,7 @@ export const createProductSchema = z.object({
   categoryId: z.string().min(1),
   supplierId: z.string().min(1),
   userId: z.string().min(1),
+  unitOfMeasure: z.string().min(1).default("unit"),
 });
 
 /**
@@ -95,6 +97,7 @@ export const updateProductSchema = z.object({
     .regex(/^\d{4}-\d{2}-\d{2}$/, "Invalid date format. Use YYYY-MM-DD format")
     .optional()
     .or(z.literal("")),
+  unitOfMeasure: z.string().min(1).optional(),
 });
 
 /**
@@ -107,4 +110,3 @@ export const calculateProductStatus = (quantity: number): ProductStatus => {
   if (quantity > 0 && quantity <= 20) return "Stock Low";
   return "Stock Out";
 };
-

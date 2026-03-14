@@ -28,6 +28,8 @@ import {
   Sparkles,
   Loader2,
   ArrowRight,
+  RefreshCw,
+  Filter,
 } from "lucide-react";
 import {
   Area,
@@ -45,7 +47,7 @@ import type { DashboardStats } from "@/types";
 import ForecastingSection from "@/components/admin/ForecastingSection";
 
 function formatCurrency(value: number): string {
-  return `$${value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  return `₹${value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 }
 
 export type AdminAnalyticsContentProps = {
@@ -83,12 +85,12 @@ export default function AdminAnalyticsContent({
       `Products: ${c.products ?? 0}. Users: ${c.users ?? 0}. Suppliers: ${c.suppliers ?? 0}. Categories: ${c.categories ?? 0}.`,
       `Orders: ${c.orders ?? 0}. Invoices: ${c.invoices ?? 0}. Warehouses: ${c.warehouses ?? 0}.`,
       `Support tickets: ${c.tickets ?? 0}. Product reviews: ${c.reviews ?? 0}.`,
-      `Total revenue (orders + invoices): $${totalRev.toLocaleString()}.`,
+      `Total revenue (orders + invoices): ₹${totalRev.toLocaleString()}.`,
     ];
     const last = stats.trends?.[stats.trends.length - 1];
     if (last) {
       parts.push(
-        `Last month trend: ${last.orders} orders, $${last.revenue.toLocaleString()} revenue, ${last.products} new products, ${last.invoices} invoices.`,
+        `Last month trend: ${last.orders} orders, ₹${last.revenue.toLocaleString()} revenue, ${last.products} new products, ${last.invoices} invoices.`,
       );
     }
     return parts.join(" ");
@@ -163,6 +165,37 @@ export default function AdminAnalyticsContent({
             products, users, suppliers, categories, orders, invoices,
             warehouses, tickets, and reviews. Store-wide metrics.
           </p>
+        </div>
+
+        {/* Filters Row */}
+        <div className="flex flex-col sm:flex-row gap-4 mb-6">
+          <div className="flex items-center gap-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg px-3 py-1.5 shadow-sm">
+            <Filter className="h-4 w-4 text-zinc-500" />
+            <select
+              className="bg-transparent border-none text-sm outline-none cursor-pointer font-medium text-zinc-700 dark:text-zinc-300"
+              aria-label="Filter by Document Type"
+              defaultValue="all"
+            >
+              <option value="all">All Documents</option>
+              <option value="orders">Orders</option>
+              <option value="invoices">Invoices</option>
+              <option value="receipts">Receipts</option>
+            </select>
+          </div>
+          
+          <div className="flex items-center gap-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg px-3 py-1.5 shadow-sm">
+            <Filter className="h-4 w-4 text-zinc-500" />
+            <select
+              className="bg-transparent border-none text-sm outline-none cursor-pointer font-medium text-zinc-700 dark:text-zinc-300"
+              aria-label="Filter by Status"
+              defaultValue="all"
+            >
+              <option value="all">All Statuses</option>
+              <option value="pending">Pending</option>
+              <option value="completed">Completed</option>
+              <option value="cancelled">Cancelled</option>
+            </select>
+          </div>
         </div>
 
         {/* Overview cards — max 3 per row on admin (sidebar); same height via h-full */}
@@ -353,6 +386,20 @@ export default function AdminAnalyticsContent({
                 ]}
               />
               <StatisticsCard
+                title="Internal Transfers"
+                value={stats.counts?.internalTransfersScheduled}
+                description="Scheduled (Pending)"
+                icon={RefreshCw}
+                variant="violet"
+                badges={[
+                  {
+                    label: "Pending",
+                    value: stats.counts?.internalTransfersScheduled ?? 0,
+                  },
+                ]}
+              />
+
+              <StatisticsCard
                 title="Invoices"
                 value={stats.counts?.invoices}
                 description="Total invoices (store-wide)"
@@ -507,7 +554,7 @@ export default function AdminAnalyticsContent({
                     orientation="right"
                     tick={{ fontSize: 12 }}
                     className="text-muted-foreground"
-                    tickFormatter={(v) => `$${(v / 1000).toFixed(0)}k`}
+                    tickFormatter={(v) => `₹${(v / 1000).toFixed(0)}k`}
                   />
                   <Tooltip
                     contentStyle={{
@@ -517,7 +564,7 @@ export default function AdminAnalyticsContent({
                     }}
                     formatter={(value, name) => [
                       name === "revenue"
-                        ? `$${Number(value ?? 0).toLocaleString()}`
+                        ? `₹${Number(value ?? 0).toLocaleString()}`
                         : (value ?? 0),
                       name === "revenue"
                         ? "Order revenue (excl. cancelled)"

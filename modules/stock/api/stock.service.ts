@@ -148,4 +148,147 @@ export class StockService {
 
     return updatedStock;
   }
+
+  /**
+   * Adjust stock manually (INCREASE/DECREASE) with reason.
+   */
+  static async adjustStock(data: {
+    productId: string;
+    warehouseId: string;
+    quantity: number;
+    type: "INCREASE" | "DECREASE";
+    reason: string;
+    userId: string;
+  }): Promise<Stock> {
+    const qtyChange = data.type === "INCREASE" ? data.quantity : -data.quantity;
+
+    return await prisma.$transaction(async (tx) => {
+      // 1. Update total product quantity
+      const product = await tx.product.update({
+        where: { id: data.productId },
+        data: { quantity: { increment: qtyChange } },
+      });
+
+      if (product.quantity < 0) {
+        throw new Error("Adjustment would result in negative total product quantity.");
+      }
+
+      // 2. Update specific warehouse stock
+      const stock = await tx.stock.upsert({
+        where: {
+          productId_warehouseId: {
+            productId: data.productId,
+            warehouseId: data.warehouseId,
+          },
+        },
+        create: {
+          productId: data.productId,
+          warehouseId: data.warehouseId,
+          quantity: qtyChange,
+          userId: data.userId,
+        },
+        update: {
+          quantity: { increment: qtyChange },
+        },
+        include: { warehouse: true },
+      });
+
+      if (stock.quantity < 0) {
+        throw new Error(`Adjustment would result in negative stock at warehouse: ${stock.warehouse.name}`);
+      }
+
+      // 3. Create movement record
+      await tx.stockMovement.create({
+        data: {
+          productId: data.productId,
+          movementType: "ADJUSTMENT",
+          quantity: Math.abs(data.quantity),
+          source: data.type === "DECREASE" ? stock.warehouse.name : "MANUAL_ADJUSTMENT",
+          destination: data.type === "INCREASE" ? stock.warehouse.name : "MANUAL_ADJUSTMENT",
+          referenceDocument: `ADJ-${Date.now()}`,
+          userId: data.userId,
+          notes: data.reason,
+        },
+      });
+
+      return stock;
+    });
+  }
+
+  /**
+   * Transfer stock between warehouses.
+   */
+  static async transferStock(data: {
+    productId: string;
+    fromWarehouseId: string;
+    toWarehouseId: string;
+    quantity: number;
+    userId: string;
+  }): Promise<void> {
+    if (data.fromWarehouseId === data.toWarehouseId) {
+      throw new Error("Source and destination warehouses cannot be the same.");
+    }
+
+    await prisma.$transaction(async (tx) => {
+      // 1. Decrement from source
+      const fromStock = await tx.stock.update({
+        where: {
+          productId_warehouseId: {
+            productId: data.productId,
+            warehouseId: data.fromWarehouseId,
+          },
+        },
+        data: { quantity: { decrement: data.quantity } },
+        include: { warehouse: true },
+      });
+
+      if (fromStock.quantity < 0) {
+        throw new Error(`Insufficient stock in ${fromStock.warehouse.name}.`);
+      }
+
+      // 2. Increment to destination
+      const toStock = await tx.stock.upsert({
+        where: {
+          productId_warehouseId: {
+            productId: data.productId,
+            warehouseId: data.toWarehouseId,
+          },
+        },
+        create: {
+          productId: data.productId,
+          warehouseId: data.toWarehouseId,
+          quantity: data.quantity,
+          userId: data.userId,
+        },
+        update: {
+          quantity: { increment: data.quantity },
+        },
+        include: { warehouse: true },
+      });
+
+      // 3. Create movement records (OUT and IN)
+      await tx.stockMovement.createMany({
+        data: [
+          {
+            productId: data.productId,
+            movementType: "TRANSFER_OUT",
+            quantity: data.quantity,
+            source: fromStock.warehouse.name,
+            destination: toStock.warehouse.name,
+            referenceDocument: `TRF-${Date.now()}`,
+            userId: data.userId,
+          },
+          {
+            productId: data.productId,
+            movementType: "TRANSFER_IN",
+            quantity: data.quantity,
+            source: fromStock.warehouse.name,
+            destination: toStock.warehouse.name,
+            referenceDocument: `TRF-${Date.now()}`,
+            userId: data.userId,
+          },
+        ],
+      });
+    });
+  }
 }

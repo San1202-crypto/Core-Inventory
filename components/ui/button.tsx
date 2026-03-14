@@ -5,26 +5,26 @@ import { cn } from "@/lib/utils";
 import { Skeleton } from "@/components/ui/skeleton";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-none text-xs font-black uppercase tracking-tighter transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 active:scale-95 font-montserrat",
   {
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground shadow hover:bg-primary/90",
+          "bg-foreground text-background hover:bg-foreground/90",
         destructive:
-          "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
+          "border-2 border-foreground bg-transparent hover:bg-foreground hover:text-background",
         secondary:
-          "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
+          "bg-muted text-muted-foreground hover:bg-muted/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300",
+        link: "text-foreground underline-offset-4 hover:underline",
       },
       size: {
-        default: "h-11 px-4 py-2.5",
-        sm: "h-9 rounded-md px-3 text-xs",
-        lg: "h-12 rounded-md px-8",
-        icon: "h-11 w-11",
+        default: "h-10 px-6 py-2",
+        sm: "h-8 px-3 text-[10px]",
+        lg: "h-12 px-10 text-sm",
+        icon: "h-10 w-10",
       },
     },
     defaultVariants: {

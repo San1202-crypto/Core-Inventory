@@ -39,7 +39,7 @@ import type { InvoiceWithSource } from "./InvoiceTableColumns";
 import type { InvoiceSourceFilterValue } from "./InvoiceSourceFilter";
 
 const formatCurrency = (value: number) =>
-  `$${value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  `₹${value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 
 const InvoiceTable = dynamic(
   () =>

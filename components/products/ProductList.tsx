@@ -103,7 +103,7 @@ const ProductList = React.memo(() => {
   // Removed debug log - use React DevTools for debugging
 
   const formatCurrency = (value: number) =>
-    `$${value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    `₹${value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 
   // Determine loading state - FIXES HYDRATION & FLICKER
   const productsQueryPending = productsQuery.isPending;
@@ -362,7 +362,7 @@ const ProductList = React.memo(() => {
 
       {/* Admin products page state cards — same layout as admin/orders (2x2) */}
       {isAdminProductsPage && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 pb-6 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-2 border-foreground/10 mb-8">
           {adminProductsCardsLoading ? (
             <>
               {[1, 2, 3, 4].map((i) => (
@@ -376,7 +376,7 @@ const ProductList = React.memo(() => {
                 value={dashboard.counts.products}
                 description="Products availability"
                 icon={Package}
-                variant="rose"
+                className="border-none border-b-2 border-r-2 border-foreground/10"
                 badges={[
                   {
                     label: "Available",
@@ -397,13 +397,12 @@ const ProductList = React.memo(() => {
                 value={formatCurrency(dashboard.totalInventoryValue ?? 0)}
                 description="Total inventory value"
                 icon={DollarSign}
-                variant="violet"
+                className="border-none border-b-2 border-foreground/10"
                 badges={[
                   {
                     label: "Orders",
                     value: formatCurrency(
-                      dashboard.orderAnalytics
-                        ?.totalRevenueExcludingCancelled ??
+                      dashboard.orderAnalytics?.totalRevenueExcludingCancelled ??
                         dashboard.revenue?.fromOrders ??
                         0,
                     ),
@@ -427,28 +426,11 @@ const ProductList = React.memo(() => {
                 ]}
               />
               <StatisticsCard
-                title="Total Suppliers"
-                value={dashboard.counts.suppliers}
-                description="Suppliers"
-                icon={Truck}
-                variant="emerald"
-                badges={[
-                  {
-                    label: "Active",
-                    value: dashboard.supplierStatusBreakdown?.active ?? 0,
-                  },
-                  {
-                    label: "Inactive",
-                    value: dashboard.supplierStatusBreakdown?.inactive ?? 0,
-                  },
-                ]}
-              />
-              <StatisticsCard
                 title="Categories"
                 value={dashboard.counts.categories}
                 description="Product categories"
                 icon={FolderTree}
-                variant="amber"
+                className="border-none border-r-2 border-foreground/10"
                 badges={[
                   {
                     label: "Active",
@@ -457,6 +439,23 @@ const ProductList = React.memo(() => {
                   {
                     label: "Inactive",
                     value: dashboard.categoryStatusBreakdown?.inactive ?? 0,
+                  },
+                ]}
+              />
+              <StatisticsCard
+                title="Suppliers"
+                value={dashboard.counts.suppliers}
+                description="Suppliers"
+                icon={Truck}
+                className="border-none"
+                badges={[
+                  {
+                    label: "Active",
+                    value: dashboard.supplierStatusBreakdown?.active ?? 0,
+                  },
+                  {
+                    label: "Inactive",
+                    value: dashboard.supplierStatusBreakdown?.inactive ?? 0,
                   },
                 ]}
               />

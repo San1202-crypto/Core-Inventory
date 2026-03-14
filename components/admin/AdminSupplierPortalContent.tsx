@@ -207,7 +207,7 @@ export default function AdminSupplierPortalContent({
               />
               <AnalyticsCard
                 title="Inventory Value"
-                value={`$${stats.counts?.totalValue.toLocaleString()}`}
+                value={`₹${stats.counts?.totalValue.toLocaleString()}`}
                 icon={DollarSign}
                 description="Total product value"
                 variant="amber"

@@ -150,10 +150,11 @@ export async function GET(request: NextRequest) {
     await setCache(cacheKey, transformedProducts, 300);
 
     return NextResponse.json(transformedProducts);
-  } catch (error) {
+  } catch (error: any) {
+    console.error("DEBUG: GET /api/products error:", error);
     logger.error("Error fetching products:", error);
     return NextResponse.json(
-      { error: "Failed to fetch products" },
+      { error: "Failed to fetch products", details: error.message },
       { status: 500 },
     );
   }
@@ -178,6 +179,8 @@ export async function POST(request: NextRequest) {
 
     const userId = session.id;
     const body = await request.json();
+    console.log("DEBUG: POST /api/products body:", JSON.stringify(body, null, 2));
+
     const {
       name,
       sku,
@@ -189,7 +192,14 @@ export async function POST(request: NextRequest) {
       imageUrl,
       imageFileId,
       expirationDate,
+      unitOfMeasure,
     } = body;
+
+    // Handle empty string IDs from frontend (convert to null for Prisma)
+    const finalCategoryId = categoryId && categoryId !== "" ? categoryId : null;
+    const finalSupplierId = supplierId && supplierId !== "" ? supplierId : null;
+    
+    console.log(`DEBUG: POST /api/products cleaned IDs - category: ${finalCategoryId}, supplier: ${finalSupplierId}`);
 
     // Validate required fields
     if (!name || !sku || price === undefined || quantity === undefined) {
@@ -217,15 +227,16 @@ export async function POST(request: NextRequest) {
         name,
         sku,
         price,
-        quantity: BigInt(quantity) as any,
+        quantity: quantity,
         status,
         userId,
         createdBy: userId, // Set createdBy same as userId
-        categoryId,
-        supplierId,
+        categoryId: finalCategoryId,
+        supplierId: finalSupplierId,
         imageUrl: imageUrl || null,
         imageFileId: imageFileId || null,
         expirationDate: expirationDate ? new Date(expirationDate) : null,
+        unitOfMeasure: unitOfMeasure || "unit",
         createdAt: new Date(),
         updatedAt: null, // Set to null on creation - will be set when updated
       },
@@ -239,13 +250,13 @@ export async function POST(request: NextRequest) {
       details: { productName: product.name, sku: product.sku },
     }).catch(() => {});
 
-    // Fetch category and supplier data for the response
-    const category = await prisma.category.findUnique({
-      where: { id: categoryId },
-    });
-    const supplier = await prisma.supplier.findUnique({
-      where: { id: supplierId },
-    });
+    // Refresh category and supplier names for response using the final IDs
+    const category = finalCategoryId 
+      ? await prisma.category.findUnique({ where: { id: finalCategoryId } })
+      : null;
+    const supplier = finalSupplierId
+      ? await prisma.supplier.findUnique({ where: { id: finalSupplierId } })
+      : null;
 
     // Generate QR code and upload to ImageKit (async, don't block response)
     generateAndUploadQRCode(
@@ -323,13 +334,16 @@ export async function POST(request: NextRequest) {
       createdAt: product.createdAt.toISOString(),
       updatedAt: product.updatedAt?.toISOString() || null,
       qrCodeUrl: product.qrCodeUrl || null,
+      unitOfMeasure: product.unitOfMeasure,
     };
 
     return NextResponse.json(transformedProduct, { status: 201 });
-  } catch (error) {
+  } catch (error: any) {
+    console.error("DEBUG: POST /api/products error:", error);
+    if (error.stack) console.error("DEBUG: POST /api/products stack:", error.stack);
     logger.error("Error creating product:", error);
     return NextResponse.json(
-      { error: "Failed to create product" },
+      { error: "Failed to create product", details: error.message, stack: error.stack },
       { status: 500 },
     );
   }
@@ -366,6 +380,7 @@ export async function PUT(request: NextRequest) {
       imageUrl,
       imageFileId,
       expirationDate,
+      unitOfMeasure,
     } = body;
 
     if (!id) {
@@ -417,7 +432,7 @@ export async function PUT(request: NextRequest) {
         ...(name && { name }),
         ...(sku && { sku }),
         ...(price !== undefined && { price }),
-        ...(quantity !== undefined && { quantity: BigInt(quantity) as any }),
+        ...(quantity !== undefined && { quantity: Number(quantity) }),
         ...(status && { status }),
         ...(categoryId && { categoryId }),
         ...(supplierId && { supplierId }),
@@ -433,6 +448,7 @@ export async function PUT(request: NextRequest) {
               ? null
               : new Date(expirationDate),
         }),
+        ...(unitOfMeasure !== undefined && { unitOfMeasure }),
         updatedBy: session.id, // Track who updated the product
         updatedAt: new Date(), // Update timestamp
       },
@@ -442,7 +458,7 @@ export async function PUT(request: NextRequest) {
     if (name && name !== existingProduct.name) fieldsUpdated.push("Name");
     if (sku && sku !== existingProduct.sku) fieldsUpdated.push("SKU");
     if (price !== undefined && Number(existingProduct.price) !== price) fieldsUpdated.push("Price");
-    if (quantity !== undefined && existingProduct.quantity !== BigInt(quantity)) fieldsUpdated.push("Quantity");
+    if (quantity !== undefined && existingProduct.quantity !== Number(quantity)) fieldsUpdated.push("Quantity");
     if (status && status !== existingProduct.status) fieldsUpdated.push("Status");
     if (categoryId && categoryId !== existingProduct.categoryId) fieldsUpdated.push("Category");
     if (supplierId && supplierId !== existingProduct.supplierId) fieldsUpdated.push("Supplier");
@@ -576,6 +592,7 @@ export async function PUT(request: NextRequest) {
       imageUrl: product.imageUrl || null,
       imageFileId: product.imageFileId || null,
       expirationDate: product.expirationDate?.toISOString() || null,
+      unitOfMeasure: product.unitOfMeasure,
     };
 
     return NextResponse.json(transformedProduct);

@@ -5,7 +5,7 @@
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { KeyboardShortcutsProvider } from "@/components/providers/KeyboardShortcutsProvider";
-import { Poppins } from "next/font/google";
+import { Poppins, Montserrat } from "next/font/google";
 import localFont from "next/font/local";
 import React from "react";
 import { AuthProvider } from "@/contexts";
@@ -29,6 +29,12 @@ const geistMono = localFont({
 const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-poppins",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
@@ -121,7 +127,7 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
     >
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${montserrat.variable} antialiased`}
         suppressHydrationWarning
         style={{ overscrollBehavior: "none" }}
       >
@@ -131,8 +137,8 @@ export default function RootLayout({
               <SuppressApiErrorOverlay />
               <ThemeProvider
                 attribute="class"
-                defaultTheme="system"
-                enableSystem
+                defaultTheme="light"
+                forcedTheme="light"
                 disableTransitionOnChange
               >
                 <TooltipProvider delayDuration={200}>

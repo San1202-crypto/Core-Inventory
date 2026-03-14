@@ -108,18 +108,18 @@ export async function POST(request: NextRequest) {
           );
         }
         const parts: string[] = [];
-        if (order.subtotal) parts.push(`Subtotal $${order.subtotal.toFixed(2)}`);
-        if (order.tax && order.tax > 0) parts.push(`Tax $${order.tax.toFixed(2)}`);
+        if (order.subtotal) parts.push(`Subtotal ₹${order.subtotal.toFixed(2)}`);
+        if (order.tax && order.tax > 0) parts.push(`Tax ₹${order.tax.toFixed(2)}`);
         if (order.shipping && order.shipping > 0)
-          parts.push(`Shipping $${order.shipping.toFixed(2)}`);
-        parts.push(`Discount -$${order.discount.toFixed(2)}`);
+          parts.push(`Shipping ₹${order.shipping.toFixed(2)}`);
+        parts.push(`Discount -₹${order.discount.toFixed(2)}`);
         lineItems = [
           {
             price_data: {
               currency: "usd",
               product_data: {
                 name: `Order ${order.orderNumber}`,
-                description: parts.join(" · ") + ` → Total $${order.total.toFixed(2)}`,
+                description: parts.join(" · ") + ` → Total ₹${order.total.toFixed(2)}`,
               },
               unit_amount: totalCents,
             },

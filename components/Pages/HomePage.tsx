@@ -136,19 +136,16 @@ export default function HomePage({
   return (
     <Navbar>
       <PageContentWrapper>
-        {/* Hero intro — store-wide overview and link to My Activities */}
-        <div className="pb-6 flex flex-col items-start text-left">
-          <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white pb-2">
-            Store overview
-          </h2>
-          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
-            The cards below show your store-wide metrics as the store owner,
-            including your own activity and activity from clients and others.
-            Numbers update automatically when you or others make changes. For
-            your personal orders, products, and activity only, visit{" "}
+        {/* Page Heading */}
+        <div className="mb-8 mt-2">
+          <h1 className="text-4xl font-black tracking-tighter text-foreground uppercase font-montserrat mb-4">
+            Store Overview
+          </h1>
+          <p className="max-w-2xl text-[11px] font-black uppercase tracking-tighter text-foreground/40 font-montserrat leading-relaxed">
+            Store-wide metrics dashboard. Track inventory, supply chains, and procurement cycles in real-time. For granular control of personal workflows, visit{" "}
             <Link
               href="/admin/my-activity"
-              className="font-medium text-sky-600 hover:text-sky-800"
+              className="text-foreground underline decoration-2 underline-offset-4 hover:text-foreground/80 transition-colors"
             >
               My Activities
             </Link>

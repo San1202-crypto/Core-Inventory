@@ -208,7 +208,7 @@ export default function AdminDashboardOverview({
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-semibold">
-                $
+                ₹
                 {stats.totalRevenue.toLocaleString(undefined, {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
@@ -284,7 +284,7 @@ export default function AdminDashboardOverview({
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-semibold">
-                $
+                ₹
                 {stats.avgOrderValue.toLocaleString(undefined, {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,

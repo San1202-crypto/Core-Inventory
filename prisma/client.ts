@@ -16,6 +16,11 @@ declare global {
 // Only initialize Prisma on server-side
 const isServer = typeof window === "undefined";
 
+// Force refresh in development to pick up schema/datasource changes without full restart
+if (isServer && process.env.NODE_ENV === "development") {
+  delete (globalThis as any).prisma;
+}
+
 export const prisma = isServer
   ? (globalThis as { prisma?: PrismaClient }).prisma ||
     new PrismaClient({
@@ -25,6 +30,12 @@ export const prisma = isServer
           : ["error"],
     })
   : ({} as PrismaClient); // Dummy client for client-side (should never be used)
+
+// Force refresh if the provider or URL changed (useful when switching between MongoDB and SQLite)
+// if (isServer && globalThis.prisma) {
+//   // Simple heuristic: if we previously had a client but now we are re-initializing, 
+//   // we might want to check if it's stale. For now, we'll just allow the re-assignment.
+// }
 
 if (isServer && process.env.NODE_ENV !== "production") {
   (globalThis as { prisma?: PrismaClient }).prisma = prisma;

@@ -24,7 +24,8 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
-    "@prisma/client": "^6.4.1",
+    "@imagekit/nodejs": "^7.3.0",
+    "@prisma/client": "^6.19.2",
     "@radix-ui/react-alert-dialog": "^1.1.2",
     "@radix-ui/react-checkbox": "^1.1.2",
     "@radix-ui/react-dialog": "^1.1.2",
@@ -60,7 +61,6 @@
     "cookies": "^0.9.1",
     "date-fns": "^4.1.0",
     "exceljs": "^4.4.0",
-    "@imagekit/nodejs": "^7.3.0",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
     "jspdf": "^4.0.0",

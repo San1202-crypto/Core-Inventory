@@ -72,6 +72,13 @@ export async function GET(
         },
         orderBy: { createdAt: "desc" as const },
       },
+      stocks: {
+        include: {
+          warehouse: {
+            select: { id: true, name: true },
+          },
+        },
+      },
     };
     if (isAdmin) {
       product = await prisma.product.findFirst({
@@ -197,13 +204,21 @@ export async function GET(
       imageUrl: product.imageUrl || null,
       imageFileId: product.imageFileId || null,
       expirationDate: product.expirationDate?.toISOString() || null,
-      // Statistics
+      unitOfMeasure: (product as any).unitOfMeasure,
       statistics: {
         totalQuantitySold,
         totalRevenue,
         uniqueOrders,
         totalValue: Number(product.price) * Number(product.quantity), // Current stock value
       },
+      // Stock locations
+      stocks: (product.stocks || []).map((stock) => ({
+        id: stock.id,
+        warehouseId: stock.warehouseId,
+        warehouseName: stock.warehouse.name,
+        quantity: stock.quantity,
+        reservedQuantity: stock.reservedQuantity,
+      })),
       // Recent orders containing this product
       recentOrders: orderItems.slice(0, 10).map((item) => {
         const order = item.order as { subtotal?: number; total: number };

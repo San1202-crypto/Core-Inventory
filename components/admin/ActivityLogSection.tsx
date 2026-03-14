@@ -146,7 +146,7 @@ function getActivityDetails(log: AuditLog): React.ReactNode {
     if (Array.isArray(d.fieldsUpdated) && d.fieldsUpdated.length > 0) {
       const labels = d.fieldsUpdated.map((f) =>
         String(f)
-          .replace(/([A-Z])/g, " $1")
+          .replace(/([A-Z])/g, " ₹1")
           .replace(/^./, (s) => s.toUpperCase())
           .trim(),
       );

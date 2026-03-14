@@ -263,7 +263,7 @@ export default function AdminMyActivityContent() {
   }, [orders, searchTerm, authUser?.name, authUser?.email]);
 
   const formatCurrency = (value: number) =>
-    `$${value.toLocaleString(undefined, {
+    `₹${value.toLocaleString(undefined, {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     })}`;

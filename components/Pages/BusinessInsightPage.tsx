@@ -36,6 +36,8 @@ import {
   Users,
   Calendar,
   X,
+  ArrowDownLeft,
+  Truck,
 } from "lucide-react";
 import {
   Area,
@@ -58,7 +60,7 @@ import Navbar from "@/components/layouts/Navbar";
 import PageWithSidebar from "@/components/layouts/PageWithSidebar";
 import BusinessInsightsSidebar from "@/components/layouts/BusinessInsightsSidebar";
 import { PageContentWrapper } from "@/components/shared";
-import { useProducts, useOrders } from "@/hooks/queries";
+import { useProducts, useOrders, useReceipts, useWarehouses, useCategories } from "@/hooks/queries";
 import { queryKeys } from "@/lib/react-query";
 import { exportToExcel, exportToCSV } from "@/lib/export";
 import type { ProductForHome } from "@/lib/server/home-data";
@@ -84,6 +86,9 @@ export default function BusinessInsightPage({
   // Use TanStack Query for data fetching
   const { data: allProducts = [], isLoading } = useProducts();
   const { data: allOrders = [], isLoading: isOrdersLoading } = useOrders();
+  const { data: allReceipts = [], isLoading: isReceiptsLoading } = useReceipts();
+  const { data: allWarehouses = [], isLoading: isWarehousesLoading } = useWarehouses();
+  const { data: allCategories = [], isLoading: isCategoriesLoading } = useCategories();
   const { user, isCheckingAuth } = useAuth();
   const { toast } = useToast();
 
@@ -117,6 +122,9 @@ export default function BusinessInsightPage({
     endDate: "",
   });
 
+  const [selectedWarehouseId, setSelectedWarehouseId] = useState<string>("all");
+  const [selectedCategoryId, setSelectedCategoryId] = useState<string>("all");
+
   // Set QR URL after component mounts (client-side only)
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -130,36 +138,41 @@ export default function BusinessInsightPage({
       return [];
     }
 
-    // If no date range is specified, return all products
-    if (!dateRange.startDate && !dateRange.endDate) {
-      return allProducts;
-    }
-
     return allProducts.filter((product) => {
+      // 1. Date Range Filter
       const productDate = new Date(product.createdAt);
-      productDate.setUTCHours(0, 0, 0, 0); // Normalize to start of day in UTC
+      productDate.setUTCHours(0, 0, 0, 0);
 
-      // Filter by start date
       if (dateRange.startDate) {
         const startDate = new Date(dateRange.startDate);
         startDate.setUTCHours(0, 0, 0, 0);
-        if (productDate < startDate) {
-          return false;
-        }
+        if (productDate < startDate) return false;
       }
 
-      // Filter by end date
       if (dateRange.endDate) {
         const endDate = new Date(dateRange.endDate);
-        endDate.setUTCHours(23, 59, 59, 999); // Include entire end date
-        if (productDate > endDate) {
-          return false;
-        }
+        endDate.setUTCHours(23, 59, 59, 999);
+        if (productDate > endDate) return false;
+      }
+
+      // 2. Warehouse Filter
+      // Note: Product models in this repo seem to have a single 'warehouse' field (string) 
+      // or relations depending on the specific page. We'll check the product object.
+      if (selectedWarehouseId !== "all") {
+        const pWarehouse = (product as any).warehouseId || (product as any).warehouse;
+        if (pWarehouse !== selectedWarehouseId) return false;
+      }
+
+      // 3. Category Filter
+      if (selectedCategoryId !== "all") {
+        const pCategory = (product as any).categoryId || (product as any).category;
+        const pCategoryId = typeof pCategory === 'object' ? pCategory?.id : pCategory;
+        if (pCategoryId !== selectedCategoryId) return false;
       }
 
       return true;
     });
-  }, [allProducts, dateRange]);
+  }, [allProducts, dateRange, selectedWarehouseId, selectedCategoryId]);
 
   // Calculate analytics data with corrected calculations
   const analyticsData = useMemo(() => {
@@ -181,6 +194,8 @@ export default function BusinessInsightPage({
         stockUtilization: 0,
         valueDensity: 0,
         stockCoverage: 0,
+        pendingReceipts: 0,
+        pendingDeliveries: 0,
       };
     }
 
@@ -266,21 +281,21 @@ export default function BusinessInsightPage({
 
     // Price range distribution
     const priceRanges = [
-      { name: "$0-$100", min: 0, max: 100 },
-      { name: "$100-$500", min: 100, max: 500 },
-      { name: "$500-$1000", min: 500, max: 1000 },
-      { name: "$1000-$2000", min: 1000, max: 2000 },
-      { name: "$2000+", min: 2000, max: Infinity },
+      { name: "₹0-₹100", min: 0, max: 100 },
+      { name: "₹100-₹500", min: 100, max: 500 },
+      { name: "₹500-₹1000", min: 500, max: 1000 },
+      { name: "₹1000-₹2000", min: 1000, max: 2000 },
+      { name: "₹2000+", min: 2000, max: Infinity },
     ];
 
     const priceRangeDistribution = priceRanges.map((range) => ({
       name: range.name,
       value: filteredProducts.filter((product) => {
-        if (range.name === "$2000+") {
-          // For $2000+ range, include products > $2000 (not including $2000)
+        if (range.name === "₹2000+") {
+          // For ₹2000+ range, include products > ₹2000 (not including ₹2000)
           return product.price > 2000;
-        } else if (range.name === "$1000-$2000") {
-          // For $1000-$2000 range, include products >= $1000 and <= $2000
+        } else if (range.name === "₹1000-₹2000") {
+          // For ₹1000-₹2000 range, include products >= ₹1000 and <= ₹2000
           return product.price >= range.min && product.price <= range.max;
         } else {
           // For other ranges, include products >= min and < max (exclusive upper bound)
@@ -407,8 +422,10 @@ export default function BusinessInsightPage({
       monthlyTrend,
       topProducts,
       lowStockProducts,
+      pendingReceipts: allReceipts.filter((r: any) => r.status === 'pending' || r.status === 'PENDING').length,
+      pendingDeliveries: allOrders.filter((o: any) => o.status === 'pending' || o.status === 'PENDING').length,
     };
-  }, [filteredProducts]);
+  }, [filteredProducts, allReceipts, allOrders]);
 
   // Sales / order trend by month (from orders) — respects date range filter
   const orderTrendByMonth = useMemo(() => {
@@ -502,7 +519,7 @@ export default function BusinessInsightPage({
         {
           Section: "Key Metrics",
           Metric: "Total Value",
-          Value: `$${analyticsData.totalValue.toLocaleString()}`,
+          Value: `₹${analyticsData.totalValue.toLocaleString()}`,
           "Additional Info": "",
         },
         {
@@ -526,7 +543,7 @@ export default function BusinessInsightPage({
         {
           Section: "Key Metrics",
           Metric: "Average Price",
-          Value: `$${analyticsData.averagePrice.toFixed(2)}`,
+          Value: `₹${analyticsData.averagePrice.toFixed(2)}`,
           "Additional Info": "",
         },
         {
@@ -538,7 +555,7 @@ export default function BusinessInsightPage({
         {
           Section: "Key Metrics",
           Metric: "Value Density",
-          Value: `$${analyticsData.valueDensity.toFixed(2)}`,
+          Value: `₹${analyticsData.valueDensity.toFixed(2)}`,
           "Additional Info": "",
         },
         {
@@ -556,7 +573,7 @@ export default function BusinessInsightPage({
           Section: "Category Distribution",
           Metric: cat.name,
           Value: cat.value.toString(),
-          "Additional Info": `Count: ${cat.count}, Value: $${cat.totalValue.toLocaleString()}`,
+          "Additional Info": `Count: ${cat.count}, Value: ₹${cat.totalValue.toLocaleString()}`,
         })),
 
         // Empty row separator
@@ -588,7 +605,7 @@ export default function BusinessInsightPage({
         ...analyticsData.topProducts.map((product, index) => ({
           Section: "Top Products",
           Metric: product.name,
-          Value: `$${product.value.toLocaleString()}`,
+          Value: `₹${product.value.toLocaleString()}`,
           "Additional Info": `Quantity: ${product.quantity}`,
         })),
 
@@ -647,7 +664,7 @@ export default function BusinessInsightPage({
         { Metric: "Total Products", Value: analyticsData.totalProducts },
         {
           Metric: "Total Value",
-          Value: `$${analyticsData.totalValue.toLocaleString()}`,
+          Value: `₹${analyticsData.totalValue.toLocaleString()}`,
         },
         { Metric: "Low Stock Items", Value: analyticsData.lowStockItems },
         { Metric: "Out of Stock Items", Value: analyticsData.outOfStockItems },
@@ -657,7 +674,7 @@ export default function BusinessInsightPage({
         },
         {
           Metric: "Average Price",
-          Value: `$${analyticsData.averagePrice.toFixed(2)}`,
+          Value: `₹${analyticsData.averagePrice.toFixed(2)}`,
         },
         {
           Metric: "Stock Utilization",
@@ -665,7 +682,7 @@ export default function BusinessInsightPage({
         },
         {
           Metric: "Value Density",
-          Value: `$${analyticsData.valueDensity.toFixed(2)}`,
+          Value: `₹${analyticsData.valueDensity.toFixed(2)}`,
         },
         {
           Metric: "Stock Coverage",
@@ -709,7 +726,7 @@ export default function BusinessInsightPage({
   const buildAiSummary = useCallback(() => {
     const parts = [
       `Total products: ${analyticsData.totalProducts}.`,
-      `Total inventory value: $${analyticsData.totalValue.toLocaleString()}.`,
+      `Total inventory value: ₹${analyticsData.totalValue.toLocaleString()}.`,
       `Low stock items (qty ≤ 20): ${analyticsData.lowStockItems}.`,
       `Out of stock: ${analyticsData.outOfStockItems}.`,
       `Stock utilization: ${analyticsData.stockUtilization.toFixed(1)}%.`,
@@ -793,12 +810,24 @@ export default function BusinessInsightPage({
           <BusinessInsightsSidebar
             value={insightsTab}
             onValueChange={setInsightsTab}
+            warehouseId={selectedWarehouseId}
+            onWarehouseChange={setSelectedWarehouseId}
+            categoryId={selectedCategoryId}
+            onCategoryChange={setSelectedCategoryId}
+            warehouses={allWarehouses}
+            categories={allCategories}
           />
         }
         sidebarCollapsed={
           <BusinessInsightsSidebar
             value={insightsTab}
             onValueChange={setInsightsTab}
+            warehouseId={selectedWarehouseId}
+            onWarehouseChange={setSelectedWarehouseId}
+            categoryId={selectedCategoryId}
+            onCategoryChange={setSelectedCategoryId}
+            warehouses={allWarehouses}
+            categories={allCategories}
             collapsed
           />
         }
@@ -899,10 +928,12 @@ export default function BusinessInsightPage({
           </div>
 
           {/* Key Metrics */}
-          <div className="pb-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="pb-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
             {showSkeleton ? (
               // Show skeleton loading while data is fetching - matches exact AnalyticsCard dimensions
               <>
+                <AnalyticsCardSkeleton />
+                <AnalyticsCardSkeleton />
                 <AnalyticsCardSkeleton />
                 <AnalyticsCardSkeleton />
                 <AnalyticsCardSkeleton />
@@ -919,10 +950,24 @@ export default function BusinessInsightPage({
                 />
                 <AnalyticsCard
                   title="Total Value"
-                  value={`$${analyticsData.totalValue.toLocaleString()}`}
+                  value={`₹${analyticsData.totalValue.toLocaleString()}`}
                   icon={DollarSign}
                   variant="emerald"
                   description="Total inventory value"
+                />
+                <AnalyticsCard
+                  title="Pending Receipts"
+                  value={analyticsData.pendingReceipts}
+                  icon={ArrowDownLeft}
+                  variant="sky"
+                  description="Validated but not finished"
+                />
+                <AnalyticsCard
+                  title="Pending Deliveries"
+                  value={analyticsData.pendingDeliveries}
+                  icon={Truck}
+                  variant="violet"
+                  description="Orders awaiting fulfillment"
                 />
                 <AnalyticsCard
                   title="Low Stock Items"
@@ -1069,8 +1114,8 @@ export default function BusinessInsightPage({
                             <Tooltip
                               formatter={(value: number | undefined) => [
                                 value != null
-                                  ? `$${Number(value).toLocaleString()}`
-                                  : "$0",
+                                  ? `₹${Number(value).toLocaleString()}`
+                                  : "₹0",
                                 "Revenue",
                               ]}
                             />
@@ -1155,8 +1200,8 @@ export default function BusinessInsightPage({
                           <Tooltip
                             formatter={(value: number | undefined) => [
                               value != null
-                                ? `$${Number(value).toLocaleString()}`
-                                : "$0",
+                                ? `₹${Number(value).toLocaleString()}`
+                                : "₹0",
                               "Value",
                             ]}
                           />
@@ -1182,8 +1227,8 @@ export default function BusinessInsightPage({
                           <Tooltip
                             formatter={(value: number | undefined) => [
                               value != null
-                                ? `$${Number(value).toLocaleString()}`
-                                : "$0",
+                                ? `₹${Number(value).toLocaleString()}`
+                                : "₹0",
                               "Value",
                             ]}
                           />
@@ -1213,8 +1258,8 @@ export default function BusinessInsightPage({
                           <Tooltip
                             formatter={(value) => [
                               value
-                                ? `$${Number(value).toLocaleString()}`
-                                : "$0",
+                                ? `₹${Number(value).toLocaleString()}`
+                                : "₹0",
                               "Value",
                             ]}
                             labelFormatter={(label) => `Product: ${label}`}

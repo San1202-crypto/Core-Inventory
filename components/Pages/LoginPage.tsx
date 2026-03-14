@@ -23,16 +23,16 @@ import { Shield, Loader2, Store, ShoppingBag, Users } from "lucide-react";
  */
 const testAccounts = {
   "guest-user": {
-    email: "test@admin.com",
-    password: "12345678",
+    email: "admin@test.com",
+    password: "password123",
   },
   "guest-supplier": {
-    email: "test@supplier.com",
-    password: "12345678",
+    email: "supplier@tech.com",
+    password: "password123", /* Needs to match backend script if we update that, but admin is most important */
   },
   "guest-client": {
     email: "test@client.com",
-    password: "12345678",
+    password: "password123",
   },
 };
 
@@ -217,9 +217,9 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.15),transparent_55%),radial-gradient(circle_at_bottom,_rgba(236,72,153,0.12),transparent_65%)] dark:bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.15),transparent_55%),radial-gradient(circle_at_bottom,_rgba(236,72,153,0.12),transparent_65%)]">
-      {/* Background overlay layer - lighter for light mode, darker for dark mode */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.3),transparent_60%)] dark:bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.05),transparent_60%)]"></div>
+    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-white text-black">
+      {/* Background overlay removed for clean light design */}
+      <div className="pointer-events-none absolute inset-0"></div>
 
       <div className="relative z-10 w-full">
         <div className="flex flex-col lg:flex-row min-h-screen">
@@ -236,13 +236,13 @@ export default function LoginPage() {
             </div>
             <div className="relative z-10 max-w-2xl w-full space-y-6">
               {/* Main Welcome Card - Demo guide */}
-              <div className="rounded-[28px] border border-sky-400/30 dark:border-white/10 bg-gradient-to-br from-sky-500/25 via-sky-500/10 to-sky-500/5 dark:from-white/5 dark:via-white/5 dark:to-white/5 backdrop-blur-sm shadow-[0_30px_80px_rgba(2,132,199,0.35)] dark:shadow-lg p-4 sm:p-8">
-                <h1 className="text-xl lg:text-2xl font-semibold text-gray-900 dark:text-white mb-3 tracking-tight text-center">
+              <div className="rounded-[28px] border border-zinc-200 bg-zinc-50 p-4 sm:p-8 shadow-sm">
+                <h1 className="text-xl lg:text-3xl font-black text-black mb-3 tracking-tighter text-center uppercase">
                   Demo Accounts Guide
                 </h1>
                 <p className="text-md lg:text-lg text-gray-700 dark:text-white/80 font-medium leading-relaxed text-center">
                   Use the dropdown on the right to sign in as Admin, Client, or
-                  Supplier. All demo accounts use password: 12345678.
+                  Supplier. All demo accounts use password: password123.
                 </p>
               </div>
 
@@ -318,12 +318,12 @@ export default function LoginPage() {
 
           {/* Right Side - Login Form */}
           <div className="w-full lg:w-1/2 flex items-center justify-center p-0 sm:p-8 lg:p-12">
-            <div className="w-full max-w-md rounded-[28px] border border-sky-400/30 dark:border-white/10 bg-gradient-to-br from-sky-500/25 via-sky-500/10 to-sky-500/5 dark:from-white/5 dark:via-white/5 dark:to-white/5 backdrop-blur-sm shadow-[0_30px_80px_rgba(2,132,199,0.35)] dark:shadow-lg p-4 sm:p-8 transition-all duration-300 hover:shadow-[0_40px_100px_rgba(2,132,199,0.5)] dark:hover:shadow-[0_40px_100px_rgba(2,132,199,0.4)] hover:border-sky-300/50 dark:hover:border-sky-300/30">
+            <div className="w-full max-w-md rounded-[28px] border border-zinc-200 bg-white shadow-xl p-4 sm:p-8 transition-all duration-300">
               <div className="space-y-2 mb-6">
-                <h2 className="text-2xl sm:text-2xl font-semibold text-gray-900 dark:text-white text-center">
+                <h2 className="text-2xl sm:text-4xl font-black text-black text-center uppercase tracking-tighter">
                   Welcome Back
                 </h2>
-                <p className="text-sm sm:text-base text-gray-600 dark:text-white/70 text-center">
+                <p className="text-sm sm:text-base text-zinc-600 text-center font-medium">
                   Sign in to your account to continue
                 </p>
               </div>
@@ -360,7 +360,7 @@ export default function LoginPage() {
                           value="guest-user"
                           className="cursor-pointer text-gray-900 dark:text-white focus:bg-sky-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
                         >
-                          Guest User / Admin (test@admin.com)
+                          Guest User / Admin (admin@test.com)
                         </SelectItem>
                         <SelectItem
                           value="guest-supplier"
@@ -428,7 +428,7 @@ export default function LoginPage() {
                 {/* Sign In Button — Loader2 inside button until homepage displays (no overlay) */}
                 <Button
                   type="submit"
-                  className="w-full rounded-xl border border-sky-400/30 dark:border-sky-400/40 bg-gradient-to-r from-sky-500/70 via-sky-500/50 to-sky-500/30 dark:from-sky-500/80 dark:via-sky-500/60 dark:to-sky-500/40 text-white shadow-[0_15px_35px_rgba(2,132,199,0.45)] backdrop-blur-sm transition duration-200 hover:border-sky-300/60 dark:hover:border-sky-300/60 hover:from-sky-500/90 hover:via-sky-500/70 hover:to-sky-500/50 dark:hover:from-sky-500/90 dark:hover:via-sky-500/70 dark:hover:to-sky-500/50 hover:shadow-[0_20px_45px_rgba(2,132,199,0.6)]"
+                  className="w-full h-12 rounded-xl bg-black text-white shadow-md transition duration-200 hover:bg-zinc-800 font-bold uppercase tracking-wide"
                   disabled={isLoading || isNavigatingToHome}
                 >
                   {isNavigatingToHome ? (

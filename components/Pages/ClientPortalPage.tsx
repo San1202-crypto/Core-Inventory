@@ -265,7 +265,7 @@ export default function ClientPortalPage() {
             />
             <StatisticsCard
               title="Total Spent"
-              value={`$${dashboard.totalSpent.toLocaleString(undefined, {
+              value={`₹${dashboard.totalSpent.toLocaleString(undefined, {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
               })}`}
@@ -275,7 +275,7 @@ export default function ClientPortalPage() {
               badges={[
                 {
                   label: "Paid",
-                  value: `$${(
+                  value: `₹${(
                     dashboard.paymentBreakdown?.paid ?? 0
                   ).toLocaleString(undefined, {
                     minimumFractionDigits: 2,
@@ -284,7 +284,7 @@ export default function ClientPortalPage() {
                 },
                 {
                   label: "Due",
-                  value: `$${(
+                  value: `₹${(
                     dashboard.paymentBreakdown?.due ?? 0
                   ).toLocaleString(undefined, {
                     minimumFractionDigits: 2,
@@ -293,7 +293,7 @@ export default function ClientPortalPage() {
                 },
                 {
                   label: "Refund",
-                  value: `$${(
+                  value: `₹${(
                     dashboard.paymentBreakdown?.refund ?? 0
                   ).toLocaleString(undefined, {
                     minimumFractionDigits: 2,
@@ -302,7 +302,7 @@ export default function ClientPortalPage() {
                 },
                 {
                   label: "Pending",
-                  value: `$${(
+                  value: `₹${(
                     dashboard.paymentBreakdown?.pending ?? 0
                   ).toLocaleString(undefined, {
                     minimumFractionDigits: 2,
@@ -311,7 +311,7 @@ export default function ClientPortalPage() {
                 },
                 {
                   label: "Cancelled",
-                  value: `$${(
+                  value: `₹${(
                     dashboard.paymentBreakdown?.cancelled ?? 0
                   ).toLocaleString(undefined, {
                     minimumFractionDigits: 2,
@@ -322,7 +322,7 @@ export default function ClientPortalPage() {
                   ? [
                       {
                         label: "Avg/Order",
-                        value: `$${(
+                        value: `₹${(
                           dashboard.totalSpent / dashboard.totalOrders
                         ).toLocaleString(undefined, {
                           minimumFractionDigits: 2,
@@ -335,7 +335,7 @@ export default function ClientPortalPage() {
             />
             <StatisticsCard
               title="Outstanding"
-              value={`$${dashboard.outstandingAmount.toLocaleString(undefined, {
+              value={`₹${dashboard.outstandingAmount.toLocaleString(undefined, {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
               })}`}
@@ -400,7 +400,7 @@ export default function ClientPortalPage() {
                   <YAxis />
                   <Tooltip
                     formatter={(value) => [
-                      `$${Number(value).toLocaleString()}`,
+                      `₹${Number(value).toLocaleString()}`,
                       "Spent",
                     ]}
                   />

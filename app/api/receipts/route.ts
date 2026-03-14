@@ -21,9 +21,10 @@ export async function GET(request: NextRequest) {
     });
 
     return NextResponse.json(receipts);
-  } catch (error) {
+  } catch (error: any) {
+    console.error("DEBUG: GET /api/receipts error:", error);
     logger.error("Error fetching receipts:", error);
-    return NextResponse.json({ error: "Failed to fetch receipts" }, { status: 500 });
+    return NextResponse.json({ error: "Failed to fetch receipts", details: error.message }, { status: 500 });
   }
 }
 
@@ -41,10 +42,11 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(receipt, { status: 201 });
   } catch (error: any) {
+    console.error("DEBUG: POST /api/receipts error:", error);
     logger.error("Error creating receipt:", error);
     if (error.name === "ZodError") {
       return NextResponse.json({ error: error.errors }, { status: 400 });
     }
-    return NextResponse.json({ error: error.message || "Failed to create receipt" }, { status: 500 });
+    return NextResponse.json({ error: error.message || "Failed to create receipt", details: error.message }, { status: 500 });
   }
 }

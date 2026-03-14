@@ -6,8 +6,18 @@ import {
   PieChart as PieChartIcon,
   TrendingUp,
   AlertTriangle,
+  Warehouse,
+  Tags
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import type { Warehouse as WarehouseType, Category } from "@/types";
 
 /**
  * Business Insights sidebar: grouped header + Overview, Distribution, Trends, Alerts.
@@ -28,14 +38,25 @@ const TAB_ITEMS: {
 export interface BusinessInsightsSidebarProps {
   value: string;
   onValueChange: (value: string) => void;
-  /** When true, render icon-only compact sidebar for phone screens */
   collapsed?: boolean;
+  warehouseId: string;
+  onWarehouseChange: (id: string) => void;
+  categoryId: string;
+  onCategoryChange: (id: string) => void;
+  warehouses: WarehouseType[];
+  categories: Category[];
 }
 
 export default function BusinessInsightsSidebar({
   value,
   onValueChange,
   collapsed = false,
+  warehouseId,
+  onWarehouseChange,
+  categoryId,
+  onCategoryChange,
+  warehouses,
+  categories,
 }: BusinessInsightsSidebarProps) {
   if (collapsed) {
     return (

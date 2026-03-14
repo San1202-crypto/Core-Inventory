@@ -47,7 +47,7 @@ interface InvoiceDialogProps {
 }
 
 const fmt = (v: number) =>
-  `$${v.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  `₹${v.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 
 /**
  * Invoice Dialog Component

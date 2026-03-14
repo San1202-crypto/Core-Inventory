@@ -202,7 +202,7 @@ export default function AdminClientPortalContent({
               />
               <AnalyticsCard
                 title="Revenue"
-                value={`$${((stats.revenue?.orders ?? 0) + (stats.revenue?.invoices ?? 0)).toLocaleString()}`}
+                value={`₹${((stats.revenue?.orders ?? 0) + (stats.revenue?.invoices ?? 0)).toLocaleString()}`}
                 icon={DollarSign}
                 description="Orders + Invoices"
                 variant="amber"

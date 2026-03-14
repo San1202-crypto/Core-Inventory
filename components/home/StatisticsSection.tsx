@@ -21,7 +21,7 @@ import { StatisticsCardSkeleton } from "./StatisticsCardSkeleton";
 import { useDashboard } from "@/hooks/queries/use-dashboard";
 
 const formatCurrency = (value: number) =>
-  `$${value.toLocaleString(undefined, {
+  `₹${value.toLocaleString(undefined, {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   })}`;
@@ -52,7 +52,7 @@ export function StatisticsSection() {
   const selfOthers = stats?.selfOthersBreakdown;
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border-2 border-foreground/10">
       {isLoading ? (
         <>
           {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
@@ -66,7 +66,7 @@ export function StatisticsSection() {
             value={stats.counts?.products ?? 0}
             description="Products availability"
             icon={Package}
-            variant="rose"
+            className="border-none border-b-2 border-r-2 border-foreground/10"
             badges={[
               { label: "Available", value: stats.productStatusBreakdown?.available ?? 0 },
               { label: "Stock low", value: stats.productStatusBreakdown?.stockLow ?? 0 },
@@ -78,7 +78,7 @@ export function StatisticsSection() {
             value={formatCurrency(stats.totalInventoryValue ?? 0)}
             description="Total inventory value"
             icon={DollarSign}
-            variant="violet"
+            className="border-none border-b-2 border-r-2 border-foreground/10"
             badges={[
               {
                 label: "Orders",
@@ -104,7 +104,7 @@ export function StatisticsSection() {
             value={formatCurrency(revenueFromOrders)}
             description="Profits (excl. cancelled)"
             icon={DollarSign}
-            variant="emerald"
+            className="border-none border-b-2 border-r-2 border-foreground/10"
             badges={[
               {
                 label: "Paid",
@@ -132,10 +132,10 @@ export function StatisticsSection() {
           />
           <StatisticsCard
             title="Total Orders"
-            value={stats.counts?.orders}
+            value={stats.counts?.orders ?? 0}
             description="Total orders placed (self + client)"
             icon={ShoppingCart}
-            variant="blue"
+            className="border-none border-b-2 border-foreground/10"
             badges={[
               {
                 label: "Pending",
@@ -166,10 +166,10 @@ export function StatisticsSection() {
           />
           <StatisticsCard
             title="Invoices"
-            value={stats.counts?.invoices}
+            value={stats.counts?.invoices ?? 0}
             description="Total invoices (store-wide)"
             icon={FileText}
-            variant="sky"
+            className="border-none border-r-2 border-foreground/10"
             badges={[
               {
                 label: "Paid",
@@ -200,10 +200,10 @@ export function StatisticsSection() {
           />
           <StatisticsCard
             title="Total Warehouses"
-            value={stats.counts?.warehouses}
+            value={stats.counts?.warehouses ?? 0}
             description="Storage locations"
             icon={Warehouse}
-            variant="teal"
+            className="border-none border-r-2 border-foreground/10"
             badges={[
               { label: "Active", value: stats.warehouseAnalytics?.activeWarehouses ?? 0 },
               { label: "Inactive", value: stats.warehouseAnalytics?.inactiveWarehouses ?? 0 },
@@ -211,10 +211,10 @@ export function StatisticsSection() {
           />
           <StatisticsCard
             title="Total Suppliers"
-            value={stats.counts?.suppliers}
+            value={stats.counts?.suppliers ?? 0}
             description="Suppliers"
             icon={Truck}
-            variant="emerald"
+            className="border-none border-r-2 border-foreground/10"
             badges={[
               { label: "Active", value: stats.supplierStatusBreakdown?.active ?? 0 },
               { label: "Inactive", value: stats.supplierStatusBreakdown?.inactive ?? 0 },
@@ -222,10 +222,10 @@ export function StatisticsSection() {
           />
           <StatisticsCard
             title="Categories"
-            value={stats.counts?.categories}
+            value={stats.counts?.categories ?? 0}
             description="Product categories"
             icon={FolderTree}
-            variant="amber"
+            className="border-none"
             badges={[
               { label: "Active", value: stats.categoryStatusBreakdown?.active ?? 0 },
               { label: "Inactive", value: stats.categoryStatusBreakdown?.inactive ?? 0 },

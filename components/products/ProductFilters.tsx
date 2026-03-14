@@ -125,7 +125,7 @@ export default function FiltersAndActions({
       const csvData = filteredProducts.map((product) => ({
         "Product Name": product.name,
         SKU: product.sku,
-        Price: `$${product.price.toFixed(2)}`,
+        Price: `₹${product.price.toFixed(2)}`,
         Quantity: product.quantity,
         Status: product.status,
         Category: product.category || "Unknown",
@@ -247,15 +247,15 @@ export default function FiltersAndActions({
   // Use memoized filteredProducts instead of calling getFilteredProducts()
 
   const exportButtonClass =
-    "h-10 w-full sm:w-auto flex items-center gap-2 rounded-[28px] border border-violet-400/30 dark:border-violet-400/30 bg-gradient-to-r from-violet-500/25 via-violet-500/15 to-violet-500/10 dark:from-violet-500/25 dark:via-violet-500/15 dark:to-violet-500/10 text-gray-700 dark:text-white shadow-[0_10px_30px_rgba(139,92,246,0.2)] backdrop-blur-sm transition duration-200 hover:border-violet-300/40 hover:from-violet-500/35 hover:via-violet-500/25 hover:to-violet-500/15 dark:hover:border-violet-300/40 dark:hover:from-violet-500/35 dark:hover:via-violet-500/25 dark:hover:to-violet-500/15";
+    "h-10 w-full sm:w-auto flex items-center gap-2 rounded-none border-2 border-foreground/10 bg-background text-foreground hover:border-foreground transition-all font-black uppercase tracking-tighter text-[11px] font-montserrat";
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-6">
       {/* Row 1: Select Product Owner (when client) - centered */}
       {productOwnerOptions && onOwnerChange && (
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2 sm:gap-3 w-full">
-          <span className="text-sm font-medium text-gray-700 dark:text-white/80 flex items-center gap-2">
-            <Users className="h-4 w-4 text-gray-600 dark:text-white/60 flex-shrink-0" />
+          <span className="text-[11px] font-black uppercase tracking-tighter text-foreground/60 font-montserrat flex items-center gap-2">
+            <Users className="h-4 w-4" />
             Select Product Owner
           </span>
           <DropdownMenu>
@@ -269,13 +269,13 @@ export default function FiltersAndActions({
             </DropdownMenuTrigger>
             <DropdownMenuContent
               align="start"
-              className="rounded-[28px] border border-violet-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm min-w-[200px]"
+              className="rounded-none border-2 border-foreground bg-background text-foreground shadow-none min-w-[200px]"
             >
               {productOwnerOptions.map((a) => (
                 <DropdownMenuItem
                   key={a.id}
                   onSelect={() => onOwnerChange(a.id)}
-                  className="cursor-pointer text-gray-700 dark:text-white/80 hover:text-gray-900 dark:hover:text-white focus:bg-violet-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
+                  className="text-[11px] font-black uppercase tracking-tighter cursor-pointer focus:bg-foreground focus:text-background rounded-none py-3 font-montserrat"
                 >
                   {a.name} ({a.email})
                 </DropdownMenuItem>
@@ -304,21 +304,21 @@ export default function FiltersAndActions({
         {/* Center - Search */}
         <div className="relative flex-1 min-w-[120px] sm:min-w-[200px] sm:max-w-md w-full order-1 sm:order-2 sm:flex sm:justify-center">
           <div className="relative w-full sm:max-w-md">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-600 dark:text-white/60 z-10" />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-foreground/40 z-10" />
             <Input
               placeholder="Search by Name or SKU..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="h-10 pl-9 pr-10 w-full rounded-[28px] bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-sky-400/30 dark:border-white/20 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-white/40 focus-visible:border-sky-400 focus-visible:ring-sky-500/50 shadow-[0_10px_30px_rgba(2,132,199,0.15)]"
+              className="h-10 pl-10 pr-10 w-full rounded-full bg-background border-2 border-foreground/10 text-foreground placeholder:text-foreground/30 focus-visible:border-foreground focus-visible:ring-0 font-montserrat text-[11px] font-black uppercase tracking-tighter"
             />
             {searchTerm && (
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setSearchTerm("")}
-                className="absolute right-1 top-1/2 transform -translate-y-1/2 h-8 w-8 p-0 text-white/60 hover:text-white hover:bg-white/10 backdrop-blur-sm"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 h-7 w-7 p-0 text-foreground/40 hover:text-foreground hover:bg-transparent"
               >
-                <IoClose className="h-4 w-4 text-gray-700 dark:text-white/60" />
+                <IoClose className="h-4 w-4" />
               </Button>
             )}
           </div>
@@ -341,18 +341,18 @@ export default function FiltersAndActions({
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="end"
-                className="rounded-[28px] border border-violet-400/20 dark:border-white/10 bg-white/80 dark:bg-popover/50 backdrop-blur-sm"
+                className="rounded-none border-2 border-foreground bg-background text-foreground shadow-none"
               >
                 <DropdownMenuItem
                   onClick={exportToCSV}
-                  className="cursor-pointer text-gray-700 dark:text-white/80 hover:text-gray-900 dark:hover:text-white focus:bg-violet-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
+                  className="text-[11px] font-black uppercase tracking-tighter cursor-pointer focus:bg-foreground focus:text-background rounded-none py-3 font-montserrat"
                 >
                   <FiFileText className="mr-2 h-4 w-4" />
                   Export as CSV
                 </DropdownMenuItem>
                 <DropdownMenuItem
                   onClick={exportToExcel}
-                  className="cursor-pointer text-gray-700 dark:text-white/80 hover:text-gray-900 dark:hover:text-white focus:bg-violet-100 dark:focus:bg-white/10 focus:text-gray-900 dark:focus:text-white"
+                  className="text-[11px] font-black uppercase tracking-tighter cursor-pointer focus:bg-foreground focus:text-background rounded-none py-3 font-montserrat"
                 >
                   <FiGrid className="mr-2 h-4 w-4" />
                   Export as Excel

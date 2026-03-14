@@ -696,7 +696,7 @@ export default function SupplierDetailPage({
                               </span>
                             </>
                           ) : (
-                            `$${order.subtotal.toFixed(2)}`
+                            `₹${order.subtotal.toFixed(2)}`
                           )}
                         </p>
                         <Badge

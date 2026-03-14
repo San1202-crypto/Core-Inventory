@@ -18,6 +18,7 @@ import {
   DollarSign,
   TrendingUp,
   ShoppingCart,
+  MapPin,
   BarChart3,
   QrCode,
   Image as ImageIcon,
@@ -759,6 +760,56 @@ export default function ProductDetailPage({
             </GlassCard>
           </div>
 
+          {/* Stock Locations */}
+          {product.stocks && product.stocks.length > 0 && (
+            <GlassCard variant="emerald">
+              <div className="p-4 sm:p-5">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-300/30 bg-zinc-100/50 dark:border-white/15 dark:bg-white/10">
+                    <MapPin className="h-4 w-4 text-gray-900 dark:text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                      Stock per Location
+                    </h3>
+                    <p className="text-xs text-gray-600 dark:text-white/60">
+                      Distribution of product stock across warehouses
+                    </p>
+                  </div>
+                </div>
+                <div className="space-y-3 mt-4">
+                  {product.stocks.map((stock: any) => (
+                    <div
+                      key={stock.id}
+                      className="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-xl border border-zinc-400/20 bg-gradient-to-r from-zinc-500/10 to-transparent gap-3"
+                    >
+                      <div className="flex-1 flex items-center gap-3">
+                        <div className="p-2 rounded-lg bg-zinc-500/10">
+                          <MapPin className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
+                        </div>
+                        <div>
+                          <h4 className="font-medium text-gray-900 dark:text-white">
+                            {stock.warehouseName}
+                          </h4>
+                        </div>
+                      </div>
+                      <div className="text-left sm:text-right">
+                        <p className="text-lg font-semibold text-gray-900 dark:text-white">
+                          {stock.quantity - (stock.reservedQuantity ?? 0)} available
+                        </p>
+                        {(stock.reservedQuantity ?? 0) > 0 && (
+                          <p className="text-sm text-gray-600 dark:text-white/60">
+                            {stock.reservedQuantity} reserved · {stock.quantity} total
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </GlassCard>
+          )}
+
           {/* Recent Orders */}
           {product.recentOrders && product.recentOrders.length > 0 && (
             <GlassCard variant="rose">
@@ -811,7 +862,7 @@ export default function ProductDetailPage({
                               </span>
                             </>
                           ) : (
-                            `$${order.subtotal.toFixed(2)}`
+                            `₹${order.subtotal.toFixed(2)}`
                           )}
                         </p>
                         <Badge

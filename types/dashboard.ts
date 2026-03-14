@@ -13,6 +13,7 @@ export interface DashboardCounts {
   warehouses: number;
   tickets: number;
   reviews: number;
+  internalTransfersScheduled: number;
 }
 
 export interface DashboardRevenue {

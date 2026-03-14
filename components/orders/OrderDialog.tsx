@@ -129,12 +129,12 @@ const paymentStatusOptions: Array<{ value: PaymentStatus; label: string }> = [
 
 /** Tax: 7% of subtotal (hardcoded). */
 const TAX_RATE = 0.07;
-/** Shipping: fixed $4.99 (hardcoded). */
+/** Shipping: fixed ₹4.99 (hardcoded). */
 const SHIPPING_FIXED = 4.99;
 
 /**
  * Discount percent by subtotal tiers (hardcoded):
- * &lt; $100 → 10%, $100–$300 → 20%, $300–$500 → 30%, $500+ → 50%
+ * &lt; ₹100 → 10%, ₹100–₹300 → 20%, ₹300–₹500 → 30%, ₹500+ → 50%
  */
 function getDiscountPercent(subtotal: number): number {
   if (subtotal < 100) return 10;
@@ -382,7 +382,7 @@ export default function OrderDialog({
         throw new Error("At least one order item is required");
       }
 
-      // Compute subtotal and fees (tax 7%, shipping $4.99, discount by tier) for payload
+      // Compute subtotal and fees (tax 7%, shipping ₹4.99, discount by tier) for payload
       const submitSubtotal = validItems.reduce((sum, item) => {
         const product = availableProducts.find((p) => p.id === item.productId);
         if (!product) return sum;
@@ -1297,7 +1297,7 @@ export default function OrderDialog({
                   )}
                 </div>
 
-                {/* Order Totals Section — tax 7%, shipping $4.99, discount by subtotal tier (computed, no dropdowns) */}
+                {/* Order Totals Section — tax 7%, shipping ₹4.99, discount by subtotal tier (computed, no dropdowns) */}
                 <div className="space-y-4">
                   <Label className="text-white/80 text-base font-semibold">
                     Order Totals

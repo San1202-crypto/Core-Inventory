@@ -57,4 +57,5 @@ export interface AdminCounts {
   suppliers: number;
   clients: number;
   users: number;
+  categories: number;
 }

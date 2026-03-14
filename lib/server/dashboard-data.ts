@@ -165,6 +165,7 @@ export async function getDashboardForAdmin(userId: string): Promise<DashboardSta
     warehouseTypeGroups,
     selfInvoiceCount,
     orderRevenueSelfSum,
+    internalTransfersCount,
   ] = await Promise.all([
     prisma.product.count({ where: whereUser }),
     prisma.supplier.count({ where: whereSuppliers }),
@@ -304,6 +305,7 @@ export async function getDashboardForAdmin(userId: string): Promise<DashboardSta
           _sum: { total: true },
         })
       : { _sum: { total: null as number | null } },
+    prisma.stockTransfer.count({ where: { ...whereUser, status: "pending" } }),
   ]);
 
   const [
@@ -414,6 +416,7 @@ export async function getDashboardForAdmin(userId: string): Promise<DashboardSta
     warehouses: warehousesCount,
     tickets: ticketsCount,
     reviews: reviewsCount,
+    internalTransfersScheduled: internalTransfersCount,
   };
 
   const revenue: DashboardRevenue = {

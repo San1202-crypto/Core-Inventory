@@ -32,6 +32,7 @@ export interface Product {
   imageUrl?: string; // ImageKit URL for product image
   imageFileId?: string; // ImageKit file ID for cleanup when updating/deleting
   expirationDate?: Date | null; // Product expiration date (optional, for perishable items)
+  unitOfMeasure: string;
   /** Product owner display name (populated when fetching by supplier) */
   productOwnerName?: string | null;
   /** Extended by API for detail page */
@@ -58,6 +59,13 @@ export interface Product {
     orderTotal?: number;
     orderStatus: string;
   }> | null;
+  stocks?: Array<{
+    id: string;
+    warehouseId: string;
+    warehouseName: string;
+    quantity: number;
+    reservedQuantity?: number;
+  }> | null;
 }
 
 /**
@@ -75,6 +83,7 @@ export interface CreateProductInput {
   imageUrl?: string;
   imageFileId?: string;
   expirationDate?: string; // ISO date string
+  unitOfMeasure?: string;
 }
 
 /**
@@ -92,4 +101,5 @@ export interface UpdateProductInput {
   imageUrl?: string;
   imageFileId?: string;
   expirationDate?: string | null; // ISO date string or null to clear
+  unitOfMeasure?: string;
 }

@@ -65,6 +65,14 @@ export const getProductById = async (productId: string, userId: string) => {
           createdAt: "desc",
         },
       },
+      // Include stocks per location
+      stocks: {
+        include: {
+          warehouse: {
+            select: { id: true, name: true },
+          },
+        },
+      },
     },
   });
 };
