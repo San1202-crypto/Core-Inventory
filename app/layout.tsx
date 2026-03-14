@@ -47,16 +47,14 @@ export const metadata = {
     template: "%s | Stockly — Warehouse & Stock Inventory Management System",
   },
   description:
-    "Stockly is a full-stack warehouse and stock inventory management system built with Next.js. Manage products, categories, suppliers, orders, invoices, and warehouses. Role-based access for admin, client, and supplier. Analytics dashboard, QR codes, export, and secure JWT authentication. By Arnob Mahmud.",
+    "Stockly is a full-stack warehouse and stock inventory management system built with Next.js. Manage products, categories, suppliers, orders, invoices, and warehouses. Role-based access for admin, client, and supplier. Analytics dashboard, QR codes, export, and secure JWT authentication.",
   authors: [
     {
-      name: "Arnob Mahmud",
-      url: "https://www.arnobmahmud.com",
-      email: "contact@arnobmahmud.com",
+      name: "Admin",
     },
   ],
-  creator: "Arnob Mahmud",
-  publisher: "Arnob Mahmud",
+  creator: "Admin",
+  publisher: "Admin",
   applicationName: "Stockly",
   keywords: [
     "stock inventory",
@@ -74,7 +72,6 @@ export const metadata = {
     "JWT authentication",
     "responsive web app",
     "business dashboard",
-    "Arnob Mahmud",
   ],
   icons: {
     icon: "/favicon.ico",
@@ -89,7 +86,7 @@ export const metadata = {
     locale: "en_US",
     title: "Stockly — Warehouse & Stock Inventory Management System",
     description:
-      "Efficiently manage products, orders, invoices, and warehouses with Stockly. Secure, responsive, role-based inventory system. By Arnob Mahmud.",
+      "Efficiently manage products, orders, invoices, and warehouses with Stockly. Secure, responsive, role-based inventory system.",
     url: "https://stockly-inventory.vercel.app",
     siteName: "Stockly",
     images: [
@@ -105,7 +102,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Stockly — Warehouse & Stock Inventory Management System",
     description:
-      "Efficiently manage products, orders, invoices, and warehouses. Secure, responsive inventory system. By Arnob Mahmud.",
+      "Efficiently manage products, orders, invoices, and warehouses. Secure, responsive inventory system.",
     images: ["/favicon.ico"],
   },
   robots: {

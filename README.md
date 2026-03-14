@@ -609,7 +609,7 @@ Stockly is a full-stack example of a role-based inventory and order management a
 
 ## Keywords
 
-stock inventory, inventory management, warehouse management, stock management system, Next.js, React, Prisma, MongoDB, product catalog, orders, invoices, suppliers, categories, JWT authentication, Stripe payments, Shippo shipping, Brevo email, role-based access, admin dashboard, client portal, supplier portal, TanStack Query, TypeScript, Tailwind CSS, shadcn/ui, Arnob Mahmud
+stock inventory, inventory management, warehouse management, stock management system, Next.js, React, Prisma, MongoDB, product catalog, orders, invoices, suppliers, categories, JWT authentication, Stripe payments, Shippo shipping, Brevo email, role-based access, admin dashboard, client portal, supplier portal, TanStack Query, TypeScript, Tailwind CSS, shadcn/ui.
 
 ---
 
@@ -623,7 +623,7 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
 
 This is an **open-source project** — feel free to use, enhance, and extend this project further!
 
-If you have any questions or want to share your work, reach out via GitHub or my portfolio at [https://www.arnobmahmud.com](https://www.arnobmahmud.com).
+If you have any questions or want to share your work, reach out via GitHub.
 
 **Enjoy building and learning!** 🚀
 
