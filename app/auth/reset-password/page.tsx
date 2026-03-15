@@ -14,6 +14,8 @@ export default function ResetPasswordPage() {
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [resendCooldown, setResendCooldown] = useState(0);
+  const [isResending, setIsResending] = useState(false);
   
   const searchParams = useSearchParams();
   const { toast } = useToast();
@@ -23,6 +25,35 @@ export default function ResetPasswordPage() {
     const emailParam = searchParams.get("email");
     if (emailParam) setEmail(emailParam);
   }, [searchParams]);
+
+  useEffect(() => {
+    if (resendCooldown > 0) {
+      const timer = setTimeout(() => setResendCooldown(resendCooldown - 1), 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [resendCooldown]);
+
+  const handleResendOTP = async () => {
+    if (resendCooldown > 0 || isResending) return;
+    
+    setIsResending(true);
+    try {
+      await axios.post("/api/auth/password-reset/request", { email });
+      toast({
+        title: "Code Resent!",
+        description: "Consistency is key. Check your inbox again.",
+      });
+      setResendCooldown(60);
+    } catch (error: any) {
+      toast({
+        title: "Resend Failed",
+        description: "Wait a moment and try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsResending(false);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -96,6 +127,19 @@ export default function ResetPasswordPage() {
                 required
                 className="w-full h-12 text-center tracking-[0.5em] font-black text-2xl border-2 border-zinc-100 focus:border-black rounded-none"
               />
+              <div className="flex justify-between items-center px-1">
+                <span className="text-[10px] uppercase font-black tracking-tighter text-zinc-300">
+                  Code expires in 10 mins
+                </span>
+                <button
+                  type="button"
+                  onClick={handleResendOTP}
+                  disabled={resendCooldown > 0 || isResending}
+                  className="text-[10px] uppercase font-black tracking-tighter text-black hover:text-zinc-500 disabled:text-zinc-300 transition-colors"
+                >
+                  {resendCooldown > 0 ? `Resend in ${resendCooldown}s` : "Resend Code"}
+                </button>
+              </div>
             </div>
 
             <div className="space-y-2">
