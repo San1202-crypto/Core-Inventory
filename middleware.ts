@@ -9,9 +9,14 @@
 
 import { NextRequest, NextResponse } from "next/server";
 
-const PUBLIC = new Set(["/login", "/register"]);
+const PUBLIC = new Set([
+  "/login",
+  "/register",
+  "/auth/forgot-password",
+  "/auth/reset-password",
+]);
 
-export function proxy(request: NextRequest) {
+export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (PUBLIC.has(pathname)) {
